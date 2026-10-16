@@ -1,0 +1,92 @@
+{
+  "operationId": "listGroupMembers",
+  "scenarios": {
+    "default": {
+      "summary": "First page of a public member list: admins and moderators first",
+      "status": 200,
+      "body": {
+        "items": [
+          {
+            "id": "mbr_01JA0000000000000000002101",
+            "profile": {
+              "profile_id": "prof_01JA00000000000000000000C3",
+              "display_name": "Mai"
+            },
+            "role": "admin",
+            "joined_at": "2026-10-05T01:00:00Z"
+          },
+          {
+            "id": "mbr_01JA0000000000000000002102",
+            "profile": {
+              "profile_id": "prof_01JA00000000000000000000B2",
+              "display_name": "Daniel"
+            },
+            "role": "moderator",
+            "joined_at": "2026-10-05T03:30:00Z"
+          },
+          {
+            "id": "mbr_01JA0000000000000000002103",
+            "profile": {
+              "profile_id": "prof_01JA0000000000000000002501",
+              "display_name": "Lucas"
+            },
+            "role": "member",
+            "joined_at": "2026-10-07T10:12:00Z"
+          },
+          {
+            "id": "mbr_01JA0000000000000000002104",
+            "profile": {
+              "profile_id": "prof_01JA0000000000000000002502",
+              "display_name": "Yuki"
+            },
+            "role": "member",
+            "joined_at": "2026-10-09T13:45:00Z"
+          },
+          {
+            "id": "mbr_01JA0000000000000000002105",
+            "profile": {
+              "profile_id": "prof_01JA0000000000000000002503",
+              "display_name": "Ana"
+            },
+            "role": "member",
+            "joined_at": "2026-10-11T00:20:00Z"
+          }
+        ],
+        "next_cursor": "bW9jay1jdXJzb3ItMg"
+      }
+    },
+    "empty": {
+      "summary": "No members match the role filter (e.g. role=moderator in a group without moderators)",
+      "status": 200,
+      "body": {
+        "items": [],
+        "next_cursor": null
+      }
+    },
+    "forbidden": {
+      "summary": "Member list is members-only (or admins-only, or the group is sensitive) and the viewer is not allowed to see it",
+      "status": 403,
+      "body": {
+        "type": "urn:livingin:problem:forbidden",
+        "title": "Forbidden",
+        "status": 403,
+        "code": "forbidden",
+        "request_id": "fixture",
+        "retryable": false,
+        "detail": "Only members of this group can see who belongs to it."
+      }
+    },
+    "not_found": {
+      "summary": "Unknown group, or an unlisted group viewed by a non-member",
+      "status": 404,
+      "body": {
+        "type": "urn:livingin:problem:not_found",
+        "title": "Not found",
+        "status": 404,
+        "code": "not_found",
+        "request_id": "fixture",
+        "retryable": false
+      }
+    }
+  }
+}

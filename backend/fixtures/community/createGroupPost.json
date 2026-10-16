@@ -1,0 +1,120 @@
+{
+  "operationId": "createGroupPost",
+  "scenarios": {
+    "default": {
+      "summary": "Question published immediately",
+      "status": 201,
+      "body": {
+        "id": "pst_01JA0000000000000000002207",
+        "group_id": "grp_01JA0000000000000000002001",
+        "author": {
+          "profile_id": "prof_01JA00000000000000000000A1",
+          "display_name": "Aiko"
+        },
+        "title": "Portuguese-speaking pediatricians near Hamamatsu Station?",
+        "body": "Does anyone know a clinic near Hamamatsu Station where the doctor or staff speak some Portuguese?",
+        "pinned": false,
+        "experience_label": {
+          "basis": "conversation",
+          "verification": "not_verified"
+        },
+        "reply_count": 0,
+        "created_at": "2026-11-05T01:00:00Z",
+        "kind": "question",
+        "publication": {
+          "state": "published",
+          "published_at": "2026-11-05T01:00:00Z"
+        }
+      }
+    },
+    "pending_review": {
+      "summary": "Recommendation request from a new member, waiting for group moderators",
+      "status": 201,
+      "body": {
+        "id": "pst_01JA0000000000000000002208",
+        "group_id": "grp_01JA0000000000000000002001",
+        "author": {
+          "profile_id": "prof_01JA00000000000000000000A1",
+          "display_name": "Aiko"
+        },
+        "title": "Recommendations for a Portuguese-speaking tax adviser?",
+        "body": "I need help with my first tax return. Has anyone worked with an adviser who speaks Portuguese? Personal recommendations welcome.",
+        "pinned": false,
+        "experience_label": {
+          "basis": "conversation",
+          "verification": "not_verified"
+        },
+        "reply_count": 0,
+        "created_at": "2026-11-05T02:00:00Z",
+        "kind": "request",
+        "request": {
+          "request_type": "recommendation",
+          "resolution": {
+            "status": "open"
+          },
+          "linked_event_id": null
+        },
+        "publication": {
+          "state": "pending_review",
+          "submitted_at": "2026-11-05T02:00:00Z",
+          "reviewer": "group_moderators"
+        }
+      }
+    },
+    "held": {
+      "summary": "Post held because it may contain personal contact details; a moderator must decide",
+      "status": 201,
+      "body": {
+        "id": "pst_01JA0000000000000000002209",
+        "group_id": "grp_01JA0000000000000000002001",
+        "author": {
+          "profile_id": "prof_01JA00000000000000000000A1",
+          "display_name": "Aiko"
+        },
+        "title": "Moving out: who can help on Saturday?",
+        "body": "I am moving out of my apartment on Saturday and need two people to help carry boxes. Call me on 090-0000-0000.",
+        "pinned": false,
+        "experience_label": {
+          "basis": "conversation",
+          "verification": "not_verified"
+        },
+        "reply_count": 0,
+        "created_at": "2026-11-05T03:00:00Z",
+        "kind": "discussion",
+        "publication": {
+          "state": "held",
+          "held_at": "2026-11-05T03:00:05Z",
+          "reason": {
+            "code": "possible_personal_information",
+            "explanation": "This post may contain a phone number. A moderator will check it before anyone else can see it."
+          }
+        }
+      }
+    },
+    "forbidden": {
+      "summary": "Viewer is not an active member (non-member, pending, removed or blocked)",
+      "status": 403,
+      "body": {
+        "type": "urn:livingin:problem:forbidden",
+        "title": "Forbidden",
+        "status": 403,
+        "code": "forbidden",
+        "request_id": "fixture",
+        "retryable": false,
+        "detail": "Only members of this group can post."
+      }
+    },
+    "not_found": {
+      "summary": "Unknown group, or an unlisted group viewed by a non-member",
+      "status": 404,
+      "body": {
+        "type": "urn:livingin:problem:not_found",
+        "title": "Not found",
+        "status": 404,
+        "code": "not_found",
+        "request_id": "fixture",
+        "retryable": false
+      }
+    }
+  }
+}

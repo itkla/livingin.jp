@@ -1,0 +1,432 @@
+{
+  "operationId": "getGroup",
+  "scenarios": {
+    "default": {
+      "summary": "Listed national language group with public members and posts, open joining and two chapters; anonymous viewer",
+      "status": 200,
+      "body": {
+        "id": "grp_01JA0000000000000000002001",
+        "name": "Portuguese Speakers in Japan (example)",
+        "tagline": "Conversation, questions and meetups in Portuguese. Japanese speakers welcome.",
+        "description": "A national group for people who speak Portuguese, or are learning it, anywhere in Japan. Share introductions, ask everyday questions, swap resources and organise meetups. Local and online chapters run their own activities.",
+        "kind": "language",
+        "languages": [
+          "pt",
+          "ja"
+        ],
+        "scope": {
+          "kind": "national"
+        },
+        "discoverability": "listed",
+        "membership_visibility": "public",
+        "post_visibility": "public",
+        "join_policy": "open",
+        "sensitive": false,
+        "rules": "Be kind and patient with learners. When you share how something went for you, label it as your own experience; link the official page for rules and procedures. No selling here: use the marketplace. No recruitment or paid promotion.",
+        "parent": null,
+        "chapters": [
+          {
+            "id": "grp_01JA0000000000000000002002",
+            "name": "Portuguese Speakers in Japan: Hamamatsu (example)",
+            "tagline": "Local chapter for meetups and city questions in Hamamatsu.",
+            "kind": "language",
+            "languages": [
+              "pt",
+              "ja"
+            ],
+            "scope": {
+              "kind": "local",
+              "locality": {
+                "code": "JP-22-130",
+                "name": {
+                  "ja": "浜松市",
+                  "reading": "はままつし",
+                  "romaji": "Hamamatsu-shi",
+                  "en": "Hamamatsu City"
+                },
+                "level": "municipality"
+              }
+            },
+            "discoverability": "listed",
+            "join_policy": "open",
+            "sensitive": false,
+            "member_count": {
+              "status": "shown",
+              "count": 61
+            },
+            "parent": {
+              "id": "grp_01JA0000000000000000002001",
+              "name": "Portuguese Speakers in Japan (example)"
+            },
+            "chapter_count": 0
+          },
+          {
+            "id": "grp_01JA0000000000000000002003",
+            "name": "Portuguese for Japanese Speakers (example)",
+            "tagline": "An online chapter for people learning Portuguese, in Japanese and Portuguese.",
+            "kind": "language",
+            "languages": [
+              "ja",
+              "pt"
+            ],
+            "scope": {
+              "kind": "online"
+            },
+            "discoverability": "listed",
+            "join_policy": "open",
+            "sensitive": false,
+            "member_count": {
+              "status": "shown",
+              "count": 37
+            },
+            "parent": {
+              "id": "grp_01JA0000000000000000002001",
+              "name": "Portuguese Speakers in Japan (example)"
+            },
+            "chapter_count": 0
+          }
+        ],
+        "member_count": {
+          "status": "shown",
+          "count": 248
+        },
+        "admins": {
+          "status": "shown",
+          "admins": [
+            {
+              "profile": {
+                "profile_id": "prof_01JA00000000000000000000C3",
+                "display_name": "Mai"
+              },
+              "role": "admin"
+            },
+            {
+              "profile": {
+                "profile_id": "prof_01JA00000000000000000000B2",
+                "display_name": "Daniel"
+              },
+              "role": "moderator"
+            }
+          ]
+        },
+        "created_at": "2026-10-05T01:00:00Z",
+        "viewer": null
+      }
+    },
+    "approval_required": {
+      "summary": "Approval group with members-only membership and posts; signed-in viewer has a pending join request",
+      "status": 200,
+      "body": {
+        "id": "grp_01JA0000000000000000002004",
+        "name": "Setagaya Board Game Nights (example)",
+        "tagline": "Monthly board game evenings in Setagaya. Beginners and all languages welcome.",
+        "description": "We meet one evening a month at a community space near Sangenjaya. Bring a game or just come and learn one. Requests are approved by the organiser to keep table numbers manageable.",
+        "kind": "interest",
+        "languages": [
+          "en",
+          "ja"
+        ],
+        "scope": {
+          "kind": "local",
+          "locality": {
+            "code": "JP-13-112",
+            "name": {
+              "ja": "世田谷区",
+              "reading": "せたがやく",
+              "romaji": "Setagaya-ku",
+              "en": "Setagaya City"
+            },
+            "level": "municipality"
+          }
+        },
+        "discoverability": "listed",
+        "membership_visibility": "members_only",
+        "post_visibility": "members_only",
+        "join_policy": "approval",
+        "sensitive": false,
+        "rules": "Members-only posts stay in the group. Let the organiser know if you can no longer come to a session you said you would attend.",
+        "parent": null,
+        "chapters": [],
+        "member_count": {
+          "status": "shown",
+          "count": 24
+        },
+        "admins": {
+          "status": "shown",
+          "admins": [
+            {
+              "profile": {
+                "profile_id": "prof_01JA00000000000000000000C3",
+                "display_name": "Mai"
+              },
+              "role": "admin"
+            }
+          ]
+        },
+        "created_at": "2026-10-08T09:00:00Z",
+        "viewer": {
+          "membership": {
+            "state": "pending",
+            "membership_id": "mbr_01JA0000000000000000002110",
+            "requested_at": "2026-11-03T11:20:00Z"
+          },
+          "can_join": false,
+          "can_view_members": false,
+          "can_view_posts": false,
+          "can_post": false
+        }
+      }
+    },
+    "unlisted_member_view": {
+      "summary": "Unlisted, invite-only group seen by an active member (non-members get 404)",
+      "status": 200,
+      "body": {
+        "id": "grp_01JA0000000000000000002005",
+        "name": "Yokohama New Parents Circle (example)",
+        "tagline": "Invite-only circle for parents of babies and toddlers in Yokohama.",
+        "description": "A small circle that started at a ward parenting class. We swap tips on clinics, daycare applications and weekend outings, and meet for park walks.",
+        "kind": "life_circumstance",
+        "languages": [
+          "en",
+          "ja"
+        ],
+        "scope": {
+          "kind": "local",
+          "locality": {
+            "code": "JP-14-100",
+            "name": {
+              "ja": "横浜市",
+              "reading": "よこはまし",
+              "romaji": "Yokohama-shi",
+              "en": "Yokohama City"
+            },
+            "level": "municipality"
+          }
+        },
+        "discoverability": "unlisted",
+        "membership_visibility": "members_only",
+        "post_visibility": "members_only",
+        "join_policy": "invite_only",
+        "sensitive": false,
+        "rules": "Please do not share other members’ photos or children’s names outside the group.",
+        "parent": null,
+        "chapters": [],
+        "member_count": {
+          "status": "shown",
+          "count": 18
+        },
+        "admins": {
+          "status": "shown",
+          "admins": [
+            {
+              "profile": {
+                "profile_id": "prof_01JA0000000000000000002503",
+                "display_name": "Ana"
+              },
+              "role": "admin"
+            }
+          ]
+        },
+        "created_at": "2026-10-12T04:00:00Z",
+        "viewer": {
+          "membership": {
+            "state": "active",
+            "membership_id": "mbr_01JA0000000000000000002111",
+            "role": "member",
+            "joined_at": "2026-10-20T08:15:00Z"
+          },
+          "can_join": false,
+          "can_view_members": true,
+          "can_view_posts": true,
+          "can_post": true
+        }
+      }
+    },
+    "sensitive": {
+      "summary": "Listed sensitive group seen by a signed-in non-member: count and admins hidden, members and posts admins/members only",
+      "status": 200,
+      "body": {
+        "id": "grp_01JA0000000000000000002006",
+        "name": "Separation and Divorce Support (example)",
+        "tagline": "A private, moderated space for residents going through separation or divorce in Japan.",
+        "description": "Peer support for residents dealing with separation or divorce while living in Japan. Members share their own experiences; this group does not give legal advice. Join requests are reviewed by the moderators, and membership is never shown outside the group.",
+        "kind": "life_circumstance",
+        "languages": [
+          "en",
+          "ja"
+        ],
+        "scope": {
+          "kind": "online"
+        },
+        "discoverability": "listed",
+        "membership_visibility": "admins_only",
+        "post_visibility": "members_only",
+        "join_policy": "approval",
+        "sensitive": true,
+        "rules": "What is shared here stays here. Share your own experience only, and never post another person’s details. For legal questions, consult a qualified professional.",
+        "parent": null,
+        "chapters": [],
+        "member_count": {
+          "status": "hidden"
+        },
+        "admins": {
+          "status": "hidden"
+        },
+        "created_at": "2026-10-06T12:00:00Z",
+        "viewer": {
+          "membership": {
+            "state": "none"
+          },
+          "can_join": true,
+          "can_view_members": false,
+          "can_view_posts": false,
+          "can_post": false
+        }
+      }
+    },
+    "removed_member_view": {
+      "summary": "Viewer was removed by an admin: public posts still readable, cannot rejoin on their own",
+      "status": 200,
+      "body": {
+        "id": "grp_01JA0000000000000000002007",
+        "name": "Kansai Weekend Hiking (example)",
+        "tagline": "Day hikes around Osaka and the wider Kansai area.",
+        "description": "Day hikes around Osaka and the wider Kansai area, most weekends from spring to autumn. Hike details are posted as events with organiser-provided requirements.",
+        "kind": "interest",
+        "languages": [
+          "en",
+          "ja"
+        ],
+        "scope": {
+          "kind": "local",
+          "locality": {
+            "code": "JP-27",
+            "name": {
+              "ja": "大阪府",
+              "reading": "おおさかふ",
+              "romaji": "Osaka-fu",
+              "en": "Osaka Prefecture"
+            },
+            "level": "prefecture"
+          }
+        },
+        "discoverability": "listed",
+        "membership_visibility": "members_only",
+        "post_visibility": "public",
+        "join_policy": "approval",
+        "sensitive": false,
+        "rules": "Check each hike’s organiser-provided requirements before you RSVP. Repeated no-shows may lead to removal.",
+        "parent": null,
+        "chapters": [],
+        "member_count": {
+          "status": "shown",
+          "count": 132
+        },
+        "admins": {
+          "status": "shown",
+          "admins": [
+            {
+              "profile": {
+                "profile_id": "prof_01JA00000000000000000000C3",
+                "display_name": "Mai"
+              },
+              "role": "admin"
+            },
+            {
+              "profile": {
+                "profile_id": "prof_01JA0000000000000000002501",
+                "display_name": "Lucas"
+              },
+              "role": "moderator"
+            }
+          ]
+        },
+        "created_at": "2026-10-02T03:00:00Z",
+        "viewer": {
+          "membership": {
+            "state": "removed",
+            "removed_at": "2026-11-01T06:00:00Z"
+          },
+          "can_join": false,
+          "can_view_members": false,
+          "can_view_posts": true,
+          "can_post": false
+        }
+      }
+    },
+    "blocked_viewer": {
+      "summary": "Viewer is blocked from the group: cannot join, request or post",
+      "status": 200,
+      "body": {
+        "id": "grp_01JA0000000000000000002004",
+        "name": "Setagaya Board Game Nights (example)",
+        "tagline": "Monthly board game evenings in Setagaya. Beginners and all languages welcome.",
+        "description": "We meet one evening a month at a community space near Sangenjaya. Bring a game or just come and learn one. Requests are approved by the organiser to keep table numbers manageable.",
+        "kind": "interest",
+        "languages": [
+          "en",
+          "ja"
+        ],
+        "scope": {
+          "kind": "local",
+          "locality": {
+            "code": "JP-13-112",
+            "name": {
+              "ja": "世田谷区",
+              "reading": "せたがやく",
+              "romaji": "Setagaya-ku",
+              "en": "Setagaya City"
+            },
+            "level": "municipality"
+          }
+        },
+        "discoverability": "listed",
+        "membership_visibility": "members_only",
+        "post_visibility": "members_only",
+        "join_policy": "approval",
+        "sensitive": false,
+        "rules": "Members-only posts stay in the group. Let the organiser know if you can no longer come to a session you said you would attend.",
+        "parent": null,
+        "chapters": [],
+        "member_count": {
+          "status": "shown",
+          "count": 24
+        },
+        "admins": {
+          "status": "shown",
+          "admins": [
+            {
+              "profile": {
+                "profile_id": "prof_01JA00000000000000000000C3",
+                "display_name": "Mai"
+              },
+              "role": "admin"
+            }
+          ]
+        },
+        "created_at": "2026-10-08T09:00:00Z",
+        "viewer": {
+          "membership": {
+            "state": "blocked"
+          },
+          "can_join": false,
+          "can_view_members": false,
+          "can_view_posts": false,
+          "can_post": false
+        }
+      }
+    },
+    "not_found": {
+      "summary": "Unknown group, or an unlisted group viewed by a non-member (indistinguishable by design)",
+      "status": 404,
+      "body": {
+        "type": "urn:livingin:problem:not_found",
+        "title": "Not found",
+        "status": 404,
+        "code": "not_found",
+        "request_id": "fixture",
+        "retryable": false
+      }
+    }
+  }
+}

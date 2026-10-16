@@ -1,0 +1,436 @@
+{
+  "operationId": "listJobs",
+  "scenarios": {
+    "default": {
+      "summary": "Open vacancies across care, logistics, hospitality, customer support and engineering; one record is stale",
+      "status": 200,
+      "body": {
+        "coverage": {
+          "status": "partial",
+          "limitations": [
+            "Listings come only from employers and agencies that submit directly and from authorized feeds; many vacancies in Japan are not listed here.",
+            "Conditions are reported by the employer or agency and are not verified by livingin.jp."
+          ]
+        },
+        "items": [
+          {
+            "id": "job_01JA0000000000000000003005",
+            "title": {
+              "lang": "en",
+              "text": "Bilingual customer support (Vietnamese and Japanese), remote",
+              "translation": {
+                "status": "original"
+              }
+            },
+            "category": "customer_support",
+            "employment_type": "contract",
+            "hiring_arrangement": {
+              "kind": "direct",
+              "employer": {
+                "id": "org_01JA0000000000000000003005",
+                "kind": "business",
+                "name": {
+                  "ja": null,
+                  "en": "Example Travel Desk (example)"
+                },
+                "verification": "unverified",
+                "website": "https://travel-desk.example",
+                "description": null
+              }
+            },
+            "location": {
+              "arrangement": "remote",
+              "eligible_area": {
+                "code": "JP",
+                "name": {
+                  "ja": "日本",
+                  "reading": "にほん",
+                  "romaji": "Nihon",
+                  "en": "Japan"
+                },
+                "level": "country"
+              }
+            },
+            "base_pay": {
+              "status": "known",
+              "value": {
+                "amount": {
+                  "kind": "fixed",
+                  "amount": {
+                    "amount": 1500,
+                    "currency": "JPY"
+                  }
+                },
+                "period": "hourly"
+              },
+              "basis": "reported"
+            },
+            "japanese_required_level": {
+              "status": "known",
+              "value": "business",
+              "basis": "reported"
+            },
+            "vacancy": {
+              "status": "open",
+              "application_deadline": {
+                "status": "not_applicable"
+              }
+            },
+            "freshness": {
+              "state": "current",
+              "checked_at": "2026-10-13T04:00:00Z",
+              "stale_after": "2026-11-03T04:00:00Z"
+            },
+            "source_kind": "employer_submission",
+            "posted_at": "2026-10-13T04:00:00Z"
+          },
+          {
+            "id": "job_01JA0000000000000000003004",
+            "title": {
+              "lang": "en",
+              "text": "Care worker (介護職員) at a residential care home",
+              "translation": {
+                "status": "original"
+              }
+            },
+            "category": "care_and_healthcare",
+            "employment_type": "full_time",
+            "hiring_arrangement": {
+              "kind": "direct",
+              "employer": {
+                "id": "org_01JA0000000000000000003004",
+                "kind": "nonprofit",
+                "name": {
+                  "ja": "ひかりケアホーム（例）",
+                  "en": "Example Hikari Care Home (example)"
+                },
+                "verification": "verified",
+                "website": "https://hikari-care.example",
+                "description": "Residential care home run by a social welfare corporation (example)."
+              }
+            },
+            "location": {
+              "arrangement": "onsite",
+              "workplace": {
+                "locality": {
+                  "code": "JP-40-130",
+                  "name": {
+                    "ja": "福岡市",
+                    "reading": "ふくおかし",
+                    "romaji": "Fukuoka-shi",
+                    "en": "Fukuoka City"
+                  },
+                  "level": "municipality"
+                },
+                "label": "Near Ohashi Station"
+              }
+            },
+            "base_pay": {
+              "status": "known",
+              "value": {
+                "amount": {
+                  "kind": "range",
+                  "min": {
+                    "amount": 215000,
+                    "currency": "JPY"
+                  },
+                  "max": {
+                    "amount": 245000,
+                    "currency": "JPY"
+                  }
+                },
+                "period": "monthly"
+              },
+              "basis": "reported"
+            },
+            "japanese_required_level": {
+              "status": "known",
+              "value": "conversational",
+              "basis": "reported"
+            },
+            "vacancy": {
+              "status": "open",
+              "application_deadline": {
+                "status": "known",
+                "value": "2026-11-30",
+                "basis": "reported"
+              }
+            },
+            "freshness": {
+              "state": "current",
+              "checked_at": "2026-10-10T00:30:00Z",
+              "stale_after": "2026-10-31T00:30:00Z"
+            },
+            "source_kind": "employer_submission",
+            "posted_at": "2026-10-10T00:30:00Z"
+          },
+          {
+            "id": "job_01JA0000000000000000003002",
+            "title": {
+              "lang": "en",
+              "text": "Warehouse picking and packing staff",
+              "translation": {
+                "status": "machine_translation",
+                "source_lang": "ja"
+              }
+            },
+            "category": "logistics",
+            "employment_type": "dispatch",
+            "hiring_arrangement": {
+              "kind": "dispatch",
+              "agency": {
+                "id": "org_01JA0000000000000000003002",
+                "kind": "business",
+                "name": {
+                  "ja": "エグザンプル・スタッフィング（例）",
+                  "en": "Example Staffing (example)"
+                },
+                "verification": "verified",
+                "website": "https://staffing.example",
+                "description": "Worker dispatch agency (example)."
+              },
+              "host_company": {
+                "status": "unknown"
+              }
+            },
+            "location": {
+              "arrangement": "onsite",
+              "workplace": {
+                "locality": {
+                  "code": "JP-11-222",
+                  "name": {
+                    "ja": "越谷市",
+                    "reading": "こしがやし",
+                    "romaji": "Koshigaya-shi",
+                    "en": "Koshigaya City"
+                  },
+                  "level": "municipality"
+                },
+                "label": "Near Minami-Koshigaya Station"
+              }
+            },
+            "base_pay": {
+              "status": "known",
+              "value": {
+                "amount": {
+                  "kind": "range",
+                  "min": {
+                    "amount": 1250,
+                    "currency": "JPY"
+                  },
+                  "max": {
+                    "amount": 1400,
+                    "currency": "JPY"
+                  }
+                },
+                "period": "hourly"
+              },
+              "basis": "reported"
+            },
+            "japanese_required_level": {
+              "status": "known",
+              "value": "basic",
+              "basis": "reported"
+            },
+            "vacancy": {
+              "status": "open",
+              "application_deadline": {
+                "status": "not_applicable"
+              }
+            },
+            "freshness": {
+              "state": "current",
+              "checked_at": "2026-10-14T01:00:00Z",
+              "stale_after": "2026-10-28T01:00:00Z"
+            },
+            "source_kind": "employer_submission",
+            "posted_at": "2026-10-08T02:00:00Z"
+          },
+          {
+            "id": "job_01JA0000000000000000003001",
+            "title": {
+              "lang": "en",
+              "text": "Front desk staff (full-time)",
+              "translation": {
+                "status": "original"
+              }
+            },
+            "category": "hospitality",
+            "employment_type": "full_time",
+            "hiring_arrangement": {
+              "kind": "direct",
+              "employer": {
+                "id": "org_01JA0000000000000000003001",
+                "kind": "business",
+                "name": {
+                  "ja": "リバーサイドホテル大阪（例）",
+                  "en": "Example Riverside Hotel Osaka (example)"
+                },
+                "verification": "verified",
+                "website": "https://riverside-hotel.example",
+                "description": "180-room business hotel (example)."
+              }
+            },
+            "location": {
+              "arrangement": "onsite",
+              "workplace": {
+                "locality": {
+                  "code": "JP-27-100",
+                  "name": {
+                    "ja": "大阪市",
+                    "reading": "おおさかし",
+                    "romaji": "Osaka-shi",
+                    "en": "Osaka City"
+                  },
+                  "level": "municipality"
+                },
+                "label": "Near Umeda Station"
+              }
+            },
+            "base_pay": {
+              "status": "known",
+              "value": {
+                "amount": {
+                  "kind": "range",
+                  "min": {
+                    "amount": 230000,
+                    "currency": "JPY"
+                  },
+                  "max": {
+                    "amount": 260000,
+                    "currency": "JPY"
+                  }
+                },
+                "period": "monthly"
+              },
+              "basis": "reported"
+            },
+            "japanese_required_level": {
+              "status": "known",
+              "value": "business",
+              "basis": "reported"
+            },
+            "vacancy": {
+              "status": "open",
+              "application_deadline": {
+                "status": "known",
+                "value": "2026-11-15",
+                "basis": "reported"
+              }
+            },
+            "freshness": {
+              "state": "current",
+              "checked_at": "2026-10-12T00:00:00Z",
+              "stale_after": "2026-11-02T00:00:00Z"
+            },
+            "source_kind": "employer_submission",
+            "posted_at": "2026-10-01T01:00:00Z"
+          },
+          {
+            "id": "job_01JA0000000000000000003003",
+            "title": {
+              "lang": "en",
+              "text": "Mechanical design engineer (automotive parts)",
+              "translation": {
+                "status": "original"
+              }
+            },
+            "category": "engineering",
+            "employment_type": "full_time",
+            "hiring_arrangement": {
+              "kind": "placement_agency",
+              "agency": {
+                "id": "org_01JA0000000000000000003003",
+                "kind": "business",
+                "name": {
+                  "ja": null,
+                  "en": "Example Career Partners (example)"
+                },
+                "verification": "unverified",
+                "website": "https://career-partners.example",
+                "description": null
+              },
+              "employer": {
+                "status": "unknown"
+              }
+            },
+            "location": {
+              "arrangement": "hybrid",
+              "workplace": {
+                "locality": {
+                  "code": "JP-23-211",
+                  "name": {
+                    "ja": "豊田市",
+                    "reading": "とよたし",
+                    "romaji": "Toyota-shi",
+                    "en": "Toyota City"
+                  },
+                  "level": "municipality"
+                },
+                "label": "Near Toyotashi Station"
+              },
+              "onsite_days_per_week": {
+                "status": "known",
+                "value": 3,
+                "basis": "reported"
+              }
+            },
+            "base_pay": {
+              "status": "known",
+              "value": {
+                "amount": {
+                  "kind": "range",
+                  "min": {
+                    "amount": 4500000,
+                    "currency": "JPY"
+                  },
+                  "max": {
+                    "amount": 6500000,
+                    "currency": "JPY"
+                  }
+                },
+                "period": "annual"
+              },
+              "basis": "reported"
+            },
+            "japanese_required_level": {
+              "status": "known",
+              "value": "conversational",
+              "basis": "reported"
+            },
+            "vacancy": {
+              "status": "open",
+              "application_deadline": {
+                "status": "unknown"
+              }
+            },
+            "freshness": {
+              "state": "stale",
+              "checked_at": "2026-09-12T03:00:00Z",
+              "stale_since": "2026-09-26T03:00:00Z",
+              "reason": "The feed has not reconfirmed this vacancy for more than 14 days. It may already be filled."
+            },
+            "source_kind": "authorized_feed",
+            "posted_at": "2026-08-29T03:00:00Z"
+          }
+        ],
+        "next_cursor": "bW9jay1qb2JzLTI"
+      }
+    },
+    "empty": {
+      "summary": "Nothing matches the filters (coverage is still partial: not proof that no such jobs exist)",
+      "status": 200,
+      "body": {
+        "coverage": {
+          "status": "partial",
+          "limitations": [
+            "Listings come only from employers and agencies that submit directly and from authorized feeds; many vacancies in Japan are not listed here.",
+            "Conditions are reported by the employer or agency and are not verified by livingin.jp."
+          ]
+        },
+        "items": [],
+        "next_cursor": null
+      }
+    }
+  }
+}

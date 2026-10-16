@@ -1,0 +1,61 @@
+{
+  "operationId": "getMeta",
+  "scenarios": {
+    "default": {
+      "summary": "Mock server: every contracted feature enabled for frontend development",
+      "status": 200,
+      "body": {
+        "contract_version": "0.1.0",
+        "mode": "mock",
+        "features": [
+          { "key": "identity.accounts", "state": "enabled", "reason": null, "coverage_note": null },
+          { "key": "sources.registry", "state": "enabled", "reason": null, "coverage_note": null },
+          { "key": "living.guides", "state": "enabled", "reason": null, "coverage_note": null },
+          { "key": "living.almanac", "state": "enabled", "reason": null, "coverage_note": null },
+          { "key": "living.tools", "state": "enabled", "reason": null, "coverage_note": null },
+          { "key": "living.my_life", "state": "enabled", "reason": null, "coverage_note": null },
+          { "key": "community.groups", "state": "enabled", "reason": null, "coverage_note": null },
+          { "key": "community.conversation", "state": "enabled", "reason": null, "coverage_note": null },
+          { "key": "community.requests", "state": "enabled", "reason": null, "coverage_note": null },
+          { "key": "work.jobs", "state": "enabled", "reason": null, "coverage_note": null },
+          { "key": "work.career_workspace", "state": "enabled", "reason": null, "coverage_note": null },
+          { "key": "events.events", "state": "enabled", "reason": null, "coverage_note": null },
+          { "key": "events.participation", "state": "enabled", "reason": null, "coverage_note": null },
+          { "key": "marketplace.listings", "state": "enabled", "reason": null, "coverage_note": null },
+          { "key": "marketplace.review", "state": "enabled", "reason": null, "coverage_note": null },
+          { "key": "marketplace.coordination", "state": "enabled", "reason": null, "coverage_note": null },
+          { "key": "safety.preparedness", "state": "enabled", "reason": null, "coverage_note": null },
+          { "key": "safety.live_warnings", "state": "enabled", "reason": null, "coverage_note": null }
+        ]
+      }
+    },
+    "p1_alpha": {
+      "summary": "Illustrative P1 alpha manifest: Living, marketplace and preparedness on; later phases disabled or held",
+      "status": 200,
+      "body": {
+        "contract_version": "0.1.0",
+        "mode": "live",
+        "features": [
+          { "key": "identity.accounts", "state": "enabled", "reason": null, "coverage_note": null },
+          { "key": "sources.registry", "state": "enabled", "reason": null, "coverage_note": null },
+          { "key": "living.guides", "state": "enabled", "reason": null, "coverage_note": "Reviewed guide subset only." },
+          { "key": "living.almanac", "state": "enabled", "reason": null, "coverage_note": "Reviewed residence statuses only." },
+          { "key": "living.tools", "state": "enabled", "reason": null, "coverage_note": null },
+          { "key": "living.my_life", "state": "enabled", "reason": null, "coverage_note": null },
+          { "key": "community.groups", "state": "disabled", "reason": "Planned for P2.", "coverage_note": null },
+          { "key": "community.conversation", "state": "disabled", "reason": "Planned for P2.", "coverage_note": null },
+          { "key": "community.requests", "state": "disabled", "reason": "Planned for P2.", "coverage_note": null },
+          { "key": "work.jobs", "state": "held", "reason": "Waiting on the operating-model review (#30).", "coverage_note": null },
+          { "key": "work.career_workspace", "state": "disabled", "reason": "Planned for P3.", "coverage_note": null },
+          { "key": "events.events", "state": "disabled", "reason": "Planned for P2.", "coverage_note": null },
+          { "key": "events.participation", "state": "disabled", "reason": "Planned for P2.", "coverage_note": null },
+          { "key": "marketplace.listings", "state": "enabled", "reason": null, "coverage_note": "Pilot localities only." },
+          { "key": "marketplace.review", "state": "enabled", "reason": null, "coverage_note": null },
+          { "key": "marketplace.coordination", "state": "enabled", "reason": null, "coverage_note": null },
+          { "key": "safety.preparedness", "state": "enabled", "reason": null, "coverage_note": "Reviewed preparedness and official resources; no live warnings." },
+          { "key": "safety.live_warnings", "state": "held", "reason": "Waiting on source, semantics and outage-drill evidence (#40–#42).", "coverage_note": null }
+        ]
+      }
+    }
+  }
+}

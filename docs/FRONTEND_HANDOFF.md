@@ -4,6 +4,8 @@ Planning baseline: **2026-09-30**. Parent: [Platform epic #2](https://github.com
 
 This document specifies what future backend work must supply. It is **not** an implemented API, generated SDK, running mock server or frontend design specification.
 
+**Status (October 2026):** a proposed P0 contract package now exists: the generated OpenAPI document, fixtures and a mock server in [`backend/`](../backend/README.md), with conventions in [api/CONVENTIONS.md](api/CONVENTIONS.md). It is a baseline for review and integration feedback, not an implemented product API.
+
 ## Ownership
 
 **Hunter owns the frontend:** framework, application structure, pages, components, styling, navigation, interaction design, accessibility implementation, frontend build tooling and all administrative interfaces. These planning tickets must not scaffold or change those assets.

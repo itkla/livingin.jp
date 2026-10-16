@@ -1,0 +1,171 @@
+{
+  "operationId": "listGroupPosts",
+  "scenarios": {
+    "default": {
+      "summary": "Pinned resource first, then newest first: open wanted-item request, personal experience, question, introduction and a resolved activity request linked to an event",
+      "status": 200,
+      "body": {
+        "items": [
+          {
+            "id": "pst_01JA0000000000000000002201",
+            "group_id": "grp_01JA0000000000000000002001",
+            "author": {
+              "profile_id": "prof_01JA00000000000000000000C3",
+              "display_name": "Mai"
+            },
+            "title": "Start here: multilingual help collected by members",
+            "body": "Members have collected links to city consultation desks that offer Portuguese interpretation, plus free Japanese classes. Each link goes to the organisation’s own page: check there for current days and hours. This list is maintained by group volunteers, not by livingin.jp. Example: https://city.example.jp/multilingual-consultation",
+            "pinned": true,
+            "experience_label": {
+              "basis": "shared_resource",
+              "verification": "not_verified"
+            },
+            "reply_count": 4,
+            "created_at": "2026-10-05T02:00:00Z",
+            "kind": "resource"
+          },
+          {
+            "id": "pst_01JA0000000000000000002202",
+            "group_id": "grp_01JA0000000000000000002001",
+            "author": {
+              "profile_id": "prof_01JA00000000000000000000B2",
+              "display_name": "Daniel"
+            },
+            "title": "Looking for a used child bike seat in Hamamatsu",
+            "body": "Our daughter is starting at a new daycare. Does anyone have a rear child seat they no longer need? Happy to pay or swap.",
+            "pinned": false,
+            "experience_label": {
+              "basis": "conversation",
+              "verification": "not_verified"
+            },
+            "reply_count": 3,
+            "created_at": "2026-11-04T07:30:00Z",
+            "kind": "request",
+            "request": {
+              "request_type": "wanted_item",
+              "resolution": {
+                "status": "open"
+              },
+              "linked_event_id": null
+            }
+          },
+          {
+            "id": "pst_01JA0000000000000000002203",
+            "group_id": "grp_01JA0000000000000000002001",
+            "author": {
+              "profile_id": "prof_01JA0000000000000000002501",
+              "display_name": "Lucas"
+            },
+            "title": "How my bank account opening went",
+            "body": "Sharing my own experience: the first branch I tried asked for six months of residence, the second opened an account the same day with my residence card and a phone number. This was just my case; requirements differ by bank and branch.",
+            "pinned": false,
+            "experience_label": {
+              "basis": "personal_experience",
+              "verification": "not_verified"
+            },
+            "reply_count": 7,
+            "created_at": "2026-11-03T12:10:00Z",
+            "kind": "discussion"
+          },
+          {
+            "id": "pst_01JA0000000000000000002205",
+            "group_id": "grp_01JA0000000000000000002001",
+            "author": {
+              "profile_id": "prof_01JA00000000000000000000A1",
+              "display_name": "Aiko"
+            },
+            "title": "How long did your residence card renewal take?",
+            "body": "I am planning my renewal and would like to hear how long it took for others. I know it varies; I will check the immigration office’s own page for the official process.",
+            "pinned": false,
+            "experience_label": {
+              "basis": "conversation",
+              "verification": "not_verified"
+            },
+            "reply_count": 12,
+            "created_at": "2026-11-02T22:40:00Z",
+            "kind": "question"
+          },
+          {
+            "id": "pst_01JA0000000000000000002206",
+            "group_id": "grp_01JA0000000000000000002001",
+            "author": {
+              "profile_id": "prof_01JA0000000000000000002502",
+              "display_name": "Yuki"
+            },
+            "title": "はじめまして: learning Portuguese in Shizuoka",
+            "body": "Hello! I am Japanese and have been learning Portuguese for a year. I would love to practise and can help with Japanese in return.",
+            "pinned": false,
+            "experience_label": {
+              "basis": "conversation",
+              "verification": "not_verified"
+            },
+            "reply_count": 5,
+            "created_at": "2026-11-01T03:15:00Z",
+            "kind": "introduction"
+          },
+          {
+            "id": "pst_01JA0000000000000000002204",
+            "group_id": "grp_01JA0000000000000000002001",
+            "author": {
+              "profile_id": "prof_01JA0000000000000000002503",
+              "display_name": "Ana"
+            },
+            "title": "Picnic at the castle park?",
+            "body": "Would anyone like to meet for a picnic one Sunday? Reply with which weekends work for you.",
+            "pinned": false,
+            "experience_label": {
+              "basis": "conversation",
+              "verification": "not_verified"
+            },
+            "reply_count": 11,
+            "created_at": "2026-10-25T05:00:00Z",
+            "kind": "request",
+            "request": {
+              "request_type": "activity_interest",
+              "resolution": {
+                "status": "resolved",
+                "resolved_at": "2026-10-30T09:00:00Z",
+                "note": "We picked a date and created an event. Replying here did not sign anyone up: RSVP on the event if you want to come."
+              },
+              "linked_event_id": "evt_01JA0000000000000000002301"
+            }
+          }
+        ],
+        "next_cursor": null
+      }
+    },
+    "empty": {
+      "summary": "No published posts match (e.g. a new group, or kind=request with none open)",
+      "status": 200,
+      "body": {
+        "items": [],
+        "next_cursor": null
+      }
+    },
+    "forbidden": {
+      "summary": "Posts are members-only and the viewer is anonymous or not an active member",
+      "status": 403,
+      "body": {
+        "type": "urn:livingin:problem:forbidden",
+        "title": "Forbidden",
+        "status": 403,
+        "code": "forbidden",
+        "request_id": "fixture",
+        "retryable": false,
+        "detail": "Join this group to read its posts."
+      }
+    },
+    "not_found": {
+      "summary": "Unknown group, or an unlisted group viewed by a non-member",
+      "status": 404,
+      "body": {
+        "type": "urn:livingin:problem:not_found",
+        "title": "Not found",
+        "status": 404,
+        "code": "not_found",
+        "request_id": "fixture",
+        "retryable": false
+      }
+    }
+  }
+}

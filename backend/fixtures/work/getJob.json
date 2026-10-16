@@ -1,0 +1,1153 @@
+{
+  "operationId": "getJob",
+  "scenarios": {
+    "default": {
+      "summary": "Dispatch (haken) warehouse job: the agency is the employer of record, host company undisclosed, several conditions unknown",
+      "status": 200,
+      "body": {
+        "id": "job_01JA0000000000000000003002",
+        "title": {
+          "lang": "en",
+          "text": "Warehouse picking and packing staff",
+          "translation": {
+            "status": "machine_translation",
+            "source_lang": "ja"
+          }
+        },
+        "description": {
+          "lang": "en",
+          "text": "Picking, packing and labelling online orders at a distribution centre. Handheld scanners are used, and instructions are given in simple Japanese with pictures.",
+          "translation": {
+            "status": "machine_translation",
+            "source_lang": "ja"
+          }
+        },
+        "category": "logistics",
+        "employment_type": "dispatch",
+        "hiring_arrangement": {
+          "kind": "dispatch",
+          "agency": {
+            "id": "org_01JA0000000000000000003002",
+            "kind": "business",
+            "name": {
+              "ja": "エグザンプル・スタッフィング（例）",
+              "en": "Example Staffing (example)"
+            },
+            "verification": "verified",
+            "website": "https://staffing.example",
+            "description": "Worker dispatch agency (example)."
+          },
+          "host_company": {
+            "status": "unknown"
+          }
+        },
+        "compensation": {
+          "base_pay": {
+            "status": "known",
+            "value": {
+              "amount": {
+                "kind": "range",
+                "min": {
+                  "amount": 1250,
+                  "currency": "JPY"
+                },
+                "max": {
+                  "amount": 1400,
+                  "currency": "JPY"
+                }
+              },
+              "period": "hourly"
+            },
+            "basis": "reported"
+          },
+          "allowances": {
+            "status": "unknown"
+          },
+          "bonus": {
+            "status": "known",
+            "value": {
+              "kind": "none"
+            },
+            "basis": "reported"
+          },
+          "commuting_allowance": {
+            "status": "known",
+            "value": {
+              "kind": "capped",
+              "monthly_cap": {
+                "amount": 15000,
+                "currency": "JPY"
+              }
+            },
+            "basis": "reported"
+          },
+          "overtime": {
+            "status": "known",
+            "value": {
+              "expected_monthly_hours": {
+                "status": "unknown"
+              },
+              "fixed_overtime": {
+                "kind": "none"
+              }
+            },
+            "basis": "reported"
+          },
+          "housing_support": {
+            "status": "unknown"
+          }
+        },
+        "contract_terms": {
+          "term": {
+            "status": "known",
+            "value": {
+              "kind": "fixed_term",
+              "months": 3
+            },
+            "basis": "reported"
+          },
+          "renewal": {
+            "status": "known",
+            "value": {
+              "kind": "may_be_renewed",
+              "criteria": "Depends on the host company’s workload and on attendance."
+            },
+            "basis": "reported"
+          },
+          "probation": {
+            "status": "unknown"
+          },
+          "start": {
+            "status": "known",
+            "value": {
+              "kind": "negotiable"
+            },
+            "basis": "reported"
+          }
+        },
+        "language_expectations": {
+          "status": "known",
+          "value": [
+            {
+              "lang": "ja",
+              "required_level": "basic",
+              "preferred_level": "conversational",
+              "certificate": null
+            }
+          ],
+          "basis": "reported"
+        },
+        "location": {
+          "arrangement": "onsite",
+          "workplace": {
+            "locality": {
+              "code": "JP-11-222",
+              "name": {
+                "ja": "越谷市",
+                "reading": "こしがやし",
+                "romaji": "Koshigaya-shi",
+                "en": "Koshigaya City"
+              },
+              "level": "municipality"
+            },
+            "label": "Near Minami-Koshigaya Station"
+          }
+        },
+        "schedule": {
+          "pattern": {
+            "status": "known",
+            "value": "shifts",
+            "basis": "reported"
+          },
+          "weekly_hours": {
+            "status": "known",
+            "value": 40,
+            "basis": "reported"
+          },
+          "hours_description": {
+            "status": "known",
+            "value": "Day shift 08:00–17:00 or evening shift 13:00–22:00, each with a 1-hour break.",
+            "basis": "reported"
+          },
+          "annual_holidays": {
+            "status": "unknown"
+          },
+          "time_zone": "Asia/Tokyo"
+        },
+        "immigration_assistance": {
+          "status": "unknown"
+        },
+        "source": {
+          "kind": "employer_submission",
+          "organization_id": "org_01JA0000000000000000003002",
+          "submitted_at": "2026-10-08T02:00:00Z"
+        },
+        "freshness": {
+          "state": "current",
+          "checked_at": "2026-10-14T01:00:00Z",
+          "stale_after": "2026-10-28T01:00:00Z"
+        },
+        "vacancy": {
+          "status": "open",
+          "application_deadline": {
+            "status": "not_applicable"
+          }
+        },
+        "apply_route": {
+          "status": "external_handoff",
+          "url": "https://staffing.example/jobs/W-1182",
+          "label": "Apply on Example Staffing’s site",
+          "operated_by": "agency",
+          "note": "Opens the agency’s site. Opening this link does not submit an application, and livingin.jp does not send your details."
+        },
+        "posted_at": "2026-10-08T02:00:00Z",
+        "updated_at": "2026-10-14T01:00:00Z",
+        "viewer": null
+      }
+    },
+    "direct_employer": {
+      "summary": "Direct employer with every condition known; signed-in viewer already tracks it",
+      "status": 200,
+      "body": {
+        "id": "job_01JA0000000000000000003001",
+        "title": {
+          "lang": "en",
+          "text": "Front desk staff (full-time)",
+          "translation": {
+            "status": "original"
+          }
+        },
+        "description": {
+          "lang": "en",
+          "text": "Check-in and check-out, reservations by phone and email, and guest requests at a 180-room business hotel. Training is provided in the first month.",
+          "translation": {
+            "status": "original"
+          }
+        },
+        "category": "hospitality",
+        "employment_type": "full_time",
+        "hiring_arrangement": {
+          "kind": "direct",
+          "employer": {
+            "id": "org_01JA0000000000000000003001",
+            "kind": "business",
+            "name": {
+              "ja": "リバーサイドホテル大阪（例）",
+              "en": "Example Riverside Hotel Osaka (example)"
+            },
+            "verification": "verified",
+            "website": "https://riverside-hotel.example",
+            "description": "180-room business hotel (example)."
+          }
+        },
+        "compensation": {
+          "base_pay": {
+            "status": "known",
+            "value": {
+              "amount": {
+                "kind": "range",
+                "min": {
+                  "amount": 230000,
+                  "currency": "JPY"
+                },
+                "max": {
+                  "amount": 260000,
+                  "currency": "JPY"
+                }
+              },
+              "period": "monthly"
+            },
+            "basis": "reported"
+          },
+          "allowances": {
+            "status": "known",
+            "value": [
+              {
+                "name": {
+                  "ja": "夜勤手当",
+                  "reading": "やきんてあて",
+                  "en": "Night-shift allowance"
+                },
+                "amount": {
+                  "status": "known",
+                  "value": {
+                    "amount": {
+                      "amount": 4000,
+                      "currency": "JPY"
+                    },
+                    "per": "shift"
+                  },
+                  "basis": "reported"
+                },
+                "condition": "Shifts that include 22:00–05:00."
+              },
+              {
+                "name": {
+                  "ja": "語学手当",
+                  "reading": "ごがくてあて",
+                  "en": "Language allowance"
+                },
+                "amount": {
+                  "status": "known",
+                  "value": {
+                    "amount": {
+                      "amount": 10000,
+                      "currency": "JPY"
+                    },
+                    "per": "month"
+                  },
+                  "basis": "reported"
+                },
+                "condition": "Regularly serving guests in a third language."
+              }
+            ],
+            "basis": "reported"
+          },
+          "bonus": {
+            "status": "known",
+            "value": {
+              "kind": "offered",
+              "description": "Paid twice a year (June and December), depending on company results.",
+              "previous_year_months": {
+                "status": "known",
+                "value": 2,
+                "basis": "reported"
+              }
+            },
+            "basis": "reported"
+          },
+          "commuting_allowance": {
+            "status": "known",
+            "value": {
+              "kind": "capped",
+              "monthly_cap": {
+                "amount": 30000,
+                "currency": "JPY"
+              }
+            },
+            "basis": "reported"
+          },
+          "overtime": {
+            "status": "known",
+            "value": {
+              "expected_monthly_hours": {
+                "status": "known",
+                "value": 12,
+                "basis": "reported"
+              },
+              "fixed_overtime": {
+                "kind": "none"
+              }
+            },
+            "basis": "reported"
+          },
+          "housing_support": {
+            "status": "known",
+            "value": {
+              "kind": "rent_subsidy",
+              "monthly_amount": {
+                "status": "known",
+                "value": {
+                  "amount": 20000,
+                  "currency": "JPY"
+                },
+                "basis": "reported"
+              },
+              "conditions": "For the first two years, when renting within 60 minutes of the hotel."
+            },
+            "basis": "reported"
+          }
+        },
+        "contract_terms": {
+          "term": {
+            "status": "known",
+            "value": {
+              "kind": "indefinite"
+            },
+            "basis": "reported"
+          },
+          "renewal": {
+            "status": "not_applicable"
+          },
+          "probation": {
+            "status": "known",
+            "value": {
+              "kind": "probation",
+              "months": 3,
+              "conditions_differ": false,
+              "note": null
+            },
+            "basis": "reported"
+          },
+          "start": {
+            "status": "known",
+            "value": {
+              "kind": "on_date",
+              "date": "2026-12-01"
+            },
+            "basis": "reported"
+          }
+        },
+        "language_expectations": {
+          "status": "known",
+          "value": [
+            {
+              "lang": "ja",
+              "required_level": "business",
+              "preferred_level": null,
+              "certificate": null
+            },
+            {
+              "lang": "en",
+              "required_level": "business",
+              "preferred_level": "fluent",
+              "certificate": null
+            }
+          ],
+          "basis": "reported"
+        },
+        "location": {
+          "arrangement": "onsite",
+          "workplace": {
+            "locality": {
+              "code": "JP-27-100",
+              "name": {
+                "ja": "大阪市",
+                "reading": "おおさかし",
+                "romaji": "Osaka-shi",
+                "en": "Osaka City"
+              },
+              "level": "municipality"
+            },
+            "label": "Near Umeda Station"
+          }
+        },
+        "schedule": {
+          "pattern": {
+            "status": "known",
+            "value": "shifts",
+            "basis": "reported"
+          },
+          "weekly_hours": {
+            "status": "known",
+            "value": 40,
+            "basis": "reported"
+          },
+          "hours_description": {
+            "status": "known",
+            "value": "Rotating shifts: 07:00–16:00, 14:00–23:00 or 22:00–07:00, each with a 1-hour break.",
+            "basis": "reported"
+          },
+          "annual_holidays": {
+            "status": "known",
+            "value": 110,
+            "basis": "reported"
+          },
+          "time_zone": "Asia/Tokyo"
+        },
+        "immigration_assistance": {
+          "status": "known",
+          "value": {
+            "kind": "offered",
+            "support": [
+              "change_of_status",
+              "period_of_stay_extension",
+              "document_preparation"
+            ],
+            "note": "The hotel says it prepares the employer’s documents. Applicants make their own applications."
+          },
+          "basis": "reported"
+        },
+        "source": {
+          "kind": "employer_submission",
+          "organization_id": "org_01JA0000000000000000003001",
+          "submitted_at": "2026-10-01T01:00:00Z"
+        },
+        "freshness": {
+          "state": "current",
+          "checked_at": "2026-10-12T00:00:00Z",
+          "stale_after": "2026-11-02T00:00:00Z"
+        },
+        "vacancy": {
+          "status": "open",
+          "application_deadline": {
+            "status": "known",
+            "value": "2026-11-15",
+            "basis": "reported"
+          }
+        },
+        "apply_route": {
+          "status": "external_handoff",
+          "url": "https://riverside-hotel.example/careers/front-desk-2026",
+          "label": "Apply on Example Riverside Hotel Osaka’s careers page",
+          "operated_by": "employer",
+          "note": "Opens the employer’s site. Opening this link does not submit an application, and livingin.jp does not send your details."
+        },
+        "posted_at": "2026-10-01T01:00:00Z",
+        "updated_at": "2026-10-12T00:00:00Z",
+        "viewer": {
+          "application_id": "apl_01JA0000000000000000003002"
+        }
+      }
+    },
+    "stale_vacancy": {
+      "summary": "Placement-agency listing from an authorized feed: client employer undisclosed, vacancy not reconfirmed recently",
+      "status": 200,
+      "body": {
+        "id": "job_01JA0000000000000000003003",
+        "title": {
+          "lang": "en",
+          "text": "Mechanical design engineer (automotive parts)",
+          "translation": {
+            "status": "original"
+          }
+        },
+        "description": {
+          "lang": "en",
+          "text": "3D CAD design of interior components for an automotive parts supplier. The agency discloses the client company after a first interview.",
+          "translation": {
+            "status": "original"
+          }
+        },
+        "category": "engineering",
+        "employment_type": "full_time",
+        "hiring_arrangement": {
+          "kind": "placement_agency",
+          "agency": {
+            "id": "org_01JA0000000000000000003003",
+            "kind": "business",
+            "name": {
+              "ja": null,
+              "en": "Example Career Partners (example)"
+            },
+            "verification": "unverified",
+            "website": "https://career-partners.example",
+            "description": null
+          },
+          "employer": {
+            "status": "unknown"
+          }
+        },
+        "compensation": {
+          "base_pay": {
+            "status": "known",
+            "value": {
+              "amount": {
+                "kind": "range",
+                "min": {
+                  "amount": 4500000,
+                  "currency": "JPY"
+                },
+                "max": {
+                  "amount": 6500000,
+                  "currency": "JPY"
+                }
+              },
+              "period": "annual"
+            },
+            "basis": "reported"
+          },
+          "allowances": {
+            "status": "unknown"
+          },
+          "bonus": {
+            "status": "known",
+            "value": {
+              "kind": "offered",
+              "description": "Included in the annual figure and paid twice a year.",
+              "previous_year_months": {
+                "status": "unknown"
+              }
+            },
+            "basis": "reported"
+          },
+          "commuting_allowance": {
+            "status": "known",
+            "value": {
+              "kind": "actual_cost"
+            },
+            "basis": "reported"
+          },
+          "overtime": {
+            "status": "known",
+            "value": {
+              "expected_monthly_hours": {
+                "status": "known",
+                "value": 20,
+                "basis": "reported"
+              },
+              "fixed_overtime": {
+                "kind": "included_in_base_pay",
+                "hours_per_month": 20,
+                "amount": {
+                  "amount": 45000,
+                  "currency": "JPY"
+                },
+                "excess_paid_separately": true
+              }
+            },
+            "basis": "reported"
+          },
+          "housing_support": {
+            "status": "unknown"
+          }
+        },
+        "contract_terms": {
+          "term": {
+            "status": "known",
+            "value": {
+              "kind": "indefinite"
+            },
+            "basis": "reported"
+          },
+          "renewal": {
+            "status": "not_applicable"
+          },
+          "probation": {
+            "status": "unknown"
+          },
+          "start": {
+            "status": "known",
+            "value": {
+              "kind": "negotiable"
+            },
+            "basis": "reported"
+          }
+        },
+        "language_expectations": {
+          "status": "known",
+          "value": [
+            {
+              "lang": "ja",
+              "required_level": "conversational",
+              "preferred_level": "business",
+              "certificate": "JLPT N3"
+            },
+            {
+              "lang": "en",
+              "required_level": "none",
+              "preferred_level": "business",
+              "certificate": null
+            }
+          ],
+          "basis": "reported"
+        },
+        "location": {
+          "arrangement": "hybrid",
+          "workplace": {
+            "locality": {
+              "code": "JP-23-211",
+              "name": {
+                "ja": "豊田市",
+                "reading": "とよたし",
+                "romaji": "Toyota-shi",
+                "en": "Toyota City"
+              },
+              "level": "municipality"
+            },
+            "label": "Near Toyotashi Station"
+          },
+          "onsite_days_per_week": {
+            "status": "known",
+            "value": 3,
+            "basis": "reported"
+          }
+        },
+        "schedule": {
+          "pattern": {
+            "status": "known",
+            "value": "flextime",
+            "basis": "reported"
+          },
+          "weekly_hours": {
+            "status": "known",
+            "value": 40,
+            "basis": "reported"
+          },
+          "hours_description": {
+            "status": "known",
+            "value": "Flextime with core hours 10:00–15:00.",
+            "basis": "reported"
+          },
+          "annual_holidays": {
+            "status": "known",
+            "value": 121,
+            "basis": "reported"
+          },
+          "time_zone": "Asia/Tokyo"
+        },
+        "immigration_assistance": {
+          "status": "known",
+          "value": {
+            "kind": "offered",
+            "support": [
+              "certificate_of_eligibility",
+              "change_of_status"
+            ],
+            "note": null
+          },
+          "basis": "reported",
+          "source_id": "src_01JA0000000000000000003001"
+        },
+        "source": {
+          "kind": "authorized_feed",
+          "source": {
+            "source_id": "src_01JA0000000000000000003001",
+            "title": "Engineering vacancies feed (example)",
+            "publisher": "Example Jobs Network (example)",
+            "url": "https://feeds.jobs-network.example/engineering",
+            "retrieved_at": "2026-09-12T03:00:00Z",
+            "authority": "provider"
+          },
+          "external_reference": "EJN-77314"
+        },
+        "freshness": {
+          "state": "stale",
+          "checked_at": "2026-09-12T03:00:00Z",
+          "stale_since": "2026-09-26T03:00:00Z",
+          "reason": "The feed has not reconfirmed this vacancy for more than 14 days. It may already be filled."
+        },
+        "vacancy": {
+          "status": "open",
+          "application_deadline": {
+            "status": "unknown"
+          }
+        },
+        "apply_route": {
+          "status": "external_handoff",
+          "url": "https://career-partners.example/apply/EJN-77314",
+          "label": "Apply through Example Career Partners",
+          "operated_by": "agency",
+          "note": "Opens the agency’s site. Opening this link does not submit an application, and livingin.jp does not send your details."
+        },
+        "posted_at": "2026-08-29T03:00:00Z",
+        "updated_at": "2026-09-12T03:00:00Z",
+        "viewer": null
+      }
+    },
+    "closed": {
+      "summary": "Vacancy filled: still readable, no apply route",
+      "status": 200,
+      "body": {
+        "id": "job_01JA0000000000000000003006",
+        "title": {
+          "lang": "en",
+          "text": "Kitchen staff, evenings (part-time)",
+          "translation": {
+            "status": "original"
+          }
+        },
+        "description": {
+          "lang": "en",
+          "text": "Preparing toppings, cooking noodles and washing up in a 20-seat ramen restaurant.",
+          "translation": {
+            "status": "original"
+          }
+        },
+        "category": "food_service",
+        "employment_type": "part_time",
+        "hiring_arrangement": {
+          "kind": "direct",
+          "employer": {
+            "id": "org_01JA0000000000000000003006",
+            "kind": "business",
+            "name": {
+              "ja": "さっぽろラーメン厨房（例）",
+              "en": "Example Sapporo Ramen Kitchen (example)"
+            },
+            "verification": "unverified",
+            "website": null,
+            "description": null
+          }
+        },
+        "compensation": {
+          "base_pay": {
+            "status": "known",
+            "value": {
+              "amount": {
+                "kind": "fixed",
+                "amount": {
+                  "amount": 1150,
+                  "currency": "JPY"
+                }
+              },
+              "period": "hourly"
+            },
+            "basis": "reported"
+          },
+          "allowances": {
+            "status": "known",
+            "value": [],
+            "basis": "reported"
+          },
+          "bonus": {
+            "status": "known",
+            "value": {
+              "kind": "none"
+            },
+            "basis": "reported"
+          },
+          "commuting_allowance": {
+            "status": "known",
+            "value": {
+              "kind": "capped",
+              "monthly_cap": {
+                "amount": 10000,
+                "currency": "JPY"
+              }
+            },
+            "basis": "reported"
+          },
+          "overtime": {
+            "status": "known",
+            "value": {
+              "expected_monthly_hours": {
+                "status": "known",
+                "value": 0,
+                "basis": "reported"
+              },
+              "fixed_overtime": {
+                "kind": "none"
+              }
+            },
+            "basis": "reported"
+          },
+          "housing_support": {
+            "status": "known",
+            "value": {
+              "kind": "none"
+            },
+            "basis": "reported"
+          }
+        },
+        "contract_terms": {
+          "term": {
+            "status": "known",
+            "value": {
+              "kind": "fixed_term",
+              "months": 6
+            },
+            "basis": "reported"
+          },
+          "renewal": {
+            "status": "known",
+            "value": {
+              "kind": "may_be_renewed",
+              "criteria": null
+            },
+            "basis": "reported"
+          },
+          "probation": {
+            "status": "known",
+            "value": {
+              "kind": "none"
+            },
+            "basis": "reported"
+          },
+          "start": {
+            "status": "known",
+            "value": {
+              "kind": "negotiable"
+            },
+            "basis": "reported"
+          }
+        },
+        "language_expectations": {
+          "status": "known",
+          "value": [
+            {
+              "lang": "ja",
+              "required_level": "basic",
+              "preferred_level": null,
+              "certificate": null
+            }
+          ],
+          "basis": "reported"
+        },
+        "location": {
+          "arrangement": "onsite",
+          "workplace": {
+            "locality": {
+              "code": "JP-01-100",
+              "name": {
+                "ja": "札幌市",
+                "reading": "さっぽろし",
+                "romaji": "Sapporo-shi",
+                "en": "Sapporo City"
+              },
+              "level": "municipality"
+            },
+            "label": "Near Susukino Station"
+          }
+        },
+        "schedule": {
+          "pattern": {
+            "status": "known",
+            "value": "shifts",
+            "basis": "reported"
+          },
+          "weekly_hours": {
+            "status": "known",
+            "value": 20,
+            "basis": "reported"
+          },
+          "hours_description": {
+            "status": "known",
+            "value": "Evening shifts 17:00–22:00, four days a week.",
+            "basis": "reported"
+          },
+          "annual_holidays": {
+            "status": "not_applicable"
+          },
+          "time_zone": "Asia/Tokyo"
+        },
+        "immigration_assistance": {
+          "status": "known",
+          "value": {
+            "kind": "none"
+          },
+          "basis": "reported"
+        },
+        "source": {
+          "kind": "employer_submission",
+          "organization_id": "org_01JA0000000000000000003006",
+          "submitted_at": "2026-09-25T06:00:00Z"
+        },
+        "freshness": {
+          "state": "current",
+          "checked_at": "2026-10-09T05:00:00Z",
+          "stale_after": "2026-10-30T05:00:00Z"
+        },
+        "vacancy": {
+          "status": "closed",
+          "closed_at": "2026-10-09T05:00:00Z",
+          "reason": "filled"
+        },
+        "apply_route": {
+          "status": "none",
+          "reason": "vacancy_closed"
+        },
+        "posted_at": "2026-09-25T06:00:00Z",
+        "updated_at": "2026-10-09T05:00:00Z",
+        "viewer": null
+      }
+    },
+    "withdrawn": {
+      "summary": "Employer withdrew the listing: no longer active, no apply route",
+      "status": 200,
+      "body": {
+        "id": "job_01JA0000000000000000003007",
+        "title": {
+          "lang": "en",
+          "text": "Ski lift attendant, winter season",
+          "translation": {
+            "status": "original"
+          }
+        },
+        "description": {
+          "lang": "en",
+          "text": "Greeting skiers, loading lifts and clearing snow at lift stations for the 2026–27 winter season.",
+          "translation": {
+            "status": "original"
+          }
+        },
+        "category": "hospitality",
+        "employment_type": "contract",
+        "hiring_arrangement": {
+          "kind": "direct",
+          "employer": {
+            "id": "org_01JA0000000000000000003007",
+            "kind": "business",
+            "name": {
+              "ja": "白馬スノーリゾート（例）",
+              "en": "Example Hakuba Snow Resort (example)"
+            },
+            "verification": "verified",
+            "website": "https://hakuba-resort.example",
+            "description": "Ski resort operator (example)."
+          }
+        },
+        "compensation": {
+          "base_pay": {
+            "status": "known",
+            "value": {
+              "amount": {
+                "kind": "fixed",
+                "amount": {
+                  "amount": 1300,
+                  "currency": "JPY"
+                }
+              },
+              "period": "hourly"
+            },
+            "basis": "reported"
+          },
+          "allowances": {
+            "status": "unknown"
+          },
+          "bonus": {
+            "status": "known",
+            "value": {
+              "kind": "offered",
+              "description": "Season completion bonus for staff who work to the end of the contract.",
+              "previous_year_months": {
+                "status": "not_applicable"
+              }
+            },
+            "basis": "reported"
+          },
+          "commuting_allowance": {
+            "status": "known",
+            "value": {
+              "kind": "none"
+            },
+            "basis": "reported"
+          },
+          "overtime": {
+            "status": "unknown"
+          },
+          "housing_support": {
+            "status": "known",
+            "value": {
+              "kind": "company_housing",
+              "employee_monthly_cost": {
+                "status": "known",
+                "value": {
+                  "amount": 15000,
+                  "currency": "JPY"
+                },
+                "basis": "reported"
+              },
+              "description": "Shared staff dormitory near the resort."
+            },
+            "basis": "reported"
+          }
+        },
+        "contract_terms": {
+          "term": {
+            "status": "known",
+            "value": {
+              "kind": "fixed_term",
+              "months": 4
+            },
+            "basis": "reported"
+          },
+          "renewal": {
+            "status": "known",
+            "value": {
+              "kind": "not_renewed"
+            },
+            "basis": "reported"
+          },
+          "probation": {
+            "status": "known",
+            "value": {
+              "kind": "none"
+            },
+            "basis": "reported"
+          },
+          "start": {
+            "status": "known",
+            "value": {
+              "kind": "on_date",
+              "date": "2026-12-10"
+            },
+            "basis": "reported"
+          }
+        },
+        "language_expectations": {
+          "status": "known",
+          "value": [
+            {
+              "lang": "ja",
+              "required_level": "basic",
+              "preferred_level": "conversational",
+              "certificate": null
+            },
+            {
+              "lang": "en",
+              "required_level": "conversational",
+              "preferred_level": null,
+              "certificate": null
+            }
+          ],
+          "basis": "reported"
+        },
+        "location": {
+          "arrangement": "onsite",
+          "workplace": {
+            "locality": {
+              "code": "JP-20-485",
+              "name": {
+                "ja": "白馬村",
+                "reading": "はくばむら",
+                "romaji": "Hakuba-mura",
+                "en": "Hakuba Village"
+              },
+              "level": "municipality"
+            },
+            "label": "Hakuba Valley"
+          }
+        },
+        "schedule": {
+          "pattern": {
+            "status": "known",
+            "value": "shifts",
+            "basis": "reported"
+          },
+          "weekly_hours": {
+            "status": "known",
+            "value": 40,
+            "basis": "reported"
+          },
+          "hours_description": {
+            "status": "known",
+            "value": "08:00–17:00 with a 1-hour break, five days a week; days off rotate.",
+            "basis": "reported"
+          },
+          "annual_holidays": {
+            "status": "not_applicable"
+          },
+          "time_zone": "Asia/Tokyo"
+        },
+        "immigration_assistance": {
+          "status": "unknown"
+        },
+        "source": {
+          "kind": "employer_submission",
+          "organization_id": "org_01JA0000000000000000003007",
+          "submitted_at": "2026-09-30T00:00:00Z"
+        },
+        "freshness": {
+          "state": "current",
+          "checked_at": "2026-10-11T00:00:00Z",
+          "stale_after": "2026-11-01T00:00:00Z"
+        },
+        "vacancy": {
+          "status": "withdrawn",
+          "withdrawn_at": "2026-10-11T00:00:00Z",
+          "reason": "withdrawn_by_submitter"
+        },
+        "apply_route": {
+          "status": "none",
+          "reason": "vacancy_withdrawn"
+        },
+        "posted_at": "2026-09-30T00:00:00Z",
+        "updated_at": "2026-10-11T00:00:00Z",
+        "viewer": null
+      }
+    },
+    "not_found": {
+      "summary": "Unknown job, or removed for policy reasons",
+      "status": 404,
+      "body": {
+        "type": "urn:livingin:problem:not_found",
+        "title": "Not found",
+        "status": 404,
+        "code": "not_found",
+        "request_id": "fixture",
+        "retryable": false
+      }
+    }
+  }
+}

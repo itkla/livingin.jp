@@ -1,0 +1,88 @@
+name: backend
+
+on:
+  pull_request:
+    paths:
+      - 'backend/**'
+      - '.github/workflows/backend.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'backend/**'
+      - '.github/workflows/backend.yml'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: backend-${{ github.ref }}
+  cancel-in-progress: true
+
+defaults:
+  run:
+    working-directory: backend
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    services:
+      postgres:
+        image: postgres:16
+        env:
+          POSTGRES_USER: livingin
+          POSTGRES_PASSWORD: livingin
+          POSTGRES_DB: livingin_test
+        ports: ['5432:5432']
+        options: >-
+          --health-cmd "pg_isready -U livingin"
+          --health-interval 5s
+          --health-timeout 5s
+          --health-retries 10
+    env:
+      TEST_DATABASE_URL: postgres://livingin:livingin@localhost:5432/livingin_test
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: backend/package-lock.json
+
+      - run: npm ci
+
+      - name: Typecheck
+        run: npm run typecheck
+
+      - name: Tests (contract fixtures, HTTP behaviour, migrations on PGlite and Postgres)
+        run: npm test
+
+      - name: Contract drift and compatibility
+        run: |
+          if [ "${{ github.event_name }}" = "pull_request" ]; then
+            BASE_REF="origin/${{ github.base_ref }}"
+          else
+            BASE_REF="${{ github.event.before }}"
+          fi
+          git show "$BASE_REF:backend/contracts/openapi.json" > "$RUNNER_TEMP/base-openapi.json" 2>/dev/null || : > "$RUNNER_TEMP/base-openapi.json"
+          npm run contract:check -- --base "$RUNNER_TEMP/base-openapi.json"
+
+      - name: Migration CLI smoke test (up, full rollback, up)
+        env:
+          DATABASE_URL: postgres://livingin:livingin@localhost:5432/livingin_test
+        run: |
+          npm run db:migrate
+          npm run db:status
+          npm run db:rollback -- "$(ls src/db/migrations/*.up.sql | wc -l)"
+          npm run db:migrate
+
+      - name: Mock server starts and serves the contract
+        run: |
+          npm run start:mock > "$RUNNER_TEMP/mock.log" 2>&1 &
+          for i in $(seq 1 30); do curl -sf http://localhost:8787/v1/health > /dev/null && break; sleep 1; done
+          curl -sf http://localhost:8787/v1/health
+          curl -sf http://localhost:8787/openapi.json > /dev/null
+          curl -sf -H 'Authorization: Bearer mock:member' http://localhost:8787/v1/session > /dev/null

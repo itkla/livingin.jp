@@ -1,0 +1,791 @@
+{
+  "operationId": "getMyListing",
+  "scenarios": {
+    "default": {
+      "summary": "Draft, never submitted",
+      "status": 200,
+      "headers": {
+        "ETag": "\"1\""
+      },
+      "body": {
+        "id": "lst_01JA0000000000000000000001",
+        "revision": 1,
+        "kind": "single",
+        "title": "Wooden desk",
+        "description": "Sturdy desk, a few scratches on the top. Fits through a standard apartment door. Pickup only.",
+        "items": [
+          {
+            "id": "lsi_01JA0000000000000000000001",
+            "title": "Wooden desk",
+            "category": "furniture",
+            "condition": "good",
+            "dimensions": {
+              "status": "known",
+              "value": {
+                "width_cm": 100,
+                "depth_cm": 50,
+                "height_cm": 72
+              },
+              "basis": "reported"
+            },
+            "price": {
+              "kind": "sale",
+              "price": {
+                "amount": 3000,
+                "currency": "JPY"
+              }
+            },
+            "availability": "available",
+            "photos": [
+              {
+                "media_id": "med_01JA0000000000000000000001",
+                "state": "ready",
+                "url": "https://media.livingin.example/owner/med_01JA0000000000000000000001/w800.jpg?sig=mock"
+              }
+            ]
+          }
+        ],
+        "pickup_area": {
+          "locality": {
+            "code": "JP-13-112",
+            "name": {
+              "ja": "世田谷区",
+              "reading": "せたがやく",
+              "romaji": "Setagaya-ku",
+              "en": "Setagaya City"
+            },
+            "level": "municipality"
+          },
+          "label": "Near Sangenjaya Station"
+        },
+        "pickup_window": {
+          "available_from": "2026-11-07",
+          "available_until": "2026-11-22",
+          "time_zone": "Asia/Tokyo"
+        },
+        "publication": {
+          "state": "draft"
+        },
+        "published_revision": null,
+        "has_unsubmitted_changes": true,
+        "expires_at": null,
+        "created_at": "2026-11-03T01:00:00Z",
+        "updated_at": "2026-11-03T01:00:00Z"
+      }
+    },
+    "submitted": {
+      "summary": "Revision 2 queued for screening",
+      "status": 200,
+      "headers": {
+        "ETag": "\"2\""
+      },
+      "body": {
+        "id": "lst_01JA0000000000000000000001",
+        "revision": 2,
+        "kind": "single",
+        "title": "Wooden desk",
+        "description": "Sturdy desk, a few scratches on the top. Fits through a standard apartment door. Pickup only.",
+        "items": [
+          {
+            "id": "lsi_01JA0000000000000000000001",
+            "title": "Wooden desk",
+            "category": "furniture",
+            "condition": "good",
+            "dimensions": {
+              "status": "known",
+              "value": {
+                "width_cm": 100,
+                "depth_cm": 50,
+                "height_cm": 72
+              },
+              "basis": "reported"
+            },
+            "price": {
+              "kind": "sale",
+              "price": {
+                "amount": 3000,
+                "currency": "JPY"
+              }
+            },
+            "availability": "available",
+            "photos": [
+              {
+                "media_id": "med_01JA0000000000000000000001",
+                "state": "ready",
+                "url": "https://media.livingin.example/owner/med_01JA0000000000000000000001/w800.jpg?sig=mock"
+              }
+            ]
+          }
+        ],
+        "pickup_area": {
+          "locality": {
+            "code": "JP-13-112",
+            "name": {
+              "ja": "世田谷区",
+              "reading": "せたがやく",
+              "romaji": "Setagaya-ku",
+              "en": "Setagaya City"
+            },
+            "level": "municipality"
+          },
+          "label": "Near Sangenjaya Station"
+        },
+        "pickup_window": {
+          "available_from": "2026-11-07",
+          "available_until": "2026-11-22",
+          "time_zone": "Asia/Tokyo"
+        },
+        "publication": {
+          "state": "submitted",
+          "revision": 2,
+          "submitted_at": "2026-11-03T02:00:00Z"
+        },
+        "published_revision": null,
+        "has_unsubmitted_changes": false,
+        "expires_at": null,
+        "created_at": "2026-11-03T01:00:00Z",
+        "updated_at": "2026-11-03T01:55:00Z"
+      }
+    },
+    "screening": {
+      "summary": "Revision 2 being screened",
+      "status": 200,
+      "headers": {
+        "ETag": "\"2\""
+      },
+      "body": {
+        "id": "lst_01JA0000000000000000000001",
+        "revision": 2,
+        "kind": "single",
+        "title": "Wooden desk",
+        "description": "Sturdy desk, a few scratches on the top. Fits through a standard apartment door. Pickup only.",
+        "items": [
+          {
+            "id": "lsi_01JA0000000000000000000001",
+            "title": "Wooden desk",
+            "category": "furniture",
+            "condition": "good",
+            "dimensions": {
+              "status": "known",
+              "value": {
+                "width_cm": 100,
+                "depth_cm": 50,
+                "height_cm": 72
+              },
+              "basis": "reported"
+            },
+            "price": {
+              "kind": "sale",
+              "price": {
+                "amount": 3000,
+                "currency": "JPY"
+              }
+            },
+            "availability": "available",
+            "photos": [
+              {
+                "media_id": "med_01JA0000000000000000000001",
+                "state": "ready",
+                "url": "https://media.livingin.example/owner/med_01JA0000000000000000000001/w800.jpg?sig=mock"
+              }
+            ]
+          }
+        ],
+        "pickup_area": {
+          "locality": {
+            "code": "JP-13-112",
+            "name": {
+              "ja": "世田谷区",
+              "reading": "せたがやく",
+              "romaji": "Setagaya-ku",
+              "en": "Setagaya City"
+            },
+            "level": "municipality"
+          },
+          "label": "Near Sangenjaya Station"
+        },
+        "pickup_window": {
+          "available_from": "2026-11-07",
+          "available_until": "2026-11-22",
+          "time_zone": "Asia/Tokyo"
+        },
+        "publication": {
+          "state": "screening",
+          "revision": 2,
+          "submitted_at": "2026-11-03T02:00:00Z",
+          "delay": null
+        },
+        "published_revision": null,
+        "has_unsubmitted_changes": false,
+        "expires_at": null,
+        "created_at": "2026-11-03T01:00:00Z",
+        "updated_at": "2026-11-03T01:55:00Z"
+      }
+    },
+    "screening_delayed": {
+      "summary": "Screening model unavailable: stays pending, never auto-approved",
+      "status": 200,
+      "headers": {
+        "ETag": "\"2\""
+      },
+      "body": {
+        "id": "lst_01JA0000000000000000000001",
+        "revision": 2,
+        "kind": "single",
+        "title": "Wooden desk",
+        "description": "Sturdy desk, a few scratches on the top. Fits through a standard apartment door. Pickup only.",
+        "items": [
+          {
+            "id": "lsi_01JA0000000000000000000001",
+            "title": "Wooden desk",
+            "category": "furniture",
+            "condition": "good",
+            "dimensions": {
+              "status": "known",
+              "value": {
+                "width_cm": 100,
+                "depth_cm": 50,
+                "height_cm": 72
+              },
+              "basis": "reported"
+            },
+            "price": {
+              "kind": "sale",
+              "price": {
+                "amount": 3000,
+                "currency": "JPY"
+              }
+            },
+            "availability": "available",
+            "photos": [
+              {
+                "media_id": "med_01JA0000000000000000000001",
+                "state": "ready",
+                "url": "https://media.livingin.example/owner/med_01JA0000000000000000000001/w800.jpg?sig=mock"
+              }
+            ]
+          }
+        ],
+        "pickup_area": {
+          "locality": {
+            "code": "JP-13-112",
+            "name": {
+              "ja": "世田谷区",
+              "reading": "せたがやく",
+              "romaji": "Setagaya-ku",
+              "en": "Setagaya City"
+            },
+            "level": "municipality"
+          },
+          "label": "Near Sangenjaya Station"
+        },
+        "pickup_window": {
+          "available_from": "2026-11-07",
+          "available_until": "2026-11-22",
+          "time_zone": "Asia/Tokyo"
+        },
+        "publication": {
+          "state": "screening",
+          "revision": 2,
+          "submitted_at": "2026-11-03T02:00:00Z",
+          "delay": {
+            "reason": "screening_unavailable",
+            "since": "2026-11-03T02:05:00Z"
+          }
+        },
+        "published_revision": null,
+        "has_unsubmitted_changes": false,
+        "expires_at": null,
+        "created_at": "2026-11-03T01:00:00Z",
+        "updated_at": "2026-11-03T01:55:00Z"
+      }
+    },
+    "approved_scheduled": {
+      "summary": "Approved; waiting for the next publication window",
+      "status": 200,
+      "headers": {
+        "ETag": "\"2\""
+      },
+      "body": {
+        "id": "lst_01JA0000000000000000000001",
+        "revision": 2,
+        "kind": "single",
+        "title": "Wooden desk",
+        "description": "Sturdy desk, a few scratches on the top. Fits through a standard apartment door. Pickup only.",
+        "items": [
+          {
+            "id": "lsi_01JA0000000000000000000001",
+            "title": "Wooden desk",
+            "category": "furniture",
+            "condition": "good",
+            "dimensions": {
+              "status": "known",
+              "value": {
+                "width_cm": 100,
+                "depth_cm": 50,
+                "height_cm": 72
+              },
+              "basis": "reported"
+            },
+            "price": {
+              "kind": "sale",
+              "price": {
+                "amount": 3000,
+                "currency": "JPY"
+              }
+            },
+            "availability": "available",
+            "photos": [
+              {
+                "media_id": "med_01JA0000000000000000000001",
+                "state": "ready",
+                "url": "https://media.livingin.example/owner/med_01JA0000000000000000000001/w800.jpg?sig=mock"
+              }
+            ]
+          }
+        ],
+        "pickup_area": {
+          "locality": {
+            "code": "JP-13-112",
+            "name": {
+              "ja": "世田谷区",
+              "reading": "せたがやく",
+              "romaji": "Setagaya-ku",
+              "en": "Setagaya City"
+            },
+            "level": "municipality"
+          },
+          "label": "Near Sangenjaya Station"
+        },
+        "pickup_window": {
+          "available_from": "2026-11-07",
+          "available_until": "2026-11-22",
+          "time_zone": "Asia/Tokyo"
+        },
+        "publication": {
+          "state": "approved",
+          "revision": 2,
+          "decision_id": "mod_01JA0000000000000000000001",
+          "decided_at": "2026-11-03T02:12:00Z",
+          "release": {
+            "status": "scheduled",
+            "releases_at": "2026-11-03T02:30:00Z"
+          }
+        },
+        "published_revision": null,
+        "has_unsubmitted_changes": false,
+        "expires_at": null,
+        "created_at": "2026-11-03T01:00:00Z",
+        "updated_at": "2026-11-03T01:55:00Z"
+      }
+    },
+    "approved_published": {
+      "summary": "Approved and public",
+      "status": 200,
+      "headers": {
+        "ETag": "\"2\""
+      },
+      "body": {
+        "id": "lst_01JA0000000000000000000001",
+        "revision": 2,
+        "kind": "single",
+        "title": "Wooden desk",
+        "description": "Sturdy desk, a few scratches on the top. Fits through a standard apartment door. Pickup only.",
+        "items": [
+          {
+            "id": "lsi_01JA0000000000000000000001",
+            "title": "Wooden desk",
+            "category": "furniture",
+            "condition": "good",
+            "dimensions": {
+              "status": "known",
+              "value": {
+                "width_cm": 100,
+                "depth_cm": 50,
+                "height_cm": 72
+              },
+              "basis": "reported"
+            },
+            "price": {
+              "kind": "sale",
+              "price": {
+                "amount": 3000,
+                "currency": "JPY"
+              }
+            },
+            "availability": "available",
+            "photos": [
+              {
+                "media_id": "med_01JA0000000000000000000001",
+                "state": "ready",
+                "url": "https://media.livingin.example/owner/med_01JA0000000000000000000001/w800.jpg?sig=mock"
+              }
+            ]
+          }
+        ],
+        "pickup_area": {
+          "locality": {
+            "code": "JP-13-112",
+            "name": {
+              "ja": "世田谷区",
+              "reading": "せたがやく",
+              "romaji": "Setagaya-ku",
+              "en": "Setagaya City"
+            },
+            "level": "municipality"
+          },
+          "label": "Near Sangenjaya Station"
+        },
+        "pickup_window": {
+          "available_from": "2026-11-07",
+          "available_until": "2026-11-22",
+          "time_zone": "Asia/Tokyo"
+        },
+        "publication": {
+          "state": "approved",
+          "revision": 2,
+          "decision_id": "mod_01JA0000000000000000000001",
+          "decided_at": "2026-11-03T02:12:00Z",
+          "release": {
+            "status": "published",
+            "published_at": "2026-11-03T02:30:00Z"
+          }
+        },
+        "published_revision": 2,
+        "has_unsubmitted_changes": false,
+        "expires_at": "2026-11-24T15:00:00Z",
+        "created_at": "2026-11-03T01:00:00Z",
+        "updated_at": "2026-11-03T01:55:00Z"
+      }
+    },
+    "held": {
+      "summary": "Held for human review",
+      "status": 200,
+      "headers": {
+        "ETag": "\"2\""
+      },
+      "body": {
+        "id": "lst_01JA0000000000000000000001",
+        "revision": 2,
+        "kind": "single",
+        "title": "Wooden desk",
+        "description": "Sturdy desk, a few scratches on the top. Fits through a standard apartment door. Pickup only.",
+        "items": [
+          {
+            "id": "lsi_01JA0000000000000000000001",
+            "title": "Wooden desk",
+            "category": "furniture",
+            "condition": "good",
+            "dimensions": {
+              "status": "known",
+              "value": {
+                "width_cm": 100,
+                "depth_cm": 50,
+                "height_cm": 72
+              },
+              "basis": "reported"
+            },
+            "price": {
+              "kind": "sale",
+              "price": {
+                "amount": 3000,
+                "currency": "JPY"
+              }
+            },
+            "availability": "available",
+            "photos": [
+              {
+                "media_id": "med_01JA0000000000000000000001",
+                "state": "ready",
+                "url": "https://media.livingin.example/owner/med_01JA0000000000000000000001/w800.jpg?sig=mock"
+              }
+            ]
+          }
+        ],
+        "pickup_area": {
+          "locality": {
+            "code": "JP-13-112",
+            "name": {
+              "ja": "世田谷区",
+              "reading": "せたがやく",
+              "romaji": "Setagaya-ku",
+              "en": "Setagaya City"
+            },
+            "level": "municipality"
+          },
+          "label": "Near Sangenjaya Station"
+        },
+        "pickup_window": {
+          "available_from": "2026-11-07",
+          "available_until": "2026-11-22",
+          "time_zone": "Asia/Tokyo"
+        },
+        "publication": {
+          "state": "held",
+          "revision": 2,
+          "held_at": "2026-11-03T02:10:00Z",
+          "reason": {
+            "code": "needs_human_review",
+            "explanation": "A moderator will review this listing. This usually takes less than a day."
+          }
+        },
+        "published_revision": null,
+        "has_unsubmitted_changes": false,
+        "expires_at": null,
+        "created_at": "2026-11-03T01:00:00Z",
+        "updated_at": "2026-11-03T01:55:00Z"
+      }
+    },
+    "rejected": {
+      "summary": "Rejected with an appeal available",
+      "status": 200,
+      "headers": {
+        "ETag": "\"2\""
+      },
+      "body": {
+        "id": "lst_01JA0000000000000000000001",
+        "revision": 2,
+        "kind": "single",
+        "title": "Wooden desk",
+        "description": "Sturdy desk, a few scratches on the top. Fits through a standard apartment door. Pickup only.",
+        "items": [
+          {
+            "id": "lsi_01JA0000000000000000000001",
+            "title": "Wooden desk",
+            "category": "furniture",
+            "condition": "good",
+            "dimensions": {
+              "status": "known",
+              "value": {
+                "width_cm": 100,
+                "depth_cm": 50,
+                "height_cm": 72
+              },
+              "basis": "reported"
+            },
+            "price": {
+              "kind": "sale",
+              "price": {
+                "amount": 3000,
+                "currency": "JPY"
+              }
+            },
+            "availability": "available",
+            "photos": [
+              {
+                "media_id": "med_01JA0000000000000000000001",
+                "state": "ready",
+                "url": "https://media.livingin.example/owner/med_01JA0000000000000000000001/w800.jpg?sig=mock"
+              }
+            ]
+          }
+        ],
+        "pickup_area": {
+          "locality": {
+            "code": "JP-13-112",
+            "name": {
+              "ja": "世田谷区",
+              "reading": "せたがやく",
+              "romaji": "Setagaya-ku",
+              "en": "Setagaya City"
+            },
+            "level": "municipality"
+          },
+          "label": "Near Sangenjaya Station"
+        },
+        "pickup_window": {
+          "available_from": "2026-11-07",
+          "available_until": "2026-11-22",
+          "time_zone": "Asia/Tokyo"
+        },
+        "publication": {
+          "state": "rejected",
+          "revision": 2,
+          "decision_id": "mod_01JA0000000000000000000002",
+          "decided_at": "2026-11-03T03:00:00Z",
+          "reasons": [
+            {
+              "code": "prohibited_category",
+              "explanation": "Listings for medicines are not allowed on the marketplace."
+            }
+          ],
+          "appeal": {
+            "status": "available",
+            "deadline": "2026-11-17T03:00:00Z"
+          }
+        },
+        "published_revision": null,
+        "has_unsubmitted_changes": false,
+        "expires_at": null,
+        "created_at": "2026-11-03T01:00:00Z",
+        "updated_at": "2026-11-03T01:55:00Z"
+      }
+    },
+    "edited_during_review": {
+      "summary": "Seller edited (revision 3) while revision 2 is being screened; edits need submitting",
+      "status": 200,
+      "headers": {
+        "ETag": "\"3\""
+      },
+      "body": {
+        "id": "lst_01JA0000000000000000000001",
+        "revision": 3,
+        "kind": "single",
+        "title": "Wooden desk with chair",
+        "description": "Sturdy desk, a few scratches on the top. Fits through a standard apartment door. Pickup only.",
+        "items": [
+          {
+            "id": "lsi_01JA0000000000000000000001",
+            "title": "Wooden desk",
+            "category": "furniture",
+            "condition": "good",
+            "dimensions": {
+              "status": "known",
+              "value": {
+                "width_cm": 100,
+                "depth_cm": 50,
+                "height_cm": 72
+              },
+              "basis": "reported"
+            },
+            "price": {
+              "kind": "sale",
+              "price": {
+                "amount": 3000,
+                "currency": "JPY"
+              }
+            },
+            "availability": "available",
+            "photos": [
+              {
+                "media_id": "med_01JA0000000000000000000001",
+                "state": "ready",
+                "url": "https://media.livingin.example/owner/med_01JA0000000000000000000001/w800.jpg?sig=mock"
+              }
+            ]
+          }
+        ],
+        "pickup_area": {
+          "locality": {
+            "code": "JP-13-112",
+            "name": {
+              "ja": "世田谷区",
+              "reading": "せたがやく",
+              "romaji": "Setagaya-ku",
+              "en": "Setagaya City"
+            },
+            "level": "municipality"
+          },
+          "label": "Near Sangenjaya Station"
+        },
+        "pickup_window": {
+          "available_from": "2026-11-07",
+          "available_until": "2026-11-22",
+          "time_zone": "Asia/Tokyo"
+        },
+        "publication": {
+          "state": "screening",
+          "revision": 2,
+          "submitted_at": "2026-11-03T02:00:00Z",
+          "delay": null
+        },
+        "published_revision": null,
+        "has_unsubmitted_changes": true,
+        "expires_at": null,
+        "created_at": "2026-11-03T01:00:00Z",
+        "updated_at": "2026-11-03T02:08:00Z"
+      }
+    },
+    "edited_after_publication": {
+      "summary": "Revision 2 is public; edited revision 3 is not public until approved",
+      "status": 200,
+      "headers": {
+        "ETag": "\"3\""
+      },
+      "body": {
+        "id": "lst_01JA0000000000000000000001",
+        "revision": 3,
+        "kind": "single",
+        "title": "Wooden desk",
+        "description": "Sturdy desk. Price lowered. Pickup only.",
+        "items": [
+          {
+            "id": "lsi_01JA0000000000000000000001",
+            "title": "Wooden desk",
+            "category": "furniture",
+            "condition": "good",
+            "dimensions": {
+              "status": "known",
+              "value": {
+                "width_cm": 100,
+                "depth_cm": 50,
+                "height_cm": 72
+              },
+              "basis": "reported"
+            },
+            "price": {
+              "kind": "sale",
+              "price": {
+                "amount": 2000,
+                "currency": "JPY"
+              }
+            },
+            "availability": "available",
+            "photos": [
+              {
+                "media_id": "med_01JA0000000000000000000001",
+                "state": "ready",
+                "url": "https://media.livingin.example/owner/med_01JA0000000000000000000001/w800.jpg?sig=mock"
+              }
+            ]
+          }
+        ],
+        "pickup_area": {
+          "locality": {
+            "code": "JP-13-112",
+            "name": {
+              "ja": "世田谷区",
+              "reading": "せたがやく",
+              "romaji": "Setagaya-ku",
+              "en": "Setagaya City"
+            },
+            "level": "municipality"
+          },
+          "label": "Near Sangenjaya Station"
+        },
+        "pickup_window": {
+          "available_from": "2026-11-07",
+          "available_until": "2026-11-22",
+          "time_zone": "Asia/Tokyo"
+        },
+        "publication": {
+          "state": "approved",
+          "revision": 2,
+          "decision_id": "mod_01JA0000000000000000000001",
+          "decided_at": "2026-11-03T02:12:00Z",
+          "release": {
+            "status": "published",
+            "published_at": "2026-11-03T02:30:00Z"
+          }
+        },
+        "published_revision": 2,
+        "has_unsubmitted_changes": true,
+        "expires_at": "2026-11-24T15:00:00Z",
+        "created_at": "2026-11-03T01:00:00Z",
+        "updated_at": "2026-11-05T08:00:00Z"
+      }
+    },
+    "not_found": {
+      "summary": "Not the owner, or unknown listing",
+      "status": 404,
+      "body": {
+        "type": "urn:livingin:problem:not_found",
+        "title": "Not found",
+        "status": 404,
+        "code": "not_found",
+        "request_id": "fixture",
+        "retryable": false
+      }
+    }
+  }
+}

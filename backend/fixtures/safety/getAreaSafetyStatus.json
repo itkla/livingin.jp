@@ -1,0 +1,875 @@
+{
+  "operationId": "getAreaSafetyStatus",
+  "scenarios": {
+    "default": {
+      "summary": "Current feed, no warnings in effect (only meaningful because freshness is current)",
+      "status": 200,
+      "body": {
+        "area": {
+          "code": "JP-13-112",
+          "name": {
+            "ja": "世田谷区",
+            "reading": "せたがやく",
+            "romaji": "Setagaya-ku",
+            "en": "Setagaya City"
+          },
+          "level": "municipality"
+        },
+        "coverage": {
+          "status": "partial",
+          "limitations": [
+            "Weather warnings and advisories only. Earthquake Early Warnings, tsunami and volcanic warnings are not carried; use an official alert service.",
+            "Municipal evacuation instructions are not carried; see the municipality’s evacuation information page."
+          ]
+        },
+        "feed": {
+          "status": "available",
+          "freshness": {
+            "state": "current",
+            "checked_at": "2026-10-20T03:05:00Z",
+            "stale_after": "2026-10-20T03:14:00Z"
+          },
+          "retrieved_at": "2026-10-20T03:04:00Z",
+          "source": {
+            "source_id": "src_01JA0000000000000000005001",
+            "title": "Weather warnings and advisories feed (example)",
+            "publisher": "Example Meteorological Agency",
+            "url": "https://met.example/feeds/warnings",
+            "retrieved_at": "2026-10-20T03:04:00Z",
+            "authority": "official"
+          },
+          "warnings": []
+        },
+        "official_fallbacks": [
+          {
+            "resource_id": "sfr_01JA0000000000000000005102",
+            "kind": "official_alert_service",
+            "title": "Current warnings and advisories (example)",
+            "publisher": "Example Meteorological Agency",
+            "url": "https://met.example/warnings/map"
+          },
+          {
+            "resource_id": "sfr_01JA0000000000000000005101",
+            "kind": "official_alert_service",
+            "title": "Official disaster alert app (example)",
+            "publisher": "Example Disaster Management Agency",
+            "url": "https://bousai.example/app"
+          },
+          {
+            "resource_id": "sfr_01JA0000000000000000005107",
+            "kind": "evacuation_information",
+            "title": "Setagaya evacuation information (example)",
+            "publisher": "Example City Disaster Prevention Division",
+            "url": "https://city.example/bousai/evacuation"
+          }
+        ],
+        "disclaimer": "livingin.jp is a supplementary information service, not an official warning or emergency alert service. It may be delayed, incomplete or unavailable. Always follow the issuer and your municipality."
+      }
+    },
+    "active_warning": {
+      "summary": "Heavy rain warning (revision 2, no end time) and a flood advisory in effect",
+      "status": 200,
+      "body": {
+        "area": {
+          "code": "JP-13-112",
+          "name": {
+            "ja": "世田谷区",
+            "reading": "せたがやく",
+            "romaji": "Setagaya-ku",
+            "en": "Setagaya City"
+          },
+          "level": "municipality"
+        },
+        "coverage": {
+          "status": "partial",
+          "limitations": [
+            "Weather warnings and advisories only. Earthquake Early Warnings, tsunami and volcanic warnings are not carried; use an official alert service.",
+            "Municipal evacuation instructions are not carried; see the municipality’s evacuation information page."
+          ]
+        },
+        "feed": {
+          "status": "available",
+          "freshness": {
+            "state": "current",
+            "checked_at": "2026-10-21T05:05:00Z",
+            "stale_after": "2026-10-21T05:14:00Z"
+          },
+          "retrieved_at": "2026-10-21T05:04:00Z",
+          "source": {
+            "source_id": "src_01JA0000000000000000005001",
+            "title": "Weather warnings and advisories feed (example)",
+            "publisher": "Example Meteorological Agency",
+            "url": "https://met.example/feeds/warnings",
+            "retrieved_at": "2026-10-21T05:04:00Z",
+            "authority": "official"
+          },
+          "warnings": [
+            {
+              "id": "wrn_01JA0000000000000000005001",
+              "issuer": {
+                "code": "example_met_agency",
+                "name": {
+                  "ja": "気象機関（例）",
+                  "en": "Example Meteorological Agency"
+                }
+              },
+              "product": {
+                "code": "heavy_rain_warning",
+                "name": {
+                  "ja": "大雨警報",
+                  "reading": "おおあめけいほう",
+                  "romaji": "ōame keihō",
+                  "en": "Heavy rain warning"
+                },
+                "hazard": "heavy_rain"
+              },
+              "level": "warning",
+              "issuer_areas": [
+                {
+                  "code": "1311200",
+                  "name": {
+                    "ja": "世田谷区",
+                    "reading": "せたがやく",
+                    "en": "Setagaya City"
+                  }
+                }
+              ],
+              "affected_areas": [
+                {
+                  "code": "JP-13-112",
+                  "name": {
+                    "ja": "世田谷区",
+                    "reading": "せたがやく",
+                    "romaji": "Setagaya-ku",
+                    "en": "Setagaya City"
+                  },
+                  "level": "municipality"
+                }
+              ],
+              "first_issued_at": "2026-10-21T02:10:00Z",
+              "issued_at": "2026-10-21T04:40:00Z",
+              "valid_from": "2026-10-21T02:10:00Z",
+              "valid_until": null,
+              "issuer_revision": 2,
+              "lifecycle": {
+                "status": "active"
+              },
+              "is_test": false,
+              "official_text": {
+                "original": {
+                  "lang": "ja",
+                  "text": "世田谷区に大雨警報（土砂災害、浸水害）を発表しています。土砂災害や低い土地の浸水に警戒してください。（例）",
+                  "translation": {
+                    "status": "original"
+                  }
+                },
+                "localized": {
+                  "lang": "en",
+                  "text": "A heavy rain warning (landslides, inundation) is in effect for Setagaya City. Be on alert for landslides and flooding of low-lying land. (example)",
+                  "translation": {
+                    "status": "reviewed_translation",
+                    "source_lang": "ja",
+                    "reviewed_at": "2026-09-28T03:00:00Z"
+                  }
+                }
+              },
+              "explanation": {
+                "template_id": "heavy_rain.warning.general",
+                "template_version": 3,
+                "reviewed_at": "2026-09-28T03:00:00Z",
+                "text": {
+                  "lang": "en",
+                  "text": "A warning means serious damage is possible. Stay away from rivers, slopes and underpasses, check your city’s hazard map and evacuation information, and be ready to follow your municipality’s instructions. This guidance supplements the official warning text above.",
+                  "translation": {
+                    "status": "original"
+                  }
+                }
+              },
+              "source_url": "https://met.example/warnings/1311200/heavy-rain"
+            },
+            {
+              "id": "wrn_01JA0000000000000000005002",
+              "issuer": {
+                "code": "example_met_agency",
+                "name": {
+                  "ja": "気象機関（例）",
+                  "en": "Example Meteorological Agency"
+                }
+              },
+              "product": {
+                "code": "flood_advisory",
+                "name": {
+                  "ja": "洪水注意報",
+                  "reading": "こうずいちゅういほう",
+                  "romaji": "kōzui chūihō",
+                  "en": "Flood advisory"
+                },
+                "hazard": "flood"
+              },
+              "level": "advisory",
+              "issuer_areas": [
+                {
+                  "code": "1311200",
+                  "name": {
+                    "ja": "世田谷区",
+                    "reading": "せたがやく",
+                    "en": "Setagaya City"
+                  }
+                }
+              ],
+              "affected_areas": [
+                {
+                  "code": "JP-13-112",
+                  "name": {
+                    "ja": "世田谷区",
+                    "reading": "せたがやく",
+                    "romaji": "Setagaya-ku",
+                    "en": "Setagaya City"
+                  },
+                  "level": "municipality"
+                }
+              ],
+              "first_issued_at": "2026-10-21T01:30:00Z",
+              "issued_at": "2026-10-21T01:30:00Z",
+              "valid_from": "2026-10-21T01:30:00Z",
+              "valid_until": "2026-10-21T12:00:00Z",
+              "issuer_revision": 1,
+              "lifecycle": {
+                "status": "active"
+              },
+              "is_test": false,
+              "official_text": {
+                "original": {
+                  "lang": "ja",
+                  "text": "世田谷区に洪水注意報を発表しています。河川の増水に注意してください。（例）",
+                  "translation": {
+                    "status": "original"
+                  }
+                },
+                "localized": {
+                  "lang": "en",
+                  "text": "A flood advisory is in effect for Setagaya City. Be careful of rising rivers. (example)",
+                  "translation": {
+                    "status": "reviewed_translation",
+                    "source_lang": "ja",
+                    "reviewed_at": "2026-09-28T03:00:00Z"
+                  }
+                }
+              },
+              "explanation": {
+                "template_id": "flood.advisory.general",
+                "template_version": 2,
+                "reviewed_at": "2026-09-28T03:00:00Z",
+                "text": {
+                  "lang": "en",
+                  "text": "An advisory means conditions could become hazardous. Keep away from riverbanks and check for updates; an advisory can be upgraded to a warning. This guidance supplements the official advisory text above.",
+                  "translation": {
+                    "status": "original"
+                  }
+                }
+              },
+              "source_url": "https://met.example/warnings/1311200/flood"
+            }
+          ]
+        },
+        "official_fallbacks": [
+          {
+            "resource_id": "sfr_01JA0000000000000000005102",
+            "kind": "official_alert_service",
+            "title": "Current warnings and advisories (example)",
+            "publisher": "Example Meteorological Agency",
+            "url": "https://met.example/warnings/map"
+          },
+          {
+            "resource_id": "sfr_01JA0000000000000000005101",
+            "kind": "official_alert_service",
+            "title": "Official disaster alert app (example)",
+            "publisher": "Example Disaster Management Agency",
+            "url": "https://bousai.example/app"
+          },
+          {
+            "resource_id": "sfr_01JA0000000000000000005107",
+            "kind": "evacuation_information",
+            "title": "Setagaya evacuation information (example)",
+            "publisher": "Example City Disaster Prevention Division",
+            "url": "https://city.example/bousai/evacuation"
+          }
+        ],
+        "disclaimer": "livingin.jp is a supplementary information service, not an official warning or emergency alert service. It may be delayed, incomplete or unavailable. Always follow the issuer and your municipality."
+      }
+    },
+    "stale_feed": {
+      "summary": "Feed data exists but is stale; the empty list must NOT be shown as \"no warnings\"",
+      "status": 200,
+      "body": {
+        "area": {
+          "code": "JP-13-112",
+          "name": {
+            "ja": "世田谷区",
+            "reading": "せたがやく",
+            "romaji": "Setagaya-ku",
+            "en": "Setagaya City"
+          },
+          "level": "municipality"
+        },
+        "coverage": {
+          "status": "partial",
+          "limitations": [
+            "Weather warnings and advisories only. Earthquake Early Warnings, tsunami and volcanic warnings are not carried; use an official alert service.",
+            "Municipal evacuation instructions are not carried; see the municipality’s evacuation information page."
+          ]
+        },
+        "feed": {
+          "status": "available",
+          "freshness": {
+            "state": "stale",
+            "checked_at": "2026-10-21T05:40:00Z",
+            "stale_since": "2026-10-21T05:14:00Z",
+            "reason": "The issuer feed has not been retrieved successfully since 14:04 JST. Warnings issued since then may be missing."
+          },
+          "retrieved_at": "2026-10-21T05:04:00Z",
+          "source": {
+            "source_id": "src_01JA0000000000000000005001",
+            "title": "Weather warnings and advisories feed (example)",
+            "publisher": "Example Meteorological Agency",
+            "url": "https://met.example/feeds/warnings",
+            "retrieved_at": "2026-10-21T05:04:00Z",
+            "authority": "official"
+          },
+          "warnings": []
+        },
+        "official_fallbacks": [
+          {
+            "resource_id": "sfr_01JA0000000000000000005102",
+            "kind": "official_alert_service",
+            "title": "Current warnings and advisories (example)",
+            "publisher": "Example Meteorological Agency",
+            "url": "https://met.example/warnings/map"
+          },
+          {
+            "resource_id": "sfr_01JA0000000000000000005101",
+            "kind": "official_alert_service",
+            "title": "Official disaster alert app (example)",
+            "publisher": "Example Disaster Management Agency",
+            "url": "https://bousai.example/app"
+          },
+          {
+            "resource_id": "sfr_01JA0000000000000000005107",
+            "kind": "evacuation_information",
+            "title": "Setagaya evacuation information (example)",
+            "publisher": "Example City Disaster Prevention Division",
+            "url": "https://city.example/bousai/evacuation"
+          }
+        ],
+        "disclaimer": "livingin.jp is a supplementary information service, not an official warning or emergency alert service. It may be delayed, incomplete or unavailable. Always follow the issuer and your municipality."
+      }
+    },
+    "unavailable": {
+      "summary": "Upstream outage: no reliable result, which does not mean there are no warnings",
+      "status": 200,
+      "body": {
+        "area": {
+          "code": "JP-13-112",
+          "name": {
+            "ja": "世田谷区",
+            "reading": "せたがやく",
+            "romaji": "Setagaya-ku",
+            "en": "Setagaya City"
+          },
+          "level": "municipality"
+        },
+        "coverage": {
+          "status": "partial",
+          "limitations": [
+            "Weather warnings and advisories only. Earthquake Early Warnings, tsunami and volcanic warnings are not carried; use an official alert service.",
+            "Municipal evacuation instructions are not carried; see the municipality’s evacuation information page."
+          ]
+        },
+        "feed": {
+          "status": "unavailable",
+          "reason_code": "upstream_outage",
+          "last_successful_retrieval_at": "2026-10-21T03:04:00Z",
+          "explanation": "We cannot show current warnings for this area right now. This does not mean there are no warnings. Check the official sources below."
+        },
+        "official_fallbacks": [
+          {
+            "resource_id": "sfr_01JA0000000000000000005102",
+            "kind": "official_alert_service",
+            "title": "Current warnings and advisories (example)",
+            "publisher": "Example Meteorological Agency",
+            "url": "https://met.example/warnings/map"
+          },
+          {
+            "resource_id": "sfr_01JA0000000000000000005101",
+            "kind": "official_alert_service",
+            "title": "Official disaster alert app (example)",
+            "publisher": "Example Disaster Management Agency",
+            "url": "https://bousai.example/app"
+          },
+          {
+            "resource_id": "sfr_01JA0000000000000000005107",
+            "kind": "evacuation_information",
+            "title": "Setagaya evacuation information (example)",
+            "publisher": "Example City Disaster Prevention Division",
+            "url": "https://city.example/bousai/evacuation"
+          }
+        ],
+        "disclaimer": "livingin.jp is a supplementary information service, not an official warning or emergency alert service. It may be delayed, incomplete or unavailable. Always follow the issuer and your municipality."
+      }
+    },
+    "cancelled_warning": {
+      "summary": "Heavy rain warning cancelled by the issuer (revision 3) and replaced with an advisory",
+      "status": 200,
+      "body": {
+        "area": {
+          "code": "JP-13-112",
+          "name": {
+            "ja": "世田谷区",
+            "reading": "せたがやく",
+            "romaji": "Setagaya-ku",
+            "en": "Setagaya City"
+          },
+          "level": "municipality"
+        },
+        "coverage": {
+          "status": "partial",
+          "limitations": [
+            "Weather warnings and advisories only. Earthquake Early Warnings, tsunami and volcanic warnings are not carried; use an official alert service.",
+            "Municipal evacuation instructions are not carried; see the municipality’s evacuation information page."
+          ]
+        },
+        "feed": {
+          "status": "available",
+          "freshness": {
+            "state": "current",
+            "checked_at": "2026-10-21T09:25:00Z",
+            "stale_after": "2026-10-21T09:34:00Z"
+          },
+          "retrieved_at": "2026-10-21T09:24:00Z",
+          "source": {
+            "source_id": "src_01JA0000000000000000005001",
+            "title": "Weather warnings and advisories feed (example)",
+            "publisher": "Example Meteorological Agency",
+            "url": "https://met.example/feeds/warnings",
+            "retrieved_at": "2026-10-21T09:24:00Z",
+            "authority": "official"
+          },
+          "warnings": [
+            {
+              "id": "wrn_01JA0000000000000000005001",
+              "issuer": {
+                "code": "example_met_agency",
+                "name": {
+                  "ja": "気象機関（例）",
+                  "en": "Example Meteorological Agency"
+                }
+              },
+              "product": {
+                "code": "heavy_rain_warning",
+                "name": {
+                  "ja": "大雨警報",
+                  "reading": "おおあめけいほう",
+                  "romaji": "ōame keihō",
+                  "en": "Heavy rain warning"
+                },
+                "hazard": "heavy_rain"
+              },
+              "level": "warning",
+              "issuer_areas": [
+                {
+                  "code": "1311200",
+                  "name": {
+                    "ja": "世田谷区",
+                    "reading": "せたがやく",
+                    "en": "Setagaya City"
+                  }
+                }
+              ],
+              "affected_areas": [
+                {
+                  "code": "JP-13-112",
+                  "name": {
+                    "ja": "世田谷区",
+                    "reading": "せたがやく",
+                    "romaji": "Setagaya-ku",
+                    "en": "Setagaya City"
+                  },
+                  "level": "municipality"
+                }
+              ],
+              "first_issued_at": "2026-10-21T02:10:00Z",
+              "issued_at": "2026-10-21T09:20:00Z",
+              "valid_from": "2026-10-21T02:10:00Z",
+              "valid_until": null,
+              "issuer_revision": 3,
+              "lifecycle": {
+                "status": "cancelled",
+                "cancelled_at": "2026-10-21T09:20:00Z"
+              },
+              "is_test": false,
+              "official_text": {
+                "original": {
+                  "lang": "ja",
+                  "text": "世田谷区の大雨警報を解除し、大雨注意報に切り替えました。（例）",
+                  "translation": {
+                    "status": "original"
+                  }
+                },
+                "localized": {
+                  "lang": "en",
+                  "text": "The heavy rain warning for Setagaya City has been lifted and replaced with a heavy rain advisory. (example)",
+                  "translation": {
+                    "status": "reviewed_translation",
+                    "source_lang": "ja",
+                    "reviewed_at": "2026-09-28T03:00:00Z"
+                  }
+                }
+              },
+              "explanation": {
+                "template_id": "warning.cancelled.general",
+                "template_version": 1,
+                "reviewed_at": "2026-09-28T03:00:00Z",
+                "text": {
+                  "lang": "en",
+                  "text": "The issuer has lifted this warning. Other warnings or advisories may still be in effect, and ground can stay unstable after heavy rain. This guidance supplements the official text above.",
+                  "translation": {
+                    "status": "original"
+                  }
+                }
+              },
+              "source_url": "https://met.example/warnings/1311200/heavy-rain"
+            },
+            {
+              "id": "wrn_01JA0000000000000000005003",
+              "issuer": {
+                "code": "example_met_agency",
+                "name": {
+                  "ja": "気象機関（例）",
+                  "en": "Example Meteorological Agency"
+                }
+              },
+              "product": {
+                "code": "heavy_rain_advisory",
+                "name": {
+                  "ja": "大雨注意報",
+                  "reading": "おおあめちゅういほう",
+                  "romaji": "ōame chūihō",
+                  "en": "Heavy rain advisory"
+                },
+                "hazard": "heavy_rain"
+              },
+              "level": "advisory",
+              "issuer_areas": [
+                {
+                  "code": "1311200",
+                  "name": {
+                    "ja": "世田谷区",
+                    "reading": "せたがやく",
+                    "en": "Setagaya City"
+                  }
+                }
+              ],
+              "affected_areas": [
+                {
+                  "code": "JP-13-112",
+                  "name": {
+                    "ja": "世田谷区",
+                    "reading": "せたがやく",
+                    "romaji": "Setagaya-ku",
+                    "en": "Setagaya City"
+                  },
+                  "level": "municipality"
+                }
+              ],
+              "first_issued_at": "2026-10-21T09:20:00Z",
+              "issued_at": "2026-10-21T09:20:00Z",
+              "valid_from": "2026-10-21T09:20:00Z",
+              "valid_until": "2026-10-21T15:00:00Z",
+              "issuer_revision": 1,
+              "lifecycle": {
+                "status": "active"
+              },
+              "is_test": false,
+              "official_text": {
+                "original": {
+                  "lang": "ja",
+                  "text": "世田谷区に大雨注意報を発表しています。土砂災害に注意してください。（例）",
+                  "translation": {
+                    "status": "original"
+                  }
+                },
+                "localized": {
+                  "lang": "en",
+                  "text": "A heavy rain advisory is in effect for Setagaya City. Be careful of landslides. (example)",
+                  "translation": {
+                    "status": "reviewed_translation",
+                    "source_lang": "ja",
+                    "reviewed_at": "2026-09-28T03:00:00Z"
+                  }
+                }
+              },
+              "explanation": {
+                "template_id": "heavy_rain.advisory.general",
+                "template_version": 2,
+                "reviewed_at": "2026-09-28T03:00:00Z",
+                "text": {
+                  "lang": "en",
+                  "text": "An advisory means conditions could become hazardous. Avoid steep slopes and check for updates; an advisory can be upgraded to a warning. This guidance supplements the official advisory text above.",
+                  "translation": {
+                    "status": "original"
+                  }
+                }
+              },
+              "source_url": "https://met.example/warnings/1311200/heavy-rain"
+            }
+          ]
+        },
+        "official_fallbacks": [
+          {
+            "resource_id": "sfr_01JA0000000000000000005102",
+            "kind": "official_alert_service",
+            "title": "Current warnings and advisories (example)",
+            "publisher": "Example Meteorological Agency",
+            "url": "https://met.example/warnings/map"
+          },
+          {
+            "resource_id": "sfr_01JA0000000000000000005101",
+            "kind": "official_alert_service",
+            "title": "Official disaster alert app (example)",
+            "publisher": "Example Disaster Management Agency",
+            "url": "https://bousai.example/app"
+          },
+          {
+            "resource_id": "sfr_01JA0000000000000000005107",
+            "kind": "evacuation_information",
+            "title": "Setagaya evacuation information (example)",
+            "publisher": "Example City Disaster Prevention Division",
+            "url": "https://city.example/bousai/evacuation"
+          }
+        ],
+        "disclaimer": "livingin.jp is a supplementary information service, not an official warning or emergency alert service. It may be delayed, incomplete or unavailable. Always follow the issuer and your municipality."
+      }
+    },
+    "test_message": {
+      "summary": "Issuer exercise message during an announced drill (is_test: not a real warning)",
+      "status": 200,
+      "body": {
+        "area": {
+          "code": "JP-13-112",
+          "name": {
+            "ja": "世田谷区",
+            "reading": "せたがやく",
+            "romaji": "Setagaya-ku",
+            "en": "Setagaya City"
+          },
+          "level": "municipality"
+        },
+        "coverage": {
+          "status": "partial",
+          "limitations": [
+            "Weather warnings and advisories only. Earthquake Early Warnings, tsunami and volcanic warnings are not carried; use an official alert service.",
+            "Municipal evacuation instructions are not carried; see the municipality’s evacuation information page."
+          ]
+        },
+        "feed": {
+          "status": "available",
+          "freshness": {
+            "state": "current",
+            "checked_at": "2026-10-21T01:05:00Z",
+            "stale_after": "2026-10-21T01:14:00Z"
+          },
+          "retrieved_at": "2026-10-21T01:04:00Z",
+          "source": {
+            "source_id": "src_01JA0000000000000000005001",
+            "title": "Weather warnings and advisories feed (example)",
+            "publisher": "Example Meteorological Agency",
+            "url": "https://met.example/feeds/warnings",
+            "retrieved_at": "2026-10-21T01:04:00Z",
+            "authority": "official"
+          },
+          "warnings": [
+            {
+              "id": "wrn_01JA0000000000000000005004",
+              "issuer": {
+                "code": "example_met_agency",
+                "name": {
+                  "ja": "気象機関（例）",
+                  "en": "Example Meteorological Agency"
+                }
+              },
+              "product": {
+                "code": "test_message",
+                "name": {
+                  "ja": "訓練報",
+                  "reading": "くんれんほう",
+                  "en": "Exercise message"
+                },
+                "hazard": "test"
+              },
+              "level": "advisory",
+              "issuer_areas": [
+                {
+                  "code": "1311200",
+                  "name": {
+                    "ja": "世田谷区",
+                    "reading": "せたがやく",
+                    "en": "Setagaya City"
+                  }
+                }
+              ],
+              "affected_areas": [
+                {
+                  "code": "JP-13-112",
+                  "name": {
+                    "ja": "世田谷区",
+                    "reading": "せたがやく",
+                    "romaji": "Setagaya-ku",
+                    "en": "Setagaya City"
+                  },
+                  "level": "municipality"
+                }
+              ],
+              "first_issued_at": "2026-10-21T01:00:00Z",
+              "issued_at": "2026-10-21T01:00:00Z",
+              "valid_from": "2026-10-21T01:00:00Z",
+              "valid_until": "2026-10-21T02:00:00Z",
+              "issuer_revision": 1,
+              "lifecycle": {
+                "status": "active"
+              },
+              "is_test": true,
+              "official_text": {
+                "original": {
+                  "lang": "ja",
+                  "text": "これは訓練です。実際の警報ではありません。（例）",
+                  "translation": {
+                    "status": "original"
+                  }
+                },
+                "localized": {
+                  "lang": "en",
+                  "text": "This is an exercise. It is not a real warning. (example)",
+                  "translation": {
+                    "status": "reviewed_translation",
+                    "source_lang": "ja",
+                    "reviewed_at": "2026-09-28T03:00:00Z"
+                  }
+                }
+              },
+              "explanation": {
+                "template_id": "test_message.general",
+                "template_version": 1,
+                "reviewed_at": "2026-09-28T03:00:00Z",
+                "text": {
+                  "lang": "en",
+                  "text": "This is a test message sent during an announced drill. No action is needed.",
+                  "translation": {
+                    "status": "original"
+                  }
+                }
+              },
+              "source_url": "https://met.example/warnings/1311200/exercise"
+            }
+          ]
+        },
+        "official_fallbacks": [
+          {
+            "resource_id": "sfr_01JA0000000000000000005102",
+            "kind": "official_alert_service",
+            "title": "Current warnings and advisories (example)",
+            "publisher": "Example Meteorological Agency",
+            "url": "https://met.example/warnings/map"
+          },
+          {
+            "resource_id": "sfr_01JA0000000000000000005101",
+            "kind": "official_alert_service",
+            "title": "Official disaster alert app (example)",
+            "publisher": "Example Disaster Management Agency",
+            "url": "https://bousai.example/app"
+          },
+          {
+            "resource_id": "sfr_01JA0000000000000000005107",
+            "kind": "evacuation_information",
+            "title": "Setagaya evacuation information (example)",
+            "publisher": "Example City Disaster Prevention Division",
+            "url": "https://city.example/bousai/evacuation"
+          }
+        ],
+        "disclaimer": "livingin.jp is a supplementary information service, not an official warning or emergency alert service. It may be delayed, incomplete or unavailable. Always follow the issuer and your municipality."
+      }
+    },
+    "unsupported_area": {
+      "summary": "Area livingin.jp does not carry warnings for (not the same as no warnings)",
+      "status": 200,
+      "body": {
+        "area": {
+          "code": "JP-13-421",
+          "name": {
+            "ja": "小笠原村",
+            "reading": "おがさわらむら",
+            "romaji": "Ogasawara-mura",
+            "en": "Ogasawara Village"
+          },
+          "level": "municipality"
+        },
+        "coverage": {
+          "status": "unsupported",
+          "reason_code": "outside_warning_coverage",
+          "explanation": "livingin.jp does not carry warnings for the Ogasawara Islands yet."
+        },
+        "feed": {
+          "status": "not_covered",
+          "explanation": "We do not show warnings for this area. This does not mean there are no warnings. Check the official sources below."
+        },
+        "official_fallbacks": [
+          {
+            "resource_id": "sfr_01JA0000000000000000005102",
+            "kind": "official_alert_service",
+            "title": "Current warnings and advisories (example)",
+            "publisher": "Example Meteorological Agency",
+            "url": "https://met.example/warnings/map"
+          },
+          {
+            "resource_id": "sfr_01JA0000000000000000005101",
+            "kind": "official_alert_service",
+            "title": "Official disaster alert app (example)",
+            "publisher": "Example Disaster Management Agency",
+            "url": "https://bousai.example/app"
+          }
+        ],
+        "disclaimer": "livingin.jp is a supplementary information service, not an official warning or emergency alert service. It may be delayed, incomplete or unavailable. Always follow the issuer and your municipality."
+      }
+    },
+    "validation_failed": {
+      "summary": "Malformed locality code",
+      "status": 400,
+      "body": {
+        "type": "urn:livingin:problem:validation_failed",
+        "title": "Validation failed",
+        "status": 400,
+        "code": "validation_failed",
+        "request_id": "fixture",
+        "retryable": false,
+        "fields": [
+          {
+            "pointer": "/params/locality_code",
+            "code": "invalid_format",
+            "message": "Invalid string: must match pattern /^JP-\\d{2}(-\\d{3})?$/"
+          }
+        ]
+      }
+    },
+    "not_found": {
+      "summary": "Well-formed but unknown locality code",
+      "status": 404,
+      "body": {
+        "type": "urn:livingin:problem:not_found",
+        "title": "Not found",
+        "status": 404,
+        "code": "not_found",
+        "request_id": "fixture",
+        "retryable": false
+      }
+    }
+  }
+}

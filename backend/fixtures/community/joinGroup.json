@@ -1,0 +1,57 @@
+{
+  "operationId": "joinGroup",
+  "scenarios": {
+    "default": {
+      "summary": "Joined an open group immediately",
+      "status": 201,
+      "body": {
+        "state": "active",
+        "id": "mbr_01JA0000000000000000002106",
+        "group": {
+          "id": "grp_01JA0000000000000000002001",
+          "name": "Portuguese Speakers in Japan (example)"
+        },
+        "role": "member",
+        "joined_at": "2026-11-04T08:00:00Z"
+      }
+    },
+    "pending_approval": {
+      "summary": "Join request recorded for an approval group; not yet a member",
+      "status": 202,
+      "body": {
+        "state": "pending",
+        "id": "mbr_01JA0000000000000000002110",
+        "group": {
+          "id": "grp_01JA0000000000000000002004",
+          "name": "Setagaya Board Game Nights (example)"
+        },
+        "requested_at": "2026-11-03T11:20:00Z"
+      }
+    },
+    "forbidden": {
+      "summary": "Invite-only group, or the viewer was removed or blocked from it",
+      "status": 403,
+      "body": {
+        "type": "urn:livingin:problem:forbidden",
+        "title": "Forbidden",
+        "status": 403,
+        "code": "forbidden",
+        "request_id": "fixture",
+        "retryable": false,
+        "detail": "You can’t join this group on your own."
+      }
+    },
+    "not_found": {
+      "summary": "Unknown group, or an unlisted group viewed by a non-member",
+      "status": 404,
+      "body": {
+        "type": "urn:livingin:problem:not_found",
+        "title": "Not found",
+        "status": 404,
+        "code": "not_found",
+        "request_id": "fixture",
+        "retryable": false
+      }
+    }
+  }
+}

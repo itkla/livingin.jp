@@ -9,7 +9,7 @@ Planning baseline: **2026-09-30**. [Master roadmap](https://github.com/itkla/liv
 | Product mission | Settle in, live well, feel at home in Japan; newcomers and established residents both matter | Product direction established in #1 |
 | Broad modules | Living, Community, Work, Local & Events, Marketplace, Weather & Safety | Scope maintained in module epics |
 | Frontend ownership | Hunter owns all frontend, including administrative interfaces | Backend delivers contracts/fixtures; #12 |
-| Architecture | Empty-repository baseline; runtime, database and hosting not selected | Backend lead role, unassigned; #12 |
+| Architecture | Proposed: TypeScript modular monolith on Node.js/Hono, PostgreSQL, OpenAPI generated from zod ([ADR 0001–0003](adr/README.md)). Identity provider and hosting/storage/jobs still open ([ADR 0004–0005](adr/README.md)) | Backend lead role, unassigned; approve or replace at #52; #12 |
 | Inference | Cloudflare Workers AI is the intended provider; model/capability/cost selection unconfirmed | Backend/security review; #48 |
 | Marketplace timing | Narrow local exchange intended for first release, subject to safety gate | Product/operator decision; #53 |
 | Publication cadence | Optional 30-minute windows for completed approvals; default to be measured/decided | #38 and #48 |

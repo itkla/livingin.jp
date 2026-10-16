@@ -10,6 +10,8 @@ It should serve newcomers and established residents alike. Local discovery and v
 
 Planning baseline created **September 30, 2026**. The repository initially contained no implementation. These documents and GitHub issues are a proposed delivery plan, not a claim that features exist or that target dates are committed.
 
+**P0 contract baseline (proposed, October 2026):** [`backend/`](backend/README.md) contains the API contract (generated OpenAPI 3.1), synthetic fixtures for every module, a mock server, and a service skeleton with database migrations and CI ([#12](https://github.com/itkla/livingin.jp/issues/12)). The live service implements only health and the feature manifest; no product feature is implemented or enabled yet. Architecture decisions are *proposed*, pending approval at the [P0 gate #52](https://github.com/itkla/livingin.jp/issues/52).
+
 **Hunter owns the frontend.** Current implementation planning covers backend services, APIs, data, ingestion, rules, security, moderation, infrastructure, operations and contract fixtures. No frontend framework, pages, components, styling or design system is selected or scaffolded here.
 
 ## Start here
@@ -19,6 +21,8 @@ Planning baseline created **September 30, 2026**. The repository initially conta
 - [Module and feature plan](docs/FEATURE_PLAN.md)
 - [Backend-to-frontend handoff contract](docs/FRONTEND_HANDOFF.md)
 - [Decisions, dependencies and release risks](docs/DECISIONS_AND_RISKS.md)
+- [Architecture decision records](docs/adr/README.md)
+- [API conventions](docs/api/CONVENTIONS.md) and the [backend / mock server](backend/README.md)
 
 ## Product modules
 

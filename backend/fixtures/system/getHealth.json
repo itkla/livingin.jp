@@ -1,0 +1,15 @@
+{
+  "operationId": "getHealth",
+  "scenarios": {
+    "default": {
+      "summary": "Mock server is healthy",
+      "status": 200,
+      "body": { "status": "ok", "mode": "mock", "contract_version": "0.1.0", "checks": { "database": "not_configured" }, "checked_at": "2026-11-02T00:00:00Z" }
+    },
+    "degraded": {
+      "summary": "Database check failing",
+      "status": 200,
+      "body": { "status": "degraded", "mode": "live", "contract_version": "0.1.0", "checks": { "database": "error" }, "checked_at": "2026-11-02T00:00:00Z" }
+    }
+  }
+}

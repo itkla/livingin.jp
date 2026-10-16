@@ -1,0 +1,156 @@
+{
+  "operationId": "listMyApplications",
+  "scenarios": {
+    "default": {
+      "summary": "Handoff opened but not submitted, interviewing, a job found elsewhere, and preparing for a stale listing",
+      "status": 200,
+      "body": {
+        "items": [
+          {
+            "id": "apl_01JA0000000000000000003001",
+            "revision": 2,
+            "job_id": "job_01JA0000000000000000003002",
+            "job_snapshot": {
+              "title": "Warehouse picking and packing staff",
+              "employer_name": "Example Staffing (example), host company not disclosed",
+              "url": null,
+              "captured_at": "2026-10-13T11:00:00Z"
+            },
+            "stage": "external_handoff_opened",
+            "stage_history": [
+              {
+                "set_by": "member",
+                "stage": "saved",
+                "at": "2026-10-13T11:00:00Z"
+              },
+              {
+                "set_by": "system_handoff_click",
+                "stage": "external_handoff_opened",
+                "at": "2026-10-14T12:30:00Z"
+              }
+            ],
+            "next_action": {
+              "description": "Finish the agency’s online form. Opening the link did not apply.",
+              "due_on": "2026-10-18"
+            },
+            "notes": "",
+            "created_at": "2026-10-13T11:00:00Z",
+            "updated_at": "2026-10-14T12:30:00Z"
+          },
+          {
+            "id": "apl_01JA0000000000000000003002",
+            "revision": 6,
+            "job_id": "job_01JA0000000000000000003001",
+            "job_snapshot": {
+              "title": "Front desk staff (full-time)",
+              "employer_name": "Example Riverside Hotel Osaka (example)",
+              "url": null,
+              "captured_at": "2026-10-02T09:00:00Z"
+            },
+            "stage": "interviewing",
+            "stage_history": [
+              {
+                "set_by": "member",
+                "stage": "saved",
+                "at": "2026-10-02T09:00:00Z"
+              },
+              {
+                "set_by": "member",
+                "stage": "preparing",
+                "at": "2026-10-03T10:00:00Z"
+              },
+              {
+                "set_by": "system_handoff_click",
+                "stage": "external_handoff_opened",
+                "at": "2026-10-05T08:15:00Z"
+              },
+              {
+                "set_by": "member",
+                "stage": "submitted",
+                "at": "2026-10-05T08:40:00Z"
+              },
+              {
+                "set_by": "member",
+                "stage": "interviewing",
+                "at": "2026-10-11T03:00:00Z"
+              }
+            ],
+            "next_action": {
+              "description": "Second interview at the hotel. Bring a printed résumé.",
+              "due_on": "2026-10-22"
+            },
+            "notes": "First interview was in Japanese and English. They asked how often I can do night shifts.",
+            "created_at": "2026-10-02T09:00:00Z",
+            "updated_at": "2026-10-11T03:00:00Z"
+          },
+          {
+            "id": "apl_01JA0000000000000000003003",
+            "revision": 1,
+            "job_id": null,
+            "job_snapshot": {
+              "title": "Delivery driver (light van)",
+              "employer_name": "Example Express Logistics",
+              "url": "https://jobs-board.example/listings/88123",
+              "captured_at": "2026-10-09T06:00:00Z"
+            },
+            "stage": "submitted",
+            "stage_history": [
+              {
+                "set_by": "member",
+                "stage": "submitted",
+                "at": "2026-10-09T06:00:00Z"
+              }
+            ],
+            "next_action": {
+              "description": "Follow up by phone if there is no reply.",
+              "due_on": "2026-10-23"
+            },
+            "notes": "Found on another job board. Asks for a driving licence valid in Japan.",
+            "created_at": "2026-10-09T06:00:00Z",
+            "updated_at": "2026-10-09T06:00:00Z"
+          },
+          {
+            "id": "apl_01JA0000000000000000003004",
+            "revision": 3,
+            "job_id": "job_01JA0000000000000000003003",
+            "job_snapshot": {
+              "title": "Mechanical design engineer (automotive parts)",
+              "employer_name": "Undisclosed client (via Example Career Partners)",
+              "url": null,
+              "captured_at": "2026-09-20T13:00:00Z"
+            },
+            "stage": "preparing",
+            "stage_history": [
+              {
+                "set_by": "member",
+                "stage": "saved",
+                "at": "2026-09-20T13:00:00Z"
+              },
+              {
+                "set_by": "member",
+                "stage": "preparing",
+                "at": "2026-09-22T12:00:00Z"
+              }
+            ],
+            "next_action": {
+              "description": "Update rirekisho (履歴書) and ask the agency who the client company is.",
+              "due_on": "2026-10-25"
+            },
+            "notes": "Listing is marked stale. Check that it is still open before applying.",
+            "created_at": "2026-09-20T13:00:00Z",
+            "updated_at": "2026-10-06T10:00:00Z"
+          }
+        ],
+        "next_cursor": null
+      }
+    },
+    "empty": {
+      "summary": "Member tracks no applications yet",
+      "status": 200,
+      "body": {
+        "items": [],
+        "next_cursor": null
+      }
+    }
+  }
+}

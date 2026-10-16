@@ -1,0 +1,29 @@
+{
+  "operationId": "getProfile",
+  "scenarios": {
+    "default": {
+      "summary": "Public profile with self-declared languages",
+      "status": 200,
+      "body": {
+        "id": "prof_01JA00000000000000000000A1",
+        "display_name": "Aiko",
+        "bio": "Moved to Tokyo for work in 2024. Happy to help with ward-office paperwork questions.",
+        "languages": [
+          { "lang": "en", "proficiency": "native" },
+          { "lang": "ja", "proficiency": "conversational" }
+        ],
+        "joined_at": "2026-10-20T03:12:00Z"
+      }
+    },
+    "minimal": {
+      "summary": "Profile with no bio or languages",
+      "status": 200,
+      "body": { "id": "prof_01JA00000000000000000000B2", "display_name": "Daniel", "bio": null, "languages": [], "joined_at": "2026-10-22T09:40:00Z" }
+    },
+    "not_found": {
+      "summary": "Unknown, deactivated or blocked profile (indistinguishable by design)",
+      "status": 404,
+      "body": { "type": "urn:livingin:problem:not_found", "title": "Not found", "status": 404, "code": "not_found", "request_id": "fixture", "retryable": false }
+    }
+  }
+}

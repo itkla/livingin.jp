@@ -1,0 +1,145 @@
+{
+  "operationId": "getInquiry",
+  "scenarios": {
+    "default": {
+      "summary": "Open thread with one message",
+      "status": 200,
+      "body": {
+        "id": "thr_01JA0000000000000000000001",
+        "listing_id": "lst_01JA0000000000000000000002",
+        "item_ids": [
+          "lsi_01JA0000000000000000000005"
+        ],
+        "seller": {
+          "profile_id": "prof_01JA00000000000000000000B2",
+          "display_name": "Daniel"
+        },
+        "buyer": {
+          "profile_id": "prof_01JA00000000000000000000A1",
+          "display_name": "Aiko"
+        },
+        "state": "open",
+        "pickup_proposal": null,
+        "messages": [
+          {
+            "id": "msg_01JA0000000000000000000001",
+            "author": {
+              "profile_id": "prof_01JA00000000000000000000A1",
+              "display_name": "Aiko"
+            },
+            "body": "Hi! Is the rice cooker still available? I could pick it up this weekend.",
+            "sent_at": "2026-11-04T09:00:00Z"
+          }
+        ],
+        "created_at": "2026-11-04T09:00:00Z"
+      }
+    },
+    "pickup_proposed": {
+      "summary": "Seller proposed a pickup time; meeting point is private",
+      "status": 200,
+      "body": {
+        "id": "thr_01JA0000000000000000000001",
+        "listing_id": "lst_01JA0000000000000000000002",
+        "item_ids": [
+          "lsi_01JA0000000000000000000005"
+        ],
+        "seller": {
+          "profile_id": "prof_01JA00000000000000000000B2",
+          "display_name": "Daniel"
+        },
+        "buyer": {
+          "profile_id": "prof_01JA00000000000000000000A1",
+          "display_name": "Aiko"
+        },
+        "state": "open",
+        "pickup_proposal": {
+          "proposed_by": {
+            "profile_id": "prof_01JA00000000000000000000B2",
+            "display_name": "Daniel"
+          },
+          "starts_at": "2026-11-08T05:00:00Z",
+          "ends_at": "2026-11-08T06:00:00Z",
+          "time_zone": "Asia/Tokyo",
+          "meeting_point": "In front of the building entrance; I will message when I come down.",
+          "status": "proposed"
+        },
+        "messages": [
+          {
+            "id": "msg_01JA0000000000000000000001",
+            "author": {
+              "profile_id": "prof_01JA00000000000000000000A1",
+              "display_name": "Aiko"
+            },
+            "body": "Hi! Is the rice cooker still available? I could pick it up this weekend.",
+            "sent_at": "2026-11-04T09:00:00Z"
+          },
+          {
+            "id": "msg_01JA0000000000000000000002",
+            "author": {
+              "profile_id": "prof_01JA00000000000000000000B2",
+              "display_name": "Daniel"
+            },
+            "body": "Yes! Does Saturday 2–3pm work?",
+            "sent_at": "2026-11-04T11:30:00Z"
+          }
+        ],
+        "created_at": "2026-11-04T09:00:00Z"
+      }
+    },
+    "completed": {
+      "summary": "Participants reported the handover complete",
+      "status": 200,
+      "body": {
+        "id": "thr_01JA0000000000000000000001",
+        "listing_id": "lst_01JA0000000000000000000002",
+        "item_ids": [
+          "lsi_01JA0000000000000000000005"
+        ],
+        "seller": {
+          "profile_id": "prof_01JA00000000000000000000B2",
+          "display_name": "Daniel"
+        },
+        "buyer": {
+          "profile_id": "prof_01JA00000000000000000000A1",
+          "display_name": "Aiko"
+        },
+        "state": "completed",
+        "pickup_proposal": {
+          "proposed_by": {
+            "profile_id": "prof_01JA00000000000000000000B2",
+            "display_name": "Daniel"
+          },
+          "starts_at": "2026-11-08T05:00:00Z",
+          "ends_at": "2026-11-08T06:00:00Z",
+          "time_zone": "Asia/Tokyo",
+          "meeting_point": "In front of the building entrance; I will message when I come down.",
+          "status": "accepted"
+        },
+        "messages": [
+          {
+            "id": "msg_01JA0000000000000000000001",
+            "author": {
+              "profile_id": "prof_01JA00000000000000000000A1",
+              "display_name": "Aiko"
+            },
+            "body": "Hi! Is the rice cooker still available? I could pick it up this weekend.",
+            "sent_at": "2026-11-04T09:00:00Z"
+          }
+        ],
+        "created_at": "2026-11-04T09:00:00Z"
+      }
+    },
+    "not_found": {
+      "summary": "Not a participant, or unknown thread",
+      "status": 404,
+      "body": {
+        "type": "urn:livingin:problem:not_found",
+        "title": "Not found",
+        "status": 404,
+        "code": "not_found",
+        "request_id": "fixture",
+        "retryable": false
+      }
+    }
+  }
+}

@@ -1,0 +1,401 @@
+{
+  "operationId": "getListing",
+  "scenarios": {
+    "default": {
+      "summary": "Single-item listing, anonymous viewer",
+      "status": 200,
+      "body": {
+        "id": "lst_01JA0000000000000000000001",
+        "kind": "single",
+        "title": "Wooden desk",
+        "description": "Sturdy desk, a few scratches on the top. Fits through a standard apartment door. Pickup only.",
+        "items": [
+          {
+            "id": "lsi_01JA0000000000000000000001",
+            "title": "Wooden desk",
+            "category": "furniture",
+            "condition": "good",
+            "dimensions": {
+              "status": "known",
+              "value": {
+                "width_cm": 100,
+                "depth_cm": 50,
+                "height_cm": 72
+              },
+              "basis": "reported"
+            },
+            "price": {
+              "kind": "sale",
+              "price": {
+                "amount": 3000,
+                "currency": "JPY"
+              }
+            },
+            "availability": "available",
+            "photos": [
+              {
+                "media_id": "med_01JA0000000000000000000001",
+                "url": "https://media.livingin.example/derivatives/med_01JA0000000000000000000001/w800.jpg?sig=mock",
+                "width": 800,
+                "height": 600,
+                "alt": "Light wooden desk with one drawer"
+              }
+            ]
+          }
+        ],
+        "availability_summary": "available",
+        "pickup_area": {
+          "locality": {
+            "code": "JP-13-112",
+            "name": {
+              "ja": "世田谷区",
+              "reading": "せたがやく",
+              "romaji": "Setagaya-ku",
+              "en": "Setagaya City"
+            },
+            "level": "municipality"
+          },
+          "label": "Near Sangenjaya Station"
+        },
+        "pickup_window": {
+          "available_from": "2026-11-07",
+          "available_until": "2026-11-22",
+          "time_zone": "Asia/Tokyo"
+        },
+        "seller": {
+          "profile_id": "prof_01JA00000000000000000000A1",
+          "display_name": "Aiko"
+        },
+        "screening": {
+          "method": "automated",
+          "seller_verification": "not_verified"
+        },
+        "published_revision": 2,
+        "published_at": "2026-11-03T02:30:00Z",
+        "expires_at": "2026-11-24T15:00:00Z",
+        "viewer": null
+      }
+    },
+    "signed_in_viewer": {
+      "summary": "Signed-in non-owner who can inquire",
+      "status": 200,
+      "body": {
+        "id": "lst_01JA0000000000000000000001",
+        "kind": "single",
+        "title": "Wooden desk",
+        "description": "Sturdy desk, a few scratches on the top. Fits through a standard apartment door. Pickup only.",
+        "items": [
+          {
+            "id": "lsi_01JA0000000000000000000001",
+            "title": "Wooden desk",
+            "category": "furniture",
+            "condition": "good",
+            "dimensions": {
+              "status": "known",
+              "value": {
+                "width_cm": 100,
+                "depth_cm": 50,
+                "height_cm": 72
+              },
+              "basis": "reported"
+            },
+            "price": {
+              "kind": "sale",
+              "price": {
+                "amount": 3000,
+                "currency": "JPY"
+              }
+            },
+            "availability": "available",
+            "photos": [
+              {
+                "media_id": "med_01JA0000000000000000000001",
+                "url": "https://media.livingin.example/derivatives/med_01JA0000000000000000000001/w800.jpg?sig=mock",
+                "width": 800,
+                "height": 600,
+                "alt": "Light wooden desk with one drawer"
+              }
+            ]
+          }
+        ],
+        "availability_summary": "available",
+        "pickup_area": {
+          "locality": {
+            "code": "JP-13-112",
+            "name": {
+              "ja": "世田谷区",
+              "reading": "せたがやく",
+              "romaji": "Setagaya-ku",
+              "en": "Setagaya City"
+            },
+            "level": "municipality"
+          },
+          "label": "Near Sangenjaya Station"
+        },
+        "pickup_window": {
+          "available_from": "2026-11-07",
+          "available_until": "2026-11-22",
+          "time_zone": "Asia/Tokyo"
+        },
+        "seller": {
+          "profile_id": "prof_01JA00000000000000000000A1",
+          "display_name": "Aiko"
+        },
+        "screening": {
+          "method": "automated",
+          "seller_verification": "not_verified"
+        },
+        "published_revision": 2,
+        "published_at": "2026-11-03T02:30:00Z",
+        "expires_at": "2026-11-24T15:00:00Z",
+        "viewer": {
+          "relation": "other",
+          "can_inquire": true,
+          "existing_inquiry_id": null
+        }
+      }
+    },
+    "owner_viewer": {
+      "summary": "The seller viewing their own public listing",
+      "status": 200,
+      "body": {
+        "id": "lst_01JA0000000000000000000001",
+        "kind": "single",
+        "title": "Wooden desk",
+        "description": "Sturdy desk, a few scratches on the top. Fits through a standard apartment door. Pickup only.",
+        "items": [
+          {
+            "id": "lsi_01JA0000000000000000000001",
+            "title": "Wooden desk",
+            "category": "furniture",
+            "condition": "good",
+            "dimensions": {
+              "status": "known",
+              "value": {
+                "width_cm": 100,
+                "depth_cm": 50,
+                "height_cm": 72
+              },
+              "basis": "reported"
+            },
+            "price": {
+              "kind": "sale",
+              "price": {
+                "amount": 3000,
+                "currency": "JPY"
+              }
+            },
+            "availability": "available",
+            "photos": [
+              {
+                "media_id": "med_01JA0000000000000000000001",
+                "url": "https://media.livingin.example/derivatives/med_01JA0000000000000000000001/w800.jpg?sig=mock",
+                "width": 800,
+                "height": 600,
+                "alt": "Light wooden desk with one drawer"
+              }
+            ]
+          }
+        ],
+        "availability_summary": "available",
+        "pickup_area": {
+          "locality": {
+            "code": "JP-13-112",
+            "name": {
+              "ja": "世田谷区",
+              "reading": "せたがやく",
+              "romaji": "Setagaya-ku",
+              "en": "Setagaya City"
+            },
+            "level": "municipality"
+          },
+          "label": "Near Sangenjaya Station"
+        },
+        "pickup_window": {
+          "available_from": "2026-11-07",
+          "available_until": "2026-11-22",
+          "time_zone": "Asia/Tokyo"
+        },
+        "seller": {
+          "profile_id": "prof_01JA00000000000000000000A1",
+          "display_name": "Aiko"
+        },
+        "screening": {
+          "method": "automated",
+          "seller_verification": "not_verified"
+        },
+        "published_revision": 2,
+        "published_at": "2026-11-03T02:30:00Z",
+        "expires_at": "2026-11-24T15:00:00Z",
+        "viewer": {
+          "relation": "owner",
+          "can_inquire": false,
+          "existing_inquiry_id": null
+        }
+      }
+    },
+    "bundle_partially_sold": {
+      "summary": "Move-out bundle with sold, reserved and available items",
+      "status": 200,
+      "body": {
+        "id": "lst_01JA0000000000000000000002",
+        "kind": "bundle",
+        "title": "Move-out sale: appliances and kitchen",
+        "description": "Leaving Japan at the end of November. Everything must go; free items are first come, first served.",
+        "items": [
+          {
+            "id": "lsi_01JA0000000000000000000002",
+            "title": "Two-door refrigerator (138 L)",
+            "category": "appliances",
+            "condition": "good",
+            "dimensions": {
+              "status": "known",
+              "value": {
+                "width_cm": 48,
+                "depth_cm": 55,
+                "height_cm": 120
+              },
+              "basis": "reported"
+            },
+            "price": {
+              "kind": "sale",
+              "price": {
+                "amount": 5000,
+                "currency": "JPY"
+              }
+            },
+            "availability": "sold",
+            "photos": [
+              {
+                "media_id": "med_01JA0000000000000000000002",
+                "url": "https://media.livingin.example/derivatives/med_01JA0000000000000000000002/w800.jpg?sig=mock",
+                "width": 800,
+                "height": 600,
+                "alt": "White two-door refrigerator"
+              }
+            ]
+          },
+          {
+            "id": "lsi_01JA0000000000000000000003",
+            "title": "Washing machine (5 kg)",
+            "category": "appliances",
+            "condition": "good",
+            "dimensions": {
+              "status": "known",
+              "value": {
+                "width_cm": 56,
+                "depth_cm": 53,
+                "height_cm": 89
+              },
+              "basis": "reported"
+            },
+            "price": {
+              "kind": "sale",
+              "price": {
+                "amount": 4000,
+                "currency": "JPY"
+              }
+            },
+            "availability": "reserved",
+            "photos": [
+              {
+                "media_id": "med_01JA0000000000000000000003",
+                "url": "https://media.livingin.example/derivatives/med_01JA0000000000000000000003/w800.jpg?sig=mock",
+                "width": 800,
+                "height": 600,
+                "alt": "Top-loading washing machine"
+              }
+            ]
+          },
+          {
+            "id": "lsi_01JA0000000000000000000004",
+            "title": "Futon set",
+            "category": "bedding_textiles",
+            "condition": "like_new",
+            "dimensions": {
+              "status": "unknown"
+            },
+            "price": {
+              "kind": "free"
+            },
+            "availability": "available",
+            "photos": []
+          },
+          {
+            "id": "lsi_01JA0000000000000000000005",
+            "title": "Rice cooker",
+            "category": "kitchen",
+            "condition": "fair",
+            "dimensions": {
+              "status": "unknown"
+            },
+            "price": {
+              "kind": "sale",
+              "price": {
+                "amount": 500,
+                "currency": "JPY"
+              }
+            },
+            "availability": "available",
+            "photos": [
+              {
+                "media_id": "med_01JA0000000000000000000005",
+                "url": "https://media.livingin.example/derivatives/med_01JA0000000000000000000005/w800.jpg?sig=mock",
+                "width": 800,
+                "height": 600,
+                "alt": "Small rice cooker"
+              }
+            ]
+          }
+        ],
+        "availability_summary": "partially_available",
+        "pickup_area": {
+          "locality": {
+            "code": "JP-13-112",
+            "name": {
+              "ja": "世田谷区",
+              "reading": "せたがやく",
+              "romaji": "Setagaya-ku",
+              "en": "Setagaya City"
+            },
+            "level": "municipality"
+          },
+          "label": "Near Shimokitazawa Station"
+        },
+        "pickup_window": {
+          "available_from": "2026-11-02",
+          "available_until": "2026-11-22",
+          "time_zone": "Asia/Tokyo"
+        },
+        "seller": {
+          "profile_id": "prof_01JA00000000000000000000B2",
+          "display_name": "Daniel"
+        },
+        "screening": {
+          "method": "automated_and_human",
+          "seller_verification": "not_verified"
+        },
+        "published_revision": 1,
+        "published_at": "2026-11-02T10:00:00Z",
+        "expires_at": "2026-11-22T15:00:00Z",
+        "viewer": {
+          "relation": "other",
+          "can_inquire": true,
+          "existing_inquiry_id": "thr_01JA0000000000000000000001"
+        }
+      }
+    },
+    "not_found": {
+      "summary": "Unpublished, rejected, expired, blocked or unknown (indistinguishable by design)",
+      "status": 404,
+      "body": {
+        "type": "urn:livingin:problem:not_found",
+        "title": "Not found",
+        "status": 404,
+        "code": "not_found",
+        "request_id": "fixture",
+        "retryable": false
+      }
+    }
+  }
+}

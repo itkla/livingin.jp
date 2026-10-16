@@ -1,0 +1,34 @@
+{
+  "operationId": "getOrganization",
+  "scenarios": {
+    "default": {
+      "summary": "Verified nonprofit",
+      "status": 200,
+      "body": {
+        "id": "org_01JA0000000000000000000001",
+        "kind": "nonprofit",
+        "name": { "ja": "さくら国際交流センター（例）", "en": "Sakura International Exchange Center (example)" },
+        "verification": "verified",
+        "website": "https://sakura-exchange.example",
+        "description": "Runs Japanese conversation circles and newcomer orientation sessions."
+      }
+    },
+    "unverified_business": {
+      "summary": "Unverified business with an English name only",
+      "status": 200,
+      "body": {
+        "id": "org_01JA0000000000000000000002",
+        "kind": "business",
+        "name": { "ja": null, "en": "Example Movers" },
+        "verification": "unverified",
+        "website": null,
+        "description": null
+      }
+    },
+    "not_found": {
+      "summary": "Unknown organization",
+      "status": 404,
+      "body": { "type": "urn:livingin:problem:not_found", "title": "Not found", "status": 404, "code": "not_found", "request_id": "fixture", "retryable": false }
+    }
+  }
+}

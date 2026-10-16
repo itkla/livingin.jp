@@ -1,0 +1,114 @@
+{
+  "operationId": "updateMyListing",
+  "current_etag": "\"2\"",
+  "scenarios": {
+    "default": {
+      "summary": "Edit creates revision 3; published revision 2 stays public",
+      "status": 200,
+      "headers": {
+        "ETag": "\"3\""
+      },
+      "body": {
+        "id": "lst_01JA0000000000000000000001",
+        "revision": 3,
+        "kind": "single",
+        "title": "Wooden desk",
+        "description": "Sturdy desk. Price lowered. Pickup only.",
+        "items": [
+          {
+            "id": "lsi_01JA0000000000000000000001",
+            "title": "Wooden desk",
+            "category": "furniture",
+            "condition": "good",
+            "dimensions": {
+              "status": "known",
+              "value": {
+                "width_cm": 100,
+                "depth_cm": 50,
+                "height_cm": 72
+              },
+              "basis": "reported"
+            },
+            "price": {
+              "kind": "sale",
+              "price": {
+                "amount": 2000,
+                "currency": "JPY"
+              }
+            },
+            "availability": "available",
+            "photos": [
+              {
+                "media_id": "med_01JA0000000000000000000001",
+                "state": "ready",
+                "url": "https://media.livingin.example/owner/med_01JA0000000000000000000001/w800.jpg?sig=mock"
+              }
+            ]
+          }
+        ],
+        "pickup_area": {
+          "locality": {
+            "code": "JP-13-112",
+            "name": {
+              "ja": "世田谷区",
+              "reading": "せたがやく",
+              "romaji": "Setagaya-ku",
+              "en": "Setagaya City"
+            },
+            "level": "municipality"
+          },
+          "label": "Near Sangenjaya Station"
+        },
+        "pickup_window": {
+          "available_from": "2026-11-07",
+          "available_until": "2026-11-22",
+          "time_zone": "Asia/Tokyo"
+        },
+        "publication": {
+          "state": "approved",
+          "revision": 2,
+          "decision_id": "mod_01JA0000000000000000000001",
+          "decided_at": "2026-11-03T02:12:00Z",
+          "release": {
+            "status": "published",
+            "published_at": "2026-11-03T02:30:00Z"
+          }
+        },
+        "published_revision": 2,
+        "has_unsubmitted_changes": true,
+        "expires_at": "2026-11-24T15:00:00Z",
+        "created_at": "2026-11-03T01:00:00Z",
+        "updated_at": "2026-11-05T08:00:00Z"
+      }
+    },
+    "not_found": {
+      "summary": "Not the owner, or unknown listing",
+      "status": 404,
+      "body": {
+        "type": "urn:livingin:problem:not_found",
+        "title": "Not found",
+        "status": 404,
+        "code": "not_found",
+        "request_id": "fixture",
+        "retryable": false
+      }
+    },
+    "revision_conflict": {
+      "summary": "Edited from a stale copy (If-Match does not match)",
+      "status": 412,
+      "headers": {
+        "ETag": "\"2\""
+      },
+      "body": {
+        "type": "urn:livingin:problem:revision_conflict",
+        "title": "Revision conflict",
+        "status": 412,
+        "code": "revision_conflict",
+        "request_id": "fixture",
+        "retryable": false,
+        "current_revision": 2,
+        "detail": "The resource changed since you loaded it. Reload and reapply your edit."
+      }
+    }
+  }
+}

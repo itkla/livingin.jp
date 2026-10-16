@@ -1,0 +1,37 @@
+{
+  "operationId": "getMyAccount",
+  "scenarios": {
+    "default": {
+      "summary": "Member with one followed locality",
+      "status": 200,
+      "headers": { "ETag": "\"2\"" },
+      "body": {
+        "id": "acct_01JA00000000000000000000A1",
+        "profile_id": "prof_01JA00000000000000000000A1",
+        "email": "aiko@example.com",
+        "status": "active",
+        "preferred_lang": "en",
+        "followed_localities": [
+          { "code": "JP-13-112", "name": { "ja": "世田谷区", "reading": "せたがやく", "romaji": "Setagaya-ku", "en": "Setagaya City" }, "level": "municipality" }
+        ],
+        "created_at": "2026-10-20T03:12:00Z",
+        "revision": 2
+      }
+    },
+    "no_location": {
+      "summary": "Member who has not chosen any location",
+      "status": 200,
+      "headers": { "ETag": "\"1\"" },
+      "body": {
+        "id": "acct_01JA00000000000000000000B2",
+        "profile_id": "prof_01JA00000000000000000000B2",
+        "email": "daniel@example.com",
+        "status": "active",
+        "preferred_lang": "ja",
+        "followed_localities": [],
+        "created_at": "2026-10-22T09:40:00Z",
+        "revision": 1
+      }
+    }
+  }
+}

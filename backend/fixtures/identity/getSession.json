@@ -1,0 +1,49 @@
+{
+  "operationId": "getSession",
+  "scenarios": {
+    "default": {
+      "summary": "Signed-in member",
+      "status": 200,
+      "body": {
+        "state": "authenticated",
+        "account_id": "acct_01JA00000000000000000000A1",
+        "profile": { "profile_id": "prof_01JA00000000000000000000A1", "display_name": "Aiko" },
+        "roles": ["member"],
+        "restricted": false,
+        "csrf_token": "mock-csrf-token-member",
+        "expires_at": "2026-11-16T00:00:00Z"
+      }
+    },
+    "anonymous": {
+      "summary": "No session",
+      "status": 200,
+      "body": { "state": "anonymous" }
+    },
+    "restricted": {
+      "summary": "Signed in, but a moderation restriction blocks changes",
+      "status": 200,
+      "body": {
+        "state": "authenticated",
+        "account_id": "acct_01JA00000000000000000000E5",
+        "profile": { "profile_id": "prof_01JA00000000000000000000E5", "display_name": "Ren" },
+        "roles": ["member"],
+        "restricted": true,
+        "csrf_token": "mock-csrf-token-restricted",
+        "expires_at": "2026-11-16T00:00:00Z"
+      }
+    },
+    "operator": {
+      "summary": "Signed-in operator",
+      "status": 200,
+      "body": {
+        "state": "authenticated",
+        "account_id": "acct_01JA00000000000000000000D4",
+        "profile": { "profile_id": "prof_01JA00000000000000000000D4", "display_name": "Operator Kenta" },
+        "roles": ["member", "operator"],
+        "restricted": false,
+        "csrf_token": "mock-csrf-token-operator",
+        "expires_at": "2026-11-16T00:00:00Z"
+      }
+    }
+  }
+}

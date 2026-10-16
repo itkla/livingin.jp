@@ -1,0 +1,96 @@
+{
+  "operationId": "setMyListingItemAvailability",
+  "scenarios": {
+    "default": {
+      "summary": "Item marked sold; revision and publication unchanged",
+      "status": 200,
+      "headers": {
+        "ETag": "\"2\""
+      },
+      "body": {
+        "id": "lst_01JA0000000000000000000001",
+        "revision": 2,
+        "kind": "single",
+        "title": "Wooden desk",
+        "description": "Sturdy desk, a few scratches on the top. Fits through a standard apartment door. Pickup only.",
+        "items": [
+          {
+            "id": "lsi_01JA0000000000000000000001",
+            "title": "Wooden desk",
+            "category": "furniture",
+            "condition": "good",
+            "dimensions": {
+              "status": "known",
+              "value": {
+                "width_cm": 100,
+                "depth_cm": 50,
+                "height_cm": 72
+              },
+              "basis": "reported"
+            },
+            "price": {
+              "kind": "sale",
+              "price": {
+                "amount": 3000,
+                "currency": "JPY"
+              }
+            },
+            "availability": "sold",
+            "photos": [
+              {
+                "media_id": "med_01JA0000000000000000000001",
+                "state": "ready",
+                "url": "https://media.livingin.example/owner/med_01JA0000000000000000000001/w800.jpg?sig=mock"
+              }
+            ]
+          }
+        ],
+        "pickup_area": {
+          "locality": {
+            "code": "JP-13-112",
+            "name": {
+              "ja": "世田谷区",
+              "reading": "せたがやく",
+              "romaji": "Setagaya-ku",
+              "en": "Setagaya City"
+            },
+            "level": "municipality"
+          },
+          "label": "Near Sangenjaya Station"
+        },
+        "pickup_window": {
+          "available_from": "2026-11-07",
+          "available_until": "2026-11-22",
+          "time_zone": "Asia/Tokyo"
+        },
+        "publication": {
+          "state": "approved",
+          "revision": 2,
+          "decision_id": "mod_01JA0000000000000000000001",
+          "decided_at": "2026-11-03T02:12:00Z",
+          "release": {
+            "status": "published",
+            "published_at": "2026-11-03T02:30:00Z"
+          }
+        },
+        "published_revision": 2,
+        "has_unsubmitted_changes": false,
+        "expires_at": "2026-11-24T15:00:00Z",
+        "created_at": "2026-11-03T01:00:00Z",
+        "updated_at": "2026-11-08T06:00:00Z"
+      }
+    },
+    "not_found": {
+      "summary": "Not the owner, or unknown listing/item",
+      "status": 404,
+      "body": {
+        "type": "urn:livingin:problem:not_found",
+        "title": "Not found",
+        "status": 404,
+        "code": "not_found",
+        "request_id": "fixture",
+        "retryable": false
+      }
+    }
+  }
+}

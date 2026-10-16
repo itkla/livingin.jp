@@ -1,0 +1,189 @@
+{
+  "operationId": "listGroups",
+  "scenarios": {
+    "default": {
+      "summary": "Listed groups, by name: national, online chapter, local chapter, sensitive (hidden count) and local interest groups",
+      "status": 200,
+      "body": {
+        "items": [
+          {
+            "id": "grp_01JA0000000000000000002007",
+            "name": "Kansai Weekend Hiking (example)",
+            "tagline": "Day hikes around Osaka and the wider Kansai area.",
+            "kind": "interest",
+            "languages": [
+              "en",
+              "ja"
+            ],
+            "scope": {
+              "kind": "local",
+              "locality": {
+                "code": "JP-27",
+                "name": {
+                  "ja": "大阪府",
+                  "reading": "おおさかふ",
+                  "romaji": "Osaka-fu",
+                  "en": "Osaka Prefecture"
+                },
+                "level": "prefecture"
+              }
+            },
+            "discoverability": "listed",
+            "join_policy": "approval",
+            "sensitive": false,
+            "member_count": {
+              "status": "shown",
+              "count": 132
+            },
+            "parent": null,
+            "chapter_count": 0
+          },
+          {
+            "id": "grp_01JA0000000000000000002003",
+            "name": "Portuguese for Japanese Speakers (example)",
+            "tagline": "An online chapter for people learning Portuguese, in Japanese and Portuguese.",
+            "kind": "language",
+            "languages": [
+              "ja",
+              "pt"
+            ],
+            "scope": {
+              "kind": "online"
+            },
+            "discoverability": "listed",
+            "join_policy": "open",
+            "sensitive": false,
+            "member_count": {
+              "status": "shown",
+              "count": 37
+            },
+            "parent": {
+              "id": "grp_01JA0000000000000000002001",
+              "name": "Portuguese Speakers in Japan (example)"
+            },
+            "chapter_count": 0
+          },
+          {
+            "id": "grp_01JA0000000000000000002001",
+            "name": "Portuguese Speakers in Japan (example)",
+            "tagline": "Conversation, questions and meetups in Portuguese. Japanese speakers welcome.",
+            "kind": "language",
+            "languages": [
+              "pt",
+              "ja"
+            ],
+            "scope": {
+              "kind": "national"
+            },
+            "discoverability": "listed",
+            "join_policy": "open",
+            "sensitive": false,
+            "member_count": {
+              "status": "shown",
+              "count": 248
+            },
+            "parent": null,
+            "chapter_count": 2
+          },
+          {
+            "id": "grp_01JA0000000000000000002002",
+            "name": "Portuguese Speakers in Japan: Hamamatsu (example)",
+            "tagline": "Local chapter for meetups and city questions in Hamamatsu.",
+            "kind": "language",
+            "languages": [
+              "pt",
+              "ja"
+            ],
+            "scope": {
+              "kind": "local",
+              "locality": {
+                "code": "JP-22-130",
+                "name": {
+                  "ja": "浜松市",
+                  "reading": "はままつし",
+                  "romaji": "Hamamatsu-shi",
+                  "en": "Hamamatsu City"
+                },
+                "level": "municipality"
+              }
+            },
+            "discoverability": "listed",
+            "join_policy": "open",
+            "sensitive": false,
+            "member_count": {
+              "status": "shown",
+              "count": 61
+            },
+            "parent": {
+              "id": "grp_01JA0000000000000000002001",
+              "name": "Portuguese Speakers in Japan (example)"
+            },
+            "chapter_count": 0
+          },
+          {
+            "id": "grp_01JA0000000000000000002006",
+            "name": "Separation and Divorce Support (example)",
+            "tagline": "A private, moderated space for residents going through separation or divorce in Japan.",
+            "kind": "life_circumstance",
+            "languages": [
+              "en",
+              "ja"
+            ],
+            "scope": {
+              "kind": "online"
+            },
+            "discoverability": "listed",
+            "join_policy": "approval",
+            "sensitive": true,
+            "member_count": {
+              "status": "hidden"
+            },
+            "parent": null,
+            "chapter_count": 0
+          },
+          {
+            "id": "grp_01JA0000000000000000002004",
+            "name": "Setagaya Board Game Nights (example)",
+            "tagline": "Monthly board game evenings in Setagaya. Beginners and all languages welcome.",
+            "kind": "interest",
+            "languages": [
+              "en",
+              "ja"
+            ],
+            "scope": {
+              "kind": "local",
+              "locality": {
+                "code": "JP-13-112",
+                "name": {
+                  "ja": "世田谷区",
+                  "reading": "せたがやく",
+                  "romaji": "Setagaya-ku",
+                  "en": "Setagaya City"
+                },
+                "level": "municipality"
+              }
+            },
+            "discoverability": "listed",
+            "join_policy": "approval",
+            "sensitive": false,
+            "member_count": {
+              "status": "shown",
+              "count": 24
+            },
+            "parent": null,
+            "chapter_count": 0
+          }
+        ],
+        "next_cursor": "bW9jay1jdXJzb3ItMg"
+      }
+    },
+    "empty": {
+      "summary": "No listed groups match the search",
+      "status": 200,
+      "body": {
+        "items": [],
+        "next_cursor": null
+      }
+    }
+  }
+}

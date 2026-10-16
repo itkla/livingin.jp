@@ -1,0 +1,506 @@
+{
+  "operationId": "listSafetyResources",
+  "scenarios": {
+    "default": {
+      "summary": "National, prefectural and municipal resources for a supported municipality",
+      "status": 200,
+      "body": {
+        "coverage": {
+          "status": "supported"
+        },
+        "items": [
+          {
+            "id": "sfr_01JA0000000000000000005102",
+            "kind": "official_alert_service",
+            "title": "Current warnings and advisories (example)",
+            "official_name": {
+              "ja": "気象警報・注意報（例）",
+              "reading": "きしょうけいほう・ちゅういほう",
+              "en": "Weather warnings and advisories"
+            },
+            "summary": "The issuer’s own map of warnings and advisories in effect. This is the authoritative place to check the current situation.",
+            "publisher": "Example Meteorological Agency",
+            "authority": "official",
+            "url": "https://met.example/warnings/map",
+            "locality": {
+              "code": "JP",
+              "name": {
+                "ja": "日本",
+                "reading": "にほん",
+                "romaji": "Nihon",
+                "en": "Japan"
+              },
+              "level": "country"
+            },
+            "languages": [
+              "ja",
+              "en"
+            ],
+            "review": {
+              "status": "reviewed",
+              "reviewed_at": "2026-09-20T02:00:00Z",
+              "next_review_due": "2027-03-20",
+              "reviewer_role": "editor"
+            },
+            "last_checked": {
+              "state": "current",
+              "checked_at": "2026-10-20T00:00:00Z",
+              "stale_after": "2026-10-27T00:00:00Z"
+            }
+          },
+          {
+            "id": "sfr_01JA0000000000000000005101",
+            "kind": "official_alert_service",
+            "title": "Official disaster alert app (example)",
+            "official_name": {
+              "ja": "防災情報アプリ（例）",
+              "reading": "ぼうさいじょうほうあぷり",
+              "en": "Disaster information app"
+            },
+            "summary": "A government-run app that pushes official warnings and evacuation information. Use it for emergency alerts; livingin.jp is not an alert service.",
+            "publisher": "Example Disaster Management Agency",
+            "authority": "official",
+            "url": "https://bousai.example/app",
+            "locality": {
+              "code": "JP",
+              "name": {
+                "ja": "日本",
+                "reading": "にほん",
+                "romaji": "Nihon",
+                "en": "Japan"
+              },
+              "level": "country"
+            },
+            "languages": [
+              "ja",
+              "en",
+              "zh-Hans",
+              "zh-Hant",
+              "ko",
+              "vi",
+              "pt",
+              "es"
+            ],
+            "review": {
+              "status": "reviewed",
+              "reviewed_at": "2026-09-20T02:00:00Z",
+              "next_review_due": "2027-03-20",
+              "reviewer_role": "editor"
+            },
+            "last_checked": {
+              "state": "current",
+              "checked_at": "2026-10-20T00:00:00Z",
+              "stale_after": "2026-10-27T00:00:00Z"
+            }
+          },
+          {
+            "id": "sfr_01JA0000000000000000005103",
+            "kind": "multilingual_support",
+            "title": "Multilingual disaster information portal (example)",
+            "official_name": null,
+            "summary": "An official portal with disaster information and preparedness basics in several languages.",
+            "publisher": "Example Disaster Management Agency",
+            "authority": "official",
+            "url": "https://bousai.example/multilingual",
+            "locality": {
+              "code": "JP",
+              "name": {
+                "ja": "日本",
+                "reading": "にほん",
+                "romaji": "Nihon",
+                "en": "Japan"
+              },
+              "level": "country"
+            },
+            "languages": [
+              "en",
+              "zh-Hans",
+              "ko",
+              "vi",
+              "ne",
+              "id",
+              "tl",
+              "th",
+              "pt",
+              "es"
+            ],
+            "review": {
+              "status": "reviewed",
+              "reviewed_at": "2026-09-20T02:00:00Z",
+              "next_review_due": "2027-03-20",
+              "reviewer_role": "editor"
+            },
+            "last_checked": {
+              "state": "current",
+              "checked_at": "2026-10-20T00:00:00Z",
+              "stale_after": "2026-10-27T00:00:00Z"
+            }
+          },
+          {
+            "id": "sfr_01JA0000000000000000005104",
+            "kind": "preparedness_guide",
+            "title": "Preparing for heavy rain and typhoons",
+            "official_name": null,
+            "summary": "What heavy-rain warnings mean, what to prepare at home and how to find your municipality’s evacuation information. Written by livingin.jp from official guidance.",
+            "publisher": "livingin.jp",
+            "authority": "editorial",
+            "url": "https://livingin.example/safety/guides/heavy-rain",
+            "locality": {
+              "code": "JP",
+              "name": {
+                "ja": "日本",
+                "reading": "にほん",
+                "romaji": "Nihon",
+                "en": "Japan"
+              },
+              "level": "country"
+            },
+            "languages": [
+              "en",
+              "ja"
+            ],
+            "review": {
+              "status": "reviewed",
+              "reviewed_at": "2026-09-25T04:00:00Z",
+              "next_review_due": "2027-03-25",
+              "reviewer_role": "subject_expert"
+            },
+            "last_checked": {
+              "state": "current",
+              "checked_at": "2026-10-20T00:00:00Z",
+              "stale_after": "2026-10-27T00:00:00Z"
+            }
+          },
+          {
+            "id": "sfr_01JA0000000000000000005105",
+            "kind": "emergency_contact",
+            "title": "Emergency numbers and multilingual helplines in Tokyo (example)",
+            "official_name": {
+              "ja": "緊急連絡先・多言語相談窓口（例）",
+              "reading": "きんきゅうれんらくさき・たげんごそうだんまどぐち",
+              "en": "Emergency contacts and multilingual consultation"
+            },
+            "summary": "The prefecture’s page listing police, fire and ambulance numbers and the multilingual helplines it runs.",
+            "publisher": "Example Prefectural Government",
+            "authority": "official",
+            "url": "https://pref.example/bousai/contacts",
+            "locality": {
+              "code": "JP-13",
+              "name": {
+                "ja": "東京都",
+                "reading": "とうきょうと",
+                "romaji": "Tōkyō-to",
+                "en": "Tokyo"
+              },
+              "level": "prefecture"
+            },
+            "languages": [
+              "ja",
+              "en",
+              "zh-Hans",
+              "ko"
+            ],
+            "review": {
+              "status": "reviewed",
+              "reviewed_at": "2026-09-22T02:00:00Z",
+              "next_review_due": "2027-03-22",
+              "reviewer_role": "editor"
+            },
+            "last_checked": {
+              "state": "current",
+              "checked_at": "2026-10-19T00:00:00Z",
+              "stale_after": "2026-10-26T00:00:00Z"
+            }
+          },
+          {
+            "id": "sfr_01JA0000000000000000005106",
+            "kind": "hazard_map",
+            "title": "Setagaya flood and landslide hazard map (example)",
+            "official_name": {
+              "ja": "洪水・土砂災害ハザードマップ（例）",
+              "reading": "こうずい・どしゃさいがいはざーどまっぷ",
+              "en": "Flood and landslide hazard map"
+            },
+            "summary": "The city’s official map of expected flood depths and landslide warning zones. Check it before choosing where to go in heavy rain.",
+            "publisher": "Example City Disaster Prevention Division",
+            "authority": "official",
+            "url": "https://city.example/bousai/hazard-map",
+            "locality": {
+              "code": "JP-13-112",
+              "name": {
+                "ja": "世田谷区",
+                "reading": "せたがやく",
+                "romaji": "Setagaya-ku",
+                "en": "Setagaya City"
+              },
+              "level": "municipality"
+            },
+            "languages": [
+              "ja",
+              "en"
+            ],
+            "review": {
+              "status": "reviewed",
+              "reviewed_at": "2026-09-22T02:00:00Z",
+              "next_review_due": "2027-03-22",
+              "reviewer_role": "editor"
+            },
+            "last_checked": {
+              "state": "current",
+              "checked_at": "2026-10-19T00:00:00Z",
+              "stale_after": "2026-10-26T00:00:00Z"
+            }
+          },
+          {
+            "id": "sfr_01JA0000000000000000005107",
+            "kind": "evacuation_information",
+            "title": "Setagaya evacuation information (example)",
+            "official_name": {
+              "ja": "避難情報（例）",
+              "reading": "ひなんじょうほう",
+              "en": "Evacuation information"
+            },
+            "summary": "Where the city publishes evacuation instructions and its list of designated evacuation sites. livingin.jp does not report whether a site is open; check this page.",
+            "publisher": "Example City Disaster Prevention Division",
+            "authority": "official",
+            "url": "https://city.example/bousai/evacuation",
+            "locality": {
+              "code": "JP-13-112",
+              "name": {
+                "ja": "世田谷区",
+                "reading": "せたがやく",
+                "romaji": "Setagaya-ku",
+                "en": "Setagaya City"
+              },
+              "level": "municipality"
+            },
+            "languages": [
+              "ja",
+              "en",
+              "zh-Hans",
+              "ko"
+            ],
+            "review": {
+              "status": "reviewed",
+              "reviewed_at": "2026-09-22T02:00:00Z",
+              "next_review_due": "2027-03-22",
+              "reviewer_role": "editor"
+            },
+            "last_checked": {
+              "state": "current",
+              "checked_at": "2026-10-19T00:00:00Z",
+              "stale_after": "2026-10-26T00:00:00Z"
+            }
+          }
+        ],
+        "next_cursor": null
+      }
+    },
+    "empty": {
+      "summary": "Supported locality where no resources match the filters",
+      "status": 200,
+      "body": {
+        "coverage": {
+          "status": "supported"
+        },
+        "items": [],
+        "next_cursor": null
+      }
+    },
+    "unsupported_locality": {
+      "summary": "Local resources not maintained; national resources still listed because they apply everywhere",
+      "status": 200,
+      "body": {
+        "coverage": {
+          "status": "unsupported",
+          "reason_code": "local_resources_not_maintained",
+          "explanation": "livingin.jp does not maintain local safety resources for Ogasawara Village yet. National resources that apply everywhere are still listed."
+        },
+        "items": [
+          {
+            "id": "sfr_01JA0000000000000000005102",
+            "kind": "official_alert_service",
+            "title": "Current warnings and advisories (example)",
+            "official_name": {
+              "ja": "気象警報・注意報（例）",
+              "reading": "きしょうけいほう・ちゅういほう",
+              "en": "Weather warnings and advisories"
+            },
+            "summary": "The issuer’s own map of warnings and advisories in effect. This is the authoritative place to check the current situation.",
+            "publisher": "Example Meteorological Agency",
+            "authority": "official",
+            "url": "https://met.example/warnings/map",
+            "locality": {
+              "code": "JP",
+              "name": {
+                "ja": "日本",
+                "reading": "にほん",
+                "romaji": "Nihon",
+                "en": "Japan"
+              },
+              "level": "country"
+            },
+            "languages": [
+              "ja",
+              "en"
+            ],
+            "review": {
+              "status": "reviewed",
+              "reviewed_at": "2026-09-20T02:00:00Z",
+              "next_review_due": "2027-03-20",
+              "reviewer_role": "editor"
+            },
+            "last_checked": {
+              "state": "current",
+              "checked_at": "2026-10-20T00:00:00Z",
+              "stale_after": "2026-10-27T00:00:00Z"
+            }
+          },
+          {
+            "id": "sfr_01JA0000000000000000005101",
+            "kind": "official_alert_service",
+            "title": "Official disaster alert app (example)",
+            "official_name": {
+              "ja": "防災情報アプリ（例）",
+              "reading": "ぼうさいじょうほうあぷり",
+              "en": "Disaster information app"
+            },
+            "summary": "A government-run app that pushes official warnings and evacuation information. Use it for emergency alerts; livingin.jp is not an alert service.",
+            "publisher": "Example Disaster Management Agency",
+            "authority": "official",
+            "url": "https://bousai.example/app",
+            "locality": {
+              "code": "JP",
+              "name": {
+                "ja": "日本",
+                "reading": "にほん",
+                "romaji": "Nihon",
+                "en": "Japan"
+              },
+              "level": "country"
+            },
+            "languages": [
+              "ja",
+              "en",
+              "zh-Hans",
+              "zh-Hant",
+              "ko",
+              "vi",
+              "pt",
+              "es"
+            ],
+            "review": {
+              "status": "reviewed",
+              "reviewed_at": "2026-09-20T02:00:00Z",
+              "next_review_due": "2027-03-20",
+              "reviewer_role": "editor"
+            },
+            "last_checked": {
+              "state": "current",
+              "checked_at": "2026-10-20T00:00:00Z",
+              "stale_after": "2026-10-27T00:00:00Z"
+            }
+          },
+          {
+            "id": "sfr_01JA0000000000000000005103",
+            "kind": "multilingual_support",
+            "title": "Multilingual disaster information portal (example)",
+            "official_name": null,
+            "summary": "An official portal with disaster information and preparedness basics in several languages.",
+            "publisher": "Example Disaster Management Agency",
+            "authority": "official",
+            "url": "https://bousai.example/multilingual",
+            "locality": {
+              "code": "JP",
+              "name": {
+                "ja": "日本",
+                "reading": "にほん",
+                "romaji": "Nihon",
+                "en": "Japan"
+              },
+              "level": "country"
+            },
+            "languages": [
+              "en",
+              "zh-Hans",
+              "ko",
+              "vi",
+              "ne",
+              "id",
+              "tl",
+              "th",
+              "pt",
+              "es"
+            ],
+            "review": {
+              "status": "reviewed",
+              "reviewed_at": "2026-09-20T02:00:00Z",
+              "next_review_due": "2027-03-20",
+              "reviewer_role": "editor"
+            },
+            "last_checked": {
+              "state": "current",
+              "checked_at": "2026-10-20T00:00:00Z",
+              "stale_after": "2026-10-27T00:00:00Z"
+            }
+          },
+          {
+            "id": "sfr_01JA0000000000000000005104",
+            "kind": "preparedness_guide",
+            "title": "Preparing for heavy rain and typhoons",
+            "official_name": null,
+            "summary": "What heavy-rain warnings mean, what to prepare at home and how to find your municipality’s evacuation information. Written by livingin.jp from official guidance.",
+            "publisher": "livingin.jp",
+            "authority": "editorial",
+            "url": "https://livingin.example/safety/guides/heavy-rain",
+            "locality": {
+              "code": "JP",
+              "name": {
+                "ja": "日本",
+                "reading": "にほん",
+                "romaji": "Nihon",
+                "en": "Japan"
+              },
+              "level": "country"
+            },
+            "languages": [
+              "en",
+              "ja"
+            ],
+            "review": {
+              "status": "reviewed",
+              "reviewed_at": "2026-09-25T04:00:00Z",
+              "next_review_due": "2027-03-25",
+              "reviewer_role": "subject_expert"
+            },
+            "last_checked": {
+              "state": "current",
+              "checked_at": "2026-10-20T00:00:00Z",
+              "stale_after": "2026-10-27T00:00:00Z"
+            }
+          }
+        ],
+        "next_cursor": null
+      }
+    },
+    "validation_failed": {
+      "summary": "Unknown resource kind",
+      "status": 400,
+      "body": {
+        "type": "urn:livingin:problem:validation_failed",
+        "title": "Validation failed",
+        "status": 400,
+        "code": "validation_failed",
+        "request_id": "fixture",
+        "retryable": false,
+        "fields": [
+          {
+            "pointer": "/query/kind",
+            "code": "invalid_value",
+            "message": "Invalid option: expected one of \"hazard_map\"|\"evacuation_information\"|\"official_alert_service\"|\"preparedness_guide\"|\"emergency_contact\"|\"multilingual_support\""
+          }
+        ]
+      }
+    }
+  }
+}

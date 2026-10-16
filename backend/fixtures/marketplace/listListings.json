@@ -1,0 +1,134 @@
+{
+  "operationId": "listListings",
+  "scenarios": {
+    "default": {
+      "summary": "Two listings in a pilot locality",
+      "status": 200,
+      "body": {
+        "coverage": {
+          "status": "supported"
+        },
+        "items": [
+          {
+            "id": "lst_01JA0000000000000000000001",
+            "kind": "single",
+            "title": "Wooden desk",
+            "cover_photo": {
+              "media_id": "med_01JA0000000000000000000001",
+              "url": "https://media.livingin.example/derivatives/med_01JA0000000000000000000001/w800.jpg?sig=mock",
+              "width": 800,
+              "height": 600,
+              "alt": "Light wooden desk with one drawer"
+            },
+            "price_summary": {
+              "kind": "fixed",
+              "price": {
+                "amount": 3000,
+                "currency": "JPY"
+              }
+            },
+            "availability_summary": "available",
+            "item_count": 1,
+            "available_item_count": 1,
+            "pickup_area": {
+              "locality": {
+                "code": "JP-13-112",
+                "name": {
+                  "ja": "世田谷区",
+                  "reading": "せたがやく",
+                  "romaji": "Setagaya-ku",
+                  "en": "Setagaya City"
+                },
+                "level": "municipality"
+              },
+              "label": "Near Sangenjaya Station"
+            },
+            "published_at": "2026-11-03T02:30:00Z",
+            "expires_at": "2026-11-24T15:00:00Z"
+          },
+          {
+            "id": "lst_01JA0000000000000000000002",
+            "kind": "bundle",
+            "title": "Move-out sale: appliances and kitchen",
+            "cover_photo": {
+              "media_id": "med_01JA0000000000000000000002",
+              "url": "https://media.livingin.example/derivatives/med_01JA0000000000000000000002/w800.jpg?sig=mock",
+              "width": 800,
+              "height": 600,
+              "alt": "White two-door refrigerator"
+            },
+            "price_summary": {
+              "kind": "mixed_free_and_sale",
+              "max": {
+                "amount": 5000,
+                "currency": "JPY"
+              }
+            },
+            "availability_summary": "partially_available",
+            "item_count": 4,
+            "available_item_count": 2,
+            "pickup_area": {
+              "locality": {
+                "code": "JP-13-112",
+                "name": {
+                  "ja": "世田谷区",
+                  "reading": "せたがやく",
+                  "romaji": "Setagaya-ku",
+                  "en": "Setagaya City"
+                },
+                "level": "municipality"
+              },
+              "label": "Near Shimokitazawa Station"
+            },
+            "published_at": "2026-11-02T10:00:00Z",
+            "expires_at": "2026-11-22T15:00:00Z"
+          }
+        ],
+        "next_cursor": "bW9jay1jdXJzb3ItMg"
+      }
+    },
+    "empty": {
+      "summary": "Supported locality with no matching listings",
+      "status": 200,
+      "body": {
+        "coverage": {
+          "status": "supported"
+        },
+        "items": [],
+        "next_cursor": null
+      }
+    },
+    "unsupported_locality": {
+      "summary": "Locality outside the marketplace pilot (not the same as empty)",
+      "status": 200,
+      "body": {
+        "coverage": {
+          "status": "unsupported",
+          "reason_code": "outside_pilot",
+          "explanation": "The marketplace is only available in pilot areas right now."
+        },
+        "items": [],
+        "next_cursor": null
+      }
+    },
+    "validation_failed": {
+      "summary": "Malformed locality code",
+      "status": 400,
+      "body": {
+        "type": "urn:livingin:problem:validation_failed",
+        "title": "Validation failed",
+        "status": 400,
+        "code": "validation_failed",
+        "request_id": "fixture",
+        "retryable": false,
+        "fields": [
+          {
+            "pointer": "/query/locality",
+            "code": "invalid_format",
+            "message": "Invalid string: must match pattern /^JP-\\d{2}(-\\d{3})?$/"
+          }
+        ]
+      }
+    }
+  }
+}

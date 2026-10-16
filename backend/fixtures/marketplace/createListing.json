@@ -1,0 +1,121 @@
+{
+  "operationId": "createListing",
+  "scenarios": {
+    "default": {
+      "summary": "Draft created at revision 1 (photo still processing)",
+      "status": 201,
+      "headers": {
+        "ETag": "\"1\"",
+        "Location": "/v1/me/listings/lst_01JA0000000000000000000001"
+      },
+      "body": {
+        "id": "lst_01JA0000000000000000000001",
+        "revision": 1,
+        "kind": "single",
+        "title": "Wooden desk",
+        "description": "Sturdy desk, a few scratches on the top. Fits through a standard apartment door. Pickup only.",
+        "items": [
+          {
+            "id": "lsi_01JA0000000000000000000001",
+            "title": "Wooden desk",
+            "category": "furniture",
+            "condition": "good",
+            "dimensions": {
+              "status": "known",
+              "value": {
+                "width_cm": 100,
+                "depth_cm": 50,
+                "height_cm": 72
+              },
+              "basis": "reported"
+            },
+            "price": {
+              "kind": "sale",
+              "price": {
+                "amount": 3000,
+                "currency": "JPY"
+              }
+            },
+            "availability": "available",
+            "photos": [
+              {
+                "media_id": "med_01JA0000000000000000000001",
+                "state": "processing",
+                "url": null
+              }
+            ]
+          }
+        ],
+        "pickup_area": {
+          "locality": {
+            "code": "JP-13-112",
+            "name": {
+              "ja": "世田谷区",
+              "reading": "せたがやく",
+              "romaji": "Setagaya-ku",
+              "en": "Setagaya City"
+            },
+            "level": "municipality"
+          },
+          "label": "Near Sangenjaya Station"
+        },
+        "pickup_window": {
+          "available_from": "2026-11-07",
+          "available_until": "2026-11-22",
+          "time_zone": "Asia/Tokyo"
+        },
+        "publication": {
+          "state": "draft"
+        },
+        "published_revision": null,
+        "has_unsubmitted_changes": true,
+        "expires_at": null,
+        "created_at": "2026-11-03T01:00:00Z",
+        "updated_at": "2026-11-03T01:00:00Z"
+      }
+    },
+    "validation_failed": {
+      "summary": "Missing title and a street-level pickup label",
+      "status": 400,
+      "body": {
+        "type": "urn:livingin:problem:validation_failed",
+        "title": "Validation failed",
+        "status": 400,
+        "code": "validation_failed",
+        "request_id": "fixture",
+        "retryable": false,
+        "fields": [
+          {
+            "pointer": "/body/title",
+            "code": "too_small",
+            "message": "Too small: expected string to have >=1 characters"
+          },
+          {
+            "pointer": "/body/items",
+            "code": "custom",
+            "message": "A single listing has exactly one item"
+          }
+        ]
+      }
+    },
+    "outside_pilot": {
+      "summary": "Pickup locality is not a marketplace pilot locality",
+      "status": 400,
+      "body": {
+        "type": "urn:livingin:problem:validation_failed",
+        "title": "Validation failed",
+        "status": 400,
+        "code": "validation_failed",
+        "request_id": "fixture",
+        "retryable": false,
+        "fields": [
+          {
+            "pointer": "/body/pickup_locality_code",
+            "code": "unsupported_locality",
+            "message": "The marketplace is not available in this locality yet."
+          }
+        ]
+      }
+    }
+  }
+}
