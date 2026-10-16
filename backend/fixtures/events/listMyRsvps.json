@@ -1,0 +1,403 @@
+{
+  "operationId": "listMyRsvps",
+  "scenarios": {
+    "default": {
+      "summary": "My RSVPs: waitlisted, going, pending approval, and going to an event that was later cancelled",
+      "status": 200,
+      "body": {
+        "items": [
+          {
+            "id": "rsv_01JA0000000000000000004207",
+            "event_id": "evt_01JA0000000000000000004121",
+            "state": "waitlisted",
+            "waitlist_position": 2,
+            "offer_expires_at": null,
+            "cancelled_by": null,
+            "created_at": "2026-10-16T04:00:00Z",
+            "updated_at": "2026-10-16T04:00:00Z",
+            "event": {
+              "id": "evt_01JA0000000000000000004121",
+              "series_id": "evs_01JA0000000000000000004002",
+              "title": {
+                "lang": "en",
+                "text": "Thursday evening language exchange (Japanese–English)",
+                "translation": {
+                  "status": "original"
+                }
+              },
+              "timing": {
+                "kind": "timed",
+                "starts_at": "2026-10-22T10:00:00Z",
+                "ends_at": {
+                  "status": "known",
+                  "value": "2026-10-22T11:30:00Z",
+                  "basis": "reported"
+                },
+                "time_zone": "Asia/Tokyo"
+              },
+              "status": {
+                "state": "scheduled"
+              },
+              "confirmation": "confirmed",
+              "format": "in_person",
+              "source_kind": "member",
+              "organizer": {
+                "kind": "member",
+                "profile": {
+                  "profile_id": "prof_01JA00000000000000000000C3",
+                  "display_name": "Mai"
+                }
+              },
+              "participation": {
+                "kind": "rsvp_open"
+              },
+              "capacity": {
+                "kind": "limited",
+                "limit": 12,
+                "going_count": 12,
+                "offered_count": 0,
+                "waitlist_count": 2
+              },
+              "cost": {
+                "status": "known",
+                "value": {
+                  "kind": "fee",
+                  "amount": {
+                    "amount": 300,
+                    "currency": "JPY"
+                  },
+                  "note": "Room fee, paid in cash at the door"
+                },
+                "basis": "reported"
+              },
+              "area": {
+                "locality": {
+                  "code": "JP-13-203",
+                  "name": {
+                    "ja": "武蔵野市",
+                    "reading": "むさしのし",
+                    "romaji": "Musashino-shi",
+                    "en": "Musashino City"
+                  },
+                  "level": "municipality"
+                },
+                "label": "Near Kichijoji Station"
+              }
+            }
+          },
+          {
+            "id": "rsv_01JA0000000000000000004206",
+            "event_id": "evt_01JA0000000000000000004151",
+            "state": "going",
+            "waitlist_position": null,
+            "offer_expires_at": null,
+            "cancelled_by": null,
+            "created_at": "2026-10-10T12:00:00Z",
+            "updated_at": "2026-10-10T12:00:00Z",
+            "event": {
+              "id": "evt_01JA0000000000000000004151",
+              "series_id": null,
+              "title": {
+                "lang": "en",
+                "text": "Online Japanese conversation practice: beginners",
+                "translation": {
+                  "status": "original"
+                }
+              },
+              "timing": {
+                "kind": "timed",
+                "starts_at": "2026-10-28T11:00:00Z",
+                "ends_at": {
+                  "status": "known",
+                  "value": "2026-10-28T12:00:00Z",
+                  "basis": "reported"
+                },
+                "time_zone": "Asia/Tokyo"
+              },
+              "status": {
+                "state": "scheduled"
+              },
+              "confirmation": "confirmed",
+              "format": "online",
+              "source_kind": "group",
+              "organizer": {
+                "kind": "group",
+                "group": {
+                  "id": "grp_01JA0000000000000000004001",
+                  "name": "Japanese Learners Online (example)"
+                }
+              },
+              "participation": {
+                "kind": "rsvp_open"
+              },
+              "capacity": {
+                "kind": "limited",
+                "limit": 20,
+                "going_count": 9,
+                "offered_count": 0,
+                "waitlist_count": 0
+              },
+              "cost": {
+                "status": "known",
+                "value": {
+                  "kind": "free"
+                },
+                "basis": "reported"
+              },
+              "area": null
+            }
+          },
+          {
+            "id": "rsv_01JA0000000000000000004205",
+            "event_id": "evt_01JA0000000000000000004122",
+            "state": "going",
+            "waitlist_position": null,
+            "offer_expires_at": null,
+            "cancelled_by": null,
+            "created_at": "2026-10-08T10:00:00Z",
+            "updated_at": "2026-10-08T10:00:00Z",
+            "event": {
+              "id": "evt_01JA0000000000000000004122",
+              "series_id": "evs_01JA0000000000000000004002",
+              "title": {
+                "lang": "en",
+                "text": "Thursday evening language exchange (Japanese–English)",
+                "translation": {
+                  "status": "original"
+                }
+              },
+              "timing": {
+                "kind": "timed",
+                "starts_at": "2026-10-29T10:00:00Z",
+                "ends_at": {
+                  "status": "known",
+                  "value": "2026-10-29T11:30:00Z",
+                  "basis": "reported"
+                },
+                "time_zone": "Asia/Tokyo"
+              },
+              "status": {
+                "state": "cancelled",
+                "cancelled_at": "2026-10-20T08:00:00Z",
+                "reason": {
+                  "status": "known",
+                  "value": "The organizer is away this week.",
+                  "basis": "reported"
+                }
+              },
+              "confirmation": "confirmed",
+              "format": "in_person",
+              "source_kind": "member",
+              "organizer": {
+                "kind": "member",
+                "profile": {
+                  "profile_id": "prof_01JA00000000000000000000C3",
+                  "display_name": "Mai"
+                }
+              },
+              "participation": {
+                "kind": "rsvp_open"
+              },
+              "capacity": {
+                "kind": "limited",
+                "limit": 12,
+                "going_count": 6,
+                "offered_count": 0,
+                "waitlist_count": 0
+              },
+              "cost": {
+                "status": "known",
+                "value": {
+                  "kind": "fee",
+                  "amount": {
+                    "amount": 300,
+                    "currency": "JPY"
+                  },
+                  "note": "Room fee, paid in cash at the door"
+                },
+                "basis": "reported"
+              },
+              "area": {
+                "locality": {
+                  "code": "JP-13-203",
+                  "name": {
+                    "ja": "武蔵野市",
+                    "reading": "むさしのし",
+                    "romaji": "Musashino-shi",
+                    "en": "Musashino City"
+                  },
+                  "level": "municipality"
+                },
+                "label": "Near Kichijoji Station"
+              }
+            }
+          },
+          {
+            "id": "rsv_01JA0000000000000000004202",
+            "event_id": "evt_01JA0000000000000000004131",
+            "state": "pending_approval",
+            "waitlist_position": null,
+            "offer_expires_at": null,
+            "cancelled_by": null,
+            "created_at": "2026-10-14T06:00:00Z",
+            "updated_at": "2026-10-14T06:00:00Z",
+            "event": {
+              "id": "evt_01JA0000000000000000004131",
+              "series_id": "evs_01JA0000000000000000004003",
+              "title": {
+                "lang": "en",
+                "text": "Newcomer orientation: your first months in Tokyo",
+                "translation": {
+                  "status": "original"
+                }
+              },
+              "timing": {
+                "kind": "timed",
+                "starts_at": "2026-11-07T05:00:00Z",
+                "ends_at": {
+                  "status": "known",
+                  "value": "2026-11-07T07:00:00Z",
+                  "basis": "reported"
+                },
+                "time_zone": "Asia/Tokyo"
+              },
+              "status": {
+                "state": "scheduled"
+              },
+              "confirmation": "confirmed",
+              "format": "hybrid",
+              "source_kind": "organization",
+              "organizer": {
+                "kind": "organization",
+                "organization": {
+                  "id": "org_01JA0000000000000000000001",
+                  "kind": "nonprofit",
+                  "name": {
+                    "ja": "さくら国際交流センター（例）",
+                    "en": "Sakura International Exchange Center (example)"
+                  },
+                  "verification": "verified",
+                  "website": "https://sakura-exchange.example",
+                  "description": "Runs Japanese conversation circles and newcomer orientation sessions."
+                }
+              },
+              "participation": {
+                "kind": "rsvp_approval"
+              },
+              "capacity": {
+                "kind": "limited",
+                "limit": 20,
+                "going_count": 8,
+                "offered_count": 0,
+                "waitlist_count": 0
+              },
+              "cost": {
+                "status": "known",
+                "value": {
+                  "kind": "free"
+                },
+                "basis": "reported"
+              },
+              "area": {
+                "locality": {
+                  "code": "JP-13-104",
+                  "name": {
+                    "ja": "新宿区",
+                    "reading": "しんじゅくく",
+                    "romaji": "Shinjuku-ku",
+                    "en": "Shinjuku City"
+                  },
+                  "level": "municipality"
+                },
+                "label": "Near Takadanobaba Station"
+              }
+            }
+          },
+          {
+            "id": "rsv_01JA0000000000000000004201",
+            "event_id": "evt_01JA0000000000000000004101",
+            "state": "going",
+            "waitlist_position": null,
+            "offer_expires_at": null,
+            "cancelled_by": null,
+            "created_at": "2026-10-16T03:00:00Z",
+            "updated_at": "2026-10-16T03:00:00Z",
+            "event": {
+              "id": "evt_01JA0000000000000000004101",
+              "series_id": null,
+              "title": {
+                "lang": "en",
+                "text": "Autumn hike: Mt. Takao via Trail 6",
+                "translation": {
+                  "status": "original"
+                }
+              },
+              "timing": {
+                "kind": "timed",
+                "starts_at": "2026-11-13T23:30:00Z",
+                "ends_at": {
+                  "status": "known",
+                  "value": "2026-11-14T06:00:00Z",
+                  "basis": "reported"
+                },
+                "time_zone": "Asia/Tokyo"
+              },
+              "status": {
+                "state": "scheduled"
+              },
+              "confirmation": "confirmed",
+              "format": "in_person",
+              "source_kind": "member",
+              "organizer": {
+                "kind": "member",
+                "profile": {
+                  "profile_id": "prof_01JA00000000000000000000C3",
+                  "display_name": "Mai"
+                }
+              },
+              "participation": {
+                "kind": "rsvp_open"
+              },
+              "capacity": {
+                "kind": "limited",
+                "limit": 12,
+                "going_count": 7,
+                "offered_count": 0,
+                "waitlist_count": 0
+              },
+              "cost": {
+                "status": "known",
+                "value": {
+                  "kind": "free"
+                },
+                "basis": "reported"
+              },
+              "area": {
+                "locality": {
+                  "code": "JP-13-201",
+                  "name": {
+                    "ja": "八王子市",
+                    "reading": "はちおうじし",
+                    "romaji": "Hachioji-shi",
+                    "en": "Hachioji City"
+                  },
+                  "level": "municipality"
+                },
+                "label": "Mt. Takao"
+              }
+            }
+          }
+        ],
+        "next_cursor": null
+      }
+    },
+    "empty": {
+      "summary": "No RSVPs",
+      "status": 200,
+      "body": {
+        "items": [],
+        "next_cursor": null
+      }
+    }
+  }
+}

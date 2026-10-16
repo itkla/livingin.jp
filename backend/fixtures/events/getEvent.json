@@ -1,0 +1,1393 @@
+{
+  "operationId": "getEvent",
+  "scenarios": {
+    "default": {
+      "summary": "Member-hosted hike, open RSVP, meeting point (station) differs from venue (trail), organizer-provided requirements; anonymous viewer",
+      "status": 200,
+      "body": {
+        "id": "evt_01JA0000000000000000004101",
+        "series_id": null,
+        "title": {
+          "lang": "en",
+          "text": "Autumn hike: Mt. Takao via Trail 6",
+          "translation": {
+            "status": "original"
+          }
+        },
+        "timing": {
+          "kind": "timed",
+          "starts_at": "2026-11-13T23:30:00Z",
+          "ends_at": {
+            "status": "known",
+            "value": "2026-11-14T06:00:00Z",
+            "basis": "reported"
+          },
+          "time_zone": "Asia/Tokyo"
+        },
+        "status": {
+          "state": "scheduled"
+        },
+        "confirmation": "confirmed",
+        "format": "in_person",
+        "source_kind": "member",
+        "organizer": {
+          "kind": "member",
+          "profile": {
+            "profile_id": "prof_01JA00000000000000000000C3",
+            "display_name": "Mai"
+          }
+        },
+        "participation": {
+          "kind": "rsvp_open"
+        },
+        "capacity": {
+          "kind": "limited",
+          "limit": 12,
+          "going_count": 7,
+          "offered_count": 0,
+          "waitlist_count": 0
+        },
+        "cost": {
+          "status": "known",
+          "value": {
+            "kind": "free"
+          },
+          "basis": "reported"
+        },
+        "description": {
+          "lang": "en",
+          "text": "A steady half-day hike up Mt. Takao by the stream-side Trail 6, lunch at the summit, then down the Inariyama ridge. Beginners with reasonable fitness are welcome; we walk at the pace of the slowest person. This is a casual member-organized hike, not a guided tour.",
+          "translation": {
+            "status": "original"
+          }
+        },
+        "provenance": {
+          "kind": "native",
+          "created_by": "member",
+          "created_at": "2026-10-05T11:00:00Z"
+        },
+        "visibility": "public",
+        "location": {
+          "kind": "in_person",
+          "venue": {
+            "name": "Mt. Takao trails (Trail 6 up, Inariyama Trail down)",
+            "area": {
+              "locality": {
+                "code": "JP-13-201",
+                "name": {
+                  "ja": "八王子市",
+                  "reading": "はちおうじし",
+                  "romaji": "Hachioji-shi",
+                  "en": "Hachioji City"
+                },
+                "level": "municipality"
+              },
+              "label": "Mt. Takao"
+            },
+            "address": {
+              "status": "not_applicable"
+            }
+          },
+          "meeting_point": {
+            "name": "Takaosanguchi Station",
+            "area": {
+              "locality": {
+                "code": "JP-13-201",
+                "name": {
+                  "ja": "八王子市",
+                  "reading": "はちおうじし",
+                  "romaji": "Hachioji-shi",
+                  "en": "Hachioji City"
+                },
+                "level": "municipality"
+              },
+              "label": "Takaosanguchi Station"
+            },
+            "details": "Outside the ticket gates. We set off for the trailhead at 8:40."
+          }
+        },
+        "requirements": {
+          "basis": "organizer_provided",
+          "safety_certification": "none",
+          "difficulty": {
+            "status": "known",
+            "value": "Moderate: about 400 m of ascent on uneven, sometimes muddy trail",
+            "basis": "reported"
+          },
+          "duration_minutes": {
+            "status": "known",
+            "value": 390,
+            "basis": "reported"
+          },
+          "fitness": {
+            "status": "known",
+            "value": "Comfortable walking uphill for two hours with short breaks",
+            "basis": "reported"
+          },
+          "gear": {
+            "status": "known",
+            "value": [
+              "Hiking shoes with good grip",
+              "Rain jacket",
+              "At least 1 litre of water",
+              "Lunch and snacks"
+            ],
+            "basis": "reported"
+          },
+          "transport": {
+            "status": "known",
+            "value": "Make your own way to Takaosanguchi Station (Keio Line). Fares are not included.",
+            "basis": "reported"
+          },
+          "cancellation_policy": {
+            "status": "known",
+            "value": "If heavy rain is forecast, the organizer decides by 20:00 the evening before and updates this event.",
+            "basis": "reported"
+          }
+        },
+        "languages": {
+          "status": "known",
+          "value": [
+            "en",
+            "ja"
+          ],
+          "basis": "reported"
+        },
+        "accessibility": {
+          "status": "known",
+          "value": "Steep, uneven mountain trail with steps and tree roots; not step-free.",
+          "basis": "reported"
+        },
+        "updated_at": "2026-10-12T09:30:00Z",
+        "viewer": null
+      }
+    },
+    "full_waitlist": {
+      "summary": "Hike at capacity; signed-in viewer is third on the waitlist",
+      "status": 200,
+      "body": {
+        "id": "evt_01JA0000000000000000004101",
+        "series_id": null,
+        "title": {
+          "lang": "en",
+          "text": "Autumn hike: Mt. Takao via Trail 6",
+          "translation": {
+            "status": "original"
+          }
+        },
+        "timing": {
+          "kind": "timed",
+          "starts_at": "2026-11-13T23:30:00Z",
+          "ends_at": {
+            "status": "known",
+            "value": "2026-11-14T06:00:00Z",
+            "basis": "reported"
+          },
+          "time_zone": "Asia/Tokyo"
+        },
+        "status": {
+          "state": "scheduled"
+        },
+        "confirmation": "confirmed",
+        "format": "in_person",
+        "source_kind": "member",
+        "organizer": {
+          "kind": "member",
+          "profile": {
+            "profile_id": "prof_01JA00000000000000000000C3",
+            "display_name": "Mai"
+          }
+        },
+        "participation": {
+          "kind": "rsvp_open"
+        },
+        "capacity": {
+          "kind": "limited",
+          "limit": 12,
+          "going_count": 12,
+          "offered_count": 0,
+          "waitlist_count": 3
+        },
+        "cost": {
+          "status": "known",
+          "value": {
+            "kind": "free"
+          },
+          "basis": "reported"
+        },
+        "description": {
+          "lang": "en",
+          "text": "A steady half-day hike up Mt. Takao by the stream-side Trail 6, lunch at the summit, then down the Inariyama ridge. Beginners with reasonable fitness are welcome; we walk at the pace of the slowest person. This is a casual member-organized hike, not a guided tour.",
+          "translation": {
+            "status": "original"
+          }
+        },
+        "provenance": {
+          "kind": "native",
+          "created_by": "member",
+          "created_at": "2026-10-05T11:00:00Z"
+        },
+        "visibility": "public",
+        "location": {
+          "kind": "in_person",
+          "venue": {
+            "name": "Mt. Takao trails (Trail 6 up, Inariyama Trail down)",
+            "area": {
+              "locality": {
+                "code": "JP-13-201",
+                "name": {
+                  "ja": "八王子市",
+                  "reading": "はちおうじし",
+                  "romaji": "Hachioji-shi",
+                  "en": "Hachioji City"
+                },
+                "level": "municipality"
+              },
+              "label": "Mt. Takao"
+            },
+            "address": {
+              "status": "not_applicable"
+            }
+          },
+          "meeting_point": {
+            "name": "Takaosanguchi Station",
+            "area": {
+              "locality": {
+                "code": "JP-13-201",
+                "name": {
+                  "ja": "八王子市",
+                  "reading": "はちおうじし",
+                  "romaji": "Hachioji-shi",
+                  "en": "Hachioji City"
+                },
+                "level": "municipality"
+              },
+              "label": "Takaosanguchi Station"
+            },
+            "details": "Outside the ticket gates. We set off for the trailhead at 8:40."
+          }
+        },
+        "requirements": {
+          "basis": "organizer_provided",
+          "safety_certification": "none",
+          "difficulty": {
+            "status": "known",
+            "value": "Moderate: about 400 m of ascent on uneven, sometimes muddy trail",
+            "basis": "reported"
+          },
+          "duration_minutes": {
+            "status": "known",
+            "value": 390,
+            "basis": "reported"
+          },
+          "fitness": {
+            "status": "known",
+            "value": "Comfortable walking uphill for two hours with short breaks",
+            "basis": "reported"
+          },
+          "gear": {
+            "status": "known",
+            "value": [
+              "Hiking shoes with good grip",
+              "Rain jacket",
+              "At least 1 litre of water",
+              "Lunch and snacks"
+            ],
+            "basis": "reported"
+          },
+          "transport": {
+            "status": "known",
+            "value": "Make your own way to Takaosanguchi Station (Keio Line). Fares are not included.",
+            "basis": "reported"
+          },
+          "cancellation_policy": {
+            "status": "known",
+            "value": "If heavy rain is forecast, the organizer decides by 20:00 the evening before and updates this event.",
+            "basis": "reported"
+          }
+        },
+        "languages": {
+          "status": "known",
+          "value": [
+            "en",
+            "ja"
+          ],
+          "basis": "reported"
+        },
+        "accessibility": {
+          "status": "known",
+          "value": "Steep, uneven mountain trail with steps and tree roots; not step-free.",
+          "basis": "reported"
+        },
+        "updated_at": "2026-10-12T09:30:00Z",
+        "viewer": {
+          "rsvp_state": "waitlisted",
+          "rsvp_id": "rsv_01JA0000000000000000004209",
+          "waitlist_position": 3,
+          "offer_expires_at": null,
+          "saved": false
+        }
+      }
+    },
+    "waitlist_offer": {
+      "summary": "A place opened up and is held for the viewer until the offer expires",
+      "status": 200,
+      "body": {
+        "id": "evt_01JA0000000000000000004101",
+        "series_id": null,
+        "title": {
+          "lang": "en",
+          "text": "Autumn hike: Mt. Takao via Trail 6",
+          "translation": {
+            "status": "original"
+          }
+        },
+        "timing": {
+          "kind": "timed",
+          "starts_at": "2026-11-13T23:30:00Z",
+          "ends_at": {
+            "status": "known",
+            "value": "2026-11-14T06:00:00Z",
+            "basis": "reported"
+          },
+          "time_zone": "Asia/Tokyo"
+        },
+        "status": {
+          "state": "scheduled"
+        },
+        "confirmation": "confirmed",
+        "format": "in_person",
+        "source_kind": "member",
+        "organizer": {
+          "kind": "member",
+          "profile": {
+            "profile_id": "prof_01JA00000000000000000000C3",
+            "display_name": "Mai"
+          }
+        },
+        "participation": {
+          "kind": "rsvp_open"
+        },
+        "capacity": {
+          "kind": "limited",
+          "limit": 12,
+          "going_count": 11,
+          "offered_count": 1,
+          "waitlist_count": 2
+        },
+        "cost": {
+          "status": "known",
+          "value": {
+            "kind": "free"
+          },
+          "basis": "reported"
+        },
+        "description": {
+          "lang": "en",
+          "text": "A steady half-day hike up Mt. Takao by the stream-side Trail 6, lunch at the summit, then down the Inariyama ridge. Beginners with reasonable fitness are welcome; we walk at the pace of the slowest person. This is a casual member-organized hike, not a guided tour.",
+          "translation": {
+            "status": "original"
+          }
+        },
+        "provenance": {
+          "kind": "native",
+          "created_by": "member",
+          "created_at": "2026-10-05T11:00:00Z"
+        },
+        "visibility": "public",
+        "location": {
+          "kind": "in_person",
+          "venue": {
+            "name": "Mt. Takao trails (Trail 6 up, Inariyama Trail down)",
+            "area": {
+              "locality": {
+                "code": "JP-13-201",
+                "name": {
+                  "ja": "八王子市",
+                  "reading": "はちおうじし",
+                  "romaji": "Hachioji-shi",
+                  "en": "Hachioji City"
+                },
+                "level": "municipality"
+              },
+              "label": "Mt. Takao"
+            },
+            "address": {
+              "status": "not_applicable"
+            }
+          },
+          "meeting_point": {
+            "name": "Takaosanguchi Station",
+            "area": {
+              "locality": {
+                "code": "JP-13-201",
+                "name": {
+                  "ja": "八王子市",
+                  "reading": "はちおうじし",
+                  "romaji": "Hachioji-shi",
+                  "en": "Hachioji City"
+                },
+                "level": "municipality"
+              },
+              "label": "Takaosanguchi Station"
+            },
+            "details": "Outside the ticket gates. We set off for the trailhead at 8:40."
+          }
+        },
+        "requirements": {
+          "basis": "organizer_provided",
+          "safety_certification": "none",
+          "difficulty": {
+            "status": "known",
+            "value": "Moderate: about 400 m of ascent on uneven, sometimes muddy trail",
+            "basis": "reported"
+          },
+          "duration_minutes": {
+            "status": "known",
+            "value": 390,
+            "basis": "reported"
+          },
+          "fitness": {
+            "status": "known",
+            "value": "Comfortable walking uphill for two hours with short breaks",
+            "basis": "reported"
+          },
+          "gear": {
+            "status": "known",
+            "value": [
+              "Hiking shoes with good grip",
+              "Rain jacket",
+              "At least 1 litre of water",
+              "Lunch and snacks"
+            ],
+            "basis": "reported"
+          },
+          "transport": {
+            "status": "known",
+            "value": "Make your own way to Takaosanguchi Station (Keio Line). Fares are not included.",
+            "basis": "reported"
+          },
+          "cancellation_policy": {
+            "status": "known",
+            "value": "If heavy rain is forecast, the organizer decides by 20:00 the evening before and updates this event.",
+            "basis": "reported"
+          }
+        },
+        "languages": {
+          "status": "known",
+          "value": [
+            "en",
+            "ja"
+          ],
+          "basis": "reported"
+        },
+        "accessibility": {
+          "status": "known",
+          "value": "Steep, uneven mountain trail with steps and tree roots; not step-free.",
+          "basis": "reported"
+        },
+        "updated_at": "2026-10-12T09:30:00Z",
+        "viewer": {
+          "rsvp_state": "offered",
+          "rsvp_id": "rsv_01JA0000000000000000004209",
+          "waitlist_position": null,
+          "offer_expires_at": "2026-10-17T12:00:00Z",
+          "saved": false
+        }
+      }
+    },
+    "cancelled": {
+      "summary": "Organizer cancelled the hike; the viewer’s RSVP still reads going and the event status is authoritative",
+      "status": 200,
+      "body": {
+        "id": "evt_01JA0000000000000000004101",
+        "series_id": null,
+        "title": {
+          "lang": "en",
+          "text": "Autumn hike: Mt. Takao via Trail 6",
+          "translation": {
+            "status": "original"
+          }
+        },
+        "timing": {
+          "kind": "timed",
+          "starts_at": "2026-11-13T23:30:00Z",
+          "ends_at": {
+            "status": "known",
+            "value": "2026-11-14T06:00:00Z",
+            "basis": "reported"
+          },
+          "time_zone": "Asia/Tokyo"
+        },
+        "status": {
+          "state": "cancelled",
+          "cancelled_at": "2026-11-13T11:00:00Z",
+          "reason": {
+            "status": "known",
+            "value": "Heavy rain and strong wind are forecast for Saturday, so the organizer has called off the hike.",
+            "basis": "reported"
+          }
+        },
+        "confirmation": "confirmed",
+        "format": "in_person",
+        "source_kind": "member",
+        "organizer": {
+          "kind": "member",
+          "profile": {
+            "profile_id": "prof_01JA00000000000000000000C3",
+            "display_name": "Mai"
+          }
+        },
+        "participation": {
+          "kind": "rsvp_open"
+        },
+        "capacity": {
+          "kind": "limited",
+          "limit": 12,
+          "going_count": 7,
+          "offered_count": 0,
+          "waitlist_count": 0
+        },
+        "cost": {
+          "status": "known",
+          "value": {
+            "kind": "free"
+          },
+          "basis": "reported"
+        },
+        "description": {
+          "lang": "en",
+          "text": "A steady half-day hike up Mt. Takao by the stream-side Trail 6, lunch at the summit, then down the Inariyama ridge. Beginners with reasonable fitness are welcome; we walk at the pace of the slowest person. This is a casual member-organized hike, not a guided tour.",
+          "translation": {
+            "status": "original"
+          }
+        },
+        "provenance": {
+          "kind": "native",
+          "created_by": "member",
+          "created_at": "2026-10-05T11:00:00Z"
+        },
+        "visibility": "public",
+        "location": {
+          "kind": "in_person",
+          "venue": {
+            "name": "Mt. Takao trails (Trail 6 up, Inariyama Trail down)",
+            "area": {
+              "locality": {
+                "code": "JP-13-201",
+                "name": {
+                  "ja": "八王子市",
+                  "reading": "はちおうじし",
+                  "romaji": "Hachioji-shi",
+                  "en": "Hachioji City"
+                },
+                "level": "municipality"
+              },
+              "label": "Mt. Takao"
+            },
+            "address": {
+              "status": "not_applicable"
+            }
+          },
+          "meeting_point": {
+            "name": "Takaosanguchi Station",
+            "area": {
+              "locality": {
+                "code": "JP-13-201",
+                "name": {
+                  "ja": "八王子市",
+                  "reading": "はちおうじし",
+                  "romaji": "Hachioji-shi",
+                  "en": "Hachioji City"
+                },
+                "level": "municipality"
+              },
+              "label": "Takaosanguchi Station"
+            },
+            "details": "Outside the ticket gates. We set off for the trailhead at 8:40."
+          }
+        },
+        "requirements": {
+          "basis": "organizer_provided",
+          "safety_certification": "none",
+          "difficulty": {
+            "status": "known",
+            "value": "Moderate: about 400 m of ascent on uneven, sometimes muddy trail",
+            "basis": "reported"
+          },
+          "duration_minutes": {
+            "status": "known",
+            "value": 390,
+            "basis": "reported"
+          },
+          "fitness": {
+            "status": "known",
+            "value": "Comfortable walking uphill for two hours with short breaks",
+            "basis": "reported"
+          },
+          "gear": {
+            "status": "known",
+            "value": [
+              "Hiking shoes with good grip",
+              "Rain jacket",
+              "At least 1 litre of water",
+              "Lunch and snacks"
+            ],
+            "basis": "reported"
+          },
+          "transport": {
+            "status": "known",
+            "value": "Make your own way to Takaosanguchi Station (Keio Line). Fares are not included.",
+            "basis": "reported"
+          },
+          "cancellation_policy": {
+            "status": "known",
+            "value": "If heavy rain is forecast, the organizer decides by 20:00 the evening before and updates this event.",
+            "basis": "reported"
+          }
+        },
+        "languages": {
+          "status": "known",
+          "value": [
+            "en",
+            "ja"
+          ],
+          "basis": "reported"
+        },
+        "accessibility": {
+          "status": "known",
+          "value": "Steep, uneven mountain trail with steps and tree roots; not step-free.",
+          "basis": "reported"
+        },
+        "updated_at": "2026-10-12T09:30:00Z",
+        "viewer": {
+          "rsvp_state": "going",
+          "rsvp_id": "rsv_01JA0000000000000000004201",
+          "waitlist_position": null,
+          "offer_expires_at": null,
+          "saved": true
+        }
+      }
+    },
+    "rescheduled": {
+      "summary": "Hike moved to a new occurrence one week later; RSVPs do not transfer automatically",
+      "status": 200,
+      "body": {
+        "id": "evt_01JA0000000000000000004101",
+        "series_id": null,
+        "title": {
+          "lang": "en",
+          "text": "Autumn hike: Mt. Takao via Trail 6",
+          "translation": {
+            "status": "original"
+          }
+        },
+        "timing": {
+          "kind": "timed",
+          "starts_at": "2026-11-13T23:30:00Z",
+          "ends_at": {
+            "status": "known",
+            "value": "2026-11-14T06:00:00Z",
+            "basis": "reported"
+          },
+          "time_zone": "Asia/Tokyo"
+        },
+        "status": {
+          "state": "rescheduled",
+          "rescheduled_at": "2026-11-11T10:00:00Z",
+          "moved_to_event_id": "evt_01JA0000000000000000004102",
+          "reason": {
+            "status": "known",
+            "value": "Moved one week later because part of the trail is closed on the 14th.",
+            "basis": "reported"
+          }
+        },
+        "confirmation": "confirmed",
+        "format": "in_person",
+        "source_kind": "member",
+        "organizer": {
+          "kind": "member",
+          "profile": {
+            "profile_id": "prof_01JA00000000000000000000C3",
+            "display_name": "Mai"
+          }
+        },
+        "participation": {
+          "kind": "rsvp_open"
+        },
+        "capacity": {
+          "kind": "limited",
+          "limit": 12,
+          "going_count": 7,
+          "offered_count": 0,
+          "waitlist_count": 0
+        },
+        "cost": {
+          "status": "known",
+          "value": {
+            "kind": "free"
+          },
+          "basis": "reported"
+        },
+        "description": {
+          "lang": "en",
+          "text": "A steady half-day hike up Mt. Takao by the stream-side Trail 6, lunch at the summit, then down the Inariyama ridge. Beginners with reasonable fitness are welcome; we walk at the pace of the slowest person. This is a casual member-organized hike, not a guided tour.",
+          "translation": {
+            "status": "original"
+          }
+        },
+        "provenance": {
+          "kind": "native",
+          "created_by": "member",
+          "created_at": "2026-10-05T11:00:00Z"
+        },
+        "visibility": "public",
+        "location": {
+          "kind": "in_person",
+          "venue": {
+            "name": "Mt. Takao trails (Trail 6 up, Inariyama Trail down)",
+            "area": {
+              "locality": {
+                "code": "JP-13-201",
+                "name": {
+                  "ja": "八王子市",
+                  "reading": "はちおうじし",
+                  "romaji": "Hachioji-shi",
+                  "en": "Hachioji City"
+                },
+                "level": "municipality"
+              },
+              "label": "Mt. Takao"
+            },
+            "address": {
+              "status": "not_applicable"
+            }
+          },
+          "meeting_point": {
+            "name": "Takaosanguchi Station",
+            "area": {
+              "locality": {
+                "code": "JP-13-201",
+                "name": {
+                  "ja": "八王子市",
+                  "reading": "はちおうじし",
+                  "romaji": "Hachioji-shi",
+                  "en": "Hachioji City"
+                },
+                "level": "municipality"
+              },
+              "label": "Takaosanguchi Station"
+            },
+            "details": "Outside the ticket gates. We set off for the trailhead at 8:40."
+          }
+        },
+        "requirements": {
+          "basis": "organizer_provided",
+          "safety_certification": "none",
+          "difficulty": {
+            "status": "known",
+            "value": "Moderate: about 400 m of ascent on uneven, sometimes muddy trail",
+            "basis": "reported"
+          },
+          "duration_minutes": {
+            "status": "known",
+            "value": 390,
+            "basis": "reported"
+          },
+          "fitness": {
+            "status": "known",
+            "value": "Comfortable walking uphill for two hours with short breaks",
+            "basis": "reported"
+          },
+          "gear": {
+            "status": "known",
+            "value": [
+              "Hiking shoes with good grip",
+              "Rain jacket",
+              "At least 1 litre of water",
+              "Lunch and snacks"
+            ],
+            "basis": "reported"
+          },
+          "transport": {
+            "status": "known",
+            "value": "Make your own way to Takaosanguchi Station (Keio Line). Fares are not included.",
+            "basis": "reported"
+          },
+          "cancellation_policy": {
+            "status": "known",
+            "value": "If heavy rain is forecast, the organizer decides by 20:00 the evening before and updates this event.",
+            "basis": "reported"
+          }
+        },
+        "languages": {
+          "status": "known",
+          "value": [
+            "en",
+            "ja"
+          ],
+          "basis": "reported"
+        },
+        "accessibility": {
+          "status": "known",
+          "value": "Steep, uneven mountain trail with steps and tree roots; not step-free.",
+          "basis": "reported"
+        },
+        "updated_at": "2026-10-12T09:30:00Z",
+        "viewer": {
+          "rsvp_state": "going",
+          "rsvp_id": "rsv_01JA0000000000000000004201",
+          "waitlist_position": null,
+          "offer_expires_at": null,
+          "saved": false
+        }
+      }
+    },
+    "imported_external_registration": {
+      "summary": "Imported municipal class with registration on the organizer’s site; the viewer saved it, which is not a registration",
+      "status": 200,
+      "body": {
+        "id": "evt_01JA0000000000000000004141",
+        "series_id": null,
+        "title": {
+          "lang": "en",
+          "text": "Japanese home cooking class for international residents",
+          "translation": {
+            "status": "machine_translation",
+            "source_lang": "ja"
+          }
+        },
+        "timing": {
+          "kind": "timed",
+          "starts_at": "2026-11-28T01:00:00Z",
+          "ends_at": {
+            "status": "known",
+            "value": "2026-11-28T04:00:00Z",
+            "basis": "source_derived",
+            "source_id": "src_01JA0000000000000000004002"
+          },
+          "time_zone": "Asia/Tokyo"
+        },
+        "status": {
+          "state": "scheduled"
+        },
+        "confirmation": "confirmed",
+        "format": "in_person",
+        "source_kind": "imported",
+        "organizer": {
+          "kind": "imported",
+          "name": "Example City International Association (example)",
+          "source": {
+            "source_id": "src_01JA0000000000000000004002",
+            "title": "Musashino City events open data (example)",
+            "publisher": "Musashino City Office (example)",
+            "url": "https://city-musashino.example/opendata/events",
+            "retrieved_at": "2026-10-15T21:00:00Z",
+            "authority": "official"
+          }
+        },
+        "participation": {
+          "kind": "external_registration",
+          "url": "https://city-musashino.example/events/cooking-class-2026-11",
+          "registration_deadline": {
+            "status": "known",
+            "value": "2026-11-18",
+            "basis": "source_derived",
+            "source_id": "src_01JA0000000000000000004002"
+          },
+          "registration_tracking": "not_tracked",
+          "notice": "Register on the organizer’s website. Saving this event on livingin.jp does not register you or reserve a place."
+        },
+        "capacity": {
+          "kind": "not_tracked",
+          "stated_limit": {
+            "status": "known",
+            "value": 20,
+            "basis": "source_derived",
+            "source_id": "src_01JA0000000000000000004002"
+          }
+        },
+        "cost": {
+          "status": "known",
+          "value": {
+            "kind": "fee",
+            "amount": {
+              "amount": 800,
+              "currency": "JPY"
+            },
+            "note": "Ingredients; paid on the day"
+          },
+          "basis": "source_derived",
+          "source_id": "src_01JA0000000000000000004002"
+        },
+        "description": {
+          "lang": "en",
+          "text": "Learn to make miso soup, rice balls and a simple side dish with local volunteers. Ingredients included. Bring an apron and a hand towel. Apply through the association’s website.",
+          "translation": {
+            "status": "machine_translation",
+            "source_lang": "ja"
+          }
+        },
+        "provenance": {
+          "kind": "imported",
+          "source": {
+            "source_id": "src_01JA0000000000000000004002",
+            "title": "Musashino City events open data (example)",
+            "publisher": "Musashino City Office (example)",
+            "url": "https://city-musashino.example/opendata/events",
+            "retrieved_at": "2026-10-15T21:00:00Z",
+            "authority": "official"
+          },
+          "source_record_key": "musashino-od-2026-1128-cooking",
+          "freshness": {
+            "state": "current",
+            "checked_at": "2026-10-15T21:00:00Z",
+            "stale_after": "2026-10-18T21:00:00Z"
+          }
+        },
+        "visibility": "public",
+        "location": {
+          "kind": "in_person",
+          "venue": {
+            "name": "Musashino Example Civic Center, cooking room",
+            "area": {
+              "locality": {
+                "code": "JP-13-203",
+                "name": {
+                  "ja": "武蔵野市",
+                  "reading": "むさしのし",
+                  "romaji": "Musashino-shi",
+                  "en": "Musashino City"
+                },
+                "level": "municipality"
+              },
+              "label": "Near Mitaka Station (north exit)"
+            },
+            "address": {
+              "status": "known",
+              "value": "2-4-6 Example-cho, Musashino City, Tokyo (example)",
+              "basis": "source_derived",
+              "source_id": "src_01JA0000000000000000004002"
+            }
+          },
+          "meeting_point": null
+        },
+        "requirements": {
+          "basis": "organizer_provided",
+          "safety_certification": "none",
+          "difficulty": {
+            "status": "not_applicable"
+          },
+          "duration_minutes": {
+            "status": "known",
+            "value": 180,
+            "basis": "source_derived",
+            "source_id": "src_01JA0000000000000000004002"
+          },
+          "fitness": {
+            "status": "not_applicable"
+          },
+          "gear": {
+            "status": "known",
+            "value": [
+              "Apron",
+              "Hand towel"
+            ],
+            "basis": "source_derived",
+            "source_id": "src_01JA0000000000000000004002"
+          },
+          "transport": {
+            "status": "unknown"
+          },
+          "cancellation_policy": {
+            "status": "unknown"
+          }
+        },
+        "languages": {
+          "status": "known",
+          "value": [
+            "ja"
+          ],
+          "basis": "source_derived",
+          "source_id": "src_01JA0000000000000000004002"
+        },
+        "accessibility": {
+          "status": "known",
+          "value": "Lift to the 3rd floor; accessible toilet on the 1st floor.",
+          "basis": "source_derived",
+          "source_id": "src_01JA0000000000000000004002"
+        },
+        "updated_at": "2026-10-15T21:05:00Z",
+        "viewer": {
+          "rsvp_state": "none",
+          "rsvp_id": null,
+          "waitlist_position": null,
+          "offer_expires_at": null,
+          "saved": true
+        }
+      }
+    },
+    "online": {
+      "summary": "Online group event; the viewer is going, so join details are included (private response)",
+      "status": 200,
+      "body": {
+        "id": "evt_01JA0000000000000000004151",
+        "series_id": null,
+        "title": {
+          "lang": "en",
+          "text": "Online Japanese conversation practice: beginners",
+          "translation": {
+            "status": "original"
+          }
+        },
+        "timing": {
+          "kind": "timed",
+          "starts_at": "2026-10-28T11:00:00Z",
+          "ends_at": {
+            "status": "known",
+            "value": "2026-10-28T12:00:00Z",
+            "basis": "reported"
+          },
+          "time_zone": "Asia/Tokyo"
+        },
+        "status": {
+          "state": "scheduled"
+        },
+        "confirmation": "confirmed",
+        "format": "online",
+        "source_kind": "group",
+        "organizer": {
+          "kind": "group",
+          "group": {
+            "id": "grp_01JA0000000000000000004001",
+            "name": "Japanese Learners Online (example)"
+          }
+        },
+        "participation": {
+          "kind": "rsvp_open"
+        },
+        "capacity": {
+          "kind": "limited",
+          "limit": 20,
+          "going_count": 9,
+          "offered_count": 0,
+          "waitlist_count": 0
+        },
+        "cost": {
+          "status": "known",
+          "value": {
+            "kind": "free"
+          },
+          "basis": "reported"
+        },
+        "description": {
+          "lang": "en",
+          "text": "One hour of guided small-group conversation for beginners (around JLPT N5–N4). Volunteer hosts keep it slow and friendly. English is fine for questions.",
+          "translation": {
+            "status": "original"
+          }
+        },
+        "provenance": {
+          "kind": "native",
+          "created_by": "group",
+          "created_at": "2026-10-01T10:00:00Z"
+        },
+        "visibility": "public",
+        "location": {
+          "kind": "online",
+          "online": {
+            "platform": "Video call",
+            "join": {
+              "status": "available",
+              "url": "https://meet.example/j/evt-4151-mock",
+              "instructions": "Cameras optional. Join a few minutes early to check your audio."
+            }
+          }
+        },
+        "requirements": null,
+        "languages": {
+          "status": "known",
+          "value": [
+            "ja",
+            "en"
+          ],
+          "basis": "reported"
+        },
+        "accessibility": {
+          "status": "unknown"
+        },
+        "updated_at": "2026-10-03T08:00:00Z",
+        "viewer": {
+          "rsvp_state": "going",
+          "rsvp_id": "rsv_01JA0000000000000000004206",
+          "waitlist_position": null,
+          "offer_expires_at": null,
+          "saved": false
+        }
+      }
+    },
+    "hybrid_approval_pending": {
+      "summary": "Hybrid organization event with approval-based RSVP; the viewer’s request is pending, so online join details are withheld",
+      "status": 200,
+      "body": {
+        "id": "evt_01JA0000000000000000004131",
+        "series_id": "evs_01JA0000000000000000004003",
+        "title": {
+          "lang": "en",
+          "text": "Newcomer orientation: your first months in Tokyo",
+          "translation": {
+            "status": "original"
+          }
+        },
+        "timing": {
+          "kind": "timed",
+          "starts_at": "2026-11-07T05:00:00Z",
+          "ends_at": {
+            "status": "known",
+            "value": "2026-11-07T07:00:00Z",
+            "basis": "reported"
+          },
+          "time_zone": "Asia/Tokyo"
+        },
+        "status": {
+          "state": "scheduled"
+        },
+        "confirmation": "confirmed",
+        "format": "hybrid",
+        "source_kind": "organization",
+        "organizer": {
+          "kind": "organization",
+          "organization": {
+            "id": "org_01JA0000000000000000000001",
+            "kind": "nonprofit",
+            "name": {
+              "ja": "さくら国際交流センター（例）",
+              "en": "Sakura International Exchange Center (example)"
+            },
+            "verification": "verified",
+            "website": "https://sakura-exchange.example",
+            "description": "Runs Japanese conversation circles and newcomer orientation sessions."
+          }
+        },
+        "participation": {
+          "kind": "rsvp_approval"
+        },
+        "capacity": {
+          "kind": "limited",
+          "limit": 20,
+          "going_count": 8,
+          "offered_count": 0,
+          "waitlist_count": 0
+        },
+        "cost": {
+          "status": "known",
+          "value": {
+            "kind": "free"
+          },
+          "basis": "reported"
+        },
+        "description": {
+          "lang": "en",
+          "text": "A two-hour introduction for people who have recently moved: getting around, everyday services, finding Japanese classes and meeting people. Join at the center or online. The center approves requests so each session stays small.",
+          "translation": {
+            "status": "original"
+          }
+        },
+        "provenance": {
+          "kind": "native",
+          "created_by": "organization",
+          "created_at": "2026-09-15T02:00:00Z"
+        },
+        "visibility": "public",
+        "location": {
+          "kind": "hybrid",
+          "venue": {
+            "name": "Sakura International Exchange Center (example), Room 3",
+            "area": {
+              "locality": {
+                "code": "JP-13-104",
+                "name": {
+                  "ja": "新宿区",
+                  "reading": "しんじゅくく",
+                  "romaji": "Shinjuku-ku",
+                  "en": "Shinjuku City"
+                },
+                "level": "municipality"
+              },
+              "label": "Near Takadanobaba Station"
+            },
+            "address": {
+              "status": "known",
+              "value": "7-8-9 Example-dori, Shinjuku City, Tokyo (example)",
+              "basis": "reported"
+            }
+          },
+          "meeting_point": null,
+          "online": {
+            "platform": "Video call",
+            "join": {
+              "status": "participants_only"
+            }
+          }
+        },
+        "requirements": null,
+        "languages": {
+          "status": "known",
+          "value": [
+            "en",
+            "ja"
+          ],
+          "basis": "reported"
+        },
+        "accessibility": {
+          "status": "known",
+          "value": "Step-free entrance and lift. Live English captions on the online stream.",
+          "basis": "reported"
+        },
+        "updated_at": "2026-10-02T04:00:00Z",
+        "viewer": {
+          "rsvp_state": "pending_approval",
+          "rsvp_id": "rsv_01JA0000000000000000004202",
+          "waitlist_position": null,
+          "offer_expires_at": null,
+          "saved": false
+        }
+      }
+    },
+    "expected_occurrence": {
+      "summary": "Projected occurrence of an imported monthly series: expected, not confirmed by the source",
+      "status": 200,
+      "body": {
+        "id": "evt_01JA0000000000000000004115",
+        "series_id": "evs_01JA0000000000000000004001",
+        "title": {
+          "lang": "en",
+          "text": "Example Riverside Park flea market",
+          "translation": {
+            "status": "machine_translation",
+            "source_lang": "ja"
+          }
+        },
+        "timing": {
+          "kind": "timed",
+          "starts_at": "2027-02-14T00:00:00Z",
+          "ends_at": {
+            "status": "known",
+            "value": "2027-02-14T05:00:00Z",
+            "basis": "source_derived",
+            "source_id": "src_01JA0000000000000000004001"
+          },
+          "time_zone": "Asia/Tokyo"
+        },
+        "status": {
+          "state": "scheduled"
+        },
+        "confirmation": "expected",
+        "format": "in_person",
+        "source_kind": "imported",
+        "organizer": {
+          "kind": "imported",
+          "name": "Riverside Flea Market Committee (example)",
+          "source": {
+            "source_id": "src_01JA0000000000000000004001",
+            "title": "Setagaya City community events calendar (example)",
+            "publisher": "Setagaya City Office (example)",
+            "url": "https://city-setagaya.example/events/calendar",
+            "retrieved_at": "2026-10-16T00:00:00Z",
+            "authority": "official"
+          }
+        },
+        "participation": {
+          "kind": "no_registration_needed"
+        },
+        "capacity": {
+          "kind": "not_tracked",
+          "stated_limit": {
+            "status": "not_applicable"
+          }
+        },
+        "cost": {
+          "status": "known",
+          "value": {
+            "kind": "free"
+          },
+          "basis": "source_derived",
+          "source_id": "src_01JA0000000000000000004001"
+        },
+        "description": {
+          "lang": "en",
+          "text": "Monthly flea market with around 60 stalls selling secondhand clothes, books, toys and household goods. Free entry. Stall applications are handled by the organizing committee.",
+          "translation": {
+            "status": "machine_translation",
+            "source_lang": "ja"
+          }
+        },
+        "provenance": {
+          "kind": "imported",
+          "source": {
+            "source_id": "src_01JA0000000000000000004001",
+            "title": "Setagaya City community events calendar (example)",
+            "publisher": "Setagaya City Office (example)",
+            "url": "https://city-setagaya.example/events/calendar",
+            "retrieved_at": "2026-10-16T00:00:00Z",
+            "authority": "official"
+          },
+          "source_record_key": "setagaya-events-flea-riverside",
+          "freshness": {
+            "state": "current",
+            "checked_at": "2026-10-16T00:00:00Z",
+            "stale_after": "2026-10-19T00:00:00Z"
+          }
+        },
+        "visibility": "public",
+        "location": {
+          "kind": "in_person",
+          "venue": {
+            "name": "Example Riverside Park, central lawn",
+            "area": {
+              "locality": {
+                "code": "JP-13-112",
+                "name": {
+                  "ja": "世田谷区",
+                  "reading": "せたがやく",
+                  "romaji": "Setagaya-ku",
+                  "en": "Setagaya City"
+                },
+                "level": "municipality"
+              },
+              "label": "Near Futako-Tamagawa Station"
+            },
+            "address": {
+              "status": "known",
+              "value": "4-5-6 Example-machi, Setagaya City, Tokyo (example)",
+              "basis": "source_derived",
+              "source_id": "src_01JA0000000000000000004001"
+            }
+          },
+          "meeting_point": null
+        },
+        "requirements": null,
+        "languages": {
+          "status": "unknown"
+        },
+        "accessibility": {
+          "status": "unknown"
+        },
+        "updated_at": "2026-10-01T03:10:00Z",
+        "viewer": null
+      }
+    },
+    "not_found": {
+      "summary": "Unknown event, a group-only event for a non-member, or an event by a blocked member",
+      "status": 404,
+      "body": {
+        "type": "urn:livingin:problem:not_found",
+        "title": "Not found",
+        "status": 404,
+        "code": "not_found",
+        "request_id": "fixture",
+        "retryable": false
+      }
+    }
+  }
+}

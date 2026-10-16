@@ -125,7 +125,7 @@
           {
             "pointer": "/query/locality",
             "code": "invalid_format",
-            "message": "Invalid string: must match pattern /^JP-\\d{2}(-\\d{3})?$/"
+            "message": "Invalid string: must match pattern /^JP(-\\d{2}(-\\d{3})?)?$/"
           }
         ]
       }

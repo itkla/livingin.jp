@@ -2,7 +2,9 @@
  * Contract gate run in CI and by `npm run check`:
  *   1. contracts/openapi.json must equal the document generated from the zod schemas.
  *   2. Compared with the base branch's contract (--base <file>), breaking changes require a
- *      version bump (see src/contract/version.ts).
+ *      version bump (see src/contract/version.ts), unless a reviewer recorded the exact change as a
+ *      false positive in contracts/compat-exceptions.json (with a reason). Clear that file once the
+ *      change has merged.
  */
 import { existsSync, readFileSync } from 'node:fs';
 import { compareContracts, versionAllowsBreaking } from '../src/contract/compat';
@@ -28,7 +30,12 @@ if (!basePath) {
   const base = JSON.parse(readFileSync(basePath, 'utf8'));
   const head = JSON.parse(generated);
   const changes = compareContracts(base, head);
-  const breaking = changes.filter((c) => c.kind === 'breaking');
+  // Reviewed false positives (e.g. a regex that was loosened, which the checker cannot prove).
+  const exceptionsFile = new URL('../contracts/compat-exceptions.json', import.meta.url);
+  const exceptions: Array<{ location: string; message: string; reason: string }> = existsSync(exceptionsFile) ? JSON.parse(readFileSync(exceptionsFile, 'utf8')) : [];
+  const accepted = changes.filter((c) => c.kind === 'breaking' && exceptions.some((e) => e.location === c.location && e.message === c.message));
+  for (const c of accepted) console.log(`  accepted ${c.location}: ${c.message} (${exceptions.find((e) => e.location === c.location)!.reason})`);
+  const breaking = changes.filter((c) => c.kind === 'breaking' && !accepted.includes(c));
   const notices = changes.filter((c) => c.kind === 'notice');
   for (const c of notices) console.log(`  notice   ${c.location}: ${c.message}`);
   for (const c of breaking) console.log(`  BREAKING ${c.location}: ${c.message}`);

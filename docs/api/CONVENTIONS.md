@@ -12,6 +12,7 @@ This page describes the HTTP contract only. It does not prescribe frontend struc
 - **Breaking:** removing an operation, a success status, a response property, a request enum value or a request union variant; making a response property optional; adding a required request property or parameter; tightening request constraints; widening the types a response can return; no longer guaranteeing a response header.
 - **Notice (allowed in a minor version):** new response enum values and new union variants. **Clients must handle unknown enum values and unknown `state`/`status`/`kind` variants with a generic fallback.** The checker lists every such change so it is announced, not silent.
 - **Additive (not reported):** new operations, new optional request fields, new response fields, new error statuses. Clients must ignore unknown response fields.
+- Any change to a request `pattern` is reported as breaking, because the checker can't prove a new regex accepts everything the old one did. When a reviewer confirms a flagged change is a false positive (for example a loosened pattern), they record that exact change with a reason in `backend/contracts/compat-exceptions.json`, and the entry is cleared after merge.
 - A breaking change ships with a migration note for frontend consumers in the PR that makes it.
 
 ## Identifiers

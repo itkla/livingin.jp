@@ -1,0 +1,21 @@
+{
+  "operationId": "deleteMyTask",
+  "scenarios": {
+    "default": {
+      "summary": "Deleted",
+      "status": 204
+    },
+    "not_found": {
+      "summary": "Not the owner, already deleted, or unknown task",
+      "status": 404,
+      "body": {
+        "type": "urn:livingin:problem:not_found",
+        "title": "Not found",
+        "status": 404,
+        "code": "not_found",
+        "request_id": "fixture",
+        "retryable": false
+      }
+    }
+  }
+}

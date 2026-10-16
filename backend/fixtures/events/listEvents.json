@@ -1,0 +1,606 @@
+{
+  "operationId": "listEvents",
+  "scenarios": {
+    "default": {
+      "summary": "Upcoming occurrences with no locality filter: member, group, organization and imported events, including a cancelled occurrence; imported calendars only cover pilot localities",
+      "status": 200,
+      "body": {
+        "coverage": {
+          "status": "partial",
+          "limitations": [
+            "Municipal event calendars are imported only for pilot localities: Setagaya City and Musashino City. Elsewhere, only events posted on livingin.jp by members, groups and organizations are shown."
+          ]
+        },
+        "items": [
+          {
+            "id": "evt_01JA0000000000000000004121",
+            "series_id": "evs_01JA0000000000000000004002",
+            "title": {
+              "lang": "en",
+              "text": "Thursday evening language exchange (Japanese–English)",
+              "translation": {
+                "status": "original"
+              }
+            },
+            "timing": {
+              "kind": "timed",
+              "starts_at": "2026-10-22T10:00:00Z",
+              "ends_at": {
+                "status": "known",
+                "value": "2026-10-22T11:30:00Z",
+                "basis": "reported"
+              },
+              "time_zone": "Asia/Tokyo"
+            },
+            "status": {
+              "state": "scheduled"
+            },
+            "confirmation": "confirmed",
+            "format": "in_person",
+            "source_kind": "member",
+            "organizer": {
+              "kind": "member",
+              "profile": {
+                "profile_id": "prof_01JA00000000000000000000C3",
+                "display_name": "Mai"
+              }
+            },
+            "participation": {
+              "kind": "rsvp_open"
+            },
+            "capacity": {
+              "kind": "limited",
+              "limit": 12,
+              "going_count": 12,
+              "offered_count": 0,
+              "waitlist_count": 2
+            },
+            "cost": {
+              "status": "known",
+              "value": {
+                "kind": "fee",
+                "amount": {
+                  "amount": 300,
+                  "currency": "JPY"
+                },
+                "note": "Room fee, paid in cash at the door"
+              },
+              "basis": "reported"
+            },
+            "area": {
+              "locality": {
+                "code": "JP-13-203",
+                "name": {
+                  "ja": "武蔵野市",
+                  "reading": "むさしのし",
+                  "romaji": "Musashino-shi",
+                  "en": "Musashino City"
+                },
+                "level": "municipality"
+              },
+              "label": "Near Kichijoji Station"
+            }
+          },
+          {
+            "id": "evt_01JA0000000000000000004151",
+            "series_id": null,
+            "title": {
+              "lang": "en",
+              "text": "Online Japanese conversation practice: beginners",
+              "translation": {
+                "status": "original"
+              }
+            },
+            "timing": {
+              "kind": "timed",
+              "starts_at": "2026-10-28T11:00:00Z",
+              "ends_at": {
+                "status": "known",
+                "value": "2026-10-28T12:00:00Z",
+                "basis": "reported"
+              },
+              "time_zone": "Asia/Tokyo"
+            },
+            "status": {
+              "state": "scheduled"
+            },
+            "confirmation": "confirmed",
+            "format": "online",
+            "source_kind": "group",
+            "organizer": {
+              "kind": "group",
+              "group": {
+                "id": "grp_01JA0000000000000000004001",
+                "name": "Japanese Learners Online (example)"
+              }
+            },
+            "participation": {
+              "kind": "rsvp_open"
+            },
+            "capacity": {
+              "kind": "limited",
+              "limit": 20,
+              "going_count": 9,
+              "offered_count": 0,
+              "waitlist_count": 0
+            },
+            "cost": {
+              "status": "known",
+              "value": {
+                "kind": "free"
+              },
+              "basis": "reported"
+            },
+            "area": null
+          },
+          {
+            "id": "evt_01JA0000000000000000004122",
+            "series_id": "evs_01JA0000000000000000004002",
+            "title": {
+              "lang": "en",
+              "text": "Thursday evening language exchange (Japanese–English)",
+              "translation": {
+                "status": "original"
+              }
+            },
+            "timing": {
+              "kind": "timed",
+              "starts_at": "2026-10-29T10:00:00Z",
+              "ends_at": {
+                "status": "known",
+                "value": "2026-10-29T11:30:00Z",
+                "basis": "reported"
+              },
+              "time_zone": "Asia/Tokyo"
+            },
+            "status": {
+              "state": "cancelled",
+              "cancelled_at": "2026-10-20T08:00:00Z",
+              "reason": {
+                "status": "known",
+                "value": "The organizer is away this week.",
+                "basis": "reported"
+              }
+            },
+            "confirmation": "confirmed",
+            "format": "in_person",
+            "source_kind": "member",
+            "organizer": {
+              "kind": "member",
+              "profile": {
+                "profile_id": "prof_01JA00000000000000000000C3",
+                "display_name": "Mai"
+              }
+            },
+            "participation": {
+              "kind": "rsvp_open"
+            },
+            "capacity": {
+              "kind": "limited",
+              "limit": 12,
+              "going_count": 6,
+              "offered_count": 0,
+              "waitlist_count": 0
+            },
+            "cost": {
+              "status": "known",
+              "value": {
+                "kind": "fee",
+                "amount": {
+                  "amount": 300,
+                  "currency": "JPY"
+                },
+                "note": "Room fee, paid in cash at the door"
+              },
+              "basis": "reported"
+            },
+            "area": {
+              "locality": {
+                "code": "JP-13-203",
+                "name": {
+                  "ja": "武蔵野市",
+                  "reading": "むさしのし",
+                  "romaji": "Musashino-shi",
+                  "en": "Musashino City"
+                },
+                "level": "municipality"
+              },
+              "label": "Near Kichijoji Station"
+            }
+          },
+          {
+            "id": "evt_01JA0000000000000000004131",
+            "series_id": "evs_01JA0000000000000000004003",
+            "title": {
+              "lang": "en",
+              "text": "Newcomer orientation: your first months in Tokyo",
+              "translation": {
+                "status": "original"
+              }
+            },
+            "timing": {
+              "kind": "timed",
+              "starts_at": "2026-11-07T05:00:00Z",
+              "ends_at": {
+                "status": "known",
+                "value": "2026-11-07T07:00:00Z",
+                "basis": "reported"
+              },
+              "time_zone": "Asia/Tokyo"
+            },
+            "status": {
+              "state": "scheduled"
+            },
+            "confirmation": "confirmed",
+            "format": "hybrid",
+            "source_kind": "organization",
+            "organizer": {
+              "kind": "organization",
+              "organization": {
+                "id": "org_01JA0000000000000000000001",
+                "kind": "nonprofit",
+                "name": {
+                  "ja": "さくら国際交流センター（例）",
+                  "en": "Sakura International Exchange Center (example)"
+                },
+                "verification": "verified",
+                "website": "https://sakura-exchange.example",
+                "description": "Runs Japanese conversation circles and newcomer orientation sessions."
+              }
+            },
+            "participation": {
+              "kind": "rsvp_approval"
+            },
+            "capacity": {
+              "kind": "limited",
+              "limit": 20,
+              "going_count": 8,
+              "offered_count": 0,
+              "waitlist_count": 0
+            },
+            "cost": {
+              "status": "known",
+              "value": {
+                "kind": "free"
+              },
+              "basis": "reported"
+            },
+            "area": {
+              "locality": {
+                "code": "JP-13-104",
+                "name": {
+                  "ja": "新宿区",
+                  "reading": "しんじゅくく",
+                  "romaji": "Shinjuku-ku",
+                  "en": "Shinjuku City"
+                },
+                "level": "municipality"
+              },
+              "label": "Near Takadanobaba Station"
+            }
+          },
+          {
+            "id": "evt_01JA0000000000000000004111",
+            "series_id": "evs_01JA0000000000000000004001",
+            "title": {
+              "lang": "en",
+              "text": "Example Riverside Park flea market",
+              "translation": {
+                "status": "machine_translation",
+                "source_lang": "ja"
+              }
+            },
+            "timing": {
+              "kind": "timed",
+              "starts_at": "2026-11-08T00:00:00Z",
+              "ends_at": {
+                "status": "known",
+                "value": "2026-11-08T05:00:00Z",
+                "basis": "source_derived",
+                "source_id": "src_01JA0000000000000000004001"
+              },
+              "time_zone": "Asia/Tokyo"
+            },
+            "status": {
+              "state": "scheduled"
+            },
+            "confirmation": "confirmed",
+            "format": "in_person",
+            "source_kind": "imported",
+            "organizer": {
+              "kind": "imported",
+              "name": "Riverside Flea Market Committee (example)",
+              "source": {
+                "source_id": "src_01JA0000000000000000004001",
+                "title": "Setagaya City community events calendar (example)",
+                "publisher": "Setagaya City Office (example)",
+                "url": "https://city-setagaya.example/events/calendar",
+                "retrieved_at": "2026-10-16T00:00:00Z",
+                "authority": "official"
+              }
+            },
+            "participation": {
+              "kind": "no_registration_needed"
+            },
+            "capacity": {
+              "kind": "not_tracked",
+              "stated_limit": {
+                "status": "not_applicable"
+              }
+            },
+            "cost": {
+              "status": "known",
+              "value": {
+                "kind": "free"
+              },
+              "basis": "source_derived",
+              "source_id": "src_01JA0000000000000000004001"
+            },
+            "area": {
+              "locality": {
+                "code": "JP-13-112",
+                "name": {
+                  "ja": "世田谷区",
+                  "reading": "せたがやく",
+                  "romaji": "Setagaya-ku",
+                  "en": "Setagaya City"
+                },
+                "level": "municipality"
+              },
+              "label": "Near Futako-Tamagawa Station"
+            }
+          },
+          {
+            "id": "evt_01JA0000000000000000004101",
+            "series_id": null,
+            "title": {
+              "lang": "en",
+              "text": "Autumn hike: Mt. Takao via Trail 6",
+              "translation": {
+                "status": "original"
+              }
+            },
+            "timing": {
+              "kind": "timed",
+              "starts_at": "2026-11-13T23:30:00Z",
+              "ends_at": {
+                "status": "known",
+                "value": "2026-11-14T06:00:00Z",
+                "basis": "reported"
+              },
+              "time_zone": "Asia/Tokyo"
+            },
+            "status": {
+              "state": "scheduled"
+            },
+            "confirmation": "confirmed",
+            "format": "in_person",
+            "source_kind": "member",
+            "organizer": {
+              "kind": "member",
+              "profile": {
+                "profile_id": "prof_01JA00000000000000000000C3",
+                "display_name": "Mai"
+              }
+            },
+            "participation": {
+              "kind": "rsvp_open"
+            },
+            "capacity": {
+              "kind": "limited",
+              "limit": 12,
+              "going_count": 7,
+              "offered_count": 0,
+              "waitlist_count": 0
+            },
+            "cost": {
+              "status": "known",
+              "value": {
+                "kind": "free"
+              },
+              "basis": "reported"
+            },
+            "area": {
+              "locality": {
+                "code": "JP-13-201",
+                "name": {
+                  "ja": "八王子市",
+                  "reading": "はちおうじし",
+                  "romaji": "Hachioji-shi",
+                  "en": "Hachioji City"
+                },
+                "level": "municipality"
+              },
+              "label": "Mt. Takao"
+            }
+          },
+          {
+            "id": "evt_01JA0000000000000000004161",
+            "series_id": null,
+            "title": {
+              "lang": "en",
+              "text": "International Day festival",
+              "translation": {
+                "status": "machine_translation",
+                "source_lang": "ja"
+              }
+            },
+            "timing": {
+              "kind": "all_day",
+              "start_date": "2026-11-21",
+              "end_date": "2026-11-22",
+              "time_zone": "Asia/Tokyo"
+            },
+            "status": {
+              "state": "scheduled"
+            },
+            "confirmation": "confirmed",
+            "format": "in_person",
+            "source_kind": "imported",
+            "organizer": {
+              "kind": "imported",
+              "name": "Example City International Association (example)",
+              "source": {
+                "source_id": "src_01JA0000000000000000004002",
+                "title": "Musashino City events open data (example)",
+                "publisher": "Musashino City Office (example)",
+                "url": "https://city-musashino.example/opendata/events",
+                "retrieved_at": "2026-10-15T21:00:00Z",
+                "authority": "official"
+              }
+            },
+            "participation": {
+              "kind": "no_registration_needed"
+            },
+            "capacity": {
+              "kind": "not_tracked",
+              "stated_limit": {
+                "status": "not_applicable"
+              }
+            },
+            "cost": {
+              "status": "known",
+              "value": {
+                "kind": "free"
+              },
+              "basis": "source_derived",
+              "source_id": "src_01JA0000000000000000004002"
+            },
+            "area": {
+              "locality": {
+                "code": "JP-13-203",
+                "name": {
+                  "ja": "武蔵野市",
+                  "reading": "むさしのし",
+                  "romaji": "Musashino-shi",
+                  "en": "Musashino City"
+                },
+                "level": "municipality"
+              },
+              "label": "Near Kichijoji Station"
+            }
+          },
+          {
+            "id": "evt_01JA0000000000000000004141",
+            "series_id": null,
+            "title": {
+              "lang": "en",
+              "text": "Japanese home cooking class for international residents",
+              "translation": {
+                "status": "machine_translation",
+                "source_lang": "ja"
+              }
+            },
+            "timing": {
+              "kind": "timed",
+              "starts_at": "2026-11-28T01:00:00Z",
+              "ends_at": {
+                "status": "known",
+                "value": "2026-11-28T04:00:00Z",
+                "basis": "source_derived",
+                "source_id": "src_01JA0000000000000000004002"
+              },
+              "time_zone": "Asia/Tokyo"
+            },
+            "status": {
+              "state": "scheduled"
+            },
+            "confirmation": "confirmed",
+            "format": "in_person",
+            "source_kind": "imported",
+            "organizer": {
+              "kind": "imported",
+              "name": "Example City International Association (example)",
+              "source": {
+                "source_id": "src_01JA0000000000000000004002",
+                "title": "Musashino City events open data (example)",
+                "publisher": "Musashino City Office (example)",
+                "url": "https://city-musashino.example/opendata/events",
+                "retrieved_at": "2026-10-15T21:00:00Z",
+                "authority": "official"
+              }
+            },
+            "participation": {
+              "kind": "external_registration",
+              "url": "https://city-musashino.example/events/cooking-class-2026-11",
+              "registration_deadline": {
+                "status": "known",
+                "value": "2026-11-18",
+                "basis": "source_derived",
+                "source_id": "src_01JA0000000000000000004002"
+              },
+              "registration_tracking": "not_tracked",
+              "notice": "Register on the organizer’s website. Saving this event on livingin.jp does not register you or reserve a place."
+            },
+            "capacity": {
+              "kind": "not_tracked",
+              "stated_limit": {
+                "status": "known",
+                "value": 20,
+                "basis": "source_derived",
+                "source_id": "src_01JA0000000000000000004002"
+              }
+            },
+            "cost": {
+              "status": "known",
+              "value": {
+                "kind": "fee",
+                "amount": {
+                  "amount": 800,
+                  "currency": "JPY"
+                },
+                "note": "Ingredients; paid on the day"
+              },
+              "basis": "source_derived",
+              "source_id": "src_01JA0000000000000000004002"
+            },
+            "area": {
+              "locality": {
+                "code": "JP-13-203",
+                "name": {
+                  "ja": "武蔵野市",
+                  "reading": "むさしのし",
+                  "romaji": "Musashino-shi",
+                  "en": "Musashino City"
+                },
+                "level": "municipality"
+              },
+              "label": "Near Mitaka Station (north exit)"
+            }
+          }
+        ],
+        "next_cursor": "bW9jay1jdXJzb3ItZXZ0LTg"
+      }
+    },
+    "empty": {
+      "summary": "Pilot locality (fully covered) with no events in the requested dates",
+      "status": 200,
+      "body": {
+        "coverage": {
+          "status": "supported"
+        },
+        "items": [],
+        "next_cursor": null
+      }
+    },
+    "validation_failed": {
+      "summary": "Malformed date in the `from` filter",
+      "status": 400,
+      "body": {
+        "type": "urn:livingin:problem:validation_failed",
+        "title": "Validation failed",
+        "status": 400,
+        "code": "validation_failed",
+        "request_id": "fixture",
+        "retryable": false,
+        "fields": [
+          {
+            "pointer": "/query/from",
+            "code": "invalid_format",
+            "message": "Invalid ISO date: expected YYYY-MM-DD"
+          }
+        ]
+      }
+    }
+  }
+}

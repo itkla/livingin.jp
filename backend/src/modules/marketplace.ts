@@ -287,7 +287,7 @@ export const marketplaceOperations = [
     auth: 'optional',
     request: {
       query: PageQuery.extend({
-        locality: z.string().regex(/^JP-\d{2}(-\d{3})?$/).optional().openapi({ description: 'Prefecture or municipality code.' }),
+        locality: z.string().regex(/^JP(-\d{2}(-\d{3})?)?$/).optional().openapi({ description: '`JP`, a prefecture or a municipality code.' }),
         q: z.string().max(200).optional(),
         category: ListingCategory.optional(),
         price: z.enum(['free', 'sale']).optional(),

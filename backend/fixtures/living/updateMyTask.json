@@ -1,0 +1,75 @@
+{
+  "operationId": "updateMyTask",
+  "current_etag": "\"2\"",
+  "scenarios": {
+    "default": {
+      "summary": "Member sets their own date on a rule-derived task: the due date becomes user-entered; the origin still records the rule",
+      "status": 200,
+      "headers": {
+        "ETag": "\"3\""
+      },
+      "body": {
+        "id": "tsk_01JA0000000000000000001000",
+        "revision": 3,
+        "title": "Submit moving-in notification at your new municipal office",
+        "notes": "Bring residence card and moving-out certificate.",
+        "status": "open",
+        "status_changed_at": "2026-10-05T10:00:00Z",
+        "origin": {
+          "kind": "rule_derived",
+          "guide_id": "gde_01JA0000000000000000001000",
+          "guide_revision": 4,
+          "guide_title": "Moving to a new municipality: notifying your old and new city offices",
+          "suggestion_key": "submit_moving_in_notification",
+          "rule_version": "gde-moving-municipality/submit_moving_in_notification@4",
+          "explanation": "Suggested because you are moving to a different municipality. The moving-in notification is due within 14 days of moving in.",
+          "rule_status": {
+            "status": "current",
+            "checked_at": "2026-10-15T18:00:00Z"
+          }
+        },
+        "due": {
+          "kind": "date",
+          "date": "2026-11-25",
+          "time_zone": "Asia/Tokyo",
+          "provenance": {
+            "kind": "user_entered",
+            "set_at": "2026-10-16T09:30:00Z"
+          }
+        },
+        "journey": "moving",
+        "updated_at": "2026-10-16T09:30:00Z",
+        "created_at": "2026-10-05T10:00:00Z"
+      }
+    },
+    "not_found": {
+      "summary": "Not the owner, or unknown task",
+      "status": 404,
+      "body": {
+        "type": "urn:livingin:problem:not_found",
+        "title": "Not found",
+        "status": 404,
+        "code": "not_found",
+        "request_id": "fixture",
+        "retryable": false
+      }
+    },
+    "revision_conflict": {
+      "summary": "Edited from a stale copy (If-Match does not match)",
+      "status": 412,
+      "headers": {
+        "ETag": "\"2\""
+      },
+      "body": {
+        "type": "urn:livingin:problem:revision_conflict",
+        "title": "Revision conflict",
+        "status": 412,
+        "code": "revision_conflict",
+        "request_id": "fixture",
+        "retryable": false,
+        "current_revision": 2,
+        "detail": "The resource changed since you loaded it. Reload and reapply your edit."
+      }
+    }
+  }
+}

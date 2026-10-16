@@ -1,0 +1,1803 @@
+{
+  "operationId": "getEventSeries",
+  "scenarios": {
+    "default": {
+      "summary": "Imported municipal flea market (monthly RRULE) with one cancelled date, one moved date, and later occurrences only expected",
+      "status": 200,
+      "body": {
+        "id": "evs_01JA0000000000000000004001",
+        "title": {
+          "lang": "en",
+          "text": "Example Riverside Park flea market",
+          "translation": {
+            "status": "machine_translation",
+            "source_lang": "ja"
+          }
+        },
+        "description": {
+          "lang": "en",
+          "text": "Monthly flea market with around 60 stalls selling secondhand clothes, books, toys and household goods. Free entry. Stall applications are handled by the organizing committee.",
+          "translation": {
+            "status": "machine_translation",
+            "source_lang": "ja"
+          }
+        },
+        "source_kind": "imported",
+        "organizer": {
+          "kind": "imported",
+          "name": "Riverside Flea Market Committee (example)",
+          "source": {
+            "source_id": "src_01JA0000000000000000004001",
+            "title": "Setagaya City community events calendar (example)",
+            "publisher": "Setagaya City Office (example)",
+            "url": "https://city-setagaya.example/events/calendar",
+            "retrieved_at": "2026-10-16T00:00:00Z",
+            "authority": "official"
+          }
+        },
+        "provenance": {
+          "kind": "imported",
+          "source": {
+            "source_id": "src_01JA0000000000000000004001",
+            "title": "Setagaya City community events calendar (example)",
+            "publisher": "Setagaya City Office (example)",
+            "url": "https://city-setagaya.example/events/calendar",
+            "retrieved_at": "2026-10-16T00:00:00Z",
+            "authority": "official"
+          },
+          "source_record_key": "setagaya-events-flea-riverside",
+          "freshness": {
+            "state": "current",
+            "checked_at": "2026-10-16T00:00:00Z",
+            "stale_after": "2026-10-19T00:00:00Z"
+          }
+        },
+        "visibility": "public",
+        "format": "in_person",
+        "location": {
+          "kind": "in_person",
+          "venue": {
+            "name": "Example Riverside Park, central lawn",
+            "area": {
+              "locality": {
+                "code": "JP-13-112",
+                "name": {
+                  "ja": "世田谷区",
+                  "reading": "せたがやく",
+                  "romaji": "Setagaya-ku",
+                  "en": "Setagaya City"
+                },
+                "level": "municipality"
+              },
+              "label": "Near Futako-Tamagawa Station"
+            },
+            "address": {
+              "status": "known",
+              "value": "4-5-6 Example-machi, Setagaya City, Tokyo (example)",
+              "basis": "source_derived",
+              "source_id": "src_01JA0000000000000000004001"
+            }
+          },
+          "meeting_point": null
+        },
+        "participation": {
+          "kind": "no_registration_needed"
+        },
+        "cost": {
+          "status": "known",
+          "value": {
+            "kind": "free"
+          },
+          "basis": "source_derived",
+          "source_id": "src_01JA0000000000000000004001"
+        },
+        "recurrence": {
+          "kind": "rule",
+          "rrule": "FREQ=MONTHLY;BYDAY=2SU",
+          "starts_on": "2026-04-12",
+          "time_of_day": {
+            "kind": "timed",
+            "start_time": "09:00",
+            "end_time": "14:00"
+          },
+          "time_zone": "Asia/Tokyo",
+          "summary": "Second Sunday of each month, 9:00–14:00 (Japan time)"
+        },
+        "status": {
+          "state": "active"
+        },
+        "exceptions": [
+          {
+            "kind": "cancelled",
+            "original_date": "2026-12-13",
+            "event_id": "evt_01JA0000000000000000004112",
+            "announced_at": "2026-10-01T03:00:00Z",
+            "reason": {
+              "status": "known",
+              "value": "Park facilities closed for maintenance",
+              "basis": "source_derived",
+              "source_id": "src_01JA0000000000000000004001"
+            }
+          },
+          {
+            "kind": "moved",
+            "original_date": "2027-01-10",
+            "new_date": "2027-01-17",
+            "event_id": "evt_01JA0000000000000000004113",
+            "moved_to_event_id": "evt_01JA0000000000000000004114",
+            "announced_at": "2026-10-01T03:00:00Z",
+            "reason": {
+              "status": "known",
+              "value": "The park is reserved for another event on 10 January",
+              "basis": "source_derived",
+              "source_id": "src_01JA0000000000000000004001"
+            }
+          }
+        ],
+        "upcoming_occurrences": [
+          {
+            "id": "evt_01JA0000000000000000004111",
+            "series_id": "evs_01JA0000000000000000004001",
+            "title": {
+              "lang": "en",
+              "text": "Example Riverside Park flea market",
+              "translation": {
+                "status": "machine_translation",
+                "source_lang": "ja"
+              }
+            },
+            "timing": {
+              "kind": "timed",
+              "starts_at": "2026-11-08T00:00:00Z",
+              "ends_at": {
+                "status": "known",
+                "value": "2026-11-08T05:00:00Z",
+                "basis": "source_derived",
+                "source_id": "src_01JA0000000000000000004001"
+              },
+              "time_zone": "Asia/Tokyo"
+            },
+            "status": {
+              "state": "scheduled"
+            },
+            "confirmation": "confirmed",
+            "format": "in_person",
+            "source_kind": "imported",
+            "organizer": {
+              "kind": "imported",
+              "name": "Riverside Flea Market Committee (example)",
+              "source": {
+                "source_id": "src_01JA0000000000000000004001",
+                "title": "Setagaya City community events calendar (example)",
+                "publisher": "Setagaya City Office (example)",
+                "url": "https://city-setagaya.example/events/calendar",
+                "retrieved_at": "2026-10-16T00:00:00Z",
+                "authority": "official"
+              }
+            },
+            "participation": {
+              "kind": "no_registration_needed"
+            },
+            "capacity": {
+              "kind": "not_tracked",
+              "stated_limit": {
+                "status": "not_applicable"
+              }
+            },
+            "cost": {
+              "status": "known",
+              "value": {
+                "kind": "free"
+              },
+              "basis": "source_derived",
+              "source_id": "src_01JA0000000000000000004001"
+            },
+            "area": {
+              "locality": {
+                "code": "JP-13-112",
+                "name": {
+                  "ja": "世田谷区",
+                  "reading": "せたがやく",
+                  "romaji": "Setagaya-ku",
+                  "en": "Setagaya City"
+                },
+                "level": "municipality"
+              },
+              "label": "Near Futako-Tamagawa Station"
+            }
+          },
+          {
+            "id": "evt_01JA0000000000000000004112",
+            "series_id": "evs_01JA0000000000000000004001",
+            "title": {
+              "lang": "en",
+              "text": "Example Riverside Park flea market",
+              "translation": {
+                "status": "machine_translation",
+                "source_lang": "ja"
+              }
+            },
+            "timing": {
+              "kind": "timed",
+              "starts_at": "2026-12-13T00:00:00Z",
+              "ends_at": {
+                "status": "known",
+                "value": "2026-12-13T05:00:00Z",
+                "basis": "source_derived",
+                "source_id": "src_01JA0000000000000000004001"
+              },
+              "time_zone": "Asia/Tokyo"
+            },
+            "status": {
+              "state": "cancelled",
+              "cancelled_at": "2026-10-01T03:00:00Z",
+              "reason": {
+                "status": "known",
+                "value": "Park facilities closed for maintenance",
+                "basis": "source_derived",
+                "source_id": "src_01JA0000000000000000004001"
+              }
+            },
+            "confirmation": "confirmed",
+            "format": "in_person",
+            "source_kind": "imported",
+            "organizer": {
+              "kind": "imported",
+              "name": "Riverside Flea Market Committee (example)",
+              "source": {
+                "source_id": "src_01JA0000000000000000004001",
+                "title": "Setagaya City community events calendar (example)",
+                "publisher": "Setagaya City Office (example)",
+                "url": "https://city-setagaya.example/events/calendar",
+                "retrieved_at": "2026-10-16T00:00:00Z",
+                "authority": "official"
+              }
+            },
+            "participation": {
+              "kind": "no_registration_needed"
+            },
+            "capacity": {
+              "kind": "not_tracked",
+              "stated_limit": {
+                "status": "not_applicable"
+              }
+            },
+            "cost": {
+              "status": "known",
+              "value": {
+                "kind": "free"
+              },
+              "basis": "source_derived",
+              "source_id": "src_01JA0000000000000000004001"
+            },
+            "area": {
+              "locality": {
+                "code": "JP-13-112",
+                "name": {
+                  "ja": "世田谷区",
+                  "reading": "せたがやく",
+                  "romaji": "Setagaya-ku",
+                  "en": "Setagaya City"
+                },
+                "level": "municipality"
+              },
+              "label": "Near Futako-Tamagawa Station"
+            }
+          },
+          {
+            "id": "evt_01JA0000000000000000004113",
+            "series_id": "evs_01JA0000000000000000004001",
+            "title": {
+              "lang": "en",
+              "text": "Example Riverside Park flea market",
+              "translation": {
+                "status": "machine_translation",
+                "source_lang": "ja"
+              }
+            },
+            "timing": {
+              "kind": "timed",
+              "starts_at": "2027-01-10T00:00:00Z",
+              "ends_at": {
+                "status": "known",
+                "value": "2027-01-10T05:00:00Z",
+                "basis": "source_derived",
+                "source_id": "src_01JA0000000000000000004001"
+              },
+              "time_zone": "Asia/Tokyo"
+            },
+            "status": {
+              "state": "rescheduled",
+              "rescheduled_at": "2026-10-01T03:00:00Z",
+              "moved_to_event_id": "evt_01JA0000000000000000004114",
+              "reason": {
+                "status": "known",
+                "value": "The park is reserved for another event on 10 January",
+                "basis": "source_derived",
+                "source_id": "src_01JA0000000000000000004001"
+              }
+            },
+            "confirmation": "confirmed",
+            "format": "in_person",
+            "source_kind": "imported",
+            "organizer": {
+              "kind": "imported",
+              "name": "Riverside Flea Market Committee (example)",
+              "source": {
+                "source_id": "src_01JA0000000000000000004001",
+                "title": "Setagaya City community events calendar (example)",
+                "publisher": "Setagaya City Office (example)",
+                "url": "https://city-setagaya.example/events/calendar",
+                "retrieved_at": "2026-10-16T00:00:00Z",
+                "authority": "official"
+              }
+            },
+            "participation": {
+              "kind": "no_registration_needed"
+            },
+            "capacity": {
+              "kind": "not_tracked",
+              "stated_limit": {
+                "status": "not_applicable"
+              }
+            },
+            "cost": {
+              "status": "known",
+              "value": {
+                "kind": "free"
+              },
+              "basis": "source_derived",
+              "source_id": "src_01JA0000000000000000004001"
+            },
+            "area": {
+              "locality": {
+                "code": "JP-13-112",
+                "name": {
+                  "ja": "世田谷区",
+                  "reading": "せたがやく",
+                  "romaji": "Setagaya-ku",
+                  "en": "Setagaya City"
+                },
+                "level": "municipality"
+              },
+              "label": "Near Futako-Tamagawa Station"
+            }
+          },
+          {
+            "id": "evt_01JA0000000000000000004114",
+            "series_id": "evs_01JA0000000000000000004001",
+            "title": {
+              "lang": "en",
+              "text": "Example Riverside Park flea market",
+              "translation": {
+                "status": "machine_translation",
+                "source_lang": "ja"
+              }
+            },
+            "timing": {
+              "kind": "timed",
+              "starts_at": "2027-01-17T00:00:00Z",
+              "ends_at": {
+                "status": "known",
+                "value": "2027-01-17T05:00:00Z",
+                "basis": "source_derived",
+                "source_id": "src_01JA0000000000000000004001"
+              },
+              "time_zone": "Asia/Tokyo"
+            },
+            "status": {
+              "state": "scheduled"
+            },
+            "confirmation": "confirmed",
+            "format": "in_person",
+            "source_kind": "imported",
+            "organizer": {
+              "kind": "imported",
+              "name": "Riverside Flea Market Committee (example)",
+              "source": {
+                "source_id": "src_01JA0000000000000000004001",
+                "title": "Setagaya City community events calendar (example)",
+                "publisher": "Setagaya City Office (example)",
+                "url": "https://city-setagaya.example/events/calendar",
+                "retrieved_at": "2026-10-16T00:00:00Z",
+                "authority": "official"
+              }
+            },
+            "participation": {
+              "kind": "no_registration_needed"
+            },
+            "capacity": {
+              "kind": "not_tracked",
+              "stated_limit": {
+                "status": "not_applicable"
+              }
+            },
+            "cost": {
+              "status": "known",
+              "value": {
+                "kind": "free"
+              },
+              "basis": "source_derived",
+              "source_id": "src_01JA0000000000000000004001"
+            },
+            "area": {
+              "locality": {
+                "code": "JP-13-112",
+                "name": {
+                  "ja": "世田谷区",
+                  "reading": "せたがやく",
+                  "romaji": "Setagaya-ku",
+                  "en": "Setagaya City"
+                },
+                "level": "municipality"
+              },
+              "label": "Near Futako-Tamagawa Station"
+            }
+          },
+          {
+            "id": "evt_01JA0000000000000000004115",
+            "series_id": "evs_01JA0000000000000000004001",
+            "title": {
+              "lang": "en",
+              "text": "Example Riverside Park flea market",
+              "translation": {
+                "status": "machine_translation",
+                "source_lang": "ja"
+              }
+            },
+            "timing": {
+              "kind": "timed",
+              "starts_at": "2027-02-14T00:00:00Z",
+              "ends_at": {
+                "status": "known",
+                "value": "2027-02-14T05:00:00Z",
+                "basis": "source_derived",
+                "source_id": "src_01JA0000000000000000004001"
+              },
+              "time_zone": "Asia/Tokyo"
+            },
+            "status": {
+              "state": "scheduled"
+            },
+            "confirmation": "expected",
+            "format": "in_person",
+            "source_kind": "imported",
+            "organizer": {
+              "kind": "imported",
+              "name": "Riverside Flea Market Committee (example)",
+              "source": {
+                "source_id": "src_01JA0000000000000000004001",
+                "title": "Setagaya City community events calendar (example)",
+                "publisher": "Setagaya City Office (example)",
+                "url": "https://city-setagaya.example/events/calendar",
+                "retrieved_at": "2026-10-16T00:00:00Z",
+                "authority": "official"
+              }
+            },
+            "participation": {
+              "kind": "no_registration_needed"
+            },
+            "capacity": {
+              "kind": "not_tracked",
+              "stated_limit": {
+                "status": "not_applicable"
+              }
+            },
+            "cost": {
+              "status": "known",
+              "value": {
+                "kind": "free"
+              },
+              "basis": "source_derived",
+              "source_id": "src_01JA0000000000000000004001"
+            },
+            "area": {
+              "locality": {
+                "code": "JP-13-112",
+                "name": {
+                  "ja": "世田谷区",
+                  "reading": "せたがやく",
+                  "romaji": "Setagaya-ku",
+                  "en": "Setagaya City"
+                },
+                "level": "municipality"
+              },
+              "label": "Near Futako-Tamagawa Station"
+            }
+          },
+          {
+            "id": "evt_01JA0000000000000000004116",
+            "series_id": "evs_01JA0000000000000000004001",
+            "title": {
+              "lang": "en",
+              "text": "Example Riverside Park flea market",
+              "translation": {
+                "status": "machine_translation",
+                "source_lang": "ja"
+              }
+            },
+            "timing": {
+              "kind": "timed",
+              "starts_at": "2027-03-14T00:00:00Z",
+              "ends_at": {
+                "status": "known",
+                "value": "2027-03-14T05:00:00Z",
+                "basis": "source_derived",
+                "source_id": "src_01JA0000000000000000004001"
+              },
+              "time_zone": "Asia/Tokyo"
+            },
+            "status": {
+              "state": "scheduled"
+            },
+            "confirmation": "expected",
+            "format": "in_person",
+            "source_kind": "imported",
+            "organizer": {
+              "kind": "imported",
+              "name": "Riverside Flea Market Committee (example)",
+              "source": {
+                "source_id": "src_01JA0000000000000000004001",
+                "title": "Setagaya City community events calendar (example)",
+                "publisher": "Setagaya City Office (example)",
+                "url": "https://city-setagaya.example/events/calendar",
+                "retrieved_at": "2026-10-16T00:00:00Z",
+                "authority": "official"
+              }
+            },
+            "participation": {
+              "kind": "no_registration_needed"
+            },
+            "capacity": {
+              "kind": "not_tracked",
+              "stated_limit": {
+                "status": "not_applicable"
+              }
+            },
+            "cost": {
+              "status": "known",
+              "value": {
+                "kind": "free"
+              },
+              "basis": "source_derived",
+              "source_id": "src_01JA0000000000000000004001"
+            },
+            "area": {
+              "locality": {
+                "code": "JP-13-112",
+                "name": {
+                  "ja": "世田谷区",
+                  "reading": "せたがやく",
+                  "romaji": "Setagaya-ku",
+                  "en": "Setagaya City"
+                },
+                "level": "municipality"
+              },
+              "label": "Near Futako-Tamagawa Station"
+            }
+          }
+        ],
+        "updated_at": "2026-10-01T03:10:00Z"
+      }
+    },
+    "member_series": {
+      "summary": "Member-hosted weekly series: confirmed occurrences, one cancelled by the organizer, and a projected (expected) week",
+      "status": 200,
+      "body": {
+        "id": "evs_01JA0000000000000000004002",
+        "title": {
+          "lang": "en",
+          "text": "Thursday evening language exchange (Japanese–English)",
+          "translation": {
+            "status": "original"
+          }
+        },
+        "description": {
+          "lang": "en",
+          "text": "Relaxed conversation practice: half the evening in Japanese, half in English. All levels welcome; tables are grouped by level. Bring a drink if you like.",
+          "translation": {
+            "status": "original"
+          }
+        },
+        "source_kind": "member",
+        "organizer": {
+          "kind": "member",
+          "profile": {
+            "profile_id": "prof_01JA00000000000000000000C3",
+            "display_name": "Mai"
+          }
+        },
+        "provenance": {
+          "kind": "native",
+          "created_by": "member",
+          "created_at": "2026-08-20T12:00:00Z"
+        },
+        "visibility": "public",
+        "format": "in_person",
+        "location": {
+          "kind": "in_person",
+          "venue": {
+            "name": "Musashino Example Community Center, Room B",
+            "area": {
+              "locality": {
+                "code": "JP-13-203",
+                "name": {
+                  "ja": "武蔵野市",
+                  "reading": "むさしのし",
+                  "romaji": "Musashino-shi",
+                  "en": "Musashino City"
+                },
+                "level": "municipality"
+              },
+              "label": "Near Kichijoji Station"
+            },
+            "address": {
+              "status": "known",
+              "value": "1-2-3 Example-cho, Musashino City, Tokyo (example)",
+              "basis": "reported"
+            }
+          },
+          "meeting_point": null
+        },
+        "participation": {
+          "kind": "rsvp_open"
+        },
+        "cost": {
+          "status": "known",
+          "value": {
+            "kind": "fee",
+            "amount": {
+              "amount": 300,
+              "currency": "JPY"
+            },
+            "note": "Room fee, paid in cash at the door"
+          },
+          "basis": "reported"
+        },
+        "recurrence": {
+          "kind": "rule",
+          "rrule": "FREQ=WEEKLY;BYDAY=TH",
+          "starts_on": "2026-09-03",
+          "time_of_day": {
+            "kind": "timed",
+            "start_time": "19:00",
+            "end_time": "20:30"
+          },
+          "time_zone": "Asia/Tokyo",
+          "summary": "Every Thursday, 19:00–20:30 (Japan time)"
+        },
+        "status": {
+          "state": "active"
+        },
+        "exceptions": [
+          {
+            "kind": "cancelled",
+            "original_date": "2026-10-29",
+            "event_id": "evt_01JA0000000000000000004122",
+            "announced_at": "2026-10-20T08:00:00Z",
+            "reason": {
+              "status": "known",
+              "value": "The organizer is away this week.",
+              "basis": "reported"
+            }
+          }
+        ],
+        "upcoming_occurrences": [
+          {
+            "id": "evt_01JA0000000000000000004121",
+            "series_id": "evs_01JA0000000000000000004002",
+            "title": {
+              "lang": "en",
+              "text": "Thursday evening language exchange (Japanese–English)",
+              "translation": {
+                "status": "original"
+              }
+            },
+            "timing": {
+              "kind": "timed",
+              "starts_at": "2026-10-22T10:00:00Z",
+              "ends_at": {
+                "status": "known",
+                "value": "2026-10-22T11:30:00Z",
+                "basis": "reported"
+              },
+              "time_zone": "Asia/Tokyo"
+            },
+            "status": {
+              "state": "scheduled"
+            },
+            "confirmation": "confirmed",
+            "format": "in_person",
+            "source_kind": "member",
+            "organizer": {
+              "kind": "member",
+              "profile": {
+                "profile_id": "prof_01JA00000000000000000000C3",
+                "display_name": "Mai"
+              }
+            },
+            "participation": {
+              "kind": "rsvp_open"
+            },
+            "capacity": {
+              "kind": "limited",
+              "limit": 12,
+              "going_count": 12,
+              "offered_count": 0,
+              "waitlist_count": 2
+            },
+            "cost": {
+              "status": "known",
+              "value": {
+                "kind": "fee",
+                "amount": {
+                  "amount": 300,
+                  "currency": "JPY"
+                },
+                "note": "Room fee, paid in cash at the door"
+              },
+              "basis": "reported"
+            },
+            "area": {
+              "locality": {
+                "code": "JP-13-203",
+                "name": {
+                  "ja": "武蔵野市",
+                  "reading": "むさしのし",
+                  "romaji": "Musashino-shi",
+                  "en": "Musashino City"
+                },
+                "level": "municipality"
+              },
+              "label": "Near Kichijoji Station"
+            }
+          },
+          {
+            "id": "evt_01JA0000000000000000004122",
+            "series_id": "evs_01JA0000000000000000004002",
+            "title": {
+              "lang": "en",
+              "text": "Thursday evening language exchange (Japanese–English)",
+              "translation": {
+                "status": "original"
+              }
+            },
+            "timing": {
+              "kind": "timed",
+              "starts_at": "2026-10-29T10:00:00Z",
+              "ends_at": {
+                "status": "known",
+                "value": "2026-10-29T11:30:00Z",
+                "basis": "reported"
+              },
+              "time_zone": "Asia/Tokyo"
+            },
+            "status": {
+              "state": "cancelled",
+              "cancelled_at": "2026-10-20T08:00:00Z",
+              "reason": {
+                "status": "known",
+                "value": "The organizer is away this week.",
+                "basis": "reported"
+              }
+            },
+            "confirmation": "confirmed",
+            "format": "in_person",
+            "source_kind": "member",
+            "organizer": {
+              "kind": "member",
+              "profile": {
+                "profile_id": "prof_01JA00000000000000000000C3",
+                "display_name": "Mai"
+              }
+            },
+            "participation": {
+              "kind": "rsvp_open"
+            },
+            "capacity": {
+              "kind": "limited",
+              "limit": 12,
+              "going_count": 6,
+              "offered_count": 0,
+              "waitlist_count": 0
+            },
+            "cost": {
+              "status": "known",
+              "value": {
+                "kind": "fee",
+                "amount": {
+                  "amount": 300,
+                  "currency": "JPY"
+                },
+                "note": "Room fee, paid in cash at the door"
+              },
+              "basis": "reported"
+            },
+            "area": {
+              "locality": {
+                "code": "JP-13-203",
+                "name": {
+                  "ja": "武蔵野市",
+                  "reading": "むさしのし",
+                  "romaji": "Musashino-shi",
+                  "en": "Musashino City"
+                },
+                "level": "municipality"
+              },
+              "label": "Near Kichijoji Station"
+            }
+          },
+          {
+            "id": "evt_01JA0000000000000000004123",
+            "series_id": "evs_01JA0000000000000000004002",
+            "title": {
+              "lang": "en",
+              "text": "Thursday evening language exchange (Japanese–English)",
+              "translation": {
+                "status": "original"
+              }
+            },
+            "timing": {
+              "kind": "timed",
+              "starts_at": "2026-11-05T10:00:00Z",
+              "ends_at": {
+                "status": "known",
+                "value": "2026-11-05T11:30:00Z",
+                "basis": "reported"
+              },
+              "time_zone": "Asia/Tokyo"
+            },
+            "status": {
+              "state": "scheduled"
+            },
+            "confirmation": "confirmed",
+            "format": "in_person",
+            "source_kind": "member",
+            "organizer": {
+              "kind": "member",
+              "profile": {
+                "profile_id": "prof_01JA00000000000000000000C3",
+                "display_name": "Mai"
+              }
+            },
+            "participation": {
+              "kind": "rsvp_open"
+            },
+            "capacity": {
+              "kind": "limited",
+              "limit": 12,
+              "going_count": 4,
+              "offered_count": 0,
+              "waitlist_count": 0
+            },
+            "cost": {
+              "status": "known",
+              "value": {
+                "kind": "fee",
+                "amount": {
+                  "amount": 300,
+                  "currency": "JPY"
+                },
+                "note": "Room fee, paid in cash at the door"
+              },
+              "basis": "reported"
+            },
+            "area": {
+              "locality": {
+                "code": "JP-13-203",
+                "name": {
+                  "ja": "武蔵野市",
+                  "reading": "むさしのし",
+                  "romaji": "Musashino-shi",
+                  "en": "Musashino City"
+                },
+                "level": "municipality"
+              },
+              "label": "Near Kichijoji Station"
+            }
+          },
+          {
+            "id": "evt_01JA0000000000000000004124",
+            "series_id": "evs_01JA0000000000000000004002",
+            "title": {
+              "lang": "en",
+              "text": "Thursday evening language exchange (Japanese–English)",
+              "translation": {
+                "status": "original"
+              }
+            },
+            "timing": {
+              "kind": "timed",
+              "starts_at": "2026-11-12T10:00:00Z",
+              "ends_at": {
+                "status": "known",
+                "value": "2026-11-12T11:30:00Z",
+                "basis": "reported"
+              },
+              "time_zone": "Asia/Tokyo"
+            },
+            "status": {
+              "state": "scheduled"
+            },
+            "confirmation": "expected",
+            "format": "in_person",
+            "source_kind": "member",
+            "organizer": {
+              "kind": "member",
+              "profile": {
+                "profile_id": "prof_01JA00000000000000000000C3",
+                "display_name": "Mai"
+              }
+            },
+            "participation": {
+              "kind": "rsvp_open"
+            },
+            "capacity": {
+              "kind": "limited",
+              "limit": 12,
+              "going_count": 0,
+              "offered_count": 0,
+              "waitlist_count": 0
+            },
+            "cost": {
+              "status": "known",
+              "value": {
+                "kind": "fee",
+                "amount": {
+                  "amount": 300,
+                  "currency": "JPY"
+                },
+                "note": "Room fee, paid in cash at the door"
+              },
+              "basis": "reported"
+            },
+            "area": {
+              "locality": {
+                "code": "JP-13-203",
+                "name": {
+                  "ja": "武蔵野市",
+                  "reading": "むさしのし",
+                  "romaji": "Musashino-shi",
+                  "en": "Musashino City"
+                },
+                "level": "municipality"
+              },
+              "label": "Near Kichijoji Station"
+            }
+          }
+        ],
+        "updated_at": "2026-10-20T08:00:00Z"
+      }
+    },
+    "irregular_schedule": {
+      "summary": "Organization series with no recurrence rule: dates are announced individually and nothing is projected",
+      "status": 200,
+      "body": {
+        "id": "evs_01JA0000000000000000004003",
+        "title": {
+          "lang": "en",
+          "text": "Newcomer orientation: your first months in Tokyo",
+          "translation": {
+            "status": "original"
+          }
+        },
+        "description": {
+          "lang": "en",
+          "text": "A two-hour introduction for people who have recently moved: getting around, everyday services, finding Japanese classes and meeting people. Join at the center or online. The center approves requests so each session stays small.",
+          "translation": {
+            "status": "original"
+          }
+        },
+        "source_kind": "organization",
+        "organizer": {
+          "kind": "organization",
+          "organization": {
+            "id": "org_01JA0000000000000000000001",
+            "kind": "nonprofit",
+            "name": {
+              "ja": "さくら国際交流センター（例）",
+              "en": "Sakura International Exchange Center (example)"
+            },
+            "verification": "verified",
+            "website": "https://sakura-exchange.example",
+            "description": "Runs Japanese conversation circles and newcomer orientation sessions."
+          }
+        },
+        "provenance": {
+          "kind": "native",
+          "created_by": "organization",
+          "created_at": "2026-09-15T02:00:00Z"
+        },
+        "visibility": "public",
+        "format": "hybrid",
+        "location": {
+          "kind": "hybrid",
+          "venue": {
+            "name": "Sakura International Exchange Center (example), Room 3",
+            "area": {
+              "locality": {
+                "code": "JP-13-104",
+                "name": {
+                  "ja": "新宿区",
+                  "reading": "しんじゅくく",
+                  "romaji": "Shinjuku-ku",
+                  "en": "Shinjuku City"
+                },
+                "level": "municipality"
+              },
+              "label": "Near Takadanobaba Station"
+            },
+            "address": {
+              "status": "known",
+              "value": "7-8-9 Example-dori, Shinjuku City, Tokyo (example)",
+              "basis": "reported"
+            }
+          },
+          "meeting_point": null,
+          "online": {
+            "platform": "Video call",
+            "join": {
+              "status": "participants_only"
+            }
+          }
+        },
+        "participation": {
+          "kind": "rsvp_approval"
+        },
+        "cost": {
+          "status": "known",
+          "value": {
+            "kind": "free"
+          },
+          "basis": "reported"
+        },
+        "recurrence": {
+          "kind": "irregular",
+          "time_zone": "Asia/Tokyo",
+          "summary": "Dates are announced individually, usually once or twice a month."
+        },
+        "status": {
+          "state": "active"
+        },
+        "exceptions": [],
+        "upcoming_occurrences": [
+          {
+            "id": "evt_01JA0000000000000000004131",
+            "series_id": "evs_01JA0000000000000000004003",
+            "title": {
+              "lang": "en",
+              "text": "Newcomer orientation: your first months in Tokyo",
+              "translation": {
+                "status": "original"
+              }
+            },
+            "timing": {
+              "kind": "timed",
+              "starts_at": "2026-11-07T05:00:00Z",
+              "ends_at": {
+                "status": "known",
+                "value": "2026-11-07T07:00:00Z",
+                "basis": "reported"
+              },
+              "time_zone": "Asia/Tokyo"
+            },
+            "status": {
+              "state": "scheduled"
+            },
+            "confirmation": "confirmed",
+            "format": "hybrid",
+            "source_kind": "organization",
+            "organizer": {
+              "kind": "organization",
+              "organization": {
+                "id": "org_01JA0000000000000000000001",
+                "kind": "nonprofit",
+                "name": {
+                  "ja": "さくら国際交流センター（例）",
+                  "en": "Sakura International Exchange Center (example)"
+                },
+                "verification": "verified",
+                "website": "https://sakura-exchange.example",
+                "description": "Runs Japanese conversation circles and newcomer orientation sessions."
+              }
+            },
+            "participation": {
+              "kind": "rsvp_approval"
+            },
+            "capacity": {
+              "kind": "limited",
+              "limit": 20,
+              "going_count": 8,
+              "offered_count": 0,
+              "waitlist_count": 0
+            },
+            "cost": {
+              "status": "known",
+              "value": {
+                "kind": "free"
+              },
+              "basis": "reported"
+            },
+            "area": {
+              "locality": {
+                "code": "JP-13-104",
+                "name": {
+                  "ja": "新宿区",
+                  "reading": "しんじゅくく",
+                  "romaji": "Shinjuku-ku",
+                  "en": "Shinjuku City"
+                },
+                "level": "municipality"
+              },
+              "label": "Near Takadanobaba Station"
+            }
+          },
+          {
+            "id": "evt_01JA0000000000000000004132",
+            "series_id": "evs_01JA0000000000000000004003",
+            "title": {
+              "lang": "en",
+              "text": "Newcomer orientation: your first months in Tokyo",
+              "translation": {
+                "status": "original"
+              }
+            },
+            "timing": {
+              "kind": "timed",
+              "starts_at": "2026-12-05T05:00:00Z",
+              "ends_at": {
+                "status": "known",
+                "value": "2026-12-05T07:00:00Z",
+                "basis": "reported"
+              },
+              "time_zone": "Asia/Tokyo"
+            },
+            "status": {
+              "state": "scheduled"
+            },
+            "confirmation": "confirmed",
+            "format": "hybrid",
+            "source_kind": "organization",
+            "organizer": {
+              "kind": "organization",
+              "organization": {
+                "id": "org_01JA0000000000000000000001",
+                "kind": "nonprofit",
+                "name": {
+                  "ja": "さくら国際交流センター（例）",
+                  "en": "Sakura International Exchange Center (example)"
+                },
+                "verification": "verified",
+                "website": "https://sakura-exchange.example",
+                "description": "Runs Japanese conversation circles and newcomer orientation sessions."
+              }
+            },
+            "participation": {
+              "kind": "rsvp_approval"
+            },
+            "capacity": {
+              "kind": "limited",
+              "limit": 20,
+              "going_count": 3,
+              "offered_count": 0,
+              "waitlist_count": 0
+            },
+            "cost": {
+              "status": "known",
+              "value": {
+                "kind": "free"
+              },
+              "basis": "reported"
+            },
+            "area": {
+              "locality": {
+                "code": "JP-13-104",
+                "name": {
+                  "ja": "新宿区",
+                  "reading": "しんじゅくく",
+                  "romaji": "Shinjuku-ku",
+                  "en": "Shinjuku City"
+                },
+                "level": "municipality"
+              },
+              "label": "Near Takadanobaba Station"
+            }
+          }
+        ],
+        "updated_at": "2026-10-02T04:00:00Z"
+      }
+    },
+    "stale_source": {
+      "summary": "Imported series whose source could not be checked recently: data shown, but stale",
+      "status": 200,
+      "body": {
+        "id": "evs_01JA0000000000000000004001",
+        "title": {
+          "lang": "en",
+          "text": "Example Riverside Park flea market",
+          "translation": {
+            "status": "machine_translation",
+            "source_lang": "ja"
+          }
+        },
+        "description": {
+          "lang": "en",
+          "text": "Monthly flea market with around 60 stalls selling secondhand clothes, books, toys and household goods. Free entry. Stall applications are handled by the organizing committee.",
+          "translation": {
+            "status": "machine_translation",
+            "source_lang": "ja"
+          }
+        },
+        "source_kind": "imported",
+        "organizer": {
+          "kind": "imported",
+          "name": "Riverside Flea Market Committee (example)",
+          "source": {
+            "source_id": "src_01JA0000000000000000004001",
+            "title": "Setagaya City community events calendar (example)",
+            "publisher": "Setagaya City Office (example)",
+            "url": "https://city-setagaya.example/events/calendar",
+            "retrieved_at": "2026-10-02T00:00:00Z",
+            "authority": "official"
+          }
+        },
+        "provenance": {
+          "kind": "imported",
+          "source": {
+            "source_id": "src_01JA0000000000000000004001",
+            "title": "Setagaya City community events calendar (example)",
+            "publisher": "Setagaya City Office (example)",
+            "url": "https://city-setagaya.example/events/calendar",
+            "retrieved_at": "2026-10-02T00:00:00Z",
+            "authority": "official"
+          },
+          "source_record_key": "setagaya-events-flea-riverside",
+          "freshness": {
+            "state": "stale",
+            "checked_at": "2026-10-02T00:00:00Z",
+            "stale_since": "2026-10-05T00:00:00Z",
+            "reason": "The source calendar has not been readable since 2 October. Dates and cancellations shown may be out of date; check the city calendar before going."
+          }
+        },
+        "visibility": "public",
+        "format": "in_person",
+        "location": {
+          "kind": "in_person",
+          "venue": {
+            "name": "Example Riverside Park, central lawn",
+            "area": {
+              "locality": {
+                "code": "JP-13-112",
+                "name": {
+                  "ja": "世田谷区",
+                  "reading": "せたがやく",
+                  "romaji": "Setagaya-ku",
+                  "en": "Setagaya City"
+                },
+                "level": "municipality"
+              },
+              "label": "Near Futako-Tamagawa Station"
+            },
+            "address": {
+              "status": "known",
+              "value": "4-5-6 Example-machi, Setagaya City, Tokyo (example)",
+              "basis": "source_derived",
+              "source_id": "src_01JA0000000000000000004001"
+            }
+          },
+          "meeting_point": null
+        },
+        "participation": {
+          "kind": "no_registration_needed"
+        },
+        "cost": {
+          "status": "known",
+          "value": {
+            "kind": "free"
+          },
+          "basis": "source_derived",
+          "source_id": "src_01JA0000000000000000004001"
+        },
+        "recurrence": {
+          "kind": "rule",
+          "rrule": "FREQ=MONTHLY;BYDAY=2SU",
+          "starts_on": "2026-04-12",
+          "time_of_day": {
+            "kind": "timed",
+            "start_time": "09:00",
+            "end_time": "14:00"
+          },
+          "time_zone": "Asia/Tokyo",
+          "summary": "Second Sunday of each month, 9:00–14:00 (Japan time)"
+        },
+        "status": {
+          "state": "active"
+        },
+        "exceptions": [
+          {
+            "kind": "cancelled",
+            "original_date": "2026-12-13",
+            "event_id": "evt_01JA0000000000000000004112",
+            "announced_at": "2026-10-01T03:00:00Z",
+            "reason": {
+              "status": "known",
+              "value": "Park facilities closed for maintenance",
+              "basis": "source_derived",
+              "source_id": "src_01JA0000000000000000004001"
+            }
+          },
+          {
+            "kind": "moved",
+            "original_date": "2027-01-10",
+            "new_date": "2027-01-17",
+            "event_id": "evt_01JA0000000000000000004113",
+            "moved_to_event_id": "evt_01JA0000000000000000004114",
+            "announced_at": "2026-10-01T03:00:00Z",
+            "reason": {
+              "status": "known",
+              "value": "The park is reserved for another event on 10 January",
+              "basis": "source_derived",
+              "source_id": "src_01JA0000000000000000004001"
+            }
+          }
+        ],
+        "upcoming_occurrences": [
+          {
+            "id": "evt_01JA0000000000000000004111",
+            "series_id": "evs_01JA0000000000000000004001",
+            "title": {
+              "lang": "en",
+              "text": "Example Riverside Park flea market",
+              "translation": {
+                "status": "machine_translation",
+                "source_lang": "ja"
+              }
+            },
+            "timing": {
+              "kind": "timed",
+              "starts_at": "2026-11-08T00:00:00Z",
+              "ends_at": {
+                "status": "known",
+                "value": "2026-11-08T05:00:00Z",
+                "basis": "source_derived",
+                "source_id": "src_01JA0000000000000000004001"
+              },
+              "time_zone": "Asia/Tokyo"
+            },
+            "status": {
+              "state": "scheduled"
+            },
+            "confirmation": "confirmed",
+            "format": "in_person",
+            "source_kind": "imported",
+            "organizer": {
+              "kind": "imported",
+              "name": "Riverside Flea Market Committee (example)",
+              "source": {
+                "source_id": "src_01JA0000000000000000004001",
+                "title": "Setagaya City community events calendar (example)",
+                "publisher": "Setagaya City Office (example)",
+                "url": "https://city-setagaya.example/events/calendar",
+                "retrieved_at": "2026-10-02T00:00:00Z",
+                "authority": "official"
+              }
+            },
+            "participation": {
+              "kind": "no_registration_needed"
+            },
+            "capacity": {
+              "kind": "not_tracked",
+              "stated_limit": {
+                "status": "not_applicable"
+              }
+            },
+            "cost": {
+              "status": "known",
+              "value": {
+                "kind": "free"
+              },
+              "basis": "source_derived",
+              "source_id": "src_01JA0000000000000000004001"
+            },
+            "area": {
+              "locality": {
+                "code": "JP-13-112",
+                "name": {
+                  "ja": "世田谷区",
+                  "reading": "せたがやく",
+                  "romaji": "Setagaya-ku",
+                  "en": "Setagaya City"
+                },
+                "level": "municipality"
+              },
+              "label": "Near Futako-Tamagawa Station"
+            }
+          },
+          {
+            "id": "evt_01JA0000000000000000004112",
+            "series_id": "evs_01JA0000000000000000004001",
+            "title": {
+              "lang": "en",
+              "text": "Example Riverside Park flea market",
+              "translation": {
+                "status": "machine_translation",
+                "source_lang": "ja"
+              }
+            },
+            "timing": {
+              "kind": "timed",
+              "starts_at": "2026-12-13T00:00:00Z",
+              "ends_at": {
+                "status": "known",
+                "value": "2026-12-13T05:00:00Z",
+                "basis": "source_derived",
+                "source_id": "src_01JA0000000000000000004001"
+              },
+              "time_zone": "Asia/Tokyo"
+            },
+            "status": {
+              "state": "cancelled",
+              "cancelled_at": "2026-10-01T03:00:00Z",
+              "reason": {
+                "status": "known",
+                "value": "Park facilities closed for maintenance",
+                "basis": "source_derived",
+                "source_id": "src_01JA0000000000000000004001"
+              }
+            },
+            "confirmation": "confirmed",
+            "format": "in_person",
+            "source_kind": "imported",
+            "organizer": {
+              "kind": "imported",
+              "name": "Riverside Flea Market Committee (example)",
+              "source": {
+                "source_id": "src_01JA0000000000000000004001",
+                "title": "Setagaya City community events calendar (example)",
+                "publisher": "Setagaya City Office (example)",
+                "url": "https://city-setagaya.example/events/calendar",
+                "retrieved_at": "2026-10-02T00:00:00Z",
+                "authority": "official"
+              }
+            },
+            "participation": {
+              "kind": "no_registration_needed"
+            },
+            "capacity": {
+              "kind": "not_tracked",
+              "stated_limit": {
+                "status": "not_applicable"
+              }
+            },
+            "cost": {
+              "status": "known",
+              "value": {
+                "kind": "free"
+              },
+              "basis": "source_derived",
+              "source_id": "src_01JA0000000000000000004001"
+            },
+            "area": {
+              "locality": {
+                "code": "JP-13-112",
+                "name": {
+                  "ja": "世田谷区",
+                  "reading": "せたがやく",
+                  "romaji": "Setagaya-ku",
+                  "en": "Setagaya City"
+                },
+                "level": "municipality"
+              },
+              "label": "Near Futako-Tamagawa Station"
+            }
+          },
+          {
+            "id": "evt_01JA0000000000000000004113",
+            "series_id": "evs_01JA0000000000000000004001",
+            "title": {
+              "lang": "en",
+              "text": "Example Riverside Park flea market",
+              "translation": {
+                "status": "machine_translation",
+                "source_lang": "ja"
+              }
+            },
+            "timing": {
+              "kind": "timed",
+              "starts_at": "2027-01-10T00:00:00Z",
+              "ends_at": {
+                "status": "known",
+                "value": "2027-01-10T05:00:00Z",
+                "basis": "source_derived",
+                "source_id": "src_01JA0000000000000000004001"
+              },
+              "time_zone": "Asia/Tokyo"
+            },
+            "status": {
+              "state": "rescheduled",
+              "rescheduled_at": "2026-10-01T03:00:00Z",
+              "moved_to_event_id": "evt_01JA0000000000000000004114",
+              "reason": {
+                "status": "known",
+                "value": "The park is reserved for another event on 10 January",
+                "basis": "source_derived",
+                "source_id": "src_01JA0000000000000000004001"
+              }
+            },
+            "confirmation": "confirmed",
+            "format": "in_person",
+            "source_kind": "imported",
+            "organizer": {
+              "kind": "imported",
+              "name": "Riverside Flea Market Committee (example)",
+              "source": {
+                "source_id": "src_01JA0000000000000000004001",
+                "title": "Setagaya City community events calendar (example)",
+                "publisher": "Setagaya City Office (example)",
+                "url": "https://city-setagaya.example/events/calendar",
+                "retrieved_at": "2026-10-02T00:00:00Z",
+                "authority": "official"
+              }
+            },
+            "participation": {
+              "kind": "no_registration_needed"
+            },
+            "capacity": {
+              "kind": "not_tracked",
+              "stated_limit": {
+                "status": "not_applicable"
+              }
+            },
+            "cost": {
+              "status": "known",
+              "value": {
+                "kind": "free"
+              },
+              "basis": "source_derived",
+              "source_id": "src_01JA0000000000000000004001"
+            },
+            "area": {
+              "locality": {
+                "code": "JP-13-112",
+                "name": {
+                  "ja": "世田谷区",
+                  "reading": "せたがやく",
+                  "romaji": "Setagaya-ku",
+                  "en": "Setagaya City"
+                },
+                "level": "municipality"
+              },
+              "label": "Near Futako-Tamagawa Station"
+            }
+          },
+          {
+            "id": "evt_01JA0000000000000000004114",
+            "series_id": "evs_01JA0000000000000000004001",
+            "title": {
+              "lang": "en",
+              "text": "Example Riverside Park flea market",
+              "translation": {
+                "status": "machine_translation",
+                "source_lang": "ja"
+              }
+            },
+            "timing": {
+              "kind": "timed",
+              "starts_at": "2027-01-17T00:00:00Z",
+              "ends_at": {
+                "status": "known",
+                "value": "2027-01-17T05:00:00Z",
+                "basis": "source_derived",
+                "source_id": "src_01JA0000000000000000004001"
+              },
+              "time_zone": "Asia/Tokyo"
+            },
+            "status": {
+              "state": "scheduled"
+            },
+            "confirmation": "confirmed",
+            "format": "in_person",
+            "source_kind": "imported",
+            "organizer": {
+              "kind": "imported",
+              "name": "Riverside Flea Market Committee (example)",
+              "source": {
+                "source_id": "src_01JA0000000000000000004001",
+                "title": "Setagaya City community events calendar (example)",
+                "publisher": "Setagaya City Office (example)",
+                "url": "https://city-setagaya.example/events/calendar",
+                "retrieved_at": "2026-10-02T00:00:00Z",
+                "authority": "official"
+              }
+            },
+            "participation": {
+              "kind": "no_registration_needed"
+            },
+            "capacity": {
+              "kind": "not_tracked",
+              "stated_limit": {
+                "status": "not_applicable"
+              }
+            },
+            "cost": {
+              "status": "known",
+              "value": {
+                "kind": "free"
+              },
+              "basis": "source_derived",
+              "source_id": "src_01JA0000000000000000004001"
+            },
+            "area": {
+              "locality": {
+                "code": "JP-13-112",
+                "name": {
+                  "ja": "世田谷区",
+                  "reading": "せたがやく",
+                  "romaji": "Setagaya-ku",
+                  "en": "Setagaya City"
+                },
+                "level": "municipality"
+              },
+              "label": "Near Futako-Tamagawa Station"
+            }
+          },
+          {
+            "id": "evt_01JA0000000000000000004115",
+            "series_id": "evs_01JA0000000000000000004001",
+            "title": {
+              "lang": "en",
+              "text": "Example Riverside Park flea market",
+              "translation": {
+                "status": "machine_translation",
+                "source_lang": "ja"
+              }
+            },
+            "timing": {
+              "kind": "timed",
+              "starts_at": "2027-02-14T00:00:00Z",
+              "ends_at": {
+                "status": "known",
+                "value": "2027-02-14T05:00:00Z",
+                "basis": "source_derived",
+                "source_id": "src_01JA0000000000000000004001"
+              },
+              "time_zone": "Asia/Tokyo"
+            },
+            "status": {
+              "state": "scheduled"
+            },
+            "confirmation": "expected",
+            "format": "in_person",
+            "source_kind": "imported",
+            "organizer": {
+              "kind": "imported",
+              "name": "Riverside Flea Market Committee (example)",
+              "source": {
+                "source_id": "src_01JA0000000000000000004001",
+                "title": "Setagaya City community events calendar (example)",
+                "publisher": "Setagaya City Office (example)",
+                "url": "https://city-setagaya.example/events/calendar",
+                "retrieved_at": "2026-10-02T00:00:00Z",
+                "authority": "official"
+              }
+            },
+            "participation": {
+              "kind": "no_registration_needed"
+            },
+            "capacity": {
+              "kind": "not_tracked",
+              "stated_limit": {
+                "status": "not_applicable"
+              }
+            },
+            "cost": {
+              "status": "known",
+              "value": {
+                "kind": "free"
+              },
+              "basis": "source_derived",
+              "source_id": "src_01JA0000000000000000004001"
+            },
+            "area": {
+              "locality": {
+                "code": "JP-13-112",
+                "name": {
+                  "ja": "世田谷区",
+                  "reading": "せたがやく",
+                  "romaji": "Setagaya-ku",
+                  "en": "Setagaya City"
+                },
+                "level": "municipality"
+              },
+              "label": "Near Futako-Tamagawa Station"
+            }
+          },
+          {
+            "id": "evt_01JA0000000000000000004116",
+            "series_id": "evs_01JA0000000000000000004001",
+            "title": {
+              "lang": "en",
+              "text": "Example Riverside Park flea market",
+              "translation": {
+                "status": "machine_translation",
+                "source_lang": "ja"
+              }
+            },
+            "timing": {
+              "kind": "timed",
+              "starts_at": "2027-03-14T00:00:00Z",
+              "ends_at": {
+                "status": "known",
+                "value": "2027-03-14T05:00:00Z",
+                "basis": "source_derived",
+                "source_id": "src_01JA0000000000000000004001"
+              },
+              "time_zone": "Asia/Tokyo"
+            },
+            "status": {
+              "state": "scheduled"
+            },
+            "confirmation": "expected",
+            "format": "in_person",
+            "source_kind": "imported",
+            "organizer": {
+              "kind": "imported",
+              "name": "Riverside Flea Market Committee (example)",
+              "source": {
+                "source_id": "src_01JA0000000000000000004001",
+                "title": "Setagaya City community events calendar (example)",
+                "publisher": "Setagaya City Office (example)",
+                "url": "https://city-setagaya.example/events/calendar",
+                "retrieved_at": "2026-10-02T00:00:00Z",
+                "authority": "official"
+              }
+            },
+            "participation": {
+              "kind": "no_registration_needed"
+            },
+            "capacity": {
+              "kind": "not_tracked",
+              "stated_limit": {
+                "status": "not_applicable"
+              }
+            },
+            "cost": {
+              "status": "known",
+              "value": {
+                "kind": "free"
+              },
+              "basis": "source_derived",
+              "source_id": "src_01JA0000000000000000004001"
+            },
+            "area": {
+              "locality": {
+                "code": "JP-13-112",
+                "name": {
+                  "ja": "世田谷区",
+                  "reading": "せたがやく",
+                  "romaji": "Setagaya-ku",
+                  "en": "Setagaya City"
+                },
+                "level": "municipality"
+              },
+              "label": "Near Futako-Tamagawa Station"
+            }
+          }
+        ],
+        "updated_at": "2026-10-01T03:10:00Z"
+      }
+    },
+    "not_found": {
+      "summary": "Unknown series, or a group-only series and the viewer is not a member",
+      "status": 404,
+      "body": {
+        "type": "urn:livingin:problem:not_found",
+        "title": "Not found",
+        "status": 404,
+        "code": "not_found",
+        "request_id": "fixture",
+        "retryable": false
+      }
+    }
+  }
+}

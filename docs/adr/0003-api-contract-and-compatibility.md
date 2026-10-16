@@ -27,7 +27,7 @@ Hunter owns the frontend and must be able to build against the backend before it
 6. **Live responses are validated against the contract** in non-production environments, so a handler can't drift from the documented schema unnoticed.
 7. **Conventions** (IDs, time, money, unknown values, state vocabulary, errors, idempotency, concurrency, authentication) are specified in [CONVENTIONS.md](../api/CONVENTIONS.md).
 
-The baseline covers OPERATION_COUNT operations across system, identity, sources, Living, Community, Work, Events, Marketplace and Safety. It is a representative baseline per module, not a complete API. Each module's implementation issue extends its contract, and changes go through the same checks.
+The baseline covers 47 operations across system, identity, sources, Living, Community, Work, Events, Marketplace and Safety. It is a representative baseline per module, not a complete API. Each module's implementation issue extends its contract, and changes go through the same checks.
 
 ## Consequences
 

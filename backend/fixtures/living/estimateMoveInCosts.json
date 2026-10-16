@@ -1,0 +1,512 @@
+{
+  "operationId": "estimateMoveInCosts",
+  "scenarios": {
+    "default": {
+      "summary": "Supported: ¥85,000 rent in Setagaya City, moving in 16 Nov; some terms unknown so ranges and explicit assumptions are shown",
+      "status": 200,
+      "body": {
+        "outcome": "supported",
+        "locality": {
+          "code": "JP-13-112",
+          "name": {
+            "ja": "世田谷区",
+            "reading": "せたがやく",
+            "romaji": "Setagaya-ku",
+            "en": "Setagaya City"
+          },
+          "level": "municipality"
+        },
+        "move_in_date": "2026-11-16",
+        "line_items": [
+          {
+            "key": "deposit",
+            "label": "Security deposit",
+            "term": {
+              "ja": "敷金",
+              "reading": "しききん",
+              "romaji": "shikikin",
+              "en": "Security deposit"
+            },
+            "category": "upfront",
+            "refundability": "refundable_less_deductions",
+            "amount": {
+              "kind": "exact",
+              "amount": {
+                "amount": 85000,
+                "currency": "JPY"
+              }
+            },
+            "basis": "user_input",
+            "explanation": "1 month × ¥85,000 rent = ¥85,000. Refundable at move-out less cleaning and repair deductions.",
+            "assumption_keys": []
+          },
+          {
+            "key": "key_money",
+            "label": "Key money",
+            "term": {
+              "ja": "礼金",
+              "reading": "れいきん",
+              "romaji": "reikin",
+              "en": "Key money"
+            },
+            "category": "upfront",
+            "refundability": "non_refundable",
+            "amount": {
+              "kind": "range",
+              "min": {
+                "amount": 0,
+                "currency": "JPY"
+              },
+              "max": {
+                "amount": 170000,
+                "currency": "JPY"
+              }
+            },
+            "basis": "assumption",
+            "explanation": "You did not know the key money, so 0–2 months × ¥85,000 rent is shown.",
+            "assumption_keys": [
+              "key_money_range"
+            ]
+          },
+          {
+            "key": "agency_fee",
+            "label": "Agency fee",
+            "term": {
+              "ja": "仲介手数料",
+              "reading": "ちゅうかいてすうりょう",
+              "romaji": "chūkai tesūryō",
+              "en": "Agency fee"
+            },
+            "category": "upfront",
+            "refundability": "non_refundable",
+            "amount": {
+              "kind": "exact",
+              "amount": {
+                "amount": 85000,
+                "currency": "JPY"
+              }
+            },
+            "basis": "user_input",
+            "explanation": "1 month × ¥85,000 rent, as entered, before consumption tax. Within the example rule’s maximum of 1 month plus tax.",
+            "assumption_keys": [],
+            "source": {
+              "source_id": "src_01JA0000000000000000001020",
+              "title": "Brokerage fee limits for residential leases (example)",
+              "publisher": "Example Ministry of Land, Infrastructure and Transport",
+              "url": "https://mlit.example/brokerage-fees",
+              "retrieved_at": "2026-09-10T00:00:00Z",
+              "authority": "official"
+            }
+          },
+          {
+            "key": "agency_fee_consumption_tax",
+            "label": "Consumption tax on the agency fee",
+            "term": {
+              "ja": "消費税",
+              "reading": "しょうひぜい",
+              "romaji": "shōhizei",
+              "en": "Consumption tax"
+            },
+            "category": "upfront",
+            "refundability": "non_refundable",
+            "amount": {
+              "kind": "exact",
+              "amount": {
+                "amount": 8500,
+                "currency": "JPY"
+              }
+            },
+            "basis": "rule",
+            "explanation": "10% × ¥85,000 agency fee = ¥8,500.",
+            "assumption_keys": [],
+            "source": {
+              "source_id": "src_01JA0000000000000000001021",
+              "title": "Consumption tax rate (example)",
+              "publisher": "Example National Tax Agency",
+              "url": "https://nta.example/consumption-tax",
+              "retrieved_at": "2026-09-10T00:10:00Z",
+              "authority": "official"
+            }
+          },
+          {
+            "key": "guarantor_initial_fee",
+            "label": "Guarantor company initial fee",
+            "term": {
+              "ja": "保証会社 初回保証料",
+              "reading": "ほしょうがいしゃ しょかいほしょうりょう",
+              "en": "Guarantor company initial fee"
+            },
+            "category": "upfront",
+            "refundability": "non_refundable",
+            "amount": {
+              "kind": "exact",
+              "amount": {
+                "amount": 45000,
+                "currency": "JPY"
+              }
+            },
+            "basis": "user_input",
+            "explanation": "50% × (¥85,000 rent + ¥5,000 management fee) = ¥45,000.",
+            "assumption_keys": [
+              "guarantor_base_includes_management_fee"
+            ]
+          },
+          {
+            "key": "fire_insurance",
+            "label": "Fire insurance",
+            "term": {
+              "ja": "火災保険",
+              "reading": "かさいほけん",
+              "romaji": "kasai hoken",
+              "en": "Fire insurance"
+            },
+            "category": "upfront",
+            "refundability": "non_refundable",
+            "amount": {
+              "kind": "range",
+              "min": {
+                "amount": 15000,
+                "currency": "JPY"
+              },
+              "max": {
+                "amount": 25000,
+                "currency": "JPY"
+              }
+            },
+            "basis": "assumption",
+            "explanation": "You did not know the premium, so a range for a two-year renter’s policy is shown.",
+            "assumption_keys": [
+              "fire_insurance_range"
+            ]
+          },
+          {
+            "key": "lock_change",
+            "label": "Lock change",
+            "term": {
+              "ja": "鍵交換費用",
+              "reading": "かぎこうかんひよう",
+              "romaji": "kagi kōkan hiyō",
+              "en": "Lock change fee"
+            },
+            "category": "upfront",
+            "refundability": "non_refundable",
+            "amount": {
+              "kind": "range",
+              "min": {
+                "amount": 0,
+                "currency": "JPY"
+              },
+              "max": {
+                "amount": 22000,
+                "currency": "JPY"
+              }
+            },
+            "basis": "assumption",
+            "explanation": "You did not know the fee, so ¥0–¥22,000 is shown.",
+            "assumption_keys": [
+              "lock_change_range"
+            ]
+          },
+          {
+            "key": "prorated_rent",
+            "label": "Rent for the rest of November",
+            "term": {
+              "ja": "日割り家賃",
+              "reading": "ひわりやちん",
+              "romaji": "hiwari yachin",
+              "en": "Prorated rent"
+            },
+            "category": "upfront",
+            "refundability": "non_refundable",
+            "amount": {
+              "kind": "exact",
+              "amount": {
+                "amount": 42500,
+                "currency": "JPY"
+              }
+            },
+            "basis": "rule",
+            "explanation": "¥85,000 × 15/30 days (16–30 November) = ¥42,500.",
+            "assumption_keys": []
+          },
+          {
+            "key": "prorated_management_fee",
+            "label": "Management fee for the rest of November",
+            "term": {
+              "ja": "日割り管理費",
+              "reading": "ひわりかんりひ",
+              "en": "Prorated management fee"
+            },
+            "category": "upfront",
+            "refundability": "non_refundable",
+            "amount": {
+              "kind": "exact",
+              "amount": {
+                "amount": 2500,
+                "currency": "JPY"
+              }
+            },
+            "basis": "rule",
+            "explanation": "¥5,000 × 15/30 days = ¥2,500.",
+            "assumption_keys": []
+          },
+          {
+            "key": "rent_in_advance",
+            "label": "December rent and management fee in advance",
+            "term": {
+              "ja": "前家賃",
+              "reading": "まえやちん",
+              "romaji": "mae yachin",
+              "en": "Rent in advance"
+            },
+            "category": "upfront",
+            "refundability": "non_refundable",
+            "amount": {
+              "kind": "range",
+              "min": {
+                "amount": 0,
+                "currency": "JPY"
+              },
+              "max": {
+                "amount": 90000,
+                "currency": "JPY"
+              }
+            },
+            "basis": "assumption",
+            "explanation": "¥85,000 rent + ¥5,000 management fee for December. Depends on the landlord, so ¥0–¥90,000 is shown.",
+            "assumption_keys": [
+              "advance_rent_after_mid_month"
+            ]
+          },
+          {
+            "key": "monthly_rent",
+            "label": "Monthly rent",
+            "term": {
+              "ja": "家賃",
+              "reading": "やちん",
+              "romaji": "yachin",
+              "en": "Rent"
+            },
+            "category": "recurring_monthly",
+            "refundability": "non_refundable",
+            "amount": {
+              "kind": "exact",
+              "amount": {
+                "amount": 85000,
+                "currency": "JPY"
+              }
+            },
+            "basis": "user_input",
+            "explanation": "As entered.",
+            "assumption_keys": []
+          },
+          {
+            "key": "monthly_management_fee",
+            "label": "Monthly management fee",
+            "term": {
+              "ja": "管理費",
+              "reading": "かんりひ",
+              "romaji": "kanrihi",
+              "en": "Management fee"
+            },
+            "category": "recurring_monthly",
+            "refundability": "non_refundable",
+            "amount": {
+              "kind": "exact",
+              "amount": {
+                "amount": 5000,
+                "currency": "JPY"
+              }
+            },
+            "basis": "user_input",
+            "explanation": "As entered.",
+            "assumption_keys": []
+          },
+          {
+            "key": "support_service",
+            "label": "24-hour support service",
+            "term": {
+              "ja": "24時間サポート",
+              "reading": "にじゅうよじかんサポート",
+              "en": "24-hour support service"
+            },
+            "category": "optional",
+            "refundability": "non_refundable",
+            "amount": {
+              "kind": "range",
+              "min": {
+                "amount": 0,
+                "currency": "JPY"
+              },
+              "max": {
+                "amount": 16500,
+                "currency": "JPY"
+              }
+            },
+            "basis": "assumption",
+            "explanation": "Often included in quotes and usually declinable. Not included in totals.",
+            "assumption_keys": [
+              "optional_services"
+            ]
+          }
+        ],
+        "totals": {
+          "upfront": {
+            "min": {
+              "amount": 283500,
+              "currency": "JPY"
+            },
+            "max": {
+              "amount": 575500,
+              "currency": "JPY"
+            }
+          },
+          "upfront_refundable_less_deductions": {
+            "min": {
+              "amount": 85000,
+              "currency": "JPY"
+            },
+            "max": {
+              "amount": 85000,
+              "currency": "JPY"
+            }
+          },
+          "recurring_monthly": {
+            "min": {
+              "amount": 90000,
+              "currency": "JPY"
+            },
+            "max": {
+              "amount": 90000,
+              "currency": "JPY"
+            }
+          },
+          "optional_not_included": {
+            "min": {
+              "amount": 0,
+              "currency": "JPY"
+            },
+            "max": {
+              "amount": 16500,
+              "currency": "JPY"
+            }
+          }
+        },
+        "assumptions": [
+          {
+            "key": "key_money_range",
+            "description": "Key money unknown: assumed 0–2 months of rent."
+          },
+          {
+            "key": "guarantor_base_includes_management_fee",
+            "description": "The guarantor percentage is applied to rent plus management fee. Some companies use rent only."
+          },
+          {
+            "key": "fire_insurance_range",
+            "description": "Fire insurance premium unknown: assumed ¥15,000–¥25,000 for a two-year policy."
+          },
+          {
+            "key": "lock_change_range",
+            "description": "Lock change fee unknown: assumed ¥0–¥22,000; some landlords do not charge one."
+          },
+          {
+            "key": "advance_rent_after_mid_month",
+            "description": "Moving in on or after the 16th: the landlord may collect next month’s rent and management fee at signing."
+          },
+          {
+            "key": "optional_services",
+            "description": "Optional services (support plans, disinfection) vary; shown separately and excluded from totals."
+          }
+        ],
+        "excluded": [
+          {
+            "key": "moving_service",
+            "description": "Moving company or van rental."
+          },
+          {
+            "key": "furniture_appliances",
+            "description": "Furniture, appliances and curtains."
+          },
+          {
+            "key": "utilities_internet",
+            "description": "Utility connection, internet installation and their deposits."
+          },
+          {
+            "key": "parking",
+            "description": "Car or bicycle parking."
+          },
+          {
+            "key": "previous_home_move_out",
+            "description": "Cleaning or repair charges at your previous home."
+          },
+          {
+            "key": "renewal_fees",
+            "description": "Contract renewal fees (更新料) and guarantor renewal fees, which fall due later."
+          }
+        ],
+        "rounding": {
+          "method": "round_down_each_line_item",
+          "explanation": "Each line item is rounded down to the whole yen; totals add the rounded items."
+        },
+        "rules": {
+          "version": "2026.10.1",
+          "effective_from": "2026-10-01",
+          "review": {
+            "status": "reviewed",
+            "reviewed_at": "2026-09-25T02:00:00Z",
+            "next_review_due": "2027-03-31",
+            "reviewer_role": "editor"
+          }
+        }
+      }
+    },
+    "unsupported_scenario": {
+      "summary": "Osaka City (JP-27-100) is outside the rule set: no amounts, never an estimate of zero",
+      "status": 200,
+      "body": {
+        "outcome": "unsupported",
+        "reason_code": "locality_not_covered",
+        "explanation": "This rule version covers Tokyo, Kanagawa, Saitama and Chiba only. Deposit practices common in the Kansai region, such as a guarantee deposit with a fixed non-refundable deduction (保証金・敷引き), are not modelled, so no amounts are shown.",
+        "rules": {
+          "version": "2026.10.1",
+          "effective_from": "2026-10-01",
+          "review": {
+            "status": "reviewed",
+            "reviewed_at": "2026-09-25T02:00:00Z",
+            "next_review_due": "2027-03-31",
+            "reviewer_role": "editor"
+          }
+        }
+      }
+    },
+    "validation_failed": {
+      "summary": "Zero rent, malformed move-in date and an unrecognized contract term",
+      "status": 400,
+      "body": {
+        "type": "urn:livingin:problem:validation_failed",
+        "title": "Validation failed",
+        "status": 400,
+        "code": "validation_failed",
+        "request_id": "fixture",
+        "retryable": false,
+        "fields": [
+          {
+            "pointer": "/body/monthly_rent/amount",
+            "code": "custom",
+            "message": "Rent must be greater than zero"
+          },
+          {
+            "pointer": "/body/move_in_date",
+            "code": "invalid_format",
+            "message": "Invalid ISO date"
+          },
+          {
+            "pointer": "/body/contract_terms",
+            "code": "unrecognized_keys",
+            "message": "Unrecognized key: \"cleaning_fee\""
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,229 @@
+{
+  "operationId": "listMyTasks",
+  "scenarios": {
+    "default": {
+      "summary": "Mixed tasks: user-entered vs rule-derived dates, a user-overridden rule task, a changed rule, an appointment time, done and dismissed",
+      "status": 200,
+      "body": {
+        "items": [
+          {
+            "id": "tsk_01JA0000000000000000001001",
+            "revision": 1,
+            "title": "Health check appointment for new job",
+            "notes": "Clinic asked to arrive 10 minutes early.",
+            "status": "open",
+            "status_changed_at": "2026-10-02T12:00:00Z",
+            "origin": {
+              "kind": "user_entered"
+            },
+            "due": {
+              "kind": "datetime",
+              "at": "2026-10-28T01:30:00Z",
+              "time_zone": "Asia/Tokyo",
+              "provenance": {
+                "kind": "user_entered",
+                "set_at": "2026-10-02T12:00:00Z"
+              }
+            },
+            "journey": null,
+            "updated_at": "2026-10-02T12:00:00Z",
+            "created_at": "2026-10-02T12:00:00Z"
+          },
+          {
+            "id": "tsk_01JA0000000000000000001002",
+            "revision": 1,
+            "title": "Cancel internet contract at current apartment",
+            "notes": "",
+            "status": "open",
+            "status_changed_at": "2026-10-03T08:00:00Z",
+            "origin": {
+              "kind": "user_entered"
+            },
+            "due": {
+              "kind": "date",
+              "date": "2026-11-10",
+              "time_zone": "Asia/Tokyo",
+              "provenance": {
+                "kind": "user_entered",
+                "set_at": "2026-10-03T08:00:00Z"
+              }
+            },
+            "journey": "moving",
+            "updated_at": "2026-10-03T08:00:00Z",
+            "created_at": "2026-10-03T08:00:00Z"
+          },
+          {
+            "id": "tsk_01JA0000000000000000001003",
+            "revision": 2,
+            "title": "Submit moving-out notification at your current municipal office",
+            "notes": "",
+            "status": "open",
+            "status_changed_at": "2026-10-05T10:01:00Z",
+            "origin": {
+              "kind": "rule_derived",
+              "guide_id": "gde_01JA0000000000000000001000",
+              "guide_revision": 4,
+              "guide_title": "Moving to a new municipality: notifying your old and new city offices",
+              "suggestion_key": "submit_moving_out_notification",
+              "rule_version": "gde-moving-municipality/submit_moving_out_notification@4",
+              "explanation": "Suggested because you are moving to a different municipality. The guide gives no deadline for this step.",
+              "rule_status": {
+                "status": "current",
+                "checked_at": "2026-10-15T18:00:00Z"
+              }
+            },
+            "due": {
+              "kind": "date",
+              "date": "2026-11-13",
+              "time_zone": "Asia/Tokyo",
+              "provenance": {
+                "kind": "user_entered",
+                "set_at": "2026-10-05T10:05:00Z"
+              }
+            },
+            "journey": "moving",
+            "updated_at": "2026-10-05T10:05:00Z",
+            "created_at": "2026-10-05T10:01:00Z"
+          },
+          {
+            "id": "tsk_01JA0000000000000000001000",
+            "revision": 2,
+            "title": "Submit moving-in notification at your new municipal office",
+            "notes": "Bring residence card and moving-out certificate.",
+            "status": "open",
+            "status_changed_at": "2026-10-05T10:00:00Z",
+            "origin": {
+              "kind": "rule_derived",
+              "guide_id": "gde_01JA0000000000000000001000",
+              "guide_revision": 4,
+              "guide_title": "Moving to a new municipality: notifying your old and new city offices",
+              "suggestion_key": "submit_moving_in_notification",
+              "rule_version": "gde-moving-municipality/submit_moving_in_notification@4",
+              "explanation": "Suggested because you are moving to a different municipality. The moving-in notification is due within 14 days of moving in.",
+              "rule_status": {
+                "status": "current",
+                "checked_at": "2026-10-15T18:00:00Z"
+              }
+            },
+            "due": {
+              "kind": "date",
+              "date": "2026-11-30",
+              "time_zone": "Asia/Tokyo",
+              "provenance": {
+                "kind": "rule_derived",
+                "anchor": {
+                  "event": {
+                    "code": "moved_in",
+                    "description": "The day you moved into your new address"
+                  },
+                  "date": "2026-11-16"
+                },
+                "offset_days": 14,
+                "explanation": "14 days after you moved in on 2026-11-16."
+              }
+            },
+            "journey": "moving",
+            "updated_at": "2026-10-06T09:00:00Z",
+            "created_at": "2026-10-05T10:00:00Z"
+          },
+          {
+            "id": "tsk_01JA0000000000000000001004",
+            "revision": 1,
+            "title": "Transfer child allowance to Setagaya City",
+            "notes": "",
+            "status": "open",
+            "status_changed_at": "2026-10-05T10:02:00Z",
+            "origin": {
+              "kind": "rule_derived",
+              "guide_id": "gde_01JA0000000000000000001001",
+              "guide_revision": 1,
+              "guide_title": "Moving into Setagaya City: moving-in notification (example)",
+              "suggestion_key": "transfer_child_allowance",
+              "rule_version": "gde-setagaya-moving-in/transfer_child_allowance@1",
+              "explanation": "Suggested because you receive child allowance and are moving into Setagaya City.",
+              "rule_status": {
+                "status": "rule_changed",
+                "detected_at": "2026-10-08T04:10:00Z",
+                "current_rule_version": "gde-setagaya-moving-in/transfer_child_allowance@2",
+                "explanation": "The guide’s rule changed in revision 2: the 15 days now count from the day after you moved in. Your date has not been changed; recompute it to use the current rule."
+              }
+            },
+            "due": {
+              "kind": "date",
+              "date": "2026-12-01",
+              "time_zone": "Asia/Tokyo",
+              "provenance": {
+                "kind": "rule_derived",
+                "anchor": {
+                  "event": {
+                    "code": "moved_in",
+                    "description": "The day you moved into your new address"
+                  },
+                  "date": "2026-11-16"
+                },
+                "offset_days": 15,
+                "explanation": "15 days after you moved in on 2026-11-16 (rule version 1)."
+              }
+            },
+            "journey": "moving",
+            "updated_at": "2026-10-05T10:02:00Z",
+            "created_at": "2026-10-05T10:02:00Z"
+          },
+          {
+            "id": "tsk_01JA0000000000000000001005",
+            "revision": 2,
+            "title": "Book a moving company",
+            "notes": "Booked for 15 Nov morning.",
+            "status": "done",
+            "status_changed_at": "2026-10-09T03:00:00Z",
+            "origin": {
+              "kind": "user_entered"
+            },
+            "due": {
+              "kind": "none"
+            },
+            "journey": "moving",
+            "updated_at": "2026-10-09T03:00:00Z",
+            "created_at": "2026-10-01T09:00:00Z"
+          },
+          {
+            "id": "tsk_01JA0000000000000000001006",
+            "revision": 2,
+            "title": "Re-enrol in National Health Insurance at your new municipal office",
+            "notes": "",
+            "status": "dismissed",
+            "status_changed_at": "2026-10-05T10:10:00Z",
+            "origin": {
+              "kind": "rule_derived",
+              "guide_id": "gde_01JA0000000000000000001000",
+              "guide_revision": 4,
+              "guide_title": "Moving to a new municipality: notifying your old and new city offices",
+              "suggestion_key": "reenroll_national_health_insurance",
+              "rule_version": "gde-moving-municipality/reenroll_national_health_insurance@4",
+              "explanation": "Suggested because the guide applies to people enrolled in National Health Insurance.",
+              "rule_status": {
+                "status": "current",
+                "checked_at": "2026-10-15T18:00:00Z"
+              }
+            },
+            "due": {
+              "kind": "none"
+            },
+            "journey": "moving",
+            "updated_at": "2026-10-05T10:10:00Z",
+            "created_at": "2026-10-05T10:03:00Z"
+          }
+        ],
+        "next_cursor": null
+      }
+    },
+    "empty": {
+      "summary": "No tasks yet (or none match the filters)",
+      "status": 200,
+      "body": {
+        "items": [],
+        "next_cursor": null
+      }
+    }
+  }
+}

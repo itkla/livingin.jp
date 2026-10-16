@@ -1,0 +1,1540 @@
+{
+  "operationId": "getGuide",
+  "scenarios": {
+    "default": {
+      "summary": "National procedure, reviewed, original English, with conditional steps and documents",
+      "status": 200,
+      "body": {
+        "id": "gde_01JA0000000000000000001000",
+        "revision": 4,
+        "lifecycle": {
+          "state": "published"
+        },
+        "format": "procedure",
+        "topics": [
+          "housing",
+          "local_admin"
+        ],
+        "title": {
+          "lang": "en",
+          "text": "Moving to a new municipality: notifying your old and new city offices",
+          "translation": {
+            "status": "original"
+          }
+        },
+        "summary": {
+          "lang": "en",
+          "text": "When you move to a different city, ward, town or village, you tell your current municipality that you are leaving and your new one that you have arrived. This is the national procedure; your new municipality may add local steps.",
+          "translation": {
+            "status": "original"
+          }
+        },
+        "body": {
+          "lang": "en",
+          "text": "Resident registration follows you when you move. Moving **between** municipalities takes two notifications: a moving-out notification where you live now and a moving-in notification where you are going.\n\nIf you are moving within the same municipality, a different, single notification applies and this guide does not.\n\nThis is example content for fixtures, not legal advice.",
+          "translation": {
+            "status": "original"
+          }
+        },
+        "applicability": {
+          "scope": {
+            "kind": "national"
+          },
+          "conditions": [
+            {
+              "code": "resident_registered",
+              "description": "You are registered as a resident (住民登録) in Japan",
+              "effect": "applies_if"
+            },
+            {
+              "code": "moving_to_different_municipality",
+              "description": "You are moving to a different municipality",
+              "effect": "applies_if"
+            },
+            {
+              "code": "moving_within_same_municipality",
+              "description": "You are moving within the same municipality (a change-of-address notification, 転居届, applies instead)",
+              "effect": "excluded_if"
+            }
+          ]
+        },
+        "variant_of": null,
+        "steps": [
+          {
+            "key": "submit_moving_out",
+            "position": 1,
+            "title": {
+              "lang": "en",
+              "text": "Submit a moving-out notification (転出届)",
+              "translation": {
+                "status": "original"
+              }
+            },
+            "instructions": {
+              "lang": "en",
+              "text": "At your current municipal office, submit a moving-out notification. You can usually do this shortly before you move (example).",
+              "translation": {
+                "status": "original"
+              }
+            },
+            "applies": {
+              "kind": "always"
+            },
+            "documents": [
+              {
+                "document_key": "residence_card",
+                "applies": {
+                  "kind": "always"
+                }
+              },
+              {
+                "document_key": "my_number_card",
+                "applies": {
+                  "kind": "only_if",
+                  "condition": {
+                    "code": "has_my_number_card",
+                    "description": "You have a My Number card"
+                  }
+                }
+              }
+            ],
+            "source_ids": [
+              "src_01JA0000000000000000001001"
+            ]
+          },
+          {
+            "key": "keep_moving_out_certificate",
+            "position": 2,
+            "title": {
+              "lang": "en",
+              "text": "Keep your moving-out certificate (転出証明書)",
+              "translation": {
+                "status": "original"
+              }
+            },
+            "instructions": {
+              "lang": "en",
+              "text": "The office gives you a moving-out certificate. Keep it safe: your new municipality asks for it.",
+              "translation": {
+                "status": "original"
+              }
+            },
+            "applies": {
+              "kind": "only_if",
+              "condition": {
+                "code": "no_my_number_card",
+                "description": "You do not have a My Number card, or are not using it for this move"
+              }
+            },
+            "documents": [],
+            "source_ids": [
+              "src_01JA0000000000000000001001"
+            ]
+          },
+          {
+            "key": "submit_moving_in",
+            "position": 3,
+            "title": {
+              "lang": "en",
+              "text": "Submit a moving-in notification (転入届) within 14 days",
+              "translation": {
+                "status": "original"
+              }
+            },
+            "instructions": {
+              "lang": "en",
+              "text": "At your new municipal office, submit a moving-in notification within 14 days of moving in. The office updates the address on your residence card (example).",
+              "translation": {
+                "status": "original"
+              }
+            },
+            "applies": {
+              "kind": "always"
+            },
+            "documents": [
+              {
+                "document_key": "residence_card",
+                "applies": {
+                  "kind": "always"
+                }
+              },
+              {
+                "document_key": "moving_out_certificate",
+                "applies": {
+                  "kind": "only_if",
+                  "condition": {
+                    "code": "no_my_number_card",
+                    "description": "You do not have a My Number card, or are not using it for this move"
+                  }
+                }
+              },
+              {
+                "document_key": "my_number_card",
+                "applies": {
+                  "kind": "only_if",
+                  "condition": {
+                    "code": "has_my_number_card",
+                    "description": "You have a My Number card"
+                  }
+                }
+              }
+            ],
+            "source_ids": [
+              "src_01JA0000000000000000001001",
+              "src_01JA0000000000000000000001"
+            ]
+          },
+          {
+            "key": "include_family_members",
+            "position": 4,
+            "title": {
+              "lang": "en",
+              "text": "Include family members who move with you",
+              "translation": {
+                "status": "original"
+              }
+            },
+            "instructions": {
+              "lang": "en",
+              "text": "One household member can usually submit notifications for family members moving at the same time. Bring their residence cards.",
+              "translation": {
+                "status": "original"
+              }
+            },
+            "applies": {
+              "kind": "only_if",
+              "condition": {
+                "code": "has_dependents_in_japan",
+                "description": "Family members live with you in Japan"
+              }
+            },
+            "documents": [
+              {
+                "document_key": "dependents_residence_cards",
+                "applies": {
+                  "kind": "always"
+                }
+              }
+            ],
+            "source_ids": [
+              "src_01JA0000000000000000001001"
+            ]
+          },
+          {
+            "key": "reenroll_nhi",
+            "position": 5,
+            "title": {
+              "lang": "en",
+              "text": "Re-enrol in National Health Insurance",
+              "translation": {
+                "status": "original"
+              }
+            },
+            "instructions": {
+              "lang": "en",
+              "text": "National Health Insurance is run by each municipality, so you enrol again at your new municipal office.",
+              "translation": {
+                "status": "original"
+              }
+            },
+            "applies": {
+              "kind": "only_if",
+              "condition": {
+                "code": "enrolled_in_national_health_insurance",
+                "description": "You are enrolled in National Health Insurance (not employer health insurance)"
+              }
+            },
+            "documents": [
+              {
+                "document_key": "residence_card",
+                "applies": {
+                  "kind": "always"
+                }
+              }
+            ],
+            "source_ids": [
+              "src_01JA0000000000000000001003"
+            ]
+          },
+          {
+            "key": "update_providers",
+            "position": 6,
+            "title": {
+              "lang": "en",
+              "text": "Update your address with your bank, mobile carrier and employer",
+              "translation": {
+                "status": "original"
+              }
+            },
+            "instructions": {
+              "lang": "en",
+              "text": "These are separate from your municipal registration. Each provider has its own process.",
+              "translation": {
+                "status": "original"
+              }
+            },
+            "applies": {
+              "kind": "always"
+            },
+            "documents": [],
+            "source_ids": []
+          }
+        ],
+        "documents": [
+          {
+            "key": "residence_card",
+            "name": {
+              "ja": "在留カード",
+              "reading": "ざいりゅうカード",
+              "romaji": "zairyū kādo",
+              "en": "Residence card"
+            },
+            "aliases": [],
+            "description": "The card issued to mid- to long-term residents. Bring the original."
+          },
+          {
+            "key": "my_number_card",
+            "name": {
+              "ja": "マイナンバーカード",
+              "reading": "まいなんばーかーど",
+              "en": "My Number card"
+            },
+            "aliases": [
+              {
+                "ja": "個人番号カード",
+                "reading": "こじんばんごうカード",
+                "en": "Individual Number Card"
+              }
+            ],
+            "description": "Optional photo card linked to your Individual Number. Some steps differ if you have one."
+          },
+          {
+            "key": "moving_out_certificate",
+            "name": {
+              "ja": "転出証明書",
+              "reading": "てんしゅつしょうめいしょ",
+              "en": "Moving-out certificate"
+            },
+            "aliases": [],
+            "description": "Issued by your previous municipality when you submit a moving-out notification on paper."
+          },
+          {
+            "key": "dependents_residence_cards",
+            "name": {
+              "ja": "家族の在留カード",
+              "reading": "かぞくのざいりゅうカード",
+              "en": "Family members’ residence cards"
+            },
+            "aliases": [],
+            "description": "Residence cards of family members moving with you."
+          }
+        ],
+        "terminology": [
+          {
+            "ja": "転出届",
+            "reading": "てんしゅつとどけ",
+            "romaji": "tenshutsu todoke",
+            "en": "Moving-out notification"
+          },
+          {
+            "ja": "転入届",
+            "reading": "てんにゅうとどけ",
+            "romaji": "tennyū todoke",
+            "en": "Moving-in notification"
+          },
+          {
+            "ja": "転居届",
+            "reading": "てんきょとどけ",
+            "romaji": "tenkyo todoke",
+            "en": "Change-of-address notification (same municipality)"
+          },
+          {
+            "ja": "住民票",
+            "reading": "じゅうみんひょう",
+            "romaji": "jūminhyō",
+            "en": "Certificate of residence"
+          },
+          {
+            "ja": "市区町村役場",
+            "reading": "しくちょうそんやくば",
+            "romaji": "shikuchōson yakuba",
+            "en": "Municipal office"
+          }
+        ],
+        "related_actions": [
+          {
+            "kind": "suggest_task",
+            "step_key": "submit_moving_out",
+            "suggestion_key": "submit_moving_out_notification",
+            "title": "Submit moving-out notification at your current municipal office",
+            "due_rule": {
+              "kind": "no_deadline"
+            },
+            "rule_version": "gde-moving-municipality/submit_moving_out_notification@4"
+          },
+          {
+            "kind": "suggest_task",
+            "step_key": "submit_moving_in",
+            "suggestion_key": "submit_moving_in_notification",
+            "title": "Submit moving-in notification at your new municipal office",
+            "due_rule": {
+              "kind": "days_after_event",
+              "days": 14,
+              "event": {
+                "code": "moved_in",
+                "description": "The day you moved into your new address"
+              },
+              "explanation": "The moving-in notification is due within 14 days of moving in (example rule).",
+              "source_id": "src_01JA0000000000000000001001"
+            },
+            "rule_version": "gde-moving-municipality/submit_moving_in_notification@4"
+          },
+          {
+            "kind": "suggest_task",
+            "step_key": "reenroll_nhi",
+            "suggestion_key": "reenroll_national_health_insurance",
+            "title": "Re-enrol in National Health Insurance at your new municipal office",
+            "due_rule": {
+              "kind": "days_after_event",
+              "days": 14,
+              "event": {
+                "code": "moved_in",
+                "description": "The day you moved into your new address"
+              },
+              "explanation": "Re-enrolment is due within 14 days of moving in (example rule).",
+              "source_id": "src_01JA0000000000000000001003"
+            },
+            "rule_version": "gde-moving-municipality/reenroll_national_health_insurance@4"
+          },
+          {
+            "kind": "use_tool",
+            "step_key": null,
+            "tool": "move_in_cost_estimate",
+            "title": "Estimate move-in costs for your new home"
+          },
+          {
+            "kind": "read_guide",
+            "step_key": "reenroll_nhi",
+            "guide_id": "gde_01JA0000000000000000001003",
+            "title": "Understanding your National Health Insurance bill"
+          },
+          {
+            "kind": "official_resource",
+            "step_key": "submit_moving_in",
+            "source_id": "src_01JA0000000000000000000001",
+            "title": "Residence card procedures after moving (example)"
+          }
+        ],
+        "sources": [
+          {
+            "source_id": "src_01JA0000000000000000001001",
+            "title": "Moving-out and moving-in notifications (example)",
+            "publisher": "Example Ministry of Internal Affairs",
+            "url": "https://soumu.example/resident-registration/moving",
+            "retrieved_at": "2026-09-20T01:00:00Z",
+            "authority": "official"
+          },
+          {
+            "source_id": "src_01JA0000000000000000000001",
+            "title": "Residence card procedures after moving (example)",
+            "publisher": "Example Immigration Agency",
+            "url": "https://immigration.example/procedures/address-change",
+            "retrieved_at": "2026-10-01T02:00:00Z",
+            "authority": "official"
+          },
+          {
+            "source_id": "src_01JA0000000000000000001003",
+            "title": "Enrolling in National Health Insurance (example)",
+            "publisher": "Example Ministry of Health",
+            "url": "https://mhlw.example/nhi/enrolment",
+            "retrieved_at": "2026-09-20T01:30:00Z",
+            "authority": "official"
+          }
+        ],
+        "review": {
+          "status": "reviewed",
+          "reviewed_at": "2026-09-15T03:00:00Z",
+          "next_review_due": "2027-03-15",
+          "reviewer_role": "subject_expert"
+        },
+        "sources_checked_at": "2026-10-15T18:00:00Z",
+        "published_at": "2026-05-10T01:00:00Z",
+        "revised_at": "2026-09-15T03:30:00Z"
+      }
+    },
+    "machine_translation": {
+      "summary": "Provider-specific guide (Example Bank) supplied in Japanese, served as an unreviewed machine translation",
+      "status": 200,
+      "body": {
+        "id": "gde_01JA0000000000000000001004",
+        "revision": 3,
+        "lifecycle": {
+          "state": "published"
+        },
+        "format": "procedure",
+        "topics": [
+          "banking",
+          "arrival"
+        ],
+        "title": {
+          "lang": "en",
+          "text": "Opening an account at Example Bank",
+          "translation": {
+            "status": "machine_translation",
+            "source_lang": "ja"
+          }
+        },
+        "summary": {
+          "lang": "en",
+          "text": "Example Bank’s own process for residents opening an ordinary savings account. Other banks have different requirements.",
+          "translation": {
+            "status": "machine_translation",
+            "source_lang": "ja"
+          }
+        },
+        "body": {
+          "lang": "en",
+          "text": "Example Bank accepts applications at branches and in its app. The bank decides whether to open an account; this guide describes its stated process only.\n\nText supplied in Japanese and machine-translated.",
+          "translation": {
+            "status": "machine_translation",
+            "source_lang": "ja"
+          }
+        },
+        "applicability": {
+          "scope": {
+            "kind": "provider",
+            "provider": {
+              "id": "org_01JA0000000000000000001001",
+              "kind": "business",
+              "name": {
+                "ja": "例示銀行",
+                "en": "Example Bank"
+              },
+              "verification": "verified",
+              "website": "https://bank.example",
+              "description": "Fictional bank used in fixtures."
+            },
+            "service_area": {
+              "code": "JP",
+              "name": {
+                "ja": "日本",
+                "reading": "にほん",
+                "romaji": "Nihon",
+                "en": "Japan"
+              },
+              "level": "country"
+            }
+          },
+          "conditions": [
+            {
+              "code": "resident_registered",
+              "description": "You are registered as a resident (住民登録) in Japan",
+              "effect": "applies_if"
+            },
+            {
+              "code": "below_provider_minimum_stay",
+              "description": "You have lived in Japan for less than the bank’s stated minimum period (6 months at Example Bank; example)",
+              "effect": "excluded_if"
+            }
+          ]
+        },
+        "variant_of": null,
+        "steps": [
+          {
+            "key": "prepare_documents",
+            "position": 1,
+            "title": {
+              "lang": "en",
+              "text": "Prepare your documents",
+              "translation": {
+                "status": "machine_translation",
+                "source_lang": "ja"
+              }
+            },
+            "instructions": {
+              "lang": "en",
+              "text": "Bring your residence card. A personal seal is needed only if you choose to register one instead of a signature.",
+              "translation": {
+                "status": "machine_translation",
+                "source_lang": "ja"
+              }
+            },
+            "applies": {
+              "kind": "always"
+            },
+            "documents": [
+              {
+                "document_key": "residence_card",
+                "applies": {
+                  "kind": "always"
+                }
+              },
+              {
+                "document_key": "personal_seal",
+                "applies": {
+                  "kind": "only_if",
+                  "condition": {
+                    "code": "chooses_seal_over_signature",
+                    "description": "You want to register a seal instead of a signature"
+                  }
+                }
+              },
+              {
+                "document_key": "my_number_card",
+                "applies": {
+                  "kind": "only_if",
+                  "condition": {
+                    "code": "has_my_number_card",
+                    "description": "You have a My Number card"
+                  }
+                }
+              }
+            ],
+            "source_ids": [
+              "src_01JA0000000000000000001005"
+            ]
+          },
+          {
+            "key": "apply",
+            "position": 2,
+            "title": {
+              "lang": "en",
+              "text": "Apply at a branch or in the app",
+              "translation": {
+                "status": "machine_translation",
+                "source_lang": "ja"
+              }
+            },
+            "instructions": {
+              "lang": "en",
+              "text": "Branch applications may need an appointment. App applications need identity verification with your residence card.",
+              "translation": {
+                "status": "machine_translation",
+                "source_lang": "ja"
+              }
+            },
+            "applies": {
+              "kind": "always"
+            },
+            "documents": [],
+            "source_ids": [
+              "src_01JA0000000000000000001005"
+            ]
+          },
+          {
+            "key": "receive_card",
+            "position": 3,
+            "title": {
+              "lang": "en",
+              "text": "Receive your cash card by registered mail",
+              "translation": {
+                "status": "machine_translation",
+                "source_lang": "ja"
+              }
+            },
+            "instructions": {
+              "lang": "en",
+              "text": "The card is sent to your registered address and cannot be forwarded.",
+              "translation": {
+                "status": "machine_translation",
+                "source_lang": "ja"
+              }
+            },
+            "applies": {
+              "kind": "always"
+            },
+            "documents": [],
+            "source_ids": [
+              "src_01JA0000000000000000001005"
+            ]
+          }
+        ],
+        "documents": [
+          {
+            "key": "residence_card",
+            "name": {
+              "ja": "在留カード",
+              "reading": "ざいりゅうカード",
+              "romaji": "zairyū kādo",
+              "en": "Residence card"
+            },
+            "aliases": [],
+            "description": "The card issued to mid- to long-term residents. Bring the original."
+          },
+          {
+            "key": "personal_seal",
+            "name": {
+              "ja": "印鑑",
+              "reading": "いんかん",
+              "en": "Personal seal"
+            },
+            "aliases": [
+              {
+                "ja": "はんこ",
+                "reading": "はんこ",
+                "en": "Hanko"
+              },
+              {
+                "ja": "届出印",
+                "reading": "とどけでいん",
+                "en": "Registered bank seal"
+              }
+            ],
+            "description": "A name stamp. Example Bank accepts a signature instead."
+          },
+          {
+            "key": "my_number_card",
+            "name": {
+              "ja": "マイナンバーカード",
+              "reading": "まいなんばーかーど",
+              "en": "My Number card"
+            },
+            "aliases": [
+              {
+                "ja": "個人番号カード",
+                "reading": "こじんばんごうカード",
+                "en": "Individual Number Card"
+              }
+            ],
+            "description": "Optional photo card linked to your Individual Number. Some steps differ if you have one."
+          }
+        ],
+        "terminology": [
+          {
+            "ja": "普通預金",
+            "reading": "ふつうよきん",
+            "romaji": "futsū yokin",
+            "en": "Ordinary savings account"
+          },
+          {
+            "ja": "キャッシュカード",
+            "reading": "きゃっしゅかーど",
+            "en": "Cash card"
+          }
+        ],
+        "related_actions": [
+          {
+            "kind": "official_resource",
+            "step_key": null,
+            "source_id": "src_01JA0000000000000000001005",
+            "title": "Opening an account: requirements for residents (example)"
+          }
+        ],
+        "sources": [
+          {
+            "source_id": "src_01JA0000000000000000001005",
+            "title": "Opening an account: requirements for residents (example)",
+            "publisher": "Example Bank",
+            "url": "https://bank.example/accounts/residents",
+            "retrieved_at": "2026-10-02T03:00:00Z",
+            "authority": "provider"
+          }
+        ],
+        "review": {
+          "status": "reviewed",
+          "reviewed_at": "2026-10-03T06:00:00Z",
+          "next_review_due": "2027-01-03",
+          "reviewer_role": "editor"
+        },
+        "sources_checked_at": "2026-10-15T18:20:00Z",
+        "published_at": "2026-06-15T01:00:00Z",
+        "revised_at": "2026-10-03T06:10:00Z"
+      }
+    },
+    "stale_translation": {
+      "summary": "Tokyo-wide guide: reviewed English title, but body and one step are stale after the Japanese original changed",
+      "status": 200,
+      "body": {
+        "id": "gde_01JA0000000000000000001002",
+        "revision": 5,
+        "lifecycle": {
+          "state": "published"
+        },
+        "format": "procedure",
+        "topics": [
+          "housing"
+        ],
+        "title": {
+          "lang": "en",
+          "text": "Applying for Tokyo metropolitan housing (都営住宅)",
+          "translation": {
+            "status": "reviewed_translation",
+            "source_lang": "ja",
+            "reviewed_at": "2026-07-01T05:00:00Z"
+          }
+        },
+        "summary": {
+          "lang": "en",
+          "text": "How application rounds for metropolitan public housing work in Tokyo. Applies to Tokyo residents only.",
+          "translation": {
+            "status": "reviewed_translation",
+            "source_lang": "ja",
+            "reviewed_at": "2026-07-01T05:00:00Z"
+          }
+        },
+        "body": {
+          "lang": "en",
+          "text": "Metropolitan housing is let through periodic application rounds and a lottery (example). Eligibility conditions are set for each round.\n\nThe Japanese original of this section was updated on 2026-09-28; this English text has not been updated yet.",
+          "translation": {
+            "status": "stale_translation",
+            "source_lang": "ja",
+            "source_revised_at": "2026-09-28T02:00:00Z"
+          }
+        },
+        "applicability": {
+          "scope": {
+            "kind": "prefecture",
+            "locality": {
+              "code": "JP-13",
+              "name": {
+                "ja": "東京都",
+                "reading": "とうきょうと",
+                "romaji": "Tōkyō-to",
+                "en": "Tokyo"
+              },
+              "level": "prefecture"
+            }
+          },
+          "conditions": [
+            {
+              "code": "registered_in_tokyo",
+              "description": "You are registered as a resident of Tokyo for the period the round requires",
+              "effect": "applies_if"
+            },
+            {
+              "code": "within_round_income_limit",
+              "description": "Your household income is within the limit for the application round",
+              "effect": "applies_if"
+            }
+          ]
+        },
+        "variant_of": null,
+        "steps": [
+          {
+            "key": "check_round",
+            "position": 1,
+            "title": {
+              "lang": "en",
+              "text": "Check the current application round",
+              "translation": {
+                "status": "reviewed_translation",
+                "source_lang": "ja",
+                "reviewed_at": "2026-07-01T05:00:00Z"
+              }
+            },
+            "instructions": {
+              "lang": "en",
+              "text": "Rounds open several times a year (example). Each round publishes its own conditions and deadlines.",
+              "translation": {
+                "status": "reviewed_translation",
+                "source_lang": "ja",
+                "reviewed_at": "2026-07-01T05:00:00Z"
+              }
+            },
+            "applies": {
+              "kind": "always"
+            },
+            "documents": [],
+            "source_ids": [
+              "src_01JA0000000000000000001004"
+            ]
+          },
+          {
+            "key": "submit_application",
+            "position": 2,
+            "title": {
+              "lang": "en",
+              "text": "Submit the application during the round",
+              "translation": {
+                "status": "stale_translation",
+                "source_lang": "ja",
+                "source_revised_at": "2026-09-28T02:00:00Z"
+              }
+            },
+            "instructions": {
+              "lang": "en",
+              "text": "Submit the form by the round deadline. Attach the certificates the round asks for (example).",
+              "translation": {
+                "status": "stale_translation",
+                "source_lang": "ja",
+                "source_revised_at": "2026-09-28T02:00:00Z"
+              }
+            },
+            "applies": {
+              "kind": "always"
+            },
+            "documents": [
+              {
+                "document_key": "certificate_of_residence",
+                "applies": {
+                  "kind": "always"
+                }
+              },
+              {
+                "document_key": "income_certificate",
+                "applies": {
+                  "kind": "only_if",
+                  "condition": {
+                    "code": "household_has_income",
+                    "description": "Someone in your household had income in the previous year"
+                  }
+                }
+              }
+            ],
+            "source_ids": [
+              "src_01JA0000000000000000001004"
+            ]
+          }
+        ],
+        "documents": [
+          {
+            "key": "certificate_of_residence",
+            "name": {
+              "ja": "住民票の写し",
+              "reading": "じゅうみんひょうのうつし",
+              "en": "Copy of certificate of residence"
+            },
+            "aliases": [
+              {
+                "ja": "住民票",
+                "reading": "じゅうみんひょう",
+                "en": "Certificate of residence"
+              }
+            ],
+            "description": "Issued by your municipal office. Application rounds usually ask for a recent copy."
+          },
+          {
+            "key": "income_certificate",
+            "name": {
+              "ja": "課税証明書",
+              "reading": "かぜいしょうめいしょ",
+              "en": "Tax certificate"
+            },
+            "aliases": [
+              {
+                "ja": "所得証明書",
+                "reading": "しょとくしょうめいしょ",
+                "en": "Income certificate"
+              },
+              {
+                "ja": "非課税証明書",
+                "reading": "ひかぜいしょうめいしょ",
+                "en": "Tax-exemption certificate"
+              }
+            ],
+            "description": "Shows the income your local tax was based on. Issued by the municipality that taxed you."
+          }
+        ],
+        "terminology": [
+          {
+            "ja": "都営住宅",
+            "reading": "とえいじゅうたく",
+            "romaji": "toei jūtaku",
+            "en": "Tokyo metropolitan housing"
+          },
+          {
+            "ja": "抽選",
+            "reading": "ちゅうせん",
+            "romaji": "chūsen",
+            "en": "Lottery"
+          }
+        ],
+        "related_actions": [
+          {
+            "kind": "official_resource",
+            "step_key": "check_round",
+            "source_id": "src_01JA0000000000000000001004",
+            "title": "Metropolitan housing application guide (example)"
+          }
+        ],
+        "sources": [
+          {
+            "source_id": "src_01JA0000000000000000001004",
+            "title": "Metropolitan housing application guide (example)",
+            "publisher": "Example Tokyo Metropolitan Housing Office",
+            "url": "https://metro-housing.example/apply",
+            "retrieved_at": "2026-09-30T00:00:00Z",
+            "authority": "official"
+          }
+        ],
+        "review": {
+          "status": "reviewed",
+          "reviewed_at": "2026-07-01T05:00:00Z",
+          "next_review_due": "2027-01-01",
+          "reviewer_role": "editor"
+        },
+        "sources_checked_at": "2026-10-15T18:10:00Z",
+        "published_at": "2026-03-01T01:00:00Z",
+        "revised_at": "2026-09-28T02:30:00Z"
+      }
+    },
+    "review_overdue": {
+      "summary": "Explainer (no steps) whose editorial review is overdue",
+      "status": 200,
+      "body": {
+        "id": "gde_01JA0000000000000000001003",
+        "revision": 2,
+        "lifecycle": {
+          "state": "published"
+        },
+        "format": "explainer",
+        "topics": [
+          "tax_pension_insurance",
+          "healthcare"
+        ],
+        "title": {
+          "lang": "en",
+          "text": "Understanding your National Health Insurance bill",
+          "translation": {
+            "status": "original"
+          }
+        },
+        "summary": {
+          "lang": "en",
+          "text": "What the premium notice and payment slips mean, why the amount changes in June, and what to do if a payment is late.",
+          "translation": {
+            "status": "original"
+          }
+        },
+        "body": {
+          "lang": "en",
+          "text": "Your municipality sends a premium notice (保険料決定通知書) with payment slips (納付書) for the fiscal year (example).\n\n- The premium is usually recalculated each June from the previous year’s income.\n- If you cannot pay, contact the municipal office before the due date.\n\nThis is example content for fixtures.",
+          "translation": {
+            "status": "original"
+          }
+        },
+        "applicability": {
+          "scope": {
+            "kind": "national"
+          },
+          "conditions": [
+            {
+              "code": "enrolled_in_national_health_insurance",
+              "description": "You are enrolled in National Health Insurance (not employer health insurance)",
+              "effect": "applies_if"
+            }
+          ]
+        },
+        "variant_of": null,
+        "steps": [],
+        "documents": [],
+        "terminology": [
+          {
+            "ja": "国民健康保険",
+            "reading": "こくみんけんこうほけん",
+            "romaji": "kokumin kenkō hoken",
+            "en": "National Health Insurance"
+          },
+          {
+            "ja": "納付書",
+            "reading": "のうふしょ",
+            "romaji": "nōfusho",
+            "en": "Payment slip"
+          },
+          {
+            "ja": "保険料",
+            "reading": "ほけんりょう",
+            "romaji": "hokenryō",
+            "en": "Premium"
+          }
+        ],
+        "related_actions": [
+          {
+            "kind": "official_resource",
+            "step_key": null,
+            "source_id": "src_01JA0000000000000000001006",
+            "title": "Reading your health insurance premium notice (example)"
+          }
+        ],
+        "sources": [
+          {
+            "source_id": "src_01JA0000000000000000001006",
+            "title": "Reading your health insurance premium notice (example)",
+            "publisher": "Example City Health Insurance Division",
+            "url": "https://city.example/nhi/premium-notice",
+            "retrieved_at": "2026-02-20T01:00:00Z",
+            "authority": "official"
+          },
+          {
+            "source_id": "src_01JA0000000000000000001003",
+            "title": "Enrolling in National Health Insurance (example)",
+            "publisher": "Example Ministry of Health",
+            "url": "https://mhlw.example/nhi/enrolment",
+            "retrieved_at": "2026-09-20T01:30:00Z",
+            "authority": "official"
+          }
+        ],
+        "review": {
+          "status": "review_overdue",
+          "last_reviewed_at": "2026-03-01T02:00:00Z",
+          "review_was_due": "2026-09-01"
+        },
+        "sources_checked_at": "2026-10-15T18:15:00Z",
+        "published_at": "2025-11-01T01:00:00Z",
+        "revised_at": "2026-03-01T02:10:00Z"
+      }
+    },
+    "municipality_variant": {
+      "summary": "Setagaya City variant of the national guide; applies only in Setagaya City",
+      "status": 200,
+      "body": {
+        "id": "gde_01JA0000000000000000001001",
+        "revision": 2,
+        "lifecycle": {
+          "state": "published"
+        },
+        "format": "procedure",
+        "topics": [
+          "housing",
+          "local_admin"
+        ],
+        "title": {
+          "lang": "en",
+          "text": "Moving into Setagaya City: moving-in notification (example)",
+          "translation": {
+            "status": "original"
+          }
+        },
+        "summary": {
+          "lang": "en",
+          "text": "Setagaya City’s local steps for the moving-in notification. Use this together with the national procedure; it applies only when moving into Setagaya City, not to neighbouring wards.",
+          "translation": {
+            "status": "original"
+          }
+        },
+        "body": {
+          "lang": "en",
+          "text": "Setagaya City accepts moving-in notifications at the ward office and at general branch offices (example). Some services, such as child allowance, need a separate application at the same visit.\n\nThis is example content for fixtures.",
+          "translation": {
+            "status": "original"
+          }
+        },
+        "applicability": {
+          "scope": {
+            "kind": "municipality",
+            "locality": {
+              "code": "JP-13-112",
+              "name": {
+                "ja": "世田谷区",
+                "reading": "せたがやく",
+                "romaji": "Setagaya-ku",
+                "en": "Setagaya City"
+              },
+              "level": "municipality"
+            }
+          },
+          "conditions": [
+            {
+              "code": "moving_into_setagaya",
+              "description": "You are moving into Setagaya City from another municipality",
+              "effect": "applies_if"
+            }
+          ]
+        },
+        "variant_of": {
+          "guide_id": "gde_01JA0000000000000000001000",
+          "title": "Moving to a new municipality: notifying your old and new city offices"
+        },
+        "steps": [
+          {
+            "key": "submit_moving_in",
+            "position": 1,
+            "title": {
+              "lang": "en",
+              "text": "Submit your moving-in notification at the ward office or a general branch office (総合支所)",
+              "translation": {
+                "status": "original"
+              }
+            },
+            "instructions": {
+              "lang": "en",
+              "text": "Any general branch office can accept the notification (example). Arrive early: queues are longest at the start of each month.",
+              "translation": {
+                "status": "original"
+              }
+            },
+            "applies": {
+              "kind": "always"
+            },
+            "documents": [
+              {
+                "document_key": "residence_card",
+                "applies": {
+                  "kind": "always"
+                }
+              },
+              {
+                "document_key": "moving_out_certificate",
+                "applies": {
+                  "kind": "only_if",
+                  "condition": {
+                    "code": "no_my_number_card",
+                    "description": "You do not have a My Number card, or are not using it for this move"
+                  }
+                }
+              },
+              {
+                "document_key": "my_number_card",
+                "applies": {
+                  "kind": "only_if",
+                  "condition": {
+                    "code": "has_my_number_card",
+                    "description": "You have a My Number card"
+                  }
+                }
+              }
+            ],
+            "source_ids": [
+              "src_01JA0000000000000000001002"
+            ]
+          },
+          {
+            "key": "transfer_child_allowance",
+            "position": 2,
+            "title": {
+              "lang": "en",
+              "text": "Apply to transfer child allowance (児童手当)",
+              "translation": {
+                "status": "original"
+              }
+            },
+            "instructions": {
+              "lang": "en",
+              "text": "Child allowance does not move automatically. Apply at the same counter visit (example).",
+              "translation": {
+                "status": "original"
+              }
+            },
+            "applies": {
+              "kind": "only_if",
+              "condition": {
+                "code": "receives_child_allowance",
+                "description": "You receive child allowance for children living with you"
+              }
+            },
+            "documents": [
+              {
+                "document_key": "residence_card",
+                "applies": {
+                  "kind": "always"
+                }
+              }
+            ],
+            "source_ids": [
+              "src_01JA0000000000000000001002"
+            ]
+          }
+        ],
+        "documents": [
+          {
+            "key": "residence_card",
+            "name": {
+              "ja": "在留カード",
+              "reading": "ざいりゅうカード",
+              "romaji": "zairyū kādo",
+              "en": "Residence card"
+            },
+            "aliases": [],
+            "description": "The card issued to mid- to long-term residents. Bring the original."
+          },
+          {
+            "key": "moving_out_certificate",
+            "name": {
+              "ja": "転出証明書",
+              "reading": "てんしゅつしょうめいしょ",
+              "en": "Moving-out certificate"
+            },
+            "aliases": [],
+            "description": "Issued by your previous municipality when you submit a moving-out notification on paper."
+          },
+          {
+            "key": "my_number_card",
+            "name": {
+              "ja": "マイナンバーカード",
+              "reading": "まいなんばーかーど",
+              "en": "My Number card"
+            },
+            "aliases": [
+              {
+                "ja": "個人番号カード",
+                "reading": "こじんばんごうカード",
+                "en": "Individual Number Card"
+              }
+            ],
+            "description": "Optional photo card linked to your Individual Number. Some steps differ if you have one."
+          }
+        ],
+        "terminology": [
+          {
+            "ja": "総合支所",
+            "reading": "そうごうししょ",
+            "romaji": "sōgō shisho",
+            "en": "General branch office"
+          },
+          {
+            "ja": "児童手当",
+            "reading": "じどうてあて",
+            "romaji": "jidō teate",
+            "en": "Child allowance"
+          }
+        ],
+        "related_actions": [
+          {
+            "kind": "suggest_task",
+            "step_key": "transfer_child_allowance",
+            "suggestion_key": "transfer_child_allowance",
+            "title": "Transfer child allowance to Setagaya City",
+            "due_rule": {
+              "kind": "days_after_event",
+              "days": 15,
+              "event": {
+                "code": "moved_in",
+                "description": "The day you moved into your new address"
+              },
+              "explanation": "Counted from the day after you moved in, within 15 days (example rule, revision 2).",
+              "source_id": "src_01JA0000000000000000001002"
+            },
+            "rule_version": "gde-setagaya-moving-in/transfer_child_allowance@2"
+          },
+          {
+            "kind": "read_guide",
+            "step_key": null,
+            "guide_id": "gde_01JA0000000000000000001000",
+            "title": "Moving to a new municipality (national procedure)"
+          }
+        ],
+        "sources": [
+          {
+            "source_id": "src_01JA0000000000000000001002",
+            "title": "Moving-in procedures at the ward office (example)",
+            "publisher": "Example Setagaya City Resident Services",
+            "url": "https://city-setagaya.example/procedures/moving-in",
+            "retrieved_at": "2026-09-22T01:00:00Z",
+            "authority": "official"
+          },
+          {
+            "source_id": "src_01JA0000000000000000001001",
+            "title": "Moving-out and moving-in notifications (example)",
+            "publisher": "Example Ministry of Internal Affairs",
+            "url": "https://soumu.example/resident-registration/moving",
+            "retrieved_at": "2026-09-20T01:00:00Z",
+            "authority": "official"
+          }
+        ],
+        "review": {
+          "status": "reviewed",
+          "reviewed_at": "2026-10-08T04:00:00Z",
+          "next_review_due": "2027-04-08",
+          "reviewer_role": "editor"
+        },
+        "sources_checked_at": "2026-10-15T18:05:00Z",
+        "published_at": "2026-07-01T01:00:00Z",
+        "revised_at": "2026-10-08T04:10:00Z"
+      }
+    },
+    "withdrawn": {
+      "summary": "Withdrawn edition that still resolves and points to its replacement",
+      "status": 200,
+      "body": {
+        "id": "gde_01JA0000000000000000001005",
+        "revision": 6,
+        "lifecycle": {
+          "state": "withdrawn",
+          "withdrawn_at": "2026-05-10T01:00:00Z",
+          "reason": "Replaced by a guide that covers both paper and My Number card procedures.",
+          "replaced_by": {
+            "guide_id": "gde_01JA0000000000000000001000",
+            "title": "Moving to a new municipality: notifying your old and new city offices"
+          }
+        },
+        "format": "procedure",
+        "topics": [
+          "housing",
+          "local_admin"
+        ],
+        "title": {
+          "lang": "en",
+          "text": "Moving to a new municipality (paper procedure, 2025 edition)",
+          "translation": {
+            "status": "original"
+          }
+        },
+        "summary": {
+          "lang": "en",
+          "text": "Earlier edition covering only the paper moving-out certificate procedure.",
+          "translation": {
+            "status": "original"
+          }
+        },
+        "body": {
+          "lang": "en",
+          "text": "This edition is no longer maintained.",
+          "translation": {
+            "status": "original"
+          }
+        },
+        "applicability": {
+          "scope": {
+            "kind": "national"
+          },
+          "conditions": [
+            {
+              "code": "moving_to_different_municipality",
+              "description": "You are moving to a different municipality",
+              "effect": "applies_if"
+            }
+          ]
+        },
+        "variant_of": null,
+        "steps": [
+          {
+            "key": "submit_moving_out",
+            "position": 1,
+            "title": {
+              "lang": "en",
+              "text": "Submit a moving-out notification (転出届)",
+              "translation": {
+                "status": "original"
+              }
+            },
+            "instructions": {
+              "lang": "en",
+              "text": "Collect a moving-out certificate at your current municipal office.",
+              "translation": {
+                "status": "original"
+              }
+            },
+            "applies": {
+              "kind": "always"
+            },
+            "documents": [
+              {
+                "document_key": "residence_card",
+                "applies": {
+                  "kind": "always"
+                }
+              }
+            ],
+            "source_ids": [
+              "src_01JA0000000000000000001001"
+            ]
+          },
+          {
+            "key": "submit_moving_in",
+            "position": 2,
+            "title": {
+              "lang": "en",
+              "text": "Submit a moving-in notification (転入届)",
+              "translation": {
+                "status": "original"
+              }
+            },
+            "instructions": {
+              "lang": "en",
+              "text": "Bring the moving-out certificate to your new municipal office.",
+              "translation": {
+                "status": "original"
+              }
+            },
+            "applies": {
+              "kind": "always"
+            },
+            "documents": [
+              {
+                "document_key": "residence_card",
+                "applies": {
+                  "kind": "always"
+                }
+              },
+              {
+                "document_key": "moving_out_certificate",
+                "applies": {
+                  "kind": "always"
+                }
+              }
+            ],
+            "source_ids": [
+              "src_01JA0000000000000000001001"
+            ]
+          }
+        ],
+        "documents": [
+          {
+            "key": "residence_card",
+            "name": {
+              "ja": "在留カード",
+              "reading": "ざいりゅうカード",
+              "romaji": "zairyū kādo",
+              "en": "Residence card"
+            },
+            "aliases": [],
+            "description": "The card issued to mid- to long-term residents. Bring the original."
+          },
+          {
+            "key": "moving_out_certificate",
+            "name": {
+              "ja": "転出証明書",
+              "reading": "てんしゅつしょうめいしょ",
+              "en": "Moving-out certificate"
+            },
+            "aliases": [],
+            "description": "Issued by your previous municipality when you submit a moving-out notification on paper."
+          }
+        ],
+        "terminology": [
+          {
+            "ja": "転出届",
+            "reading": "てんしゅつとどけ",
+            "romaji": "tenshutsu todoke",
+            "en": "Moving-out notification"
+          },
+          {
+            "ja": "転入届",
+            "reading": "てんにゅうとどけ",
+            "romaji": "tennyū todoke",
+            "en": "Moving-in notification"
+          }
+        ],
+        "related_actions": [
+          {
+            "kind": "read_guide",
+            "step_key": null,
+            "guide_id": "gde_01JA0000000000000000001000",
+            "title": "Moving to a new municipality: notifying your old and new city offices"
+          }
+        ],
+        "sources": [
+          {
+            "source_id": "src_01JA0000000000000000001001",
+            "title": "Moving-out and moving-in notifications (example)",
+            "publisher": "Example Ministry of Internal Affairs",
+            "url": "https://soumu.example/resident-registration/moving",
+            "retrieved_at": "2026-09-20T01:00:00Z",
+            "authority": "official"
+          }
+        ],
+        "review": {
+          "status": "reviewed",
+          "reviewed_at": "2025-11-01T03:00:00Z",
+          "next_review_due": "2026-11-01",
+          "reviewer_role": "editor"
+        },
+        "sources_checked_at": "2026-05-10T00:00:00Z",
+        "published_at": "2025-04-01T01:00:00Z",
+        "revised_at": "2025-11-01T03:10:00Z"
+      }
+    },
+    "not_found": {
+      "summary": "Unknown or unpublished guide",
+      "status": 404,
+      "body": {
+        "type": "urn:livingin:problem:not_found",
+        "title": "Not found",
+        "status": 404,
+        "code": "not_found",
+        "request_id": "fixture",
+        "retryable": false
+      }
+    }
+  }
+}

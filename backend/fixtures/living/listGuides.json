@@ -1,0 +1,737 @@
+{
+  "operationId": "listGuides",
+  "scenarios": {
+    "default": {
+      "summary": "Setagaya City (JP-13-112): national, Tokyo-wide, Setagaya-specific and provider guides",
+      "status": 200,
+      "body": {
+        "coverage": {
+          "status": "supported"
+        },
+        "items": [
+          {
+            "id": "gde_01JA0000000000000000001002",
+            "format": "procedure",
+            "topics": [
+              "housing"
+            ],
+            "title": {
+              "lang": "en",
+              "text": "Applying for Tokyo metropolitan housing (都営住宅)",
+              "translation": {
+                "status": "reviewed_translation",
+                "source_lang": "ja",
+                "reviewed_at": "2026-07-01T05:00:00Z"
+              }
+            },
+            "summary": {
+              "lang": "en",
+              "text": "How application rounds for metropolitan public housing work in Tokyo. Applies to Tokyo residents only.",
+              "translation": {
+                "status": "reviewed_translation",
+                "source_lang": "ja",
+                "reviewed_at": "2026-07-01T05:00:00Z"
+              }
+            },
+            "applicability": {
+              "scope": {
+                "kind": "prefecture",
+                "locality": {
+                  "code": "JP-13",
+                  "name": {
+                    "ja": "東京都",
+                    "reading": "とうきょうと",
+                    "romaji": "Tōkyō-to",
+                    "en": "Tokyo"
+                  },
+                  "level": "prefecture"
+                }
+              },
+              "conditions": [
+                {
+                  "code": "registered_in_tokyo",
+                  "description": "You are registered as a resident of Tokyo for the period the round requires",
+                  "effect": "applies_if"
+                },
+                {
+                  "code": "within_round_income_limit",
+                  "description": "Your household income is within the limit for the application round",
+                  "effect": "applies_if"
+                }
+              ]
+            },
+            "variant_of": null,
+            "review": {
+              "status": "reviewed",
+              "reviewed_at": "2026-07-01T05:00:00Z",
+              "next_review_due": "2027-01-01",
+              "reviewer_role": "editor"
+            },
+            "revised_at": "2026-09-28T02:30:00Z"
+          },
+          {
+            "id": "gde_01JA0000000000000000001001",
+            "format": "procedure",
+            "topics": [
+              "housing",
+              "local_admin"
+            ],
+            "title": {
+              "lang": "en",
+              "text": "Moving into Setagaya City: moving-in notification (example)",
+              "translation": {
+                "status": "original"
+              }
+            },
+            "summary": {
+              "lang": "en",
+              "text": "Setagaya City’s local steps for the moving-in notification. Use this together with the national procedure; it applies only when moving into Setagaya City, not to neighbouring wards.",
+              "translation": {
+                "status": "original"
+              }
+            },
+            "applicability": {
+              "scope": {
+                "kind": "municipality",
+                "locality": {
+                  "code": "JP-13-112",
+                  "name": {
+                    "ja": "世田谷区",
+                    "reading": "せたがやく",
+                    "romaji": "Setagaya-ku",
+                    "en": "Setagaya City"
+                  },
+                  "level": "municipality"
+                }
+              },
+              "conditions": [
+                {
+                  "code": "moving_into_setagaya",
+                  "description": "You are moving into Setagaya City from another municipality",
+                  "effect": "applies_if"
+                }
+              ]
+            },
+            "variant_of": "gde_01JA0000000000000000001000",
+            "review": {
+              "status": "reviewed",
+              "reviewed_at": "2026-10-08T04:00:00Z",
+              "next_review_due": "2027-04-08",
+              "reviewer_role": "editor"
+            },
+            "revised_at": "2026-10-08T04:10:00Z"
+          },
+          {
+            "id": "gde_01JA0000000000000000001000",
+            "format": "procedure",
+            "topics": [
+              "housing",
+              "local_admin"
+            ],
+            "title": {
+              "lang": "en",
+              "text": "Moving to a new municipality: notifying your old and new city offices",
+              "translation": {
+                "status": "original"
+              }
+            },
+            "summary": {
+              "lang": "en",
+              "text": "When you move to a different city, ward, town or village, you tell your current municipality that you are leaving and your new one that you have arrived. This is the national procedure; your new municipality may add local steps.",
+              "translation": {
+                "status": "original"
+              }
+            },
+            "applicability": {
+              "scope": {
+                "kind": "national"
+              },
+              "conditions": [
+                {
+                  "code": "resident_registered",
+                  "description": "You are registered as a resident (住民登録) in Japan",
+                  "effect": "applies_if"
+                },
+                {
+                  "code": "moving_to_different_municipality",
+                  "description": "You are moving to a different municipality",
+                  "effect": "applies_if"
+                },
+                {
+                  "code": "moving_within_same_municipality",
+                  "description": "You are moving within the same municipality (a change-of-address notification, 転居届, applies instead)",
+                  "effect": "excluded_if"
+                }
+              ]
+            },
+            "variant_of": null,
+            "review": {
+              "status": "reviewed",
+              "reviewed_at": "2026-09-15T03:00:00Z",
+              "next_review_due": "2027-03-15",
+              "reviewer_role": "subject_expert"
+            },
+            "revised_at": "2026-09-15T03:30:00Z"
+          },
+          {
+            "id": "gde_01JA0000000000000000001004",
+            "format": "procedure",
+            "topics": [
+              "banking",
+              "arrival"
+            ],
+            "title": {
+              "lang": "en",
+              "text": "Opening an account at Example Bank",
+              "translation": {
+                "status": "machine_translation",
+                "source_lang": "ja"
+              }
+            },
+            "summary": {
+              "lang": "en",
+              "text": "Example Bank’s own process for residents opening an ordinary savings account. Other banks have different requirements.",
+              "translation": {
+                "status": "machine_translation",
+                "source_lang": "ja"
+              }
+            },
+            "applicability": {
+              "scope": {
+                "kind": "provider",
+                "provider": {
+                  "id": "org_01JA0000000000000000001001",
+                  "kind": "business",
+                  "name": {
+                    "ja": "例示銀行",
+                    "en": "Example Bank"
+                  },
+                  "verification": "verified",
+                  "website": "https://bank.example",
+                  "description": "Fictional bank used in fixtures."
+                },
+                "service_area": {
+                  "code": "JP",
+                  "name": {
+                    "ja": "日本",
+                    "reading": "にほん",
+                    "romaji": "Nihon",
+                    "en": "Japan"
+                  },
+                  "level": "country"
+                }
+              },
+              "conditions": [
+                {
+                  "code": "resident_registered",
+                  "description": "You are registered as a resident (住民登録) in Japan",
+                  "effect": "applies_if"
+                },
+                {
+                  "code": "below_provider_minimum_stay",
+                  "description": "You have lived in Japan for less than the bank’s stated minimum period (6 months at Example Bank; example)",
+                  "effect": "excluded_if"
+                }
+              ]
+            },
+            "variant_of": null,
+            "review": {
+              "status": "reviewed",
+              "reviewed_at": "2026-10-03T06:00:00Z",
+              "next_review_due": "2027-01-03",
+              "reviewer_role": "editor"
+            },
+            "revised_at": "2026-10-03T06:10:00Z"
+          },
+          {
+            "id": "gde_01JA0000000000000000001003",
+            "format": "explainer",
+            "topics": [
+              "tax_pension_insurance",
+              "healthcare"
+            ],
+            "title": {
+              "lang": "en",
+              "text": "Understanding your National Health Insurance bill",
+              "translation": {
+                "status": "original"
+              }
+            },
+            "summary": {
+              "lang": "en",
+              "text": "What the premium notice and payment slips mean, why the amount changes in June, and what to do if a payment is late.",
+              "translation": {
+                "status": "original"
+              }
+            },
+            "applicability": {
+              "scope": {
+                "kind": "national"
+              },
+              "conditions": [
+                {
+                  "code": "enrolled_in_national_health_insurance",
+                  "description": "You are enrolled in National Health Insurance (not employer health insurance)",
+                  "effect": "applies_if"
+                }
+              ]
+            },
+            "variant_of": null,
+            "review": {
+              "status": "review_overdue",
+              "last_reviewed_at": "2026-03-01T02:00:00Z",
+              "review_was_due": "2026-09-01"
+            },
+            "revised_at": "2026-03-01T02:10:00Z"
+          }
+        ],
+        "next_cursor": "bW9jay1ndWlkZXMtMg"
+      }
+    },
+    "empty": {
+      "summary": "Supported locality, but no guide matches the topic filter (topic=leaving_japan)",
+      "status": 200,
+      "body": {
+        "coverage": {
+          "status": "supported"
+        },
+        "items": [],
+        "next_cursor": null
+      }
+    },
+    "partial_locality": {
+      "summary": "Shibuya City (JP-13-113): Tokyo-wide and national guides only; the neighbouring Setagaya guide is not a match",
+      "status": 200,
+      "body": {
+        "coverage": {
+          "status": "partial",
+          "limitations": [
+            "Shibuya City’s own procedures are not maintained yet. Tokyo-wide and national guides are shown."
+          ]
+        },
+        "items": [
+          {
+            "id": "gde_01JA0000000000000000001002",
+            "format": "procedure",
+            "topics": [
+              "housing"
+            ],
+            "title": {
+              "lang": "en",
+              "text": "Applying for Tokyo metropolitan housing (都営住宅)",
+              "translation": {
+                "status": "reviewed_translation",
+                "source_lang": "ja",
+                "reviewed_at": "2026-07-01T05:00:00Z"
+              }
+            },
+            "summary": {
+              "lang": "en",
+              "text": "How application rounds for metropolitan public housing work in Tokyo. Applies to Tokyo residents only.",
+              "translation": {
+                "status": "reviewed_translation",
+                "source_lang": "ja",
+                "reviewed_at": "2026-07-01T05:00:00Z"
+              }
+            },
+            "applicability": {
+              "scope": {
+                "kind": "prefecture",
+                "locality": {
+                  "code": "JP-13",
+                  "name": {
+                    "ja": "東京都",
+                    "reading": "とうきょうと",
+                    "romaji": "Tōkyō-to",
+                    "en": "Tokyo"
+                  },
+                  "level": "prefecture"
+                }
+              },
+              "conditions": [
+                {
+                  "code": "registered_in_tokyo",
+                  "description": "You are registered as a resident of Tokyo for the period the round requires",
+                  "effect": "applies_if"
+                },
+                {
+                  "code": "within_round_income_limit",
+                  "description": "Your household income is within the limit for the application round",
+                  "effect": "applies_if"
+                }
+              ]
+            },
+            "variant_of": null,
+            "review": {
+              "status": "reviewed",
+              "reviewed_at": "2026-07-01T05:00:00Z",
+              "next_review_due": "2027-01-01",
+              "reviewer_role": "editor"
+            },
+            "revised_at": "2026-09-28T02:30:00Z"
+          },
+          {
+            "id": "gde_01JA0000000000000000001000",
+            "format": "procedure",
+            "topics": [
+              "housing",
+              "local_admin"
+            ],
+            "title": {
+              "lang": "en",
+              "text": "Moving to a new municipality: notifying your old and new city offices",
+              "translation": {
+                "status": "original"
+              }
+            },
+            "summary": {
+              "lang": "en",
+              "text": "When you move to a different city, ward, town or village, you tell your current municipality that you are leaving and your new one that you have arrived. This is the national procedure; your new municipality may add local steps.",
+              "translation": {
+                "status": "original"
+              }
+            },
+            "applicability": {
+              "scope": {
+                "kind": "national"
+              },
+              "conditions": [
+                {
+                  "code": "resident_registered",
+                  "description": "You are registered as a resident (住民登録) in Japan",
+                  "effect": "applies_if"
+                },
+                {
+                  "code": "moving_to_different_municipality",
+                  "description": "You are moving to a different municipality",
+                  "effect": "applies_if"
+                },
+                {
+                  "code": "moving_within_same_municipality",
+                  "description": "You are moving within the same municipality (a change-of-address notification, 転居届, applies instead)",
+                  "effect": "excluded_if"
+                }
+              ]
+            },
+            "variant_of": null,
+            "review": {
+              "status": "reviewed",
+              "reviewed_at": "2026-09-15T03:00:00Z",
+              "next_review_due": "2027-03-15",
+              "reviewer_role": "subject_expert"
+            },
+            "revised_at": "2026-09-15T03:30:00Z"
+          },
+          {
+            "id": "gde_01JA0000000000000000001004",
+            "format": "procedure",
+            "topics": [
+              "banking",
+              "arrival"
+            ],
+            "title": {
+              "lang": "en",
+              "text": "Opening an account at Example Bank",
+              "translation": {
+                "status": "machine_translation",
+                "source_lang": "ja"
+              }
+            },
+            "summary": {
+              "lang": "en",
+              "text": "Example Bank’s own process for residents opening an ordinary savings account. Other banks have different requirements.",
+              "translation": {
+                "status": "machine_translation",
+                "source_lang": "ja"
+              }
+            },
+            "applicability": {
+              "scope": {
+                "kind": "provider",
+                "provider": {
+                  "id": "org_01JA0000000000000000001001",
+                  "kind": "business",
+                  "name": {
+                    "ja": "例示銀行",
+                    "en": "Example Bank"
+                  },
+                  "verification": "verified",
+                  "website": "https://bank.example",
+                  "description": "Fictional bank used in fixtures."
+                },
+                "service_area": {
+                  "code": "JP",
+                  "name": {
+                    "ja": "日本",
+                    "reading": "にほん",
+                    "romaji": "Nihon",
+                    "en": "Japan"
+                  },
+                  "level": "country"
+                }
+              },
+              "conditions": [
+                {
+                  "code": "resident_registered",
+                  "description": "You are registered as a resident (住民登録) in Japan",
+                  "effect": "applies_if"
+                },
+                {
+                  "code": "below_provider_minimum_stay",
+                  "description": "You have lived in Japan for less than the bank’s stated minimum period (6 months at Example Bank; example)",
+                  "effect": "excluded_if"
+                }
+              ]
+            },
+            "variant_of": null,
+            "review": {
+              "status": "reviewed",
+              "reviewed_at": "2026-10-03T06:00:00Z",
+              "next_review_due": "2027-01-03",
+              "reviewer_role": "editor"
+            },
+            "revised_at": "2026-10-03T06:10:00Z"
+          },
+          {
+            "id": "gde_01JA0000000000000000001003",
+            "format": "explainer",
+            "topics": [
+              "tax_pension_insurance",
+              "healthcare"
+            ],
+            "title": {
+              "lang": "en",
+              "text": "Understanding your National Health Insurance bill",
+              "translation": {
+                "status": "original"
+              }
+            },
+            "summary": {
+              "lang": "en",
+              "text": "What the premium notice and payment slips mean, why the amount changes in June, and what to do if a payment is late.",
+              "translation": {
+                "status": "original"
+              }
+            },
+            "applicability": {
+              "scope": {
+                "kind": "national"
+              },
+              "conditions": [
+                {
+                  "code": "enrolled_in_national_health_insurance",
+                  "description": "You are enrolled in National Health Insurance (not employer health insurance)",
+                  "effect": "applies_if"
+                }
+              ]
+            },
+            "variant_of": null,
+            "review": {
+              "status": "review_overdue",
+              "last_reviewed_at": "2026-03-01T02:00:00Z",
+              "review_was_due": "2026-09-01"
+            },
+            "revised_at": "2026-03-01T02:10:00Z"
+          }
+        ],
+        "next_cursor": null
+      }
+    },
+    "unsupported_locality": {
+      "summary": "Hakodate City (JP-01-202): local procedures not maintained; national and nationwide guides still apply",
+      "status": 200,
+      "body": {
+        "coverage": {
+          "status": "unsupported",
+          "reason_code": "local_guides_not_maintained",
+          "explanation": "livingin.jp does not maintain local procedures for Hakodate City or Hokkaido yet. The national guides listed still apply; check with the municipal office for local steps."
+        },
+        "items": [
+          {
+            "id": "gde_01JA0000000000000000001000",
+            "format": "procedure",
+            "topics": [
+              "housing",
+              "local_admin"
+            ],
+            "title": {
+              "lang": "en",
+              "text": "Moving to a new municipality: notifying your old and new city offices",
+              "translation": {
+                "status": "original"
+              }
+            },
+            "summary": {
+              "lang": "en",
+              "text": "When you move to a different city, ward, town or village, you tell your current municipality that you are leaving and your new one that you have arrived. This is the national procedure; your new municipality may add local steps.",
+              "translation": {
+                "status": "original"
+              }
+            },
+            "applicability": {
+              "scope": {
+                "kind": "national"
+              },
+              "conditions": [
+                {
+                  "code": "resident_registered",
+                  "description": "You are registered as a resident (住民登録) in Japan",
+                  "effect": "applies_if"
+                },
+                {
+                  "code": "moving_to_different_municipality",
+                  "description": "You are moving to a different municipality",
+                  "effect": "applies_if"
+                },
+                {
+                  "code": "moving_within_same_municipality",
+                  "description": "You are moving within the same municipality (a change-of-address notification, 転居届, applies instead)",
+                  "effect": "excluded_if"
+                }
+              ]
+            },
+            "variant_of": null,
+            "review": {
+              "status": "reviewed",
+              "reviewed_at": "2026-09-15T03:00:00Z",
+              "next_review_due": "2027-03-15",
+              "reviewer_role": "subject_expert"
+            },
+            "revised_at": "2026-09-15T03:30:00Z"
+          },
+          {
+            "id": "gde_01JA0000000000000000001004",
+            "format": "procedure",
+            "topics": [
+              "banking",
+              "arrival"
+            ],
+            "title": {
+              "lang": "en",
+              "text": "Opening an account at Example Bank",
+              "translation": {
+                "status": "machine_translation",
+                "source_lang": "ja"
+              }
+            },
+            "summary": {
+              "lang": "en",
+              "text": "Example Bank’s own process for residents opening an ordinary savings account. Other banks have different requirements.",
+              "translation": {
+                "status": "machine_translation",
+                "source_lang": "ja"
+              }
+            },
+            "applicability": {
+              "scope": {
+                "kind": "provider",
+                "provider": {
+                  "id": "org_01JA0000000000000000001001",
+                  "kind": "business",
+                  "name": {
+                    "ja": "例示銀行",
+                    "en": "Example Bank"
+                  },
+                  "verification": "verified",
+                  "website": "https://bank.example",
+                  "description": "Fictional bank used in fixtures."
+                },
+                "service_area": {
+                  "code": "JP",
+                  "name": {
+                    "ja": "日本",
+                    "reading": "にほん",
+                    "romaji": "Nihon",
+                    "en": "Japan"
+                  },
+                  "level": "country"
+                }
+              },
+              "conditions": [
+                {
+                  "code": "resident_registered",
+                  "description": "You are registered as a resident (住民登録) in Japan",
+                  "effect": "applies_if"
+                },
+                {
+                  "code": "below_provider_minimum_stay",
+                  "description": "You have lived in Japan for less than the bank’s stated minimum period (6 months at Example Bank; example)",
+                  "effect": "excluded_if"
+                }
+              ]
+            },
+            "variant_of": null,
+            "review": {
+              "status": "reviewed",
+              "reviewed_at": "2026-10-03T06:00:00Z",
+              "next_review_due": "2027-01-03",
+              "reviewer_role": "editor"
+            },
+            "revised_at": "2026-10-03T06:10:00Z"
+          },
+          {
+            "id": "gde_01JA0000000000000000001003",
+            "format": "explainer",
+            "topics": [
+              "tax_pension_insurance",
+              "healthcare"
+            ],
+            "title": {
+              "lang": "en",
+              "text": "Understanding your National Health Insurance bill",
+              "translation": {
+                "status": "original"
+              }
+            },
+            "summary": {
+              "lang": "en",
+              "text": "What the premium notice and payment slips mean, why the amount changes in June, and what to do if a payment is late.",
+              "translation": {
+                "status": "original"
+              }
+            },
+            "applicability": {
+              "scope": {
+                "kind": "national"
+              },
+              "conditions": [
+                {
+                  "code": "enrolled_in_national_health_insurance",
+                  "description": "You are enrolled in National Health Insurance (not employer health insurance)",
+                  "effect": "applies_if"
+                }
+              ]
+            },
+            "variant_of": null,
+            "review": {
+              "status": "review_overdue",
+              "last_reviewed_at": "2026-03-01T02:00:00Z",
+              "review_was_due": "2026-09-01"
+            },
+            "revised_at": "2026-03-01T02:10:00Z"
+          }
+        ],
+        "next_cursor": null
+      }
+    },
+    "validation_failed": {
+      "summary": "Malformed locality code",
+      "status": 400,
+      "body": {
+        "type": "urn:livingin:problem:validation_failed",
+        "title": "Validation failed",
+        "status": 400,
+        "code": "validation_failed",
+        "request_id": "fixture",
+        "retryable": false,
+        "fields": [
+          {
+            "pointer": "/query/locality",
+            "code": "invalid_format",
+            "message": "Invalid string: must match pattern /^JP(-\\d{2}(-\\d{3})?)?$/"
+          }
+        ]
+      }
+    }
+  }
+}

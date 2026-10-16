@@ -1,0 +1,1089 @@
+{
+  "operationId": "getAlmanacEntry",
+  "scenarios": {
+    "default": {
+      "summary": "Reviewed entry: status, entry visa, periods of stay and three procedures with sourced fees and processing evidence",
+      "status": 200,
+      "body": {
+        "id": "alm_01JA0000000000000000001000",
+        "revision": 3,
+        "summary": {
+          "lang": "en",
+          "text": "Reference record for the status of residence used for many office, engineering, translation and similar professional jobs (example record). The status, the entry visa, the periods of stay that may be granted and the application procedures are separate things and are described separately.",
+          "translation": {
+            "status": "original"
+          }
+        },
+        "status_of_residence": {
+          "code": "engineer_specialist_humanities_international",
+          "name": {
+            "ja": "技術・人文知識・国際業務",
+            "reading": "ぎじゅつ・じんぶんちしき・こくさいぎょうむ",
+            "romaji": "gijutsu, jinbun chishiki, kokusai gyōmu",
+            "en": "Engineer / Specialist in Humanities / International Services"
+          },
+          "category": "work",
+          "permitted_activities": "Work under a contract with an organization in Japan that requires specialist knowledge in the natural sciences or humanities, or skills based on familiarity with a foreign culture (example summary).",
+          "source_ids": [
+            "src_01JA0000000000000000001010"
+          ]
+        },
+        "entry_visa": {
+          "status": "known",
+          "value": {
+            "name": {
+              "ja": "就業査証",
+              "reading": "しゅうぎょうさしょう",
+              "en": "Working visa"
+            },
+            "description": "Issued by a Japanese embassy or consulate abroad, usually on the basis of a Certificate of Eligibility, so the holder can apply for landing. The status of residence is granted separately on landing (example).",
+            "issued_by": "Japanese embassies and consulates abroad (example)"
+          },
+          "basis": "source_derived",
+          "source_id": "src_01JA0000000000000000001014"
+        },
+        "periods_of_stay": {
+          "status": "known",
+          "value": [
+            {
+              "value": 5,
+              "unit": "years",
+              "label": {
+                "ja": "5年",
+                "reading": "ごねん",
+                "en": "5 years"
+              }
+            },
+            {
+              "value": 3,
+              "unit": "years",
+              "label": {
+                "ja": "3年",
+                "reading": "さんねん",
+                "en": "3 years"
+              }
+            },
+            {
+              "value": 1,
+              "unit": "years",
+              "label": {
+                "ja": "1年",
+                "reading": "いちねん",
+                "en": "1 year"
+              }
+            },
+            {
+              "value": 3,
+              "unit": "months",
+              "label": {
+                "ja": "3月",
+                "reading": "さんげつ",
+                "en": "3 months"
+              }
+            }
+          ],
+          "basis": "source_derived",
+          "source_id": "src_01JA0000000000000000001010"
+        },
+        "procedures": [
+          {
+            "key": "certificate_of_eligibility",
+            "kind": "certificate_of_eligibility",
+            "name": {
+              "ja": "在留資格認定証明書交付申請",
+              "reading": "ざいりゅうしかくにんていしょうめいしょこうふしんせい",
+              "en": "Application for a Certificate of Eligibility"
+            },
+            "use_when": "You are outside Japan and an organization in Japan will employ you. Usually filed in Japan by the employer or a representative (example).",
+            "where_to_apply": "The regional immigration services bureau with jurisdiction over the employer’s location (example).",
+            "version": {
+              "label": "FY2026 edition (example)",
+              "effective_from": "2026-04-01",
+              "source_id": "src_01JA0000000000000000001011"
+            },
+            "fee": {
+              "status": "not_applicable"
+            },
+            "fee_note": "No application fee in this example version.",
+            "requirements": [
+              {
+                "kind": "document",
+                "key": "application_form",
+                "document": {
+                  "ja": "在留資格認定証明書交付申請書",
+                  "reading": "ざいりゅうしかくにんていしょうめいしょこうふしんせいしょ",
+                  "en": "Application form"
+                },
+                "description": "The completed application form (example).",
+                "applies": {
+                  "kind": "always"
+                },
+                "source_ids": [
+                  "src_01JA0000000000000000001010"
+                ]
+              },
+              {
+                "kind": "document",
+                "key": "employment_contract",
+                "document": {
+                  "ja": "雇用契約書",
+                  "reading": "こようけいやくしょ",
+                  "en": "Employment contract"
+                },
+                "description": "A document showing the activity, period, position and pay (example).",
+                "applies": {
+                  "kind": "always"
+                },
+                "source_ids": [
+                  "src_01JA0000000000000000001010"
+                ]
+              },
+              {
+                "kind": "eligibility",
+                "key": "qualifying_background",
+                "description": "Education or professional experience related to the work, as the status requires (example; check the official source).",
+                "applies": {
+                  "kind": "always"
+                },
+                "source_ids": [
+                  "src_01JA0000000000000000001010"
+                ]
+              },
+              {
+                "kind": "document",
+                "key": "company_documents",
+                "document": {
+                  "ja": "登記事項証明書",
+                  "reading": "とうきじこうしょうめいしょ",
+                  "en": "Certificate of company registration"
+                },
+                "description": "Documents about the employer (example).",
+                "applies": {
+                  "kind": "only_if",
+                  "condition": {
+                    "code": "employer_newly_established",
+                    "description": "The employer was established recently"
+                  }
+                },
+                "source_ids": [
+                  "src_01JA0000000000000000001010"
+                ]
+              }
+            ],
+            "processing_time": {
+              "status": "known",
+              "value": [
+                {
+                  "kind": "official_guidance",
+                  "description": "Standard processing period stated by the agency: 30–90 days (example). A stated standard, not a promise for any application.",
+                  "stated_range_days": {
+                    "min": 30,
+                    "max": 90
+                  },
+                  "stated_on": "2026-04-01",
+                  "source_id": "src_01JA0000000000000000001012"
+                },
+                {
+                  "kind": "official_statistics",
+                  "description": "Average processing days published by the agency (example).",
+                  "scope": "All Certificate of Eligibility applications for this status, nationwide (example)",
+                  "observed_from": "2026-01-01",
+                  "observed_to": "2026-03-31",
+                  "metric": "mean",
+                  "value_days": 52.3,
+                  "sample_size": {
+                    "status": "known",
+                    "value": 41210,
+                    "basis": "source_derived",
+                    "source_id": "src_01JA0000000000000000001013"
+                  },
+                  "source_id": "src_01JA0000000000000000001013"
+                }
+              ],
+              "basis": "source_derived"
+            }
+          },
+          {
+            "key": "change_of_status",
+            "kind": "change_of_status",
+            "name": {
+              "ja": "在留資格変更許可申請",
+              "reading": "ざいりゅうしかくへんこうきょかしんせい",
+              "en": "Application for Change of Status of Residence"
+            },
+            "use_when": "You are already in Japan with a different status (for example Student) and will start work covered by this status.",
+            "where_to_apply": "The regional immigration services bureau with jurisdiction over your address (example).",
+            "version": {
+              "label": "FY2026 edition (example)",
+              "effective_from": "2026-04-01",
+              "source_id": "src_01JA0000000000000000001011"
+            },
+            "fee": {
+              "status": "known",
+              "value": {
+                "amount": 6000,
+                "currency": "JPY"
+              },
+              "basis": "source_derived",
+              "source_id": "src_01JA0000000000000000001011"
+            },
+            "fee_note": "Paid with a revenue stamp (収入印紙) when permission is granted (example).",
+            "requirements": [
+              {
+                "kind": "document",
+                "key": "application_form",
+                "document": {
+                  "ja": "在留資格変更許可申請書",
+                  "reading": "ざいりゅうしかくへんこうきょかしんせいしょ",
+                  "en": "Application form"
+                },
+                "description": "The completed application form (example).",
+                "applies": {
+                  "kind": "always"
+                },
+                "source_ids": [
+                  "src_01JA0000000000000000001010"
+                ]
+              },
+              {
+                "kind": "document",
+                "key": "residence_card",
+                "document": {
+                  "ja": "在留カード",
+                  "reading": "ざいりゅうカード",
+                  "en": "Residence card"
+                },
+                "description": "Present your current residence card (example).",
+                "applies": {
+                  "kind": "always"
+                },
+                "source_ids": [
+                  "src_01JA0000000000000000001010"
+                ]
+              },
+              {
+                "kind": "document",
+                "key": "employment_contract",
+                "document": {
+                  "ja": "雇用契約書",
+                  "reading": "こようけいやくしょ",
+                  "en": "Employment contract"
+                },
+                "description": "A document showing the activity, period, position and pay (example).",
+                "applies": {
+                  "kind": "always"
+                },
+                "source_ids": [
+                  "src_01JA0000000000000000001010"
+                ]
+              },
+              {
+                "kind": "document",
+                "key": "graduation_certificate",
+                "document": {
+                  "ja": "卒業証明書",
+                  "reading": "そつぎょうしょうめいしょ",
+                  "en": "Graduation certificate"
+                },
+                "description": "Proof of the education the application relies on (example).",
+                "applies": {
+                  "kind": "only_if",
+                  "condition": {
+                    "code": "relies_on_education",
+                    "description": "Your application relies on your education rather than work experience"
+                  }
+                },
+                "source_ids": [
+                  "src_01JA0000000000000000001010"
+                ]
+              }
+            ],
+            "processing_time": {
+              "status": "known",
+              "value": [
+                {
+                  "kind": "official_guidance",
+                  "description": "Standard processing period stated by the agency: 14–30 days (example). A stated standard, not a promise for any application.",
+                  "stated_range_days": {
+                    "min": 14,
+                    "max": 30
+                  },
+                  "stated_on": "2026-04-01",
+                  "source_id": "src_01JA0000000000000000001012"
+                },
+                {
+                  "kind": "official_statistics",
+                  "description": "Average processing days published by the agency (example).",
+                  "scope": "All change-of-status applications, nationwide (example)",
+                  "observed_from": "2026-01-01",
+                  "observed_to": "2026-03-31",
+                  "metric": "mean",
+                  "value_days": 38.5,
+                  "sample_size": {
+                    "status": "unknown"
+                  },
+                  "source_id": "src_01JA0000000000000000001013"
+                },
+                {
+                  "kind": "community_reported",
+                  "description": "Timelines reported by survey respondents (example).",
+                  "scope": "Change of status from Student to this status, Tokyo bureau (example)",
+                  "observed_from": "2026-01-01",
+                  "observed_to": "2026-06-30",
+                  "sample_size": 23,
+                  "median_days": 35,
+                  "range_days": {
+                    "min": 18,
+                    "max": 74
+                  },
+                  "collection_method": "Voluntary online survey run by an exchange center (example).",
+                  "limitations": [
+                    "Self-selected respondents; not representative.",
+                    "Small sample.",
+                    "Dates were reported from memory and not verified."
+                  ],
+                  "source_id": "src_01JA0000000000000000001015"
+                }
+              ],
+              "basis": "source_derived"
+            }
+          },
+          {
+            "key": "extension_of_period_of_stay",
+            "kind": "extension_of_period_of_stay",
+            "name": {
+              "ja": "在留期間更新許可申請",
+              "reading": "ざいりゅうきかんこうしんきょかしんせい",
+              "en": "Application for Extension of Period of Stay"
+            },
+            "use_when": "You hold this status and want to continue the same activity beyond your current period of stay (example).",
+            "where_to_apply": "The regional immigration services bureau with jurisdiction over your address (example).",
+            "version": {
+              "label": "FY2026 edition (example)",
+              "effective_from": "2026-04-01",
+              "source_id": "src_01JA0000000000000000001011"
+            },
+            "fee": {
+              "status": "known",
+              "value": {
+                "amount": 6000,
+                "currency": "JPY"
+              },
+              "basis": "source_derived",
+              "source_id": "src_01JA0000000000000000001011"
+            },
+            "fee_note": "Paid with a revenue stamp (収入印紙) when permission is granted (example).",
+            "requirements": [
+              {
+                "kind": "document",
+                "key": "application_form",
+                "document": {
+                  "ja": "在留期間更新許可申請書",
+                  "reading": "ざいりゅうきかんこうしんきょかしんせいしょ",
+                  "en": "Application form"
+                },
+                "description": "The completed application form (example).",
+                "applies": {
+                  "kind": "always"
+                },
+                "source_ids": [
+                  "src_01JA0000000000000000001010"
+                ]
+              },
+              {
+                "kind": "document",
+                "key": "residence_card",
+                "document": {
+                  "ja": "在留カード",
+                  "reading": "ざいりゅうカード",
+                  "en": "Residence card"
+                },
+                "description": "Present your current residence card (example).",
+                "applies": {
+                  "kind": "always"
+                },
+                "source_ids": [
+                  "src_01JA0000000000000000001010"
+                ]
+              },
+              {
+                "kind": "document",
+                "key": "tax_certificate",
+                "document": {
+                  "ja": "課税証明書",
+                  "reading": "かぜいしょうめいしょ",
+                  "en": "Tax certificate"
+                },
+                "description": "Shows your income and local tax for the previous year (example).",
+                "applies": {
+                  "kind": "always"
+                },
+                "source_ids": [
+                  "src_01JA0000000000000000001010"
+                ]
+              }
+            ],
+            "processing_time": {
+              "status": "known",
+              "value": [
+                {
+                  "kind": "official_guidance",
+                  "description": "Standard processing period stated by the agency: 14–30 days (example). A stated standard, not a promise for any application.",
+                  "stated_range_days": {
+                    "min": 14,
+                    "max": 30
+                  },
+                  "stated_on": "2026-04-01",
+                  "source_id": "src_01JA0000000000000000001012"
+                }
+              ],
+              "basis": "source_derived"
+            }
+          }
+        ],
+        "terminology": [
+          {
+            "ja": "査証",
+            "reading": "さしょう",
+            "romaji": "sashō",
+            "en": "Visa"
+          },
+          {
+            "ja": "在留資格",
+            "reading": "ざいりゅうしかく",
+            "romaji": "zairyū shikaku",
+            "en": "Status of residence"
+          },
+          {
+            "ja": "在留期間",
+            "reading": "ざいりゅうきかん",
+            "romaji": "zairyū kikan",
+            "en": "Period of stay"
+          },
+          {
+            "ja": "在留カード",
+            "reading": "ざいりゅうカード",
+            "romaji": "zairyū kādo",
+            "en": "Residence card"
+          },
+          {
+            "ja": "収入印紙",
+            "reading": "しゅうにゅういんし",
+            "romaji": "shūnyū inshi",
+            "en": "Revenue stamp"
+          }
+        ],
+        "related_guides": [
+          {
+            "guide_id": "gde_01JA0000000000000000001000",
+            "title": "Moving to a new municipality: notifying your old and new city offices"
+          }
+        ],
+        "sources": [
+          {
+            "source_id": "src_01JA0000000000000000001010",
+            "title": "Status of residence: Engineer / Specialist in Humanities / International Services (example)",
+            "publisher": "Example Immigration Agency",
+            "url": "https://immigration.example/status/engineer-humanities",
+            "retrieved_at": "2026-08-01T02:00:00Z",
+            "authority": "official"
+          },
+          {
+            "source_id": "src_01JA0000000000000000001011",
+            "title": "Application fees for residence procedures, FY2026 (example)",
+            "publisher": "Example Immigration Agency",
+            "url": "https://immigration.example/fees/fy2026",
+            "retrieved_at": "2026-08-01T02:10:00Z",
+            "authority": "official"
+          },
+          {
+            "source_id": "src_01JA0000000000000000001012",
+            "title": "Standard processing periods (example)",
+            "publisher": "Example Immigration Agency",
+            "url": "https://immigration.example/processing/standard-periods",
+            "retrieved_at": "2026-08-01T02:20:00Z",
+            "authority": "official"
+          },
+          {
+            "source_id": "src_01JA0000000000000000001013",
+            "title": "Processing statistics, January–March 2026 (example)",
+            "publisher": "Example Immigration Agency",
+            "url": "https://immigration.example/statistics/2026-q1",
+            "retrieved_at": "2026-08-01T02:30:00Z",
+            "authority": "official"
+          },
+          {
+            "source_id": "src_01JA0000000000000000001014",
+            "title": "Visa categories issued by overseas missions (example)",
+            "publisher": "Example Ministry of Foreign Affairs",
+            "url": "https://mofa.example/visa/working",
+            "retrieved_at": "2026-08-01T02:40:00Z",
+            "authority": "official"
+          },
+          {
+            "source_id": "src_01JA0000000000000000001015",
+            "title": "Resident-reported change-of-status timelines (example survey)",
+            "publisher": "Sakura International Exchange Center (example)",
+            "url": "https://sakura-center.example/surveys/processing-2026",
+            "retrieved_at": "2026-08-03T00:00:00Z",
+            "authority": "community"
+          }
+        ],
+        "review": {
+          "status": "reviewed",
+          "reviewed_at": "2026-08-20T04:00:00Z",
+          "next_review_due": "2027-02-20",
+          "reviewer_role": "qualified_professional"
+        },
+        "published_at": "2026-06-01T01:00:00Z",
+        "revised_at": "2026-08-20T04:10:00Z"
+      }
+    },
+    "unknown_fee": {
+      "summary": "After a fee revision, two procedure fees are unknown (not zero) until verified",
+      "status": 200,
+      "body": {
+        "id": "alm_01JA0000000000000000001000",
+        "revision": 4,
+        "summary": {
+          "lang": "en",
+          "text": "Reference record for the status of residence used for many office, engineering, translation and similar professional jobs (example record). The status, the entry visa, the periods of stay that may be granted and the application procedures are separate things and are described separately.",
+          "translation": {
+            "status": "original"
+          }
+        },
+        "status_of_residence": {
+          "code": "engineer_specialist_humanities_international",
+          "name": {
+            "ja": "技術・人文知識・国際業務",
+            "reading": "ぎじゅつ・じんぶんちしき・こくさいぎょうむ",
+            "romaji": "gijutsu, jinbun chishiki, kokusai gyōmu",
+            "en": "Engineer / Specialist in Humanities / International Services"
+          },
+          "category": "work",
+          "permitted_activities": "Work under a contract with an organization in Japan that requires specialist knowledge in the natural sciences or humanities, or skills based on familiarity with a foreign culture (example summary).",
+          "source_ids": [
+            "src_01JA0000000000000000001010"
+          ]
+        },
+        "entry_visa": {
+          "status": "known",
+          "value": {
+            "name": {
+              "ja": "就業査証",
+              "reading": "しゅうぎょうさしょう",
+              "en": "Working visa"
+            },
+            "description": "Issued by a Japanese embassy or consulate abroad, usually on the basis of a Certificate of Eligibility, so the holder can apply for landing. The status of residence is granted separately on landing (example).",
+            "issued_by": "Japanese embassies and consulates abroad (example)"
+          },
+          "basis": "source_derived",
+          "source_id": "src_01JA0000000000000000001014"
+        },
+        "periods_of_stay": {
+          "status": "known",
+          "value": [
+            {
+              "value": 5,
+              "unit": "years",
+              "label": {
+                "ja": "5年",
+                "reading": "ごねん",
+                "en": "5 years"
+              }
+            },
+            {
+              "value": 3,
+              "unit": "years",
+              "label": {
+                "ja": "3年",
+                "reading": "さんねん",
+                "en": "3 years"
+              }
+            },
+            {
+              "value": 1,
+              "unit": "years",
+              "label": {
+                "ja": "1年",
+                "reading": "いちねん",
+                "en": "1 year"
+              }
+            },
+            {
+              "value": 3,
+              "unit": "months",
+              "label": {
+                "ja": "3月",
+                "reading": "さんげつ",
+                "en": "3 months"
+              }
+            }
+          ],
+          "basis": "source_derived",
+          "source_id": "src_01JA0000000000000000001010"
+        },
+        "procedures": [
+          {
+            "key": "certificate_of_eligibility",
+            "kind": "certificate_of_eligibility",
+            "name": {
+              "ja": "在留資格認定証明書交付申請",
+              "reading": "ざいりゅうしかくにんていしょうめいしょこうふしんせい",
+              "en": "Application for a Certificate of Eligibility"
+            },
+            "use_when": "You are outside Japan and an organization in Japan will employ you. Usually filed in Japan by the employer or a representative (example).",
+            "where_to_apply": "The regional immigration services bureau with jurisdiction over the employer’s location (example).",
+            "version": {
+              "label": "FY2026 edition (example)",
+              "effective_from": "2026-04-01",
+              "source_id": "src_01JA0000000000000000001011"
+            },
+            "fee": {
+              "status": "not_applicable"
+            },
+            "fee_note": "No application fee in this example version.",
+            "requirements": [
+              {
+                "kind": "document",
+                "key": "application_form",
+                "document": {
+                  "ja": "在留資格認定証明書交付申請書",
+                  "reading": "ざいりゅうしかくにんていしょうめいしょこうふしんせいしょ",
+                  "en": "Application form"
+                },
+                "description": "The completed application form (example).",
+                "applies": {
+                  "kind": "always"
+                },
+                "source_ids": [
+                  "src_01JA0000000000000000001010"
+                ]
+              },
+              {
+                "kind": "document",
+                "key": "employment_contract",
+                "document": {
+                  "ja": "雇用契約書",
+                  "reading": "こようけいやくしょ",
+                  "en": "Employment contract"
+                },
+                "description": "A document showing the activity, period, position and pay (example).",
+                "applies": {
+                  "kind": "always"
+                },
+                "source_ids": [
+                  "src_01JA0000000000000000001010"
+                ]
+              },
+              {
+                "kind": "eligibility",
+                "key": "qualifying_background",
+                "description": "Education or professional experience related to the work, as the status requires (example; check the official source).",
+                "applies": {
+                  "kind": "always"
+                },
+                "source_ids": [
+                  "src_01JA0000000000000000001010"
+                ]
+              },
+              {
+                "kind": "document",
+                "key": "company_documents",
+                "document": {
+                  "ja": "登記事項証明書",
+                  "reading": "とうきじこうしょうめいしょ",
+                  "en": "Certificate of company registration"
+                },
+                "description": "Documents about the employer (example).",
+                "applies": {
+                  "kind": "only_if",
+                  "condition": {
+                    "code": "employer_newly_established",
+                    "description": "The employer was established recently"
+                  }
+                },
+                "source_ids": [
+                  "src_01JA0000000000000000001010"
+                ]
+              }
+            ],
+            "processing_time": {
+              "status": "known",
+              "value": [
+                {
+                  "kind": "official_guidance",
+                  "description": "Standard processing period stated by the agency: 30–90 days (example). A stated standard, not a promise for any application.",
+                  "stated_range_days": {
+                    "min": 30,
+                    "max": 90
+                  },
+                  "stated_on": "2026-04-01",
+                  "source_id": "src_01JA0000000000000000001012"
+                },
+                {
+                  "kind": "official_statistics",
+                  "description": "Average processing days published by the agency (example).",
+                  "scope": "All Certificate of Eligibility applications for this status, nationwide (example)",
+                  "observed_from": "2026-01-01",
+                  "observed_to": "2026-03-31",
+                  "metric": "mean",
+                  "value_days": 52.3,
+                  "sample_size": {
+                    "status": "known",
+                    "value": 41210,
+                    "basis": "source_derived",
+                    "source_id": "src_01JA0000000000000000001013"
+                  },
+                  "source_id": "src_01JA0000000000000000001013"
+                }
+              ],
+              "basis": "source_derived"
+            }
+          },
+          {
+            "key": "change_of_status",
+            "kind": "change_of_status",
+            "name": {
+              "ja": "在留資格変更許可申請",
+              "reading": "ざいりゅうしかくへんこうきょかしんせい",
+              "en": "Application for Change of Status of Residence"
+            },
+            "use_when": "You are already in Japan with a different status (for example Student) and will start work covered by this status.",
+            "where_to_apply": "The regional immigration services bureau with jurisdiction over your address (example).",
+            "version": {
+              "label": "From 1 October 2026 (example)",
+              "effective_from": "2026-10-01",
+              "source_id": "src_01JA0000000000000000001016"
+            },
+            "fee": {
+              "status": "unknown"
+            },
+            "fee_note": "The fee schedule was revised on 1 October 2026. The new amount has not been verified yet, so no fee is shown. Check the official source before applying.",
+            "requirements": [
+              {
+                "kind": "document",
+                "key": "application_form",
+                "document": {
+                  "ja": "在留資格変更許可申請書",
+                  "reading": "ざいりゅうしかくへんこうきょかしんせいしょ",
+                  "en": "Application form"
+                },
+                "description": "The completed application form (example).",
+                "applies": {
+                  "kind": "always"
+                },
+                "source_ids": [
+                  "src_01JA0000000000000000001010"
+                ]
+              },
+              {
+                "kind": "document",
+                "key": "residence_card",
+                "document": {
+                  "ja": "在留カード",
+                  "reading": "ざいりゅうカード",
+                  "en": "Residence card"
+                },
+                "description": "Present your current residence card (example).",
+                "applies": {
+                  "kind": "always"
+                },
+                "source_ids": [
+                  "src_01JA0000000000000000001010"
+                ]
+              },
+              {
+                "kind": "document",
+                "key": "employment_contract",
+                "document": {
+                  "ja": "雇用契約書",
+                  "reading": "こようけいやくしょ",
+                  "en": "Employment contract"
+                },
+                "description": "A document showing the activity, period, position and pay (example).",
+                "applies": {
+                  "kind": "always"
+                },
+                "source_ids": [
+                  "src_01JA0000000000000000001010"
+                ]
+              },
+              {
+                "kind": "document",
+                "key": "graduation_certificate",
+                "document": {
+                  "ja": "卒業証明書",
+                  "reading": "そつぎょうしょうめいしょ",
+                  "en": "Graduation certificate"
+                },
+                "description": "Proof of the education the application relies on (example).",
+                "applies": {
+                  "kind": "only_if",
+                  "condition": {
+                    "code": "relies_on_education",
+                    "description": "Your application relies on your education rather than work experience"
+                  }
+                },
+                "source_ids": [
+                  "src_01JA0000000000000000001010"
+                ]
+              }
+            ],
+            "processing_time": {
+              "status": "known",
+              "value": [
+                {
+                  "kind": "official_guidance",
+                  "description": "Standard processing period stated by the agency: 14–30 days (example). A stated standard, not a promise for any application.",
+                  "stated_range_days": {
+                    "min": 14,
+                    "max": 30
+                  },
+                  "stated_on": "2026-04-01",
+                  "source_id": "src_01JA0000000000000000001012"
+                },
+                {
+                  "kind": "official_statistics",
+                  "description": "Average processing days published by the agency (example).",
+                  "scope": "All change-of-status applications, nationwide (example)",
+                  "observed_from": "2026-01-01",
+                  "observed_to": "2026-03-31",
+                  "metric": "mean",
+                  "value_days": 38.5,
+                  "sample_size": {
+                    "status": "unknown"
+                  },
+                  "source_id": "src_01JA0000000000000000001013"
+                },
+                {
+                  "kind": "community_reported",
+                  "description": "Timelines reported by survey respondents (example).",
+                  "scope": "Change of status from Student to this status, Tokyo bureau (example)",
+                  "observed_from": "2026-01-01",
+                  "observed_to": "2026-06-30",
+                  "sample_size": 23,
+                  "median_days": 35,
+                  "range_days": {
+                    "min": 18,
+                    "max": 74
+                  },
+                  "collection_method": "Voluntary online survey run by an exchange center (example).",
+                  "limitations": [
+                    "Self-selected respondents; not representative.",
+                    "Small sample.",
+                    "Dates were reported from memory and not verified."
+                  ],
+                  "source_id": "src_01JA0000000000000000001015"
+                }
+              ],
+              "basis": "source_derived"
+            }
+          },
+          {
+            "key": "extension_of_period_of_stay",
+            "kind": "extension_of_period_of_stay",
+            "name": {
+              "ja": "在留期間更新許可申請",
+              "reading": "ざいりゅうきかんこうしんきょかしんせい",
+              "en": "Application for Extension of Period of Stay"
+            },
+            "use_when": "You hold this status and want to continue the same activity beyond your current period of stay (example).",
+            "where_to_apply": "The regional immigration services bureau with jurisdiction over your address (example).",
+            "version": {
+              "label": "From 1 October 2026 (example)",
+              "effective_from": "2026-10-01",
+              "source_id": "src_01JA0000000000000000001016"
+            },
+            "fee": {
+              "status": "unknown"
+            },
+            "fee_note": "The fee schedule was revised on 1 October 2026. The new amount has not been verified yet, so no fee is shown. Check the official source before applying.",
+            "requirements": [
+              {
+                "kind": "document",
+                "key": "application_form",
+                "document": {
+                  "ja": "在留期間更新許可申請書",
+                  "reading": "ざいりゅうきかんこうしんきょかしんせいしょ",
+                  "en": "Application form"
+                },
+                "description": "The completed application form (example).",
+                "applies": {
+                  "kind": "always"
+                },
+                "source_ids": [
+                  "src_01JA0000000000000000001010"
+                ]
+              },
+              {
+                "kind": "document",
+                "key": "residence_card",
+                "document": {
+                  "ja": "在留カード",
+                  "reading": "ざいりゅうカード",
+                  "en": "Residence card"
+                },
+                "description": "Present your current residence card (example).",
+                "applies": {
+                  "kind": "always"
+                },
+                "source_ids": [
+                  "src_01JA0000000000000000001010"
+                ]
+              },
+              {
+                "kind": "document",
+                "key": "tax_certificate",
+                "document": {
+                  "ja": "課税証明書",
+                  "reading": "かぜいしょうめいしょ",
+                  "en": "Tax certificate"
+                },
+                "description": "Shows your income and local tax for the previous year (example).",
+                "applies": {
+                  "kind": "always"
+                },
+                "source_ids": [
+                  "src_01JA0000000000000000001010"
+                ]
+              }
+            ],
+            "processing_time": {
+              "status": "known",
+              "value": [
+                {
+                  "kind": "official_guidance",
+                  "description": "Standard processing period stated by the agency: 14–30 days (example). A stated standard, not a promise for any application.",
+                  "stated_range_days": {
+                    "min": 14,
+                    "max": 30
+                  },
+                  "stated_on": "2026-04-01",
+                  "source_id": "src_01JA0000000000000000001012"
+                }
+              ],
+              "basis": "source_derived"
+            }
+          }
+        ],
+        "terminology": [
+          {
+            "ja": "査証",
+            "reading": "さしょう",
+            "romaji": "sashō",
+            "en": "Visa"
+          },
+          {
+            "ja": "在留資格",
+            "reading": "ざいりゅうしかく",
+            "romaji": "zairyū shikaku",
+            "en": "Status of residence"
+          },
+          {
+            "ja": "在留期間",
+            "reading": "ざいりゅうきかん",
+            "romaji": "zairyū kikan",
+            "en": "Period of stay"
+          },
+          {
+            "ja": "在留カード",
+            "reading": "ざいりゅうカード",
+            "romaji": "zairyū kādo",
+            "en": "Residence card"
+          },
+          {
+            "ja": "収入印紙",
+            "reading": "しゅうにゅういんし",
+            "romaji": "shūnyū inshi",
+            "en": "Revenue stamp"
+          }
+        ],
+        "related_guides": [
+          {
+            "guide_id": "gde_01JA0000000000000000001000",
+            "title": "Moving to a new municipality: notifying your old and new city offices"
+          }
+        ],
+        "sources": [
+          {
+            "source_id": "src_01JA0000000000000000001010",
+            "title": "Status of residence: Engineer / Specialist in Humanities / International Services (example)",
+            "publisher": "Example Immigration Agency",
+            "url": "https://immigration.example/status/engineer-humanities",
+            "retrieved_at": "2026-08-01T02:00:00Z",
+            "authority": "official"
+          },
+          {
+            "source_id": "src_01JA0000000000000000001011",
+            "title": "Application fees for residence procedures, FY2026 (example)",
+            "publisher": "Example Immigration Agency",
+            "url": "https://immigration.example/fees/fy2026",
+            "retrieved_at": "2026-08-01T02:10:00Z",
+            "authority": "official"
+          },
+          {
+            "source_id": "src_01JA0000000000000000001012",
+            "title": "Standard processing periods (example)",
+            "publisher": "Example Immigration Agency",
+            "url": "https://immigration.example/processing/standard-periods",
+            "retrieved_at": "2026-08-01T02:20:00Z",
+            "authority": "official"
+          },
+          {
+            "source_id": "src_01JA0000000000000000001013",
+            "title": "Processing statistics, January–March 2026 (example)",
+            "publisher": "Example Immigration Agency",
+            "url": "https://immigration.example/statistics/2026-q1",
+            "retrieved_at": "2026-08-01T02:30:00Z",
+            "authority": "official"
+          },
+          {
+            "source_id": "src_01JA0000000000000000001014",
+            "title": "Visa categories issued by overseas missions (example)",
+            "publisher": "Example Ministry of Foreign Affairs",
+            "url": "https://mofa.example/visa/working",
+            "retrieved_at": "2026-08-01T02:40:00Z",
+            "authority": "official"
+          },
+          {
+            "source_id": "src_01JA0000000000000000001015",
+            "title": "Resident-reported change-of-status timelines (example survey)",
+            "publisher": "Sakura International Exchange Center (example)",
+            "url": "https://sakura-center.example/surveys/processing-2026",
+            "retrieved_at": "2026-08-03T00:00:00Z",
+            "authority": "community"
+          },
+          {
+            "source_id": "src_01JA0000000000000000001016",
+            "title": "Revised application fees from 1 October 2026 (example)",
+            "publisher": "Example Immigration Agency",
+            "url": "https://immigration.example/fees/2026-10-revision",
+            "retrieved_at": "2026-10-02T02:00:00Z",
+            "authority": "official"
+          }
+        ],
+        "review": {
+          "status": "reviewed",
+          "reviewed_at": "2026-10-05T04:00:00Z",
+          "next_review_due": "2026-12-05",
+          "reviewer_role": "qualified_professional"
+        },
+        "published_at": "2026-06-01T01:00:00Z",
+        "revised_at": "2026-10-05T04:10:00Z"
+      }
+    },
+    "not_found": {
+      "summary": "Unknown or unreviewed entry",
+      "status": 404,
+      "body": {
+        "type": "urn:livingin:problem:not_found",
+        "title": "Not found",
+        "status": 404,
+        "code": "not_found",
+        "request_id": "fixture",
+        "retryable": false
+      }
+    }
+  }
+}

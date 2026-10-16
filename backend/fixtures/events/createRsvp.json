@@ -1,0 +1,112 @@
+{
+  "operationId": "createRsvp",
+  "scenarios": {
+    "default": {
+      "summary": "Open event with places left: going",
+      "status": 201,
+      "body": {
+        "id": "rsv_01JA0000000000000000004201",
+        "event_id": "evt_01JA0000000000000000004101",
+        "state": "going",
+        "waitlist_position": null,
+        "offer_expires_at": null,
+        "cancelled_by": null,
+        "created_at": "2026-10-16T03:00:00Z",
+        "updated_at": "2026-10-16T03:00:00Z"
+      }
+    },
+    "pending_approval": {
+      "summary": "Approval-based event: waiting for the organizer",
+      "status": 201,
+      "body": {
+        "id": "rsv_01JA0000000000000000004202",
+        "event_id": "evt_01JA0000000000000000004131",
+        "state": "pending_approval",
+        "waitlist_position": null,
+        "offer_expires_at": null,
+        "cancelled_by": null,
+        "created_at": "2026-10-14T06:00:00Z",
+        "updated_at": "2026-10-14T06:00:00Z"
+      }
+    },
+    "waitlisted": {
+      "summary": "Event is full: joined the waitlist (201, not an error)",
+      "status": 201,
+      "body": {
+        "id": "rsv_01JA0000000000000000004207",
+        "event_id": "evt_01JA0000000000000000004121",
+        "state": "waitlisted",
+        "waitlist_position": 2,
+        "offer_expires_at": null,
+        "cancelled_by": null,
+        "created_at": "2026-10-16T04:00:00Z",
+        "updated_at": "2026-10-16T04:00:00Z"
+      }
+    },
+    "offer_accepted": {
+      "summary": "Viewer held a waitlist offer; RSVPing again accepted it",
+      "status": 200,
+      "body": {
+        "id": "rsv_01JA0000000000000000004209",
+        "event_id": "evt_01JA0000000000000000004101",
+        "state": "going",
+        "waitlist_position": null,
+        "offer_expires_at": null,
+        "cancelled_by": null,
+        "created_at": "2026-10-12T08:00:00Z",
+        "updated_at": "2026-10-16T05:00:00Z"
+      }
+    },
+    "external_registration_only": {
+      "summary": "Event uses the organizer’s own registration",
+      "status": 409,
+      "body": {
+        "type": "urn:livingin:problem:conflict",
+        "title": "Conflict",
+        "status": 409,
+        "code": "conflict",
+        "request_id": "fixture",
+        "retryable": false,
+        "detail": "This event uses the organizer’s own registration. Register on their website; saving the event on livingin.jp does not register you."
+      }
+    },
+    "event_cancelled": {
+      "summary": "Occurrence is cancelled",
+      "status": 409,
+      "body": {
+        "type": "urn:livingin:problem:conflict",
+        "title": "Conflict",
+        "status": 409,
+        "code": "conflict",
+        "request_id": "fixture",
+        "retryable": false,
+        "detail": "This event has been cancelled."
+      }
+    },
+    "occurrence_not_confirmed": {
+      "summary": "Occurrence is only expected (projected from the series), not confirmed",
+      "status": 409,
+      "body": {
+        "type": "urn:livingin:problem:conflict",
+        "title": "Conflict",
+        "status": 409,
+        "code": "conflict",
+        "request_id": "fixture",
+        "retryable": false,
+        "detail": "This date has not been confirmed by the organizer yet. RSVPs open once it is confirmed."
+      }
+    },
+    "not_found": {
+      "summary": "Unknown event or not visible to the viewer",
+      "status": 404,
+      "body": {
+        "type": "urn:livingin:problem:not_found",
+        "title": "Not found",
+        "status": 404,
+        "code": "not_found",
+        "request_id": "fixture",
+        "retryable": false
+      }
+    }
+  }
+}
